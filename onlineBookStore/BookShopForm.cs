@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace OnlineBookStore
 {
-    public partial class Form1 : Form
+    public partial class BookShopForm : Form
     {
-        public Form1()
+        public BookShopForm(string userId)
         {
             InitializeComponent();
+        }
+
+        private void BookShopForm_Load(object sender, EventArgs e)
+        {
+         
+        
+
         }
     }
 }
