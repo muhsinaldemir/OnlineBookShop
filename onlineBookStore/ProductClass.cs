@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineBookStore
 {
-    abstract class ProductClass
+    public abstract class ProductClass
     {
         public string name { get; set; }
         public string id { get; set; }
