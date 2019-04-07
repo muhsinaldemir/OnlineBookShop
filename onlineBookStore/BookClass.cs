@@ -23,7 +23,7 @@ namespace OnlineBookStore
         {
 
         }
-        public BookClass(string name,string id,double price,string ISBN,string Author,string Publisher,int Page,string Cover_page_picture):base(name,id,price)
+        public BookClass(string Name,string Id,double Price,string ISBN,string Author,string Publisher,int Page,string Cover_page_picture):base(Name,Id,Price)
         {
             isbn = ISBN;
             author = Author;
