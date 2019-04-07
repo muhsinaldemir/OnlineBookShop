@@ -14,5 +14,18 @@ namespace OnlineBookStore
 
         public abstract void printProperties();
         
+        public ProductClass()
+        {
+
+        }
+        public ProductClass(string Name ,string Id ,double Price)
+        {
+            name = Name;
+            id = Id;
+            price = Price;
+
+        }
+
+      
     }
 }
