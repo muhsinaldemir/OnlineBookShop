@@ -33,6 +33,7 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.btnPasswordVisible = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -66,12 +67,13 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(174, 130);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(250, 22);
             this.txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(482, 74);
+            this.btnLogin.Location = new System.Drawing.Point(542, 73);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(115, 78);
             this.btnLogin.TabIndex = 4;
@@ -79,11 +81,22 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // btnPasswordVisible
+            // 
+            this.btnPasswordVisible.Image = global::OnlineBookStore.Properties.Resources.iconEye;
+            this.btnPasswordVisible.Location = new System.Drawing.Point(430, 115);
+            this.btnPasswordVisible.Name = "btnPasswordVisible";
+            this.btnPasswordVisible.Size = new System.Drawing.Size(103, 61);
+            this.btnPasswordVisible.TabIndex = 5;
+            this.btnPasswordVisible.UseVisualStyleBackColor = true;
+            this.btnPasswordVisible.Click += new System.EventHandler(this.btnPasswordVisible_Click);
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 225);
+            this.ClientSize = new System.Drawing.Size(658, 241);
+            this.Controls.Add(this.btnPasswordVisible);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
@@ -91,6 +104,7 @@
             this.Controls.Add(this.lblUserName);
             this.Name = "LoginPage";
             this.Text = "Login Page";
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,6 +117,7 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnPasswordVisible;
     }
 }
 

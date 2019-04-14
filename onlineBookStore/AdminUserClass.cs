@@ -10,7 +10,7 @@ namespace OnlineBookStore
     {
        public int IsAdmin { get; set; }
 
-        public AdminUserClass(string CustomerID, string Name, string Address, string Email, string UserName, string Password, int ısAdmin):base(CustomerID,Name,Address,Email,UserName,Password)
+        public AdminUserClass(string CustomerID, string Name, string SurName, string Address, string Email, string UserName, string Password, int ısAdmin):base(CustomerID,Name,SurName,Address,Email,UserName,Password)
         {
             IsAdmin = ısAdmin;
         }
