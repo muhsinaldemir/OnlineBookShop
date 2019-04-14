@@ -85,7 +85,67 @@ namespace OnlineBookStore
             }
             else
             {
-                MessageBox.Show("User added successfully");
+                MessageBox.Show("Book added successfully");
+                txtBookAuthor.Clear();
+                txtBookIsbn.Clear();
+                txtBookName.Clear();
+                txtBookPage.Clear();
+                txtBookPrice.Clear();
+                txtBookPublisher.Clear();
+                txtCoverPagePicture.Clear();
+            }
+            connection.Close();
+        }
+
+        private void btnAddMusicCDs_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand command = new SqlCommand("INSERT INTO MusicCDsTable (name,price,singer,type) values(@name,@price,@singer,@type)", connection);
+            command.Parameters.AddWithValue("@name", txtMusicName.Text);
+            command.Parameters.AddWithValue("@price", txtMusicPrice.Text);
+            command.Parameters.AddWithValue("@singer", txtMusicSinger.Text);
+            command.Parameters.AddWithValue("@type", txtMusicType.Text);
+          
+            int affected = command.ExecuteNonQuery();
+
+            if (affected == 0)
+            {
+                MessageBox.Show("Error not successful");
+            }
+            else
+            {
+                MessageBox.Show("Music CDs added successfully");
+                txtMusicName.Clear();
+                txtMusicPrice.Clear();
+                txtMusicSinger.Clear();
+                txtMusicType.Clear();
+            }
+            connection.Close();
+
+        }
+
+        private void btnAddMagazine_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand command = new SqlCommand("INSERT INTO MagazineTable (name,price,issue,type) values(@name,@price,@issue,@type)", connection);
+            command.Parameters.AddWithValue("@name", txtMagazineName.Text);
+            command.Parameters.AddWithValue("@price", txtMagazinePrice.Text);
+            command.Parameters.AddWithValue("@issue", txtMagazineIssue.Text);
+            command.Parameters.AddWithValue("@type", txtMagazineType.Text);
+
+            int affected = command.ExecuteNonQuery();
+
+            if (affected == 0)
+            {
+                MessageBox.Show("Error not successful");
+            }
+            else
+            {
+                MessageBox.Show("Magazine added successfully");
+                txtMagazineIssue.Clear();
+                txtMagazineName.Clear();
+                txtMagazinePrice.Clear();
+                txtMagazineType.Clear();
             }
             connection.Close();
         }

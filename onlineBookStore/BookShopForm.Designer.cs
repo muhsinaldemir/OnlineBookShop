@@ -71,19 +71,43 @@
             this.lblBookPublisher = new System.Windows.Forms.Label();
             this.txtBookName = new System.Windows.Forms.TextBox();
             this.lblBookName = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.txtBookPrice = new System.Windows.Forms.TextBox();
             this.lblBookPrice = new System.Windows.Forms.Label();
             this.txtCoverPagePicture = new System.Windows.Forms.TextBox();
             this.lblCoverPagePicture = new System.Windows.Forms.Label();
+            this.dgvMusicCDs = new System.Windows.Forms.DataGridView();
+            this.btnAddMusicCDs = new System.Windows.Forms.Button();
+            this.txtMusicPrice = new System.Windows.Forms.TextBox();
+            this.lblMusicPrice = new System.Windows.Forms.Label();
+            this.txtMusicSinger = new System.Windows.Forms.TextBox();
+            this.lblMusicSinger = new System.Windows.Forms.Label();
+            this.txtMusicType = new System.Windows.Forms.TextBox();
+            this.lblMusicType = new System.Windows.Forms.Label();
+            this.txtMusicName = new System.Windows.Forms.TextBox();
+            this.lblMusicName = new System.Windows.Forms.Label();
+            this.dgvMagazine = new System.Windows.Forms.DataGridView();
+            this.btnAddMagazine = new System.Windows.Forms.Button();
+            this.txtMagazinePrice = new System.Windows.Forms.TextBox();
+            this.lblMagazinePrice = new System.Windows.Forms.Label();
+            this.txtMagazineIssue = new System.Windows.Forms.TextBox();
+            this.lblMagazineIssue = new System.Windows.Forms.Label();
+            this.txtMagazineType = new System.Windows.Forms.TextBox();
+            this.lblMagazineType = new System.Windows.Forms.Label();
+            this.txtMagazineName = new System.Windows.Forms.TextBox();
+            this.lblMagazineName = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
             this.tabAdminPanel.SuspendLayout();
             this.tabControlAdmin.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabBooks.SuspendLayout();
+            this.tabMusics.SuspendLayout();
+            this.tabMagazine.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMusicCDs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -313,7 +337,7 @@
             // 
             this.tabBooks.Controls.Add(this.txtCoverPagePicture);
             this.tabBooks.Controls.Add(this.lblCoverPagePicture);
-            this.tabBooks.Controls.Add(this.dataGridView1);
+            this.tabBooks.Controls.Add(this.dgvBooks);
             this.tabBooks.Controls.Add(this.btnAddBook);
             this.tabBooks.Controls.Add(this.txtBookPage);
             this.tabBooks.Controls.Add(this.lblBookPage);
@@ -337,18 +361,38 @@
             // 
             // tabMusics
             // 
+            this.tabMusics.Controls.Add(this.dgvMusicCDs);
+            this.tabMusics.Controls.Add(this.btnAddMusicCDs);
+            this.tabMusics.Controls.Add(this.txtMusicPrice);
+            this.tabMusics.Controls.Add(this.lblMusicPrice);
+            this.tabMusics.Controls.Add(this.txtMusicSinger);
+            this.tabMusics.Controls.Add(this.lblMusicSinger);
+            this.tabMusics.Controls.Add(this.txtMusicType);
+            this.tabMusics.Controls.Add(this.lblMusicType);
+            this.tabMusics.Controls.Add(this.txtMusicName);
+            this.tabMusics.Controls.Add(this.lblMusicName);
             this.tabMusics.Location = new System.Drawing.Point(4, 25);
             this.tabMusics.Name = "tabMusics";
-            this.tabMusics.Size = new System.Drawing.Size(661, 138);
+            this.tabMusics.Size = new System.Drawing.Size(661, 585);
             this.tabMusics.TabIndex = 2;
             this.tabMusics.Text = "Music-Cds";
             this.tabMusics.UseVisualStyleBackColor = true;
             // 
             // tabMagazine
             // 
+            this.tabMagazine.Controls.Add(this.dgvMagazine);
+            this.tabMagazine.Controls.Add(this.btnAddMagazine);
+            this.tabMagazine.Controls.Add(this.txtMagazinePrice);
+            this.tabMagazine.Controls.Add(this.lblMagazinePrice);
+            this.tabMagazine.Controls.Add(this.txtMagazineIssue);
+            this.tabMagazine.Controls.Add(this.lblMagazineIssue);
+            this.tabMagazine.Controls.Add(this.txtMagazineType);
+            this.tabMagazine.Controls.Add(this.lblMagazineType);
+            this.tabMagazine.Controls.Add(this.txtMagazineName);
+            this.tabMagazine.Controls.Add(this.lblMagazineName);
             this.tabMagazine.Location = new System.Drawing.Point(4, 25);
             this.tabMagazine.Name = "tabMagazine";
-            this.tabMagazine.Size = new System.Drawing.Size(661, 138);
+            this.tabMagazine.Size = new System.Drawing.Size(661, 585);
             this.tabMagazine.TabIndex = 3;
             this.tabMagazine.Text = "Magazine";
             this.tabMagazine.UseVisualStyleBackColor = true;
@@ -558,14 +602,14 @@
             this.lblBookName.TabIndex = 14;
             this.lblBookName.Text = "Name";
             // 
-            // dataGridView1
+            // dgvBooks
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 27;
+            this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBooks.Location = new System.Drawing.Point(6, 6);
+            this.dgvBooks.Name = "dgvBooks";
+            this.dgvBooks.RowTemplate.Height = 24;
+            this.dgvBooks.Size = new System.Drawing.Size(240, 150);
+            this.dgvBooks.TabIndex = 27;
             // 
             // txtBookPrice
             // 
@@ -599,6 +643,172 @@
             this.lblCoverPagePicture.TabIndex = 28;
             this.lblCoverPagePicture.Text = "Picture";
             // 
+            // dgvMusicCDs
+            // 
+            this.dgvMusicCDs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMusicCDs.Location = new System.Drawing.Point(13, 27);
+            this.dgvMusicCDs.Name = "dgvMusicCDs";
+            this.dgvMusicCDs.RowTemplate.Height = 24;
+            this.dgvMusicCDs.Size = new System.Drawing.Size(240, 150);
+            this.dgvMusicCDs.TabIndex = 43;
+            // 
+            // btnAddMusicCDs
+            // 
+            this.btnAddMusicCDs.Location = new System.Drawing.Point(537, 142);
+            this.btnAddMusicCDs.Name = "btnAddMusicCDs";
+            this.btnAddMusicCDs.Size = new System.Drawing.Size(85, 49);
+            this.btnAddMusicCDs.TabIndex = 42;
+            this.btnAddMusicCDs.Text = "Add Music CDs";
+            this.btnAddMusicCDs.UseVisualStyleBackColor = true;
+            this.btnAddMusicCDs.Click += new System.EventHandler(this.btnAddMusicCDs_Click);
+            // 
+            // txtMusicPrice
+            // 
+            this.txtMusicPrice.Location = new System.Drawing.Point(508, 58);
+            this.txtMusicPrice.Name = "txtMusicPrice";
+            this.txtMusicPrice.Size = new System.Drawing.Size(144, 22);
+            this.txtMusicPrice.TabIndex = 39;
+            // 
+            // lblMusicPrice
+            // 
+            this.lblMusicPrice.AutoSize = true;
+            this.lblMusicPrice.Location = new System.Drawing.Point(439, 59);
+            this.lblMusicPrice.Name = "lblMusicPrice";
+            this.lblMusicPrice.Size = new System.Drawing.Size(40, 17);
+            this.lblMusicPrice.TabIndex = 38;
+            this.lblMusicPrice.Text = "Price";
+            // 
+            // txtMusicSinger
+            // 
+            this.txtMusicSinger.Location = new System.Drawing.Point(508, 86);
+            this.txtMusicSinger.Name = "txtMusicSinger";
+            this.txtMusicSinger.Size = new System.Drawing.Size(144, 22);
+            this.txtMusicSinger.TabIndex = 37;
+            // 
+            // lblMusicSinger
+            // 
+            this.lblMusicSinger.AutoSize = true;
+            this.lblMusicSinger.Location = new System.Drawing.Point(439, 89);
+            this.lblMusicSinger.Name = "lblMusicSinger";
+            this.lblMusicSinger.Size = new System.Drawing.Size(49, 17);
+            this.lblMusicSinger.TabIndex = 36;
+            this.lblMusicSinger.Text = "Singer";
+            // 
+            // txtMusicType
+            // 
+            this.txtMusicType.Location = new System.Drawing.Point(508, 114);
+            this.txtMusicType.Name = "txtMusicType";
+            this.txtMusicType.Size = new System.Drawing.Size(144, 22);
+            this.txtMusicType.TabIndex = 35;
+            // 
+            // lblMusicType
+            // 
+            this.lblMusicType.AutoSize = true;
+            this.lblMusicType.Location = new System.Drawing.Point(439, 117);
+            this.lblMusicType.Name = "lblMusicType";
+            this.lblMusicType.Size = new System.Drawing.Size(40, 17);
+            this.lblMusicType.TabIndex = 34;
+            this.lblMusicType.Text = "Type";
+            // 
+            // txtMusicName
+            // 
+            this.txtMusicName.Location = new System.Drawing.Point(508, 30);
+            this.txtMusicName.Name = "txtMusicName";
+            this.txtMusicName.Size = new System.Drawing.Size(144, 22);
+            this.txtMusicName.TabIndex = 31;
+            // 
+            // lblMusicName
+            // 
+            this.lblMusicName.AutoSize = true;
+            this.lblMusicName.Location = new System.Drawing.Point(439, 31);
+            this.lblMusicName.Name = "lblMusicName";
+            this.lblMusicName.Size = new System.Drawing.Size(45, 17);
+            this.lblMusicName.TabIndex = 30;
+            this.lblMusicName.Text = "Name";
+            // 
+            // dgvMagazine
+            // 
+            this.dgvMagazine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMagazine.Location = new System.Drawing.Point(3, 9);
+            this.dgvMagazine.Name = "dgvMagazine";
+            this.dgvMagazine.RowTemplate.Height = 24;
+            this.dgvMagazine.Size = new System.Drawing.Size(240, 150);
+            this.dgvMagazine.TabIndex = 53;
+            // 
+            // btnAddMagazine
+            // 
+            this.btnAddMagazine.Location = new System.Drawing.Point(527, 124);
+            this.btnAddMagazine.Name = "btnAddMagazine";
+            this.btnAddMagazine.Size = new System.Drawing.Size(85, 49);
+            this.btnAddMagazine.TabIndex = 52;
+            this.btnAddMagazine.Text = "Add Magazine";
+            this.btnAddMagazine.UseVisualStyleBackColor = true;
+            this.btnAddMagazine.Click += new System.EventHandler(this.btnAddMagazine_Click);
+            // 
+            // txtMagazinePrice
+            // 
+            this.txtMagazinePrice.Location = new System.Drawing.Point(498, 40);
+            this.txtMagazinePrice.Name = "txtMagazinePrice";
+            this.txtMagazinePrice.Size = new System.Drawing.Size(144, 22);
+            this.txtMagazinePrice.TabIndex = 51;
+            // 
+            // lblMagazinePrice
+            // 
+            this.lblMagazinePrice.AutoSize = true;
+            this.lblMagazinePrice.Location = new System.Drawing.Point(429, 41);
+            this.lblMagazinePrice.Name = "lblMagazinePrice";
+            this.lblMagazinePrice.Size = new System.Drawing.Size(40, 17);
+            this.lblMagazinePrice.TabIndex = 50;
+            this.lblMagazinePrice.Text = "Price";
+            // 
+            // txtMagazineIssue
+            // 
+            this.txtMagazineIssue.Location = new System.Drawing.Point(498, 68);
+            this.txtMagazineIssue.Name = "txtMagazineIssue";
+            this.txtMagazineIssue.Size = new System.Drawing.Size(144, 22);
+            this.txtMagazineIssue.TabIndex = 49;
+            // 
+            // lblMagazineIssue
+            // 
+            this.lblMagazineIssue.AutoSize = true;
+            this.lblMagazineIssue.Location = new System.Drawing.Point(429, 71);
+            this.lblMagazineIssue.Name = "lblMagazineIssue";
+            this.lblMagazineIssue.Size = new System.Drawing.Size(41, 17);
+            this.lblMagazineIssue.TabIndex = 48;
+            this.lblMagazineIssue.Text = "Issue";
+            // 
+            // txtMagazineType
+            // 
+            this.txtMagazineType.Location = new System.Drawing.Point(498, 96);
+            this.txtMagazineType.Name = "txtMagazineType";
+            this.txtMagazineType.Size = new System.Drawing.Size(144, 22);
+            this.txtMagazineType.TabIndex = 47;
+            // 
+            // lblMagazineType
+            // 
+            this.lblMagazineType.AutoSize = true;
+            this.lblMagazineType.Location = new System.Drawing.Point(429, 99);
+            this.lblMagazineType.Name = "lblMagazineType";
+            this.lblMagazineType.Size = new System.Drawing.Size(40, 17);
+            this.lblMagazineType.TabIndex = 46;
+            this.lblMagazineType.Text = "Type";
+            // 
+            // txtMagazineName
+            // 
+            this.txtMagazineName.Location = new System.Drawing.Point(498, 12);
+            this.txtMagazineName.Name = "txtMagazineName";
+            this.txtMagazineName.Size = new System.Drawing.Size(144, 22);
+            this.txtMagazineName.TabIndex = 45;
+            // 
+            // lblMagazineName
+            // 
+            this.lblMagazineName.AutoSize = true;
+            this.lblMagazineName.Location = new System.Drawing.Point(429, 13);
+            this.lblMagazineName.Name = "lblMagazineName";
+            this.lblMagazineName.Size = new System.Drawing.Size(45, 17);
+            this.lblMagazineName.TabIndex = 44;
+            this.lblMagazineName.Text = "Name";
+            // 
             // BookShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -617,8 +827,14 @@
             this.tabUser.PerformLayout();
             this.tabBooks.ResumeLayout(false);
             this.tabBooks.PerformLayout();
+            this.tabMusics.ResumeLayout(false);
+            this.tabMusics.PerformLayout();
+            this.tabMagazine.ResumeLayout(false);
+            this.tabMagazine.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMusicCDs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -659,7 +875,7 @@
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.TextBox txtCoverPagePicture;
         private System.Windows.Forms.Label lblCoverPagePicture;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBooks;
         private System.Windows.Forms.Button btnAddBook;
         private System.Windows.Forms.TextBox txtBookPage;
         private System.Windows.Forms.Label lblBookPage;
@@ -673,5 +889,25 @@
         private System.Windows.Forms.Label lblBookPublisher;
         private System.Windows.Forms.TextBox txtBookName;
         private System.Windows.Forms.Label lblBookName;
+        private System.Windows.Forms.DataGridView dgvMusicCDs;
+        private System.Windows.Forms.Button btnAddMusicCDs;
+        private System.Windows.Forms.TextBox txtMusicPrice;
+        private System.Windows.Forms.Label lblMusicPrice;
+        private System.Windows.Forms.TextBox txtMusicSinger;
+        private System.Windows.Forms.Label lblMusicSinger;
+        private System.Windows.Forms.TextBox txtMusicType;
+        private System.Windows.Forms.Label lblMusicType;
+        private System.Windows.Forms.TextBox txtMusicName;
+        private System.Windows.Forms.Label lblMusicName;
+        private System.Windows.Forms.DataGridView dgvMagazine;
+        private System.Windows.Forms.Button btnAddMagazine;
+        private System.Windows.Forms.TextBox txtMagazinePrice;
+        private System.Windows.Forms.Label lblMagazinePrice;
+        private System.Windows.Forms.TextBox txtMagazineIssue;
+        private System.Windows.Forms.Label lblMagazineIssue;
+        private System.Windows.Forms.TextBox txtMagazineType;
+        private System.Windows.Forms.Label lblMagazineType;
+        private System.Windows.Forms.TextBox txtMagazineName;
+        private System.Windows.Forms.Label lblMagazineName;
     }
 }
