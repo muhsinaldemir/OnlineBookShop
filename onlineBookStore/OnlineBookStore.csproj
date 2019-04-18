@@ -54,6 +54,7 @@
       <DependentUpon>BookShopForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerClass.cs" />
+    <Compile Include="DatabaseHelperClass.cs" />
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShoppingCartClass.cs" />
+    <Compile Include="UserClass.cs" />
     <EmbeddedResource Include="BookShopForm.resx">
       <DependentUpon>BookShopForm.cs</DependentUpon>
     </EmbeddedResource>

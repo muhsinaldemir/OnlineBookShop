@@ -28,6 +28,8 @@ namespace OnlineBookStore
             }
             else
             {
+
+
                 CustomerClass cs = CustomerClass.Instance; //SINGLETON PATTERN
                 connection.Open();
                 SqlCommand commandCustomer = new SqlCommand("Select * from CustomerTable WHERE username=@username AND password=@password", connection);
@@ -40,6 +42,8 @@ namespace OnlineBookStore
                 {
                     while (readCustomer.Read())
                     {
+                        //bool isAdmin = (bool)readCustomer["isadmin"];                          
+
                         cs.customerID = readCustomer["id"].ToString();
                         cs.name = readCustomer["name"].ToString();
                         cs.surName = readCustomer["surname"].ToString();
@@ -47,7 +51,7 @@ namespace OnlineBookStore
                         cs.email = readCustomer["email"].ToString();
                         cs.userName = readCustomer["username"].ToString();
                         cs.password = readCustomer["password"].ToString();
-
+                        cs.IsAdmin = (bool)readCustomer["isadmin"];
                         Console.WriteLine(cs.email);
                     }
 

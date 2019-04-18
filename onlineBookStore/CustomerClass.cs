@@ -6,21 +6,15 @@ using System.Threading.Tasks;
 
 namespace OnlineBookStore
 {
-    public class CustomerClass
+    public class CustomerClass : UserClass
     {
-        public string customerID { get; set; }
-        public string name { get; set; }
-        public string surName { get; set; }
-        public string address { get; set; }
-        public string email { get; set; }
-        public string userName { get; set; }
-        public string password { get; set; }
-
         public void printCustomerDetails() { }
         public void saveCustomer() { }
         public void printCustomerPurchases() { }
 
-        private CustomerClass() { }//singleton pattern
+        public bool isAdmin() { return false; }
+
+        private CustomerClass() : base() { }//singleton pattern
         private static CustomerClass customer = null;
         public static CustomerClass Instance
         {
@@ -34,15 +28,18 @@ namespace OnlineBookStore
             }
         }
 
-        public CustomerClass(string CustomerID, string Name, string SurName, string Address, string Email, string UserName, string Password)
+        public CustomerClass(string CustomerID, string Name, string SurName, string Address, string Email, string UserName, string Password, bool IsAdmin) : base(CustomerID, Name, SurName, Address, Email, UserName, Password, IsAdmin)
         {
-            customerID = CustomerID;
-            name = Name;
-            surName = SurName;
-            address = Address;
-            email = Email;
-            userName = UserName;
-            password = Password;
+            this.customerID = CustomerID;
+            this.name = Name;
+            this.surName = SurName;
+            this.address = Address;
+            this.email = Email;
+            this.userName = UserName;
+            this.password = Password;
+            this.IsAdmin = IsAdmin;
         }
+
+
     }
 }

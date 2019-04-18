@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace OnlineBookStore
 {
-    class AdminUserClass:CustomerClass
+    class AdminUserClass:UserClass
     {
-       public int IsAdmin { get; set; }
 
-        public AdminUserClass(string CustomerID, string Name, string SurName, string Address, string Email, string UserName, string Password, int ısAdmin):base(CustomerID,Name,SurName,Address,Email,UserName,Password)
+        public AdminUserClass(string CustomerID, string Name, string SurName, string Address, string Email, string UserName, string Password, bool isAdmin):base(CustomerID,Name,SurName,Address,Email,UserName,Password, isAdmin)
         {
-            IsAdmin = ısAdmin;
         }
+
+        public AdminUserClass():base(){ }
+
+        public bool isAdmin() { return true; }
+
+
         public bool addCustomer() { return true; }
         public bool addNewBook() { return true; }
         public bool addNewMagazine() { return true; }
