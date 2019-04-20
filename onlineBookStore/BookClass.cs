@@ -42,7 +42,6 @@ namespace OnlineBookStore
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("SELECT * FROM BookTable", connection);
 
-
             SqlDataReader readBooks = command.ExecuteReader();
             if (readBooks != null)
             {
@@ -58,16 +57,13 @@ namespace OnlineBookStore
                     book.isbn = readBooks["isbn"].ToString();
                     book.page = Convert.ToInt32(readBooks["page"]);
                     book.cover_page_picture = readBooks["cover_page_picture"].ToString();
-                    Console.WriteLine("While ici" + book.name);
+                   // Console.WriteLine("While ici" + book.name);
                     books. Add(book);
                     
                 }
 
             }
-            for(int i=0;i<2;i++)
-            {
-                Console.WriteLine("Class ici" + books[i].name);
-            }
+           
             return books;
         }
     }
