@@ -75,6 +75,7 @@
     <Compile Include="MagazineUserControl.Designer.cs">
       <DependentUpon>MagazineUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MusicCDsClass.cs" />
     <Compile Include="MusicCDUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

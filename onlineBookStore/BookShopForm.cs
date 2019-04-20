@@ -517,24 +517,17 @@ namespace OnlineBookStore
 
         private void populateHomePageBooks()
         {
-
-
             List<BookClass> allBooks = BookClass.getAllBooksFromDB();
             //flowLayoutPanel1.Controls.AddRange();
 
             BookUserControl[] bookUserControls = new BookUserControl[allBooks.Count];
-
-            for (int j=0;j<2;)
-            {
-                Console.WriteLine("ilk for" + allBooks[j++].name);
-            }
+            
             if (flowLayoutPanel1.Controls.Count > 0)
                 flowLayoutPanel1.Controls.Clear();
 
             int i = 0;
             foreach(var item in allBooks)
             {
-                //Console.WriteLine(item.name);
                 bookUserControls[i] = new BookUserControl();
                 bookUserControls[i].bookName = item.name;
                 bookUserControls[i].bookAuthor = item.author;
@@ -542,46 +535,51 @@ namespace OnlineBookStore
                 flowLayoutPanel1.Controls.Add(bookUserControls[i]);
                 i++;
             }
-            /*
-            for (int i=0;i<bookUserControls.Length;i++)
-            {
-                bookUserControls[i] = new BookUserControl();
-                bookUserControls[i].bookName = allBooks;
-                bookUserControls[i].bookAuthor = "autho";
-                bookUserControls[i].bookPrice = 12.33;
-                flowLayoutPanel1.Controls.Add(bookUserControls[i]);
-            }
-            */
+          
         }
 
         private void populateHomePageMusicCDs()
         {
-            MusicCDUserControl[] musicCDUserControls = new MusicCDUserControl[14];
+            List<MusicCDsClass> allMusicCDs = MusicCDsClass.getAllMusicCDsFromDB();
+            //flowLayoutPanel1.Controls.AddRange();
+
+            MusicCDUserControl[] musicCDsUserControls = new MusicCDUserControl[allMusicCDs.Count];
+
             if (flowLayoutPanel1.Controls.Count > 0)
                 flowLayoutPanel1.Controls.Clear();
-            for (int i = 0; i < musicCDUserControls.Length; i++)
+
+            int i = 0;
+            foreach (var item in allMusicCDs)
             {
-                musicCDUserControls[i] = new MusicCDUserControl();
-                musicCDUserControls[i].musicCDName = "asdMusic";
-                musicCDUserControls[i].musicCDSinger = "authoMusic";
-                musicCDUserControls[i].musicCDPrice = 12.33;
-                flowLayoutPanel1.Controls.Add(musicCDUserControls[i]);
+                musicCDsUserControls[i] = new MusicCDUserControl();
+                musicCDsUserControls[i].musicCDName = item.name;
+                musicCDsUserControls[i].musicCDPrice = item.price;
+                musicCDsUserControls[i].musicCDSinger = item.singer;
+                flowLayoutPanel1.Controls.Add(musicCDsUserControls[i]);
+                i++;
             }
         }
 
         private void populateHomePageMagazine()
         {
-            MagazineUserControl[] magazineUserControls = new MagazineUserControl[14];
+            
+            List<MagazineClass> allMusicCDs = MagazineClass.getAllMagazineFromDB();
+            //flowLayoutPanel1.Controls.AddRange();
+
+            MagazineUserControl[] magazineUserControls = new MagazineUserControl[allMusicCDs.Count];
+
             if (flowLayoutPanel1.Controls.Count > 0)
                 flowLayoutPanel1.Controls.Clear();
-            for (int i = 0; i < magazineUserControls.Length; i++)
-            {
 
+            int i = 0;
+            foreach (var item in allMusicCDs)
+            {
                 magazineUserControls[i] = new MagazineUserControl();
-                magazineUserControls[i].magazineName = "asdMagazine";
-                magazineUserControls[i].magazineIssue = "IssueMagazine";
-                magazineUserControls[i].magazinePrice = 12.33;
+                magazineUserControls[i].magazineName = item.name;
+                magazineUserControls[i].magazinePrice = item.price;
+                magazineUserControls[i].magazineIssue = item.issue;
                 flowLayoutPanel1.Controls.Add(magazineUserControls[i]);
+                i++;
             }
         }
 

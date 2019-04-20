@@ -53,7 +53,7 @@ namespace OnlineBookStore
                     magazine.name = readMagazine["name"].ToString();
                     magazine.price = Convert.ToDouble(readMagazine["price"]);
                     magazine.issue = readMagazine["issue"].ToString();
-                    magazine.magazineType = readMagazine["type"].ToString();
+                  //  magazine.magazineType = readMagazine["type"].ToString();
                     
                     // Console.WriteLine("While ici" + book.name);
                     magazineList.Add(magazine);
