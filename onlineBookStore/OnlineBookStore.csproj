@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="ItemToPurchaseClass.cs" />
     <Compile Include="MagazineClass.cs" />
+    <Compile Include="MusicCDUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MusicCDUserControl.Designer.cs">
+      <DependentUpon>MusicCDUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MusicCDUserControl.resx">
+      <DependentUpon>MusicCDUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

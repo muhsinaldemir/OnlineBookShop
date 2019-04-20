@@ -13,7 +13,7 @@ namespace OnlineBookStore
     public partial class MusicCDUserControl : UserControl
     {
         public string musicCDName { get; set; }
-        public string musicCDAuthor { get; set; }
+        public string musicCDSinger { get; set; }
         public double musicCDPrice { get; set; }
 
         public MusicCDUserControl()
@@ -23,7 +23,9 @@ namespace OnlineBookStore
 
         private void MusicCDUserControl_Load(object sender, EventArgs e)
         {
-
+            lblMusicCDName.Text = musicCDName;
+            lblMusicCDPrice.Text = musicCDPrice.ToString();
+            lblMusicCDSinger.Text = musicCDSinger;
         }
     }
 }

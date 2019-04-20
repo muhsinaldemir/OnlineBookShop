@@ -1130,6 +1130,7 @@
             this.btnHomepageMusicCDs.TabIndex = 1;
             this.btnHomepageMusicCDs.Text = "Music CDs";
             this.btnHomepageMusicCDs.UseVisualStyleBackColor = true;
+            this.btnHomepageMusicCDs.Click += new System.EventHandler(this.btnHomepageMusicCDs_Click);
             // 
             // btnHomepageMagazine
             // 

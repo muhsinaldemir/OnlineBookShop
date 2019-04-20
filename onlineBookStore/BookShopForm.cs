@@ -518,7 +518,9 @@ namespace OnlineBookStore
         private void populateBooks()
         {
             BookUserControl[] bookUserControls = new BookUserControl[14];
-            for(int i=0;i<bookUserControls.Length;i++)
+            if (flowLayoutPanel1.Controls.Count > 0)
+                flowLayoutPanel1.Controls.Clear();
+            for (int i=0;i<bookUserControls.Length;i++)
             {
                 bookUserControls[i] = new BookUserControl();
                 bookUserControls[i].bookName = "asd";
@@ -528,9 +530,30 @@ namespace OnlineBookStore
             }
         }
 
+        private void populateMusicCDs()
+        {
+            MusicCDUserControl[] musicCDUserControls = new MusicCDUserControl[14];
+            if (flowLayoutPanel1.Controls.Count > 0)
+                flowLayoutPanel1.Controls.Clear();
+            for (int i = 0; i < musicCDUserControls.Length; i++)
+            {
+                musicCDUserControls[i] = new MusicCDUserControl();
+                musicCDUserControls[i].musicCDName = "asdMusic";
+                musicCDUserControls[i].musicCDSinger = "authoMusic";
+                musicCDUserControls[i].musicCDPrice = 12.33;
+                flowLayoutPanel1.Controls.Add(musicCDUserControls[i]);
+            }
+        }
+
+
         private void btnHomepageBooks_Click(object sender, EventArgs e)
         {
             populateBooks();
+        }
+
+        private void btnHomepageMusicCDs_Click(object sender, EventArgs e)
+        {
+            populateMusicCDs();
         }
     }
 }

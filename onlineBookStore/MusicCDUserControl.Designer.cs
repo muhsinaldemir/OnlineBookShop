@@ -29,98 +29,112 @@
         private void InitializeComponent()
         {
             this.btnBookAddToCart = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMusicCDPrice = new System.Windows.Forms.Label();
-            this.lbMusicCDSinger = new System.Windows.Forms.Label();
+            this.lblMusicCDSinger = new System.Windows.Forms.Label();
             this.lblMusicCDName = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBookAddToCart
             // 
             this.btnBookAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBookAddToCart.Location = new System.Drawing.Point(46, 378);
+            this.btnBookAddToCart.Location = new System.Drawing.Point(20, 235);
             this.btnBookAddToCart.Name = "btnBookAddToCart";
             this.btnBookAddToCart.Size = new System.Drawing.Size(209, 58);
             this.btnBookAddToCart.TabIndex = 10;
             this.btnBookAddToCart.Text = "Add To Cart";
             this.btnBookAddToCart.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(34, 21);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(242, 200);
-            this.panel1.TabIndex = 9;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(21, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(195, 163);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblMusicCDPrice
             // 
             this.lblMusicCDPrice.AutoSize = true;
             this.lblMusicCDPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMusicCDPrice.Location = new System.Drawing.Point(57, 328);
+            this.lblMusicCDPrice.Location = new System.Drawing.Point(39, 187);
             this.lblMusicCDPrice.Name = "lblMusicCDPrice";
             this.lblMusicCDPrice.Size = new System.Drawing.Size(83, 36);
             this.lblMusicCDPrice.TabIndex = 8;
             this.lblMusicCDPrice.Text = "Price";
             // 
-            // lbMusicCDSinger
+            // lblMusicCDSinger
             // 
-            this.lbMusicCDSinger.AutoSize = true;
-            this.lbMusicCDSinger.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMusicCDSinger.Location = new System.Drawing.Point(53, 284);
-            this.lbMusicCDSinger.Name = "lbMusicCDSinger";
-            this.lbMusicCDSinger.Size = new System.Drawing.Size(102, 36);
-            this.lbMusicCDSinger.TabIndex = 7;
-            this.lbMusicCDSinger.Text = "Singer";
+            this.lblMusicCDSinger.AutoSize = true;
+            this.lblMusicCDSinger.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMusicCDSinger.Location = new System.Drawing.Point(35, 143);
+            this.lblMusicCDSinger.Name = "lblMusicCDSinger";
+            this.lblMusicCDSinger.Size = new System.Drawing.Size(102, 36);
+            this.lblMusicCDSinger.TabIndex = 7;
+            this.lblMusicCDSinger.Text = "Singer";
             // 
             // lblMusicCDName
             // 
             this.lblMusicCDName.AutoSize = true;
-            this.lblMusicCDName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMusicCDName.Location = new System.Drawing.Point(50, 241);
+            this.lblMusicCDName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMusicCDName.Location = new System.Drawing.Point(32, 100);
             this.lblMusicCDName.Name = "lblMusicCDName";
-            this.lblMusicCDName.Size = new System.Drawing.Size(96, 36);
+            this.lblMusicCDName.Size = new System.Drawing.Size(92, 36);
             this.lblMusicCDName.TabIndex = 6;
             this.lblMusicCDName.Text = "Name";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Location = new System.Drawing.Point(62, 24);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(197, 200);
+            this.panel2.TabIndex = 11;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnBookAddToCart);
+            this.panel3.Controls.Add(this.lblMusicCDName);
+            this.panel3.Controls.Add(this.lblMusicCDSinger);
+            this.panel3.Controls.Add(this.lblMusicCDPrice);
+            this.panel3.Location = new System.Drawing.Point(34, 137);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(250, 304);
+            this.panel3.TabIndex = 12;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(10, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(176, 163);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // MusicCDUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnBookAddToCart);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblMusicCDPrice);
-            this.Controls.Add(this.lbMusicCDSinger);
-            this.Controls.Add(this.lblMusicCDName);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Name = "MusicCDUserControl";
-            this.Size = new System.Drawing.Size(308, 480);
+            this.Size = new System.Drawing.Size(328, 477);
             this.Load += new System.EventHandler(this.MusicCDUserControl_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnBookAddToCart;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblMusicCDPrice;
-        private System.Windows.Forms.Label lbMusicCDSinger;
+        private System.Windows.Forms.Label lblMusicCDSinger;
         private System.Windows.Forms.Label lblMusicCDName;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
