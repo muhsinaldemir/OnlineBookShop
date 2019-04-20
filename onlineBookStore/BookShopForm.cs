@@ -511,7 +511,26 @@ namespace OnlineBookStore
 
         private void btnHomePage_Click(object sender, EventArgs e)
         {
+            tabControlGeneral.SelectedTab = tabHomePage;
 
+        }
+
+        private void populateBooks()
+        {
+            BookUserControl[] bookUserControls = new BookUserControl[14];
+            for(int i=0;i<bookUserControls.Length;i++)
+            {
+                bookUserControls[i] = new BookUserControl();
+                bookUserControls[i].bookName = "asd";
+                bookUserControls[i].bookAuthor = "autho";
+                bookUserControls[i].bookPrice = 12.33;
+                flowLayoutPanel1.Controls.Add(bookUserControls[i]);
+            }
+        }
+
+        private void btnHomepageBooks_Click(object sender, EventArgs e)
+        {
+            populateBooks();
         }
     }
 }

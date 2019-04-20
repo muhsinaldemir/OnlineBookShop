@@ -113,6 +113,14 @@
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.tabShoppingCart = new System.Windows.Forms.TabPage();
             this.tabHomePage = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblShoppingCartTitle = new System.Windows.Forms.Label();
+            this.lblShoppingCartValue = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnHomepageBooks = new System.Windows.Forms.Button();
+            this.btnHomepageMusicCDs = new System.Windows.Forms.Button();
+            this.btnHomepageMagazine = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMenu.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
             this.tabAdminPanel.SuspendLayout();
@@ -125,6 +133,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMusicCDs)).BeginInit();
             this.tabMagazine.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).BeginInit();
+            this.tabHomePage.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -270,7 +281,7 @@
             this.tabControlGeneral.Controls.Add(this.tabSettings);
             this.tabControlGeneral.Controls.Add(this.tabShoppingCart);
             this.tabControlGeneral.Controls.Add(this.tabHomePage);
-            this.tabControlGeneral.Location = new System.Drawing.Point(271, 0);
+            this.tabControlGeneral.Location = new System.Drawing.Point(278, 32);
             this.tabControlGeneral.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControlGeneral.Name = "tabControlGeneral";
             this.tabControlGeneral.SelectedIndex = 0;
@@ -1054,19 +1065,95 @@
             // 
             // tabHomePage
             // 
+            this.tabHomePage.Controls.Add(this.flowLayoutPanel1);
+            this.tabHomePage.Controls.Add(this.panel2);
             this.tabHomePage.Location = new System.Drawing.Point(4, 29);
             this.tabHomePage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabHomePage.Name = "tabHomePage";
             this.tabHomePage.Size = new System.Drawing.Size(1395, 955);
             this.tabHomePage.TabIndex = 3;
-            this.tabHomePage.Text = "HomePage";
+            this.tabHomePage.Text = "Home Page";
             this.tabHomePage.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblShoppingCartValue);
+            this.panel1.Controls.Add(this.lblShoppingCartTitle);
+            this.panel1.Location = new System.Drawing.Point(278, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1401, 33);
+            this.panel1.TabIndex = 5;
+            // 
+            // lblShoppingCartTitle
+            // 
+            this.lblShoppingCartTitle.AutoSize = true;
+            this.lblShoppingCartTitle.Location = new System.Drawing.Point(1016, 21);
+            this.lblShoppingCartTitle.Name = "lblShoppingCartTitle";
+            this.lblShoppingCartTitle.Size = new System.Drawing.Size(111, 20);
+            this.lblShoppingCartTitle.TabIndex = 0;
+            this.lblShoppingCartTitle.Text = "Shopping Cart";
+            // 
+            // lblShoppingCartValue
+            // 
+            this.lblShoppingCartValue.AutoSize = true;
+            this.lblShoppingCartValue.Location = new System.Drawing.Point(1144, 21);
+            this.lblShoppingCartValue.Name = "lblShoppingCartValue";
+            this.lblShoppingCartValue.Size = new System.Drawing.Size(51, 20);
+            this.lblShoppingCartValue.TabIndex = 1;
+            this.lblShoppingCartValue.Text = "label2";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnHomepageMagazine);
+            this.panel2.Controls.Add(this.btnHomepageMusicCDs);
+            this.panel2.Controls.Add(this.btnHomepageBooks);
+            this.panel2.Location = new System.Drawing.Point(10, 25);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1384, 49);
+            this.panel2.TabIndex = 0;
+            // 
+            // btnHomepageBooks
+            // 
+            this.btnHomepageBooks.Location = new System.Drawing.Point(68, 8);
+            this.btnHomepageBooks.Name = "btnHomepageBooks";
+            this.btnHomepageBooks.Size = new System.Drawing.Size(184, 34);
+            this.btnHomepageBooks.TabIndex = 0;
+            this.btnHomepageBooks.Text = "Books";
+            this.btnHomepageBooks.UseVisualStyleBackColor = true;
+            this.btnHomepageBooks.Click += new System.EventHandler(this.btnHomepageBooks_Click);
+            // 
+            // btnHomepageMusicCDs
+            // 
+            this.btnHomepageMusicCDs.Location = new System.Drawing.Point(294, 4);
+            this.btnHomepageMusicCDs.Name = "btnHomepageMusicCDs";
+            this.btnHomepageMusicCDs.Size = new System.Drawing.Size(181, 36);
+            this.btnHomepageMusicCDs.TabIndex = 1;
+            this.btnHomepageMusicCDs.Text = "Music CDs";
+            this.btnHomepageMusicCDs.UseVisualStyleBackColor = true;
+            // 
+            // btnHomepageMagazine
+            // 
+            this.btnHomepageMagazine.Location = new System.Drawing.Point(520, 6);
+            this.btnHomepageMagazine.Name = "btnHomepageMagazine";
+            this.btnHomepageMagazine.Size = new System.Drawing.Size(260, 33);
+            this.btnHomepageMagazine.TabIndex = 2;
+            this.btnHomepageMagazine.Text = "Magazine";
+            this.btnHomepageMagazine.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(68, 95);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1193, 722);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // BookShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1686, 1017);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControlGeneral);
             this.Controls.Add(this.pnlMenu);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1089,6 +1176,10 @@
             this.tabMagazine.ResumeLayout(false);
             this.tabMagazine.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).EndInit();
+            this.tabHomePage.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1180,5 +1271,13 @@
         private System.Windows.Forms.Button btnUpdateMusicCDs;
         private System.Windows.Forms.Button btnUpdateMagazine;
         private System.Windows.Forms.CheckBox cbIsAdmin;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblShoppingCartValue;
+        private System.Windows.Forms.Label lblShoppingCartTitle;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnHomepageMagazine;
+        private System.Windows.Forms.Button btnHomepageMusicCDs;
+        private System.Windows.Forms.Button btnHomepageBooks;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

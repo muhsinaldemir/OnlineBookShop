@@ -53,6 +53,12 @@
     <Compile Include="BookShopForm.Designer.cs">
       <DependentUpon>BookShopForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookUserControl.Designer.cs">
+      <DependentUpon>BookUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerClass.cs" />
     <Compile Include="DatabaseHelperClass.cs" />
     <Compile Include="LoginPage.cs">
@@ -70,6 +76,9 @@
     <Compile Include="UserClass.cs" />
     <EmbeddedResource Include="BookShopForm.resx">
       <DependentUpon>BookShopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookUserControl.resx">
+      <DependentUpon>BookUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
