@@ -517,17 +517,41 @@ namespace OnlineBookStore
 
         private void populateHomePageBooks()
         {
-            BookUserControl[] bookUserControls = new BookUserControl[14];
+
+
+            List<BookClass> allBooks = BookClass.getAllBooksFromDB();
+            //flowLayoutPanel1.Controls.AddRange();
+
+            BookUserControl[] bookUserControls = new BookUserControl[allBooks.Count];
+
+            for (int j=0;j<2;)
+            {
+                Console.WriteLine("ilk for" + allBooks[j++].name);
+            }
             if (flowLayoutPanel1.Controls.Count > 0)
                 flowLayoutPanel1.Controls.Clear();
+
+            int i = 0;
+            foreach(var item in allBooks)
+            {
+                //Console.WriteLine(item.name);
+                bookUserControls[i] = new BookUserControl();
+                bookUserControls[i].bookName = item.name;
+                bookUserControls[i].bookAuthor = item.author;
+                bookUserControls[i].bookPrice = item.price;
+                flowLayoutPanel1.Controls.Add(bookUserControls[i]);
+                i++;
+            }
+            /*
             for (int i=0;i<bookUserControls.Length;i++)
             {
                 bookUserControls[i] = new BookUserControl();
-                bookUserControls[i].bookName = "asd";
+                bookUserControls[i].bookName = allBooks;
                 bookUserControls[i].bookAuthor = "autho";
                 bookUserControls[i].bookPrice = 12.33;
                 flowLayoutPanel1.Controls.Add(bookUserControls[i]);
             }
+            */
         }
 
         private void populateHomePageMusicCDs()
@@ -552,6 +576,7 @@ namespace OnlineBookStore
                 flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < magazineUserControls.Length; i++)
             {
+
                 magazineUserControls[i] = new MagazineUserControl();
                 magazineUserControls[i].magazineName = "asdMagazine";
                 magazineUserControls[i].magazineIssue = "IssueMagazine";

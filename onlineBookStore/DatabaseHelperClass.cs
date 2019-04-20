@@ -11,7 +11,7 @@ namespace OnlineBookStore
 {
     class DatabaseHelperClass
     {
-        SqlConnection connection = new SqlConnection(@"Server=tcp: oop2.database.windows.net;Database=bookshop; User ID = oop2admin@oop2.database.windows.net; Password=oop2_project;Trusted_Connection=False; Encrypt=True;");
+        private SqlConnection connection = new SqlConnection(@"Server=tcp: oop2.database.windows.net;Database=bookshop; User ID = oop2admin@oop2.database.windows.net; Password=oop2_project;Trusted_Connection=False; Encrypt=True;");
 
         private static DatabaseHelperClass dbHelper = null;
 
@@ -29,6 +29,7 @@ namespace OnlineBookStore
 
         public SqlConnection getConnection()
         {
+    
             if(connection.State != ConnectionState.Open)
             {
                 connection.Close();
