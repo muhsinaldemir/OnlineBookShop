@@ -12,7 +12,10 @@ namespace OnlineBookStore
         public void saveCustomer() { }
         public void printCustomerPurchases() { }
 
-        public bool isAdmin() { return false; }
+        public override bool isAdmin()
+        {
+            return false;
+        }
 
         private CustomerClass() : base() { }//singleton pattern
         private static CustomerClass customer = null;

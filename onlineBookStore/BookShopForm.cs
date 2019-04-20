@@ -27,7 +27,7 @@ namespace OnlineBookStore
 
         private void BookShopForm_Load(object sender, EventArgs e)
         {
-            UserClass cs = new UserClass(); //SINGLETON PATTERN
+            //UserClass cs = new UserClass(); //SINGLETON PATTERN
             UserClass cs2 = CustomerClass.Instance;
             
 
@@ -156,7 +156,6 @@ namespace OnlineBookStore
 
                 SqlDataAdapter command = new SqlDataAdapter(" select * FROM CustomerTable", connection);
                 {
-
                     command.Fill(dt);
                     dgvUsers.DataSource = dt;
                 }

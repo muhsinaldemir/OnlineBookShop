@@ -8,7 +8,7 @@ using System.Globalization;
 
 namespace OnlineBookStore
 {
-    public class UserClass
+    public abstract class UserClass
     {
         public string customerID { get; set; }
         public string name { get; set; }
@@ -33,6 +33,8 @@ namespace OnlineBookStore
 
 
         public UserClass() { }
+
+        public abstract bool isAdmin();
 
         public bool userOperations(string operationType, string id, string name, string surname, string address, string email, string username, string password, bool isadmin)
         {
@@ -78,7 +80,6 @@ namespace OnlineBookStore
                 return false;
             else
                 return true;
-
         }
 
     }
