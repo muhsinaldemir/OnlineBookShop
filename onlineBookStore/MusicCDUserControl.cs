@@ -12,6 +12,7 @@ namespace OnlineBookStore
 {
     public partial class MusicCDUserControl : UserControl
     {
+        public string musicCDID { get; set; }
         public string musicCDName { get; set; }
         public string musicCDSinger { get; set; }
         public double musicCDPrice { get; set; }

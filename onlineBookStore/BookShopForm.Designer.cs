@@ -1140,6 +1140,7 @@
             this.btnHomepageMagazine.TabIndex = 2;
             this.btnHomepageMagazine.Text = "Magazine";
             this.btnHomepageMagazine.UseVisualStyleBackColor = true;
+            this.btnHomepageMagazine.Click += new System.EventHandler(this.btnHomepageMagazine_Click);
             // 
             // flowLayoutPanel1
             // 

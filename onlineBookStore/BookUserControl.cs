@@ -17,6 +17,7 @@ namespace OnlineBookStore
             InitializeComponent();
         }
 
+        public string bookID { get; set; }
         public string bookName { get; set; }
         public string bookAuthor { get; set; }
         public double bookPrice { get; set; }

@@ -515,7 +515,7 @@ namespace OnlineBookStore
 
         }
 
-        private void populateBooks()
+        private void populateHomePageBooks()
         {
             BookUserControl[] bookUserControls = new BookUserControl[14];
             if (flowLayoutPanel1.Controls.Count > 0)
@@ -530,7 +530,7 @@ namespace OnlineBookStore
             }
         }
 
-        private void populateMusicCDs()
+        private void populateHomePageMusicCDs()
         {
             MusicCDUserControl[] musicCDUserControls = new MusicCDUserControl[14];
             if (flowLayoutPanel1.Controls.Count > 0)
@@ -545,15 +545,35 @@ namespace OnlineBookStore
             }
         }
 
+        private void populateHomePageMagazine()
+        {
+            MagazineUserControl[] magazineUserControls = new MagazineUserControl[14];
+            if (flowLayoutPanel1.Controls.Count > 0)
+                flowLayoutPanel1.Controls.Clear();
+            for (int i = 0; i < magazineUserControls.Length; i++)
+            {
+                magazineUserControls[i] = new MagazineUserControl();
+                magazineUserControls[i].magazineName = "asdMagazine";
+                magazineUserControls[i].magazineIssue = "IssueMagazine";
+                magazineUserControls[i].magazinePrice = 12.33;
+                flowLayoutPanel1.Controls.Add(magazineUserControls[i]);
+            }
+        }
+
 
         private void btnHomepageBooks_Click(object sender, EventArgs e)
         {
-            populateBooks();
+            populateHomePageBooks();
         }
 
         private void btnHomepageMusicCDs_Click(object sender, EventArgs e)
         {
-            populateMusicCDs();
+            populateHomePageMusicCDs();
+        }
+
+        private void btnHomepageMagazine_Click(object sender, EventArgs e)
+        {
+            populateHomePageMagazine();
         }
     }
 }
