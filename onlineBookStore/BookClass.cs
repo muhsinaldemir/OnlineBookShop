@@ -75,14 +75,17 @@ namespace OnlineBookStore
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
 
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("SELECT * FROM BookTable where id=@id", connection);
+            SqlCommand command = new SqlCommand("SELECT * FROM BookTable WHERE id=@id", connection);
             command.Parameters.AddWithValue("@id",Convert.ToInt32(id));
+            Console.WriteLine("id " + Convert.ToInt32(id));
             SqlDataReader readBooks = command.ExecuteReader();
             BookClass book = new BookClass();
             if (readBooks != null)
             {
-             
-                    //bool isAdmin = (bool)readCustomer["isadmin"];                          
+                while (readBooks.Read())
+                {
+                    //bool isAdmin = (bool)readCustomer["isadmin"];      
+                    Console.WriteLine(readBooks["id"].ToString());
                     book.id = readBooks["id"].ToString();
                     book.name = readBooks["name"].ToString();
                     book.price = Convert.ToDouble(readBooks["price"]);
@@ -93,7 +96,7 @@ namespace OnlineBookStore
                     book.page = Convert.ToInt32(readBooks["page"]);
                     book.cover_page_picture = readBooks["cover_page_picture"].ToString();
                     // Console.WriteLine("While ici" + book.name);
-                
+                }
             }
 
             return book;

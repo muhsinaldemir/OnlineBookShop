@@ -77,7 +77,9 @@ namespace OnlineBookStore
             MagazineClass magazine = new MagazineClass();
             if (readMagazine != null)
             {
-              
+                while (readMagazine.Read())
+                {
+
                     //bool isAdmin = (bool)readCustomer["isadmin"];                          
                     magazine.id = readMagazine["id"].ToString();
                     magazine.name = readMagazine["name"].ToString();
@@ -87,8 +89,8 @@ namespace OnlineBookStore
                     //  magazine.magazineType = readMagazine["type"].ToString();
 
                     // Console.WriteLine("While ici" + book.name);
-                   
 
+                }
                
             }
 

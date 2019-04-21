@@ -307,6 +307,7 @@ namespace OnlineBookStore
         private void btnDeleteMusicCDs_Click(object sender, EventArgs e)
         {
             //connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
             SqlCommand deleteCommand = new SqlCommand("delete from MusicCDsTable where id=@id", connection);
             deleteCommand.Parameters.AddWithValue("@id", txtMusicCDsId.Text.ToString());
             deleteCommand.ExecuteNonQuery();
@@ -331,6 +332,7 @@ namespace OnlineBookStore
         private void btnDeleteMagazine_Click(object sender, EventArgs e)
         {
             //connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
             SqlCommand deleteCommand = new SqlCommand("delete from MagazineTable where id=@id", connection);
             deleteCommand.Parameters.AddWithValue("@id", txtMagazineId.Text.ToString());
             deleteCommand.ExecuteNonQuery();
@@ -438,6 +440,7 @@ namespace OnlineBookStore
         private void btnUpdateBook_Click(object sender, EventArgs e)
         {
             //connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("UPDATE BookTable SET name=@name,price=@price,isbn=@isbn,author=@author,publisher=@publisher,page=@page,cover_page_picture=@cover_page_picture", connection);
             command.Parameters.AddWithValue("@id", txtBookId.Text.ToString());
             command.Parameters.AddWithValue("@name", txtBookName.Text);
@@ -471,6 +474,7 @@ namespace OnlineBookStore
         private void btnUpdateMusicCDs_Click(object sender, EventArgs e)
         {
             //connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("UPDATE MusicCDsTable SET name=@name,price=@price,singer=@singer,type=@type", connection);
             command.Parameters.AddWithValue("@id", txtMusicCDsId.Text.ToString());
             command.Parameters.AddWithValue("@name", txtMusicName.Text);
@@ -499,6 +503,7 @@ namespace OnlineBookStore
         private void btnUpdateMagazine_Click(object sender, EventArgs e)
         {
             //connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("UPDATE MagazineTable SET name=@name,price=@price,issue=@issue,type=@type", connection);
             command.Parameters.AddWithValue("@id", txtMagazineId.Text.ToString());
             command.Parameters.AddWithValue("@name", txtMagazineName.Text);
@@ -544,6 +549,7 @@ namespace OnlineBookStore
             foreach(var item in allBooks)
             {
                 bookUserControls[i] = new BookUserControl();
+                bookUserControls[i].bookID = item.id;
                 bookUserControls[i].bookName = item.name;
                 bookUserControls[i].bookAuthor = item.author;
                 bookUserControls[i].bookPrice = item.price;
@@ -568,6 +574,7 @@ namespace OnlineBookStore
             foreach (var item in allMusicCDs)
             {
                 musicCDsUserControls[i] = new MusicCDUserControl();
+                musicCDsUserControls[i].musicCDID = item.id;
                 musicCDsUserControls[i].musicCDName = item.name;
                 musicCDsUserControls[i].musicCDPrice = item.price;
                 musicCDsUserControls[i].musicCDSinger = item.singer;
@@ -592,6 +599,7 @@ namespace OnlineBookStore
             foreach (var item in allmagazine)
             {
                 magazineUserControls[i] = new MagazineUserControl();
+                magazineUserControls[i].magazineID = item.id;
                 magazineUserControls[i].magazineName = item.name;
                 magazineUserControls[i].magazinePrice = item.price;
                 magazineUserControls[i].magazineIssue = item.issue;

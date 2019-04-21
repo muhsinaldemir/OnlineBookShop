@@ -24,14 +24,16 @@ namespace OnlineBookStore
         public int stock { get; set; }
         private void BookUserControl_Load(object sender, EventArgs e)
         {
+
             lblBookName.Text = bookName;
             lblBookAuthor.Text = bookAuthor;
             lblPrice.Text = bookPrice.ToString();
             lblStock.Text = stock.ToString();
         }
-
+        
         private void btnBookAddToCart_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("bookıd " + bookID);
             BookClass book = new BookClass();
             book =BookClass.getaBooksFromDBByID(bookID);
             ItemToPurchaseClass.itemsToPurchase.Add(new ItemToPurchaseClass(book, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));

@@ -50,10 +50,10 @@
             // lblBookName
             // 
             this.lblBookName.AutoSize = true;
-            this.lblBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblBookName.Location = new System.Drawing.Point(101, 71);
             this.lblBookName.Name = "lblBookName";
-            this.lblBookName.Size = new System.Drawing.Size(155, 29);
+            this.lblBookName.Size = new System.Drawing.Size(123, 25);
             this.lblBookName.TabIndex = 1;
             this.lblBookName.Text = "Book Name";
             // 

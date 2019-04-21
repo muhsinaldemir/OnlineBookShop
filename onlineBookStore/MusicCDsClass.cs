@@ -75,7 +75,9 @@ namespace OnlineBookStore
             MusicCDsClass musicCDs = new MusicCDsClass();
             if (readMusicCDs != null)
             {
-                  
+
+                while (readMusicCDs.Read())
+                {
                     //bool isAdmin = (bool)readCustomer["isadmin"];                          
                     musicCDs.id = readMusicCDs["id"].ToString();
                     musicCDs.name = readMusicCDs["name"].ToString();
@@ -86,7 +88,7 @@ namespace OnlineBookStore
                     // musicCDs. = musicCDsList["type"].ToString();
 
                     // Console.WriteLine("While ici" + book.name);
-                   
+                }
 
             }
             return musicCDs;

@@ -98,7 +98,7 @@
             // 
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(102, 163);
+            this.lblStock.Location = new System.Drawing.Point(106, 157);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(77, 29);
             this.lblStock.TabIndex = 6;
@@ -119,10 +119,10 @@
             // lblMagazineName
             // 
             this.lblMagazineName.AutoSize = true;
-            this.lblMagazineName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMagazineName.Location = new System.Drawing.Point(91, 71);
+            this.lblMagazineName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMagazineName.Location = new System.Drawing.Point(104, 77);
             this.lblMagazineName.Name = "lblMagazineName";
-            this.lblMagazineName.Size = new System.Drawing.Size(203, 29);
+            this.lblMagazineName.Size = new System.Drawing.Size(162, 25);
             this.lblMagazineName.TabIndex = 1;
             this.lblMagazineName.Text = "MagazineName";
             // 
@@ -130,7 +130,7 @@
             // 
             this.lblMagazineIssue.AutoSize = true;
             this.lblMagazineIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMagazineIssue.Location = new System.Drawing.Point(100, 105);
+            this.lblMagazineIssue.Location = new System.Drawing.Point(106, 102);
             this.lblMagazineIssue.Name = "lblMagazineIssue";
             this.lblMagazineIssue.Size = new System.Drawing.Size(73, 29);
             this.lblMagazineIssue.TabIndex = 2;
@@ -140,7 +140,7 @@
             // 
             this.lblMagazinePrice.AutoSize = true;
             this.lblMagazinePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMagazinePrice.Location = new System.Drawing.Point(102, 134);
+            this.lblMagazinePrice.Location = new System.Drawing.Point(106, 128);
             this.lblMagazinePrice.Name = "lblMagazinePrice";
             this.lblMagazinePrice.Size = new System.Drawing.Size(71, 29);
             this.lblMagazinePrice.TabIndex = 3;
