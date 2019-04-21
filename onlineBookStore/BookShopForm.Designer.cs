@@ -60,6 +60,8 @@
             this.lblName = new System.Windows.Forms.Label();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.tabBooks = new System.Windows.Forms.TabPage();
+            this.txtBookStock = new System.Windows.Forms.TextBox();
+            this.lblBookStock = new System.Windows.Forms.Label();
             this.btnUpdateBook = new System.Windows.Forms.Button();
             this.txtBookId = new System.Windows.Forms.TextBox();
             this.lblBookId = new System.Windows.Forms.Label();
@@ -81,6 +83,8 @@
             this.txtBookName = new System.Windows.Forms.TextBox();
             this.lblBookName = new System.Windows.Forms.Label();
             this.tabMusics = new System.Windows.Forms.TabPage();
+            this.txtMusicCDsStock = new System.Windows.Forms.TextBox();
+            this.lblMusicCDsStock = new System.Windows.Forms.Label();
             this.btnUpdateMusicCDs = new System.Windows.Forms.Button();
             this.txtMusicCDsId = new System.Windows.Forms.TextBox();
             this.lblMusicCDsId = new System.Windows.Forms.Label();
@@ -96,6 +100,8 @@
             this.txtMusicName = new System.Windows.Forms.TextBox();
             this.lblMusicName = new System.Windows.Forms.Label();
             this.tabMagazine = new System.Windows.Forms.TabPage();
+            this.txtMagazineStock = new System.Windows.Forms.TextBox();
+            this.lblMagazineStock = new System.Windows.Forms.Label();
             this.btnUpdateMagazine = new System.Windows.Forms.Button();
             this.txtMagazineId = new System.Windows.Forms.TextBox();
             this.lblMagazineId = new System.Windows.Forms.Label();
@@ -121,12 +127,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblShoppingCartValue = new System.Windows.Forms.Label();
             this.lblShoppingCartTitle = new System.Windows.Forms.Label();
-            this.txtBookStock = new System.Windows.Forms.TextBox();
-            this.lblBookStock = new System.Windows.Forms.Label();
-            this.txtMusicCDsStock = new System.Windows.Forms.TextBox();
-            this.lblMusicCDsStock = new System.Windows.Forms.Label();
-            this.txtMagazineStock = new System.Windows.Forms.TextBox();
-            this.lblMagazineStock = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
             this.tabAdminPanel.SuspendLayout();
@@ -155,7 +155,7 @@
             this.pnlMenu.Controls.Add(this.btnUrunler);
             this.pnlMenu.Controls.Add(this.btnHomePage);
             this.pnlMenu.Location = new System.Drawing.Point(1, 0);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(244, 649);
             this.pnlMenu.TabIndex = 3;
@@ -169,7 +169,7 @@
             this.btnShoppingCart.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnShoppingCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnShoppingCart.Location = new System.Drawing.Point(0, 385);
-            this.btnShoppingCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShoppingCart.Margin = new System.Windows.Forms.Padding(4);
             this.btnShoppingCart.Name = "btnShoppingCart";
             this.btnShoppingCart.Size = new System.Drawing.Size(243, 74);
             this.btnShoppingCart.TabIndex = 6;
@@ -186,7 +186,7 @@
             this.button11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button11.Location = new System.Drawing.Point(0, 142);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(243, 74);
             this.button11.TabIndex = 5;
@@ -203,7 +203,7 @@
             this.btnReport.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnReport.Location = new System.Drawing.Point(0, 548);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(243, 74);
             this.btnReport.TabIndex = 4;
@@ -220,7 +220,7 @@
             this.btnSettings.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnSettings.Location = new System.Drawing.Point(0, 466);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(243, 74);
             this.btnSettings.TabIndex = 3;
@@ -237,7 +237,7 @@
             this.btnAdminPanel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAdminPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnAdminPanel.Location = new System.Drawing.Point(0, 304);
-            this.btnAdminPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdminPanel.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdminPanel.Name = "btnAdminPanel";
             this.btnAdminPanel.Size = new System.Drawing.Size(243, 74);
             this.btnAdminPanel.TabIndex = 2;
@@ -255,7 +255,7 @@
             this.btnUrunler.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUrunler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnUrunler.Location = new System.Drawing.Point(0, 223);
-            this.btnUrunler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUrunler.Margin = new System.Windows.Forms.Padding(4);
             this.btnUrunler.Name = "btnUrunler";
             this.btnUrunler.Size = new System.Drawing.Size(243, 74);
             this.btnUrunler.TabIndex = 1;
@@ -272,7 +272,7 @@
             this.btnHomePage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHomePage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnHomePage.Location = new System.Drawing.Point(0, 62);
-            this.btnHomePage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHomePage.Margin = new System.Windows.Forms.Padding(4);
             this.btnHomePage.Name = "btnHomePage";
             this.btnHomePage.Size = new System.Drawing.Size(243, 74);
             this.btnHomePage.TabIndex = 0;
@@ -298,7 +298,7 @@
             this.tabAdminPanel.Controls.Add(this.tabControlAdmin);
             this.tabAdminPanel.Location = new System.Drawing.Point(4, 25);
             this.tabAdminPanel.Name = "tabAdminPanel";
-            this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(3);
             this.tabAdminPanel.Size = new System.Drawing.Size(1239, 761);
             this.tabAdminPanel.TabIndex = 0;
             this.tabAdminPanel.Text = "Admin Panel";
@@ -339,7 +339,7 @@
             this.tabUser.Controls.Add(this.dgvUsers);
             this.tabUser.Location = new System.Drawing.Point(4, 25);
             this.tabUser.Name = "tabUser";
-            this.tabUser.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabUser.Padding = new System.Windows.Forms.Padding(3);
             this.tabUser.Size = new System.Drawing.Size(1194, 698);
             this.tabUser.TabIndex = 0;
             this.tabUser.Text = "User";
@@ -537,12 +537,28 @@
             this.tabBooks.Controls.Add(this.lblBookName);
             this.tabBooks.Location = new System.Drawing.Point(4, 25);
             this.tabBooks.Name = "tabBooks";
-            this.tabBooks.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabBooks.Padding = new System.Windows.Forms.Padding(3);
             this.tabBooks.Size = new System.Drawing.Size(1194, 698);
             this.tabBooks.TabIndex = 1;
             this.tabBooks.Text = "Books";
             this.tabBooks.UseVisualStyleBackColor = true;
             this.tabBooks.Click += new System.EventHandler(this.tabBooks_Click);
+            // 
+            // txtBookStock
+            // 
+            this.txtBookStock.Location = new System.Drawing.Point(71, 358);
+            this.txtBookStock.Name = "txtBookStock";
+            this.txtBookStock.Size = new System.Drawing.Size(144, 22);
+            this.txtBookStock.TabIndex = 35;
+            // 
+            // lblBookStock
+            // 
+            this.lblBookStock.AutoSize = true;
+            this.lblBookStock.Location = new System.Drawing.Point(6, 363);
+            this.lblBookStock.Name = "lblBookStock";
+            this.lblBookStock.Size = new System.Drawing.Size(43, 17);
+            this.lblBookStock.TabIndex = 34;
+            this.lblBookStock.Text = "Stock";
             // 
             // btnUpdateBook
             // 
@@ -739,6 +755,22 @@
             this.tabMusics.UseVisualStyleBackColor = true;
             this.tabMusics.Click += new System.EventHandler(this.tabMusics_Click);
             // 
+            // txtMusicCDsStock
+            // 
+            this.txtMusicCDsStock.Location = new System.Drawing.Point(75, 347);
+            this.txtMusicCDsStock.Name = "txtMusicCDsStock";
+            this.txtMusicCDsStock.Size = new System.Drawing.Size(148, 22);
+            this.txtMusicCDsStock.TabIndex = 49;
+            // 
+            // lblMusicCDsStock
+            // 
+            this.lblMusicCDsStock.AutoSize = true;
+            this.lblMusicCDsStock.Location = new System.Drawing.Point(10, 352);
+            this.lblMusicCDsStock.Name = "lblMusicCDsStock";
+            this.lblMusicCDsStock.Size = new System.Drawing.Size(43, 17);
+            this.lblMusicCDsStock.TabIndex = 48;
+            this.lblMusicCDsStock.Text = "Stock";
+            // 
             // btnUpdateMusicCDs
             // 
             this.btnUpdateMusicCDs.Location = new System.Drawing.Point(187, 387);
@@ -886,6 +918,22 @@
             this.tabMagazine.UseVisualStyleBackColor = true;
             this.tabMagazine.Click += new System.EventHandler(this.tabMagazine_Click);
             // 
+            // txtMagazineStock
+            // 
+            this.txtMagazineStock.Location = new System.Drawing.Point(70, 322);
+            this.txtMagazineStock.Name = "txtMagazineStock";
+            this.txtMagazineStock.Size = new System.Drawing.Size(146, 22);
+            this.txtMagazineStock.TabIndex = 59;
+            // 
+            // lblMagazineStock
+            // 
+            this.lblMagazineStock.AutoSize = true;
+            this.lblMagazineStock.Location = new System.Drawing.Point(5, 327);
+            this.lblMagazineStock.Name = "lblMagazineStock";
+            this.lblMagazineStock.Size = new System.Drawing.Size(43, 17);
+            this.lblMagazineStock.TabIndex = 58;
+            this.lblMagazineStock.Text = "Stock";
+            // 
             // btnUpdateMagazine
             // 
             this.btnUpdateMagazine.Location = new System.Drawing.Point(188, 363);
@@ -1011,7 +1059,7 @@
             // 
             this.tabSettings.Location = new System.Drawing.Point(4, 25);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabSettings.Padding = new System.Windows.Forms.Padding(3);
             this.tabSettings.Size = new System.Drawing.Size(1239, 761);
             this.tabSettings.TabIndex = 1;
             this.tabSettings.Text = "Settings";
@@ -1059,10 +1107,10 @@
             // 
             // btnHomepageMagazine
             // 
-            this.btnHomepageMagazine.Location = new System.Drawing.Point(462, 5);
+            this.btnHomepageMagazine.Location = new System.Drawing.Point(573, 0);
             this.btnHomepageMagazine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHomepageMagazine.Name = "btnHomepageMagazine";
-            this.btnHomepageMagazine.Size = new System.Drawing.Size(231, 26);
+            this.btnHomepageMagazine.Size = new System.Drawing.Size(207, 37);
             this.btnHomepageMagazine.TabIndex = 2;
             this.btnHomepageMagazine.Text = "Magazine";
             this.btnHomepageMagazine.UseVisualStyleBackColor = true;
@@ -1070,10 +1118,10 @@
             // 
             // btnHomepageMusicCDs
             // 
-            this.btnHomepageMusicCDs.Location = new System.Drawing.Point(261, 3);
+            this.btnHomepageMusicCDs.Location = new System.Drawing.Point(316, 0);
             this.btnHomepageMusicCDs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHomepageMusicCDs.Name = "btnHomepageMusicCDs";
-            this.btnHomepageMusicCDs.Size = new System.Drawing.Size(161, 29);
+            this.btnHomepageMusicCDs.Size = new System.Drawing.Size(218, 39);
             this.btnHomepageMusicCDs.TabIndex = 1;
             this.btnHomepageMusicCDs.Text = "Music CDs";
             this.btnHomepageMusicCDs.UseVisualStyleBackColor = true;
@@ -1081,10 +1129,10 @@
             // 
             // btnHomepageBooks
             // 
-            this.btnHomepageBooks.Location = new System.Drawing.Point(60, 6);
+            this.btnHomepageBooks.Location = new System.Drawing.Point(60, 0);
             this.btnHomepageBooks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHomepageBooks.Name = "btnHomepageBooks";
-            this.btnHomepageBooks.Size = new System.Drawing.Size(164, 27);
+            this.btnHomepageBooks.Size = new System.Drawing.Size(208, 39);
             this.btnHomepageBooks.TabIndex = 0;
             this.btnHomepageBooks.Text = "Books";
             this.btnHomepageBooks.UseVisualStyleBackColor = true;
@@ -1117,54 +1165,6 @@
             this.lblShoppingCartTitle.Size = new System.Drawing.Size(98, 17);
             this.lblShoppingCartTitle.TabIndex = 0;
             this.lblShoppingCartTitle.Text = "Shopping Cart";
-            // 
-            // txtBookStock
-            // 
-            this.txtBookStock.Location = new System.Drawing.Point(71, 358);
-            this.txtBookStock.Name = "txtBookStock";
-            this.txtBookStock.Size = new System.Drawing.Size(144, 22);
-            this.txtBookStock.TabIndex = 35;
-            // 
-            // lblBookStock
-            // 
-            this.lblBookStock.AutoSize = true;
-            this.lblBookStock.Location = new System.Drawing.Point(6, 363);
-            this.lblBookStock.Name = "lblBookStock";
-            this.lblBookStock.Size = new System.Drawing.Size(43, 17);
-            this.lblBookStock.TabIndex = 34;
-            this.lblBookStock.Text = "Stock";
-            // 
-            // txtMusicCDsStock
-            // 
-            this.txtMusicCDsStock.Location = new System.Drawing.Point(75, 347);
-            this.txtMusicCDsStock.Name = "txtMusicCDsStock";
-            this.txtMusicCDsStock.Size = new System.Drawing.Size(148, 22);
-            this.txtMusicCDsStock.TabIndex = 49;
-            // 
-            // lblMusicCDsStock
-            // 
-            this.lblMusicCDsStock.AutoSize = true;
-            this.lblMusicCDsStock.Location = new System.Drawing.Point(10, 352);
-            this.lblMusicCDsStock.Name = "lblMusicCDsStock";
-            this.lblMusicCDsStock.Size = new System.Drawing.Size(43, 17);
-            this.lblMusicCDsStock.TabIndex = 48;
-            this.lblMusicCDsStock.Text = "Stock";
-            // 
-            // txtMagazineStock
-            // 
-            this.txtMagazineStock.Location = new System.Drawing.Point(70, 322);
-            this.txtMagazineStock.Name = "txtMagazineStock";
-            this.txtMagazineStock.Size = new System.Drawing.Size(146, 22);
-            this.txtMagazineStock.TabIndex = 59;
-            // 
-            // lblMagazineStock
-            // 
-            this.lblMagazineStock.AutoSize = true;
-            this.lblMagazineStock.Location = new System.Drawing.Point(5, 327);
-            this.lblMagazineStock.Name = "lblMagazineStock";
-            this.lblMagazineStock.Size = new System.Drawing.Size(43, 17);
-            this.lblMagazineStock.TabIndex = 58;
-            this.lblMagazineStock.Text = "Stock";
             // 
             // BookShopForm
             // 

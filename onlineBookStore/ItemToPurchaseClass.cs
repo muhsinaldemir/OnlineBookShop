@@ -10,7 +10,7 @@ namespace OnlineBookStore
     {
         public ProductClass product { get; set; }
         public int quantity { get; set; }
-        public static List<ItemToPurchaseClass> itemsToPurchase = new List<ItemToPurchaseClass>();
+     
 
         public ItemToPurchaseClass()
         {

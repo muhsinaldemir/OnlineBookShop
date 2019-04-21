@@ -37,10 +37,10 @@
             this.lblMagazineName = new System.Windows.Forms.Label();
             this.lblMagazineIssue = new System.Windows.Forms.Label();
             this.lblMagazinePrice = new System.Windows.Forms.Label();
-            this.lbl_stock = new System.Windows.Forms.Label();
-            this.lbl_price = new System.Windows.Forms.Label();
-            this.lbl_author = new System.Windows.Forms.Label();
-            this.lbl_book_name = new System.Windows.Forms.Label();
+            this.lbl_magazine_stock = new System.Windows.Forms.Label();
+            this.lbl_magazine_price = new System.Windows.Forms.Label();
+            this.lbl_magazine_issue = new System.Windows.Forms.Label();
+            this.lbl_magazine_name = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -52,7 +52,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(82, 14);
+            this.panel1.Location = new System.Drawing.Point(97, 14);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(175, 160);
@@ -70,10 +70,10 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.lbl_stock);
-            this.panel2.Controls.Add(this.lbl_price);
-            this.panel2.Controls.Add(this.lbl_author);
-            this.panel2.Controls.Add(this.lbl_book_name);
+            this.panel2.Controls.Add(this.lbl_magazine_stock);
+            this.panel2.Controls.Add(this.lbl_magazine_price);
+            this.panel2.Controls.Add(this.lbl_magazine_issue);
+            this.panel2.Controls.Add(this.lbl_magazine_name);
             this.panel2.Controls.Add(this.nudQuantity);
             this.panel2.Controls.Add(this.lblStock);
             this.panel2.Controls.Add(this.btnMagazineAddToCart);
@@ -83,7 +83,7 @@
             this.panel2.Location = new System.Drawing.Point(24, 104);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(295, 277);
+            this.panel2.Size = new System.Drawing.Size(317, 277);
             this.panel2.TabIndex = 8;
             // 
             // nudQuantity
@@ -98,7 +98,7 @@
             // 
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(106, 157);
+            this.lblStock.Location = new System.Drawing.Point(134, 158);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(77, 29);
             this.lblStock.TabIndex = 6;
@@ -120,7 +120,7 @@
             // 
             this.lblMagazineName.AutoSize = true;
             this.lblMagazineName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblMagazineName.Location = new System.Drawing.Point(104, 77);
+            this.lblMagazineName.Location = new System.Drawing.Point(135, 82);
             this.lblMagazineName.Name = "lblMagazineName";
             this.lblMagazineName.Size = new System.Drawing.Size(162, 25);
             this.lblMagazineName.TabIndex = 1;
@@ -130,7 +130,7 @@
             // 
             this.lblMagazineIssue.AutoSize = true;
             this.lblMagazineIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMagazineIssue.Location = new System.Drawing.Point(106, 102);
+            this.lblMagazineIssue.Location = new System.Drawing.Point(134, 102);
             this.lblMagazineIssue.Name = "lblMagazineIssue";
             this.lblMagazineIssue.Size = new System.Drawing.Size(73, 29);
             this.lblMagazineIssue.TabIndex = 2;
@@ -140,47 +140,47 @@
             // 
             this.lblMagazinePrice.AutoSize = true;
             this.lblMagazinePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMagazinePrice.Location = new System.Drawing.Point(106, 128);
+            this.lblMagazinePrice.Location = new System.Drawing.Point(134, 127);
             this.lblMagazinePrice.Name = "lblMagazinePrice";
             this.lblMagazinePrice.Size = new System.Drawing.Size(71, 29);
             this.lblMagazinePrice.TabIndex = 3;
             this.lblMagazinePrice.Text = "Price";
             // 
-            // lbl_stock
+            // lbl_magazine_stock
             // 
-            this.lbl_stock.AutoSize = true;
-            this.lbl_stock.Location = new System.Drawing.Point(37, 169);
-            this.lbl_stock.Name = "lbl_stock";
-            this.lbl_stock.Size = new System.Drawing.Size(59, 17);
-            this.lbl_stock.TabIndex = 15;
-            this.lbl_stock.Text = "STOCK:";
+            this.lbl_magazine_stock.AutoSize = true;
+            this.lbl_magazine_stock.Location = new System.Drawing.Point(60, 167);
+            this.lbl_magazine_stock.Name = "lbl_magazine_stock";
+            this.lbl_magazine_stock.Size = new System.Drawing.Size(59, 17);
+            this.lbl_magazine_stock.TabIndex = 15;
+            this.lbl_magazine_stock.Text = "STOCK:";
             // 
-            // lbl_price
+            // lbl_magazine_price
             // 
-            this.lbl_price.AutoSize = true;
-            this.lbl_price.Location = new System.Drawing.Point(41, 139);
-            this.lbl_price.Name = "lbl_price";
-            this.lbl_price.Size = new System.Drawing.Size(52, 17);
-            this.lbl_price.TabIndex = 14;
-            this.lbl_price.Text = "PRİCE:";
+            this.lbl_magazine_price.AutoSize = true;
+            this.lbl_magazine_price.Location = new System.Drawing.Point(67, 138);
+            this.lbl_magazine_price.Name = "lbl_magazine_price";
+            this.lbl_magazine_price.Size = new System.Drawing.Size(52, 17);
+            this.lbl_magazine_price.TabIndex = 14;
+            this.lbl_magazine_price.Text = "PRİCE:";
             // 
-            // lbl_author
+            // lbl_magazine_issue
             // 
-            this.lbl_author.AutoSize = true;
-            this.lbl_author.Location = new System.Drawing.Point(29, 109);
-            this.lbl_author.Name = "lbl_author";
-            this.lbl_author.Size = new System.Drawing.Size(71, 17);
-            this.lbl_author.TabIndex = 13;
-            this.lbl_author.Text = "AUTHOR:";
+            this.lbl_magazine_issue.AutoSize = true;
+            this.lbl_magazine_issue.Location = new System.Drawing.Point(69, 110);
+            this.lbl_magazine_issue.Name = "lbl_magazine_issue";
+            this.lbl_magazine_issue.Size = new System.Drawing.Size(52, 17);
+            this.lbl_magazine_issue.TabIndex = 13;
+            this.lbl_magazine_issue.Text = "İSSUE:";
             // 
-            // lbl_book_name
+            // lbl_magazine_name
             // 
-            this.lbl_book_name.AutoSize = true;
-            this.lbl_book_name.Location = new System.Drawing.Point(3, 82);
-            this.lbl_book_name.Name = "lbl_book_name";
-            this.lbl_book_name.Size = new System.Drawing.Size(95, 17);
-            this.lbl_book_name.TabIndex = 12;
-            this.lbl_book_name.Text = "BOOK NAME:";
+            this.lbl_magazine_name.AutoSize = true;
+            this.lbl_magazine_name.Location = new System.Drawing.Point(3, 86);
+            this.lbl_magazine_name.Name = "lbl_magazine_name";
+            this.lbl_magazine_name.Size = new System.Drawing.Size(126, 17);
+            this.lbl_magazine_name.TabIndex = 12;
+            this.lbl_magazine_name.Text = "MAGAZİNE NAME:";
             // 
             // MagazineUserControl
             // 
@@ -190,7 +190,7 @@
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MagazineUserControl";
-            this.Size = new System.Drawing.Size(337, 400);
+            this.Size = new System.Drawing.Size(359, 400);
             this.Load += new System.EventHandler(this.MagazineUserControl_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -212,9 +212,9 @@
         private System.Windows.Forms.Label lblMagazinePrice;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.NumericUpDown nudQuantity;
-        private System.Windows.Forms.Label lbl_stock;
-        private System.Windows.Forms.Label lbl_price;
-        private System.Windows.Forms.Label lbl_author;
-        private System.Windows.Forms.Label lbl_book_name;
+        private System.Windows.Forms.Label lbl_magazine_stock;
+        private System.Windows.Forms.Label lbl_magazine_price;
+        private System.Windows.Forms.Label lbl_magazine_issue;
+        private System.Windows.Forms.Label lbl_magazine_name;
     }
 }

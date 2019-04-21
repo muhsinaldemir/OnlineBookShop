@@ -16,9 +16,10 @@ namespace OnlineBookStore
     class ShoppingCartClass
     {
         public string customerID { get; set; }
-        public ArrayList itemsToPurchase { get; set; }
+       // public ArrayList itemsToPurchase { get; set; }
         public double paymentAmount { get; set; }
         public PaymentType paymentType { get; set; }
+        public static List<ItemToPurchaseClass> itemsToPurchase = new List<ItemToPurchaseClass>();
 
         public void printProducts() { }
         public bool addProduct(ItemToPurchaseClass itemToPurchase) { return true; }
@@ -34,7 +35,7 @@ namespace OnlineBookStore
         public ShoppingCartClass(string customerID, ArrayList itemsToPurchase, double paymentAmount, PaymentType paymentType)
         {
             this.customerID = customerID ?? throw new ArgumentNullException(nameof(customerID));
-            this.itemsToPurchase = itemsToPurchase ?? throw new ArgumentNullException(nameof(itemsToPurchase));
+            //this.itemsToPurchase = itemsToPurchase ?? throw new ArgumentNullException(nameof(itemsToPurchase));
             this.paymentAmount = paymentAmount;
             this.paymentType = paymentType;
         }
