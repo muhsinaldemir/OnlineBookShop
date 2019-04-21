@@ -18,7 +18,7 @@ namespace OnlineBookStore
 
         static DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
 
-        SqlConnection connection = dbHelper.getConnection();
+        //SqlConnection connection = dbHelper.getConnection();
 
         public BookShopForm()
         {
@@ -532,6 +532,7 @@ namespace OnlineBookStore
                 bookUserControls[i].bookName = item.name;
                 bookUserControls[i].bookAuthor = item.author;
                 bookUserControls[i].bookPrice = item.price;
+                bookUserControls[i].stock = item.stock;
                 flowLayoutPanel1.Controls.Add(bookUserControls[i]);
                 i++;
             }
@@ -555,6 +556,7 @@ namespace OnlineBookStore
                 musicCDsUserControls[i].musicCDName = item.name;
                 musicCDsUserControls[i].musicCDPrice = item.price;
                 musicCDsUserControls[i].musicCDSinger = item.singer;
+                musicCDsUserControls[i].stock = item.stock;
                 flowLayoutPanel1.Controls.Add(musicCDsUserControls[i]);
                 i++;
             }
@@ -578,6 +580,7 @@ namespace OnlineBookStore
                 magazineUserControls[i].magazineName = item.name;
                 magazineUserControls[i].magazinePrice = item.price;
                 magazineUserControls[i].magazineIssue = item.issue;
+                magazineUserControls[i].stock = item.stock;
                 flowLayoutPanel1.Controls.Add(magazineUserControls[i]);
                 i++;
             }

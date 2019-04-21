@@ -16,6 +16,7 @@ namespace OnlineBookStore
         public string musicCDName { get; set; }
         public string musicCDSinger { get; set; }
         public double musicCDPrice { get; set; }
+        public int stock { get; set; }
 
         public MusicCDUserControl()
         {
@@ -27,6 +28,7 @@ namespace OnlineBookStore
             lblMusicCDName.Text = musicCDName;
             lblMusicCDPrice.Text = musicCDPrice.ToString();
             lblMusicCDSinger.Text = musicCDSinger;
+            lblStock.Text = stock.ToString();
         }
     }
 }

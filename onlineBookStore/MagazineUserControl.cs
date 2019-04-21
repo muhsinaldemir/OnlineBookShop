@@ -21,12 +21,13 @@ namespace OnlineBookStore
         public string magazineName { get; set; }
         public string magazineIssue { get; set; }
         public double magazinePrice { get; set; }
-
+        public int stock { get; set; }
         private void MagazineUserControl_Load(object sender, EventArgs e)
         {
             lblMagazineName.Text = magazineName;
             lblMagazineIssue.Text = magazineIssue;
             lblMagazinePrice.Text = magazinePrice.ToString();
+            lblStock.Text = stock.ToString();
         }
     }
 }

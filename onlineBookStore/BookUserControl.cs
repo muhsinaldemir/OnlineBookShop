@@ -21,12 +21,13 @@ namespace OnlineBookStore
         public string bookName { get; set; }
         public string bookAuthor { get; set; }
         public double bookPrice { get; set; }
-
+        public int stock { get; set; }
         private void BookUserControl_Load(object sender, EventArgs e)
         {
             lblBookName.Text = bookName;
             lblBookAuthor.Text = bookAuthor;
             lblPrice.Text = bookPrice.ToString();
+            lblStock.Text = stock.ToString();
         }
     }
 }

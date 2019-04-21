@@ -113,14 +113,20 @@
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.tabShoppingCart = new System.Windows.Forms.TabPage();
             this.tabHomePage = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblShoppingCartTitle = new System.Windows.Forms.Label();
-            this.lblShoppingCartValue = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHomepageBooks = new System.Windows.Forms.Button();
-            this.btnHomepageMusicCDs = new System.Windows.Forms.Button();
-            this.btnHomepageMagazine = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnHomepageMagazine = new System.Windows.Forms.Button();
+            this.btnHomepageMusicCDs = new System.Windows.Forms.Button();
+            this.btnHomepageBooks = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblShoppingCartValue = new System.Windows.Forms.Label();
+            this.lblShoppingCartTitle = new System.Windows.Forms.Label();
+            this.txtBookStock = new System.Windows.Forms.TextBox();
+            this.lblBookStock = new System.Windows.Forms.Label();
+            this.txtMusicCDsStock = new System.Windows.Forms.TextBox();
+            this.lblMusicCDsStock = new System.Windows.Forms.Label();
+            this.txtMagazineStock = new System.Windows.Forms.TextBox();
+            this.lblMagazineStock = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
             this.tabAdminPanel.SuspendLayout();
@@ -134,8 +140,8 @@
             this.tabMagazine.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).BeginInit();
             this.tabHomePage.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -149,9 +155,9 @@
             this.pnlMenu.Controls.Add(this.btnUrunler);
             this.pnlMenu.Controls.Add(this.btnHomePage);
             this.pnlMenu.Location = new System.Drawing.Point(1, 0);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(274, 811);
+            this.pnlMenu.Size = new System.Drawing.Size(244, 649);
             this.pnlMenu.TabIndex = 3;
             // 
             // btnShoppingCart
@@ -162,10 +168,10 @@
             this.btnShoppingCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShoppingCart.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnShoppingCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnShoppingCart.Location = new System.Drawing.Point(0, 481);
-            this.btnShoppingCart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnShoppingCart.Location = new System.Drawing.Point(0, 385);
+            this.btnShoppingCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShoppingCart.Name = "btnShoppingCart";
-            this.btnShoppingCart.Size = new System.Drawing.Size(273, 92);
+            this.btnShoppingCart.Size = new System.Drawing.Size(243, 74);
             this.btnShoppingCart.TabIndex = 6;
             this.btnShoppingCart.Text = "Shopping Cart";
             this.btnShoppingCart.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -179,10 +185,10 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button11.Location = new System.Drawing.Point(0, 178);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button11.Location = new System.Drawing.Point(0, 142);
+            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(273, 92);
+            this.button11.Size = new System.Drawing.Size(243, 74);
             this.button11.TabIndex = 5;
             this.button11.Text = "-";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -196,10 +202,10 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnReport.Location = new System.Drawing.Point(0, 685);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReport.Location = new System.Drawing.Point(0, 548);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(273, 92);
+            this.btnReport.Size = new System.Drawing.Size(243, 74);
             this.btnReport.TabIndex = 4;
             this.btnReport.Text = "Rapor";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -213,10 +219,10 @@
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSettings.Location = new System.Drawing.Point(0, 582);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSettings.Location = new System.Drawing.Point(0, 466);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(273, 92);
+            this.btnSettings.Size = new System.Drawing.Size(243, 74);
             this.btnSettings.TabIndex = 3;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -230,10 +236,10 @@
             this.btnAdminPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminPanel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAdminPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAdminPanel.Location = new System.Drawing.Point(0, 380);
-            this.btnAdminPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdminPanel.Location = new System.Drawing.Point(0, 304);
+            this.btnAdminPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdminPanel.Name = "btnAdminPanel";
-            this.btnAdminPanel.Size = new System.Drawing.Size(273, 92);
+            this.btnAdminPanel.Size = new System.Drawing.Size(243, 74);
             this.btnAdminPanel.TabIndex = 2;
             this.btnAdminPanel.Text = "Admin Panel";
             this.btnAdminPanel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -248,10 +254,10 @@
             this.btnUrunler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUrunler.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUrunler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnUrunler.Location = new System.Drawing.Point(0, 279);
-            this.btnUrunler.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUrunler.Location = new System.Drawing.Point(0, 223);
+            this.btnUrunler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUrunler.Name = "btnUrunler";
-            this.btnUrunler.Size = new System.Drawing.Size(273, 92);
+            this.btnUrunler.Size = new System.Drawing.Size(243, 74);
             this.btnUrunler.TabIndex = 1;
             this.btnUrunler.Text = "-";
             this.btnUrunler.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -265,10 +271,10 @@
             this.btnHomePage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHomePage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHomePage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnHomePage.Location = new System.Drawing.Point(0, 78);
-            this.btnHomePage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnHomePage.Location = new System.Drawing.Point(0, 62);
+            this.btnHomePage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHomePage.Name = "btnHomePage";
-            this.btnHomePage.Size = new System.Drawing.Size(273, 92);
+            this.btnHomePage.Size = new System.Drawing.Size(243, 74);
             this.btnHomePage.TabIndex = 0;
             this.btnHomePage.Text = "Home Page";
             this.btnHomePage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -281,21 +287,19 @@
             this.tabControlGeneral.Controls.Add(this.tabSettings);
             this.tabControlGeneral.Controls.Add(this.tabShoppingCart);
             this.tabControlGeneral.Controls.Add(this.tabHomePage);
-            this.tabControlGeneral.Location = new System.Drawing.Point(278, 32);
-            this.tabControlGeneral.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControlGeneral.Location = new System.Drawing.Point(247, 26);
             this.tabControlGeneral.Name = "tabControlGeneral";
             this.tabControlGeneral.SelectedIndex = 0;
-            this.tabControlGeneral.Size = new System.Drawing.Size(1403, 988);
+            this.tabControlGeneral.Size = new System.Drawing.Size(1247, 790);
             this.tabControlGeneral.TabIndex = 4;
             // 
             // tabAdminPanel
             // 
             this.tabAdminPanel.Controls.Add(this.tabControlAdmin);
-            this.tabAdminPanel.Location = new System.Drawing.Point(4, 29);
-            this.tabAdminPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabAdminPanel.Location = new System.Drawing.Point(4, 25);
             this.tabAdminPanel.Name = "tabAdminPanel";
-            this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabAdminPanel.Size = new System.Drawing.Size(1395, 955);
+            this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAdminPanel.Size = new System.Drawing.Size(1239, 761);
             this.tabAdminPanel.TabIndex = 0;
             this.tabAdminPanel.Text = "Admin Panel";
             this.tabAdminPanel.UseVisualStyleBackColor = true;
@@ -306,11 +310,10 @@
             this.tabControlAdmin.Controls.Add(this.tabBooks);
             this.tabControlAdmin.Controls.Add(this.tabMusics);
             this.tabControlAdmin.Controls.Add(this.tabMagazine);
-            this.tabControlAdmin.Location = new System.Drawing.Point(3, 4);
-            this.tabControlAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControlAdmin.Location = new System.Drawing.Point(3, 3);
             this.tabControlAdmin.Name = "tabControlAdmin";
             this.tabControlAdmin.SelectedIndex = 0;
-            this.tabControlAdmin.Size = new System.Drawing.Size(1352, 909);
+            this.tabControlAdmin.Size = new System.Drawing.Size(1202, 727);
             this.tabControlAdmin.TabIndex = 0;
             // 
             // tabUser
@@ -334,11 +337,10 @@
             this.tabUser.Controls.Add(this.txtName);
             this.tabUser.Controls.Add(this.lblName);
             this.tabUser.Controls.Add(this.dgvUsers);
-            this.tabUser.Location = new System.Drawing.Point(4, 29);
-            this.tabUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabUser.Location = new System.Drawing.Point(4, 25);
             this.tabUser.Name = "tabUser";
-            this.tabUser.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabUser.Size = new System.Drawing.Size(1344, 876);
+            this.tabUser.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabUser.Size = new System.Drawing.Size(1194, 698);
             this.tabUser.TabIndex = 0;
             this.tabUser.Text = "User";
             this.tabUser.UseVisualStyleBackColor = true;
@@ -347,19 +349,19 @@
             // cbIsAdmin
             // 
             this.cbIsAdmin.AutoSize = true;
-            this.cbIsAdmin.Location = new System.Drawing.Point(113, 474);
+            this.cbIsAdmin.Location = new System.Drawing.Point(100, 379);
+            this.cbIsAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbIsAdmin.Name = "cbIsAdmin";
-            this.cbIsAdmin.Size = new System.Drawing.Size(113, 24);
+            this.cbIsAdmin.Size = new System.Drawing.Size(98, 21);
             this.cbIsAdmin.TabIndex = 18;
             this.cbIsAdmin.Text = "checkBox1";
             this.cbIsAdmin.UseVisualStyleBackColor = true;
             // 
             // btnUpdateUser
             // 
-            this.btnUpdateUser.Location = new System.Drawing.Point(216, 520);
-            this.btnUpdateUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateUser.Location = new System.Drawing.Point(192, 416);
             this.btnUpdateUser.Name = "btnUpdateUser";
-            this.btnUpdateUser.Size = new System.Drawing.Size(96, 61);
+            this.btnUpdateUser.Size = new System.Drawing.Size(85, 49);
             this.btnUpdateUser.TabIndex = 17;
             this.btnUpdateUser.Text = "Update User";
             this.btnUpdateUser.UseVisualStyleBackColor = true;
@@ -368,27 +370,25 @@
             // txtUserId
             // 
             this.txtUserId.Enabled = false;
-            this.txtUserId.Location = new System.Drawing.Point(113, 212);
-            this.txtUserId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUserId.Location = new System.Drawing.Point(100, 170);
             this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(162, 26);
+            this.txtUserId.Size = new System.Drawing.Size(144, 22);
             this.txtUserId.TabIndex = 16;
             // 
             // lblUserId
             // 
             this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(7, 212);
+            this.lblUserId.Location = new System.Drawing.Point(6, 170);
             this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(23, 20);
+            this.lblUserId.Size = new System.Drawing.Size(19, 17);
             this.lblUserId.TabIndex = 15;
             this.lblUserId.Text = "Id";
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(113, 520);
-            this.btnDeleteUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDeleteUser.Location = new System.Drawing.Point(100, 416);
             this.btnDeleteUser.Name = "btnDeleteUser";
-            this.btnDeleteUser.Size = new System.Drawing.Size(96, 61);
+            this.btnDeleteUser.Size = new System.Drawing.Size(85, 49);
             this.btnDeleteUser.TabIndex = 14;
             this.btnDeleteUser.Text = "Delete User";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
@@ -396,10 +396,9 @@
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(11, 520);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddUser.Location = new System.Drawing.Point(10, 416);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(96, 61);
+            this.btnAddUser.Size = new System.Drawing.Size(85, 49);
             this.btnAddUser.TabIndex = 13;
             this.btnAddUser.Text = "Add User";
             this.btnAddUser.UseVisualStyleBackColor = true;
@@ -407,103 +406,97 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(113, 429);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPassword.Location = new System.Drawing.Point(100, 343);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(162, 26);
+            this.txtPassword.Size = new System.Drawing.Size(144, 22);
             this.txtPassword.TabIndex = 12;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(7, 432);
+            this.lblPassword.Location = new System.Drawing.Point(6, 346);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(78, 20);
+            this.lblPassword.Size = new System.Drawing.Size(69, 17);
             this.lblPassword.TabIndex = 11;
             this.lblPassword.Text = "Password";
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(113, 289);
-            this.txtSurname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSurname.Location = new System.Drawing.Point(100, 231);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(162, 26);
+            this.txtSurname.Size = new System.Drawing.Size(144, 22);
             this.txtSurname.TabIndex = 10;
             // 
             // lblSurname
             // 
             this.lblSurname.AutoSize = true;
-            this.lblSurname.Location = new System.Drawing.Point(7, 290);
+            this.lblSurname.Location = new System.Drawing.Point(6, 232);
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(74, 20);
+            this.lblSurname.Size = new System.Drawing.Size(65, 17);
             this.lblSurname.TabIndex = 9;
             this.lblSurname.Text = "Surname";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(113, 324);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Location = new System.Drawing.Point(100, 259);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(162, 26);
+            this.txtEmail.Size = new System.Drawing.Size(144, 22);
             this.txtEmail.TabIndex = 8;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(7, 328);
+            this.lblEmail.Location = new System.Drawing.Point(6, 262);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 20);
+            this.lblEmail.Size = new System.Drawing.Size(42, 17);
             this.lblEmail.TabIndex = 7;
             this.lblEmail.Text = "Email";
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(113, 359);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAddress.Location = new System.Drawing.Point(100, 287);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(162, 26);
+            this.txtAddress.Size = new System.Drawing.Size(144, 22);
             this.txtAddress.TabIndex = 6;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(7, 362);
+            this.lblAddress.Location = new System.Drawing.Point(6, 290);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(68, 20);
+            this.lblAddress.Size = new System.Drawing.Size(60, 17);
             this.lblAddress.TabIndex = 5;
             this.lblAddress.Text = "Address";
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(113, 394);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUserName.Location = new System.Drawing.Point(100, 315);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(162, 26);
+            this.txtUserName.Size = new System.Drawing.Size(144, 22);
             this.txtUserName.TabIndex = 4;
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(7, 398);
+            this.lblUserName.Location = new System.Drawing.Point(6, 318);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(85, 20);
+            this.lblUserName.Size = new System.Drawing.Size(75, 17);
             this.lblUserName.TabIndex = 3;
             this.lblUserName.Text = "UserName";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(113, 254);
-            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Location = new System.Drawing.Point(100, 203);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(162, 26);
+            this.txtName.Size = new System.Drawing.Size(144, 22);
             this.txtName.TabIndex = 2;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(7, 255);
+            this.lblName.Location = new System.Drawing.Point(6, 204);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(51, 20);
+            this.lblName.Size = new System.Drawing.Size(45, 17);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name";
             // 
@@ -511,16 +504,17 @@
             // 
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Location = new System.Drawing.Point(0, 0);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowTemplate.Height = 24;
-            this.dgvUsers.Size = new System.Drawing.Size(737, 188);
+            this.dgvUsers.Size = new System.Drawing.Size(655, 150);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
             // 
             // tabBooks
             // 
+            this.tabBooks.Controls.Add(this.txtBookStock);
+            this.tabBooks.Controls.Add(this.lblBookStock);
             this.tabBooks.Controls.Add(this.btnUpdateBook);
             this.tabBooks.Controls.Add(this.txtBookId);
             this.tabBooks.Controls.Add(this.lblBookId);
@@ -541,11 +535,10 @@
             this.tabBooks.Controls.Add(this.lblBookPublisher);
             this.tabBooks.Controls.Add(this.txtBookName);
             this.tabBooks.Controls.Add(this.lblBookName);
-            this.tabBooks.Location = new System.Drawing.Point(4, 29);
-            this.tabBooks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabBooks.Location = new System.Drawing.Point(4, 25);
             this.tabBooks.Name = "tabBooks";
-            this.tabBooks.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabBooks.Size = new System.Drawing.Size(1344, 876);
+            this.tabBooks.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabBooks.Size = new System.Drawing.Size(1194, 698);
             this.tabBooks.TabIndex = 1;
             this.tabBooks.Text = "Books";
             this.tabBooks.UseVisualStyleBackColor = true;
@@ -553,10 +546,9 @@
             // 
             // btnUpdateBook
             // 
-            this.btnUpdateBook.Location = new System.Drawing.Point(220, 480);
-            this.btnUpdateBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateBook.Location = new System.Drawing.Point(199, 441);
             this.btnUpdateBook.Name = "btnUpdateBook";
-            this.btnUpdateBook.Size = new System.Drawing.Size(96, 61);
+            this.btnUpdateBook.Size = new System.Drawing.Size(85, 49);
             this.btnUpdateBook.TabIndex = 33;
             this.btnUpdateBook.Text = "Update Book";
             this.btnUpdateBook.UseVisualStyleBackColor = true;
@@ -565,27 +557,25 @@
             // txtBookId
             // 
             this.txtBookId.Enabled = false;
-            this.txtBookId.Location = new System.Drawing.Point(81, 200);
-            this.txtBookId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookId.Location = new System.Drawing.Point(72, 160);
             this.txtBookId.Name = "txtBookId";
-            this.txtBookId.Size = new System.Drawing.Size(162, 26);
+            this.txtBookId.Size = new System.Drawing.Size(144, 22);
             this.txtBookId.TabIndex = 32;
             // 
             // lblBookId
             // 
             this.lblBookId.AutoSize = true;
-            this.lblBookId.Location = new System.Drawing.Point(3, 200);
+            this.lblBookId.Location = new System.Drawing.Point(3, 160);
             this.lblBookId.Name = "lblBookId";
-            this.lblBookId.Size = new System.Drawing.Size(23, 20);
+            this.lblBookId.Size = new System.Drawing.Size(19, 17);
             this.lblBookId.TabIndex = 31;
             this.lblBookId.Text = "Id";
             // 
             // btnDeleteBooks
             // 
-            this.btnDeleteBooks.Location = new System.Drawing.Point(118, 480);
-            this.btnDeleteBooks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDeleteBooks.Location = new System.Drawing.Point(108, 441);
             this.btnDeleteBooks.Name = "btnDeleteBooks";
-            this.btnDeleteBooks.Size = new System.Drawing.Size(96, 61);
+            this.btnDeleteBooks.Size = new System.Drawing.Size(85, 49);
             this.btnDeleteBooks.TabIndex = 30;
             this.btnDeleteBooks.Text = "Delete Books";
             this.btnDeleteBooks.UseVisualStyleBackColor = true;
@@ -593,38 +583,35 @@
             // 
             // txtCoverPagePicture
             // 
-            this.txtCoverPagePicture.Location = new System.Drawing.Point(81, 445);
-            this.txtCoverPagePicture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCoverPagePicture.Location = new System.Drawing.Point(71, 391);
             this.txtCoverPagePicture.Name = "txtCoverPagePicture";
-            this.txtCoverPagePicture.Size = new System.Drawing.Size(162, 26);
+            this.txtCoverPagePicture.Size = new System.Drawing.Size(144, 22);
             this.txtCoverPagePicture.TabIndex = 29;
             // 
             // lblCoverPagePicture
             // 
             this.lblCoverPagePicture.AutoSize = true;
-            this.lblCoverPagePicture.Location = new System.Drawing.Point(8, 451);
+            this.lblCoverPagePicture.Location = new System.Drawing.Point(6, 396);
             this.lblCoverPagePicture.Name = "lblCoverPagePicture";
-            this.lblCoverPagePicture.Size = new System.Drawing.Size(58, 20);
+            this.lblCoverPagePicture.Size = new System.Drawing.Size(52, 17);
             this.lblCoverPagePicture.TabIndex = 28;
             this.lblCoverPagePicture.Text = "Picture";
             // 
             // dgvBooks
             // 
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBooks.Location = new System.Drawing.Point(7, 8);
-            this.dgvBooks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvBooks.Location = new System.Drawing.Point(6, 6);
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.RowTemplate.Height = 24;
-            this.dgvBooks.Size = new System.Drawing.Size(734, 188);
+            this.dgvBooks.Size = new System.Drawing.Size(652, 150);
             this.dgvBooks.TabIndex = 27;
             this.dgvBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellClick);
             // 
             // btnAddBook
             // 
-            this.btnAddBook.Location = new System.Drawing.Point(3, 480);
-            this.btnAddBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddBook.Location = new System.Drawing.Point(6, 441);
             this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(96, 61);
+            this.btnAddBook.Size = new System.Drawing.Size(85, 49);
             this.btnAddBook.TabIndex = 26;
             this.btnAddBook.Text = "Add Book";
             this.btnAddBook.UseVisualStyleBackColor = true;
@@ -632,108 +619,104 @@
             // 
             // txtBookPage
             // 
-            this.txtBookPage.Location = new System.Drawing.Point(81, 410);
-            this.txtBookPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookPage.Location = new System.Drawing.Point(72, 328);
             this.txtBookPage.Name = "txtBookPage";
-            this.txtBookPage.Size = new System.Drawing.Size(162, 26);
+            this.txtBookPage.Size = new System.Drawing.Size(144, 22);
             this.txtBookPage.TabIndex = 25;
             // 
             // lblBookPage
             // 
             this.lblBookPage.AutoSize = true;
-            this.lblBookPage.Location = new System.Drawing.Point(3, 414);
+            this.lblBookPage.Location = new System.Drawing.Point(3, 331);
             this.lblBookPage.Name = "lblBookPage";
-            this.lblBookPage.Size = new System.Drawing.Size(46, 20);
+            this.lblBookPage.Size = new System.Drawing.Size(41, 17);
             this.lblBookPage.TabIndex = 24;
             this.lblBookPage.Text = "Page";
             // 
             // txtBookPrice
             // 
-            this.txtBookPrice.Location = new System.Drawing.Point(81, 270);
-            this.txtBookPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookPrice.Location = new System.Drawing.Point(72, 216);
             this.txtBookPrice.Name = "txtBookPrice";
-            this.txtBookPrice.Size = new System.Drawing.Size(162, 26);
+            this.txtBookPrice.Size = new System.Drawing.Size(144, 22);
             this.txtBookPrice.TabIndex = 23;
             // 
             // lblBookPrice
             // 
             this.lblBookPrice.AutoSize = true;
-            this.lblBookPrice.Location = new System.Drawing.Point(3, 271);
+            this.lblBookPrice.Location = new System.Drawing.Point(3, 217);
             this.lblBookPrice.Name = "lblBookPrice";
-            this.lblBookPrice.Size = new System.Drawing.Size(44, 20);
+            this.lblBookPrice.Size = new System.Drawing.Size(40, 17);
             this.lblBookPrice.TabIndex = 22;
             this.lblBookPrice.Text = "Price";
             // 
             // txtBookIsbn
             // 
-            this.txtBookIsbn.Location = new System.Drawing.Point(81, 305);
-            this.txtBookIsbn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookIsbn.Location = new System.Drawing.Point(72, 244);
             this.txtBookIsbn.Name = "txtBookIsbn";
-            this.txtBookIsbn.Size = new System.Drawing.Size(162, 26);
+            this.txtBookIsbn.Size = new System.Drawing.Size(144, 22);
             this.txtBookIsbn.TabIndex = 21;
             // 
             // lblBookIsbn
             // 
             this.lblBookIsbn.AutoSize = true;
-            this.lblBookIsbn.Location = new System.Drawing.Point(3, 309);
+            this.lblBookIsbn.Location = new System.Drawing.Point(3, 247);
             this.lblBookIsbn.Name = "lblBookIsbn";
-            this.lblBookIsbn.Size = new System.Drawing.Size(47, 20);
+            this.lblBookIsbn.Size = new System.Drawing.Size(39, 17);
             this.lblBookIsbn.TabIndex = 20;
             this.lblBookIsbn.Text = "ISBN";
             // 
             // txtBookAuthor
             // 
-            this.txtBookAuthor.Location = new System.Drawing.Point(81, 340);
-            this.txtBookAuthor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookAuthor.Location = new System.Drawing.Point(72, 272);
             this.txtBookAuthor.Name = "txtBookAuthor";
-            this.txtBookAuthor.Size = new System.Drawing.Size(162, 26);
+            this.txtBookAuthor.Size = new System.Drawing.Size(144, 22);
             this.txtBookAuthor.TabIndex = 19;
             // 
             // lblBookAuthor
             // 
             this.lblBookAuthor.AutoSize = true;
-            this.lblBookAuthor.Location = new System.Drawing.Point(3, 344);
+            this.lblBookAuthor.Location = new System.Drawing.Point(3, 275);
             this.lblBookAuthor.Name = "lblBookAuthor";
-            this.lblBookAuthor.Size = new System.Drawing.Size(57, 20);
+            this.lblBookAuthor.Size = new System.Drawing.Size(50, 17);
             this.lblBookAuthor.TabIndex = 18;
             this.lblBookAuthor.Text = "Author";
             // 
             // txtBookPublisher
             // 
-            this.txtBookPublisher.Location = new System.Drawing.Point(81, 375);
-            this.txtBookPublisher.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookPublisher.Location = new System.Drawing.Point(72, 300);
             this.txtBookPublisher.Name = "txtBookPublisher";
-            this.txtBookPublisher.Size = new System.Drawing.Size(162, 26);
+            this.txtBookPublisher.Size = new System.Drawing.Size(144, 22);
             this.txtBookPublisher.TabIndex = 17;
             // 
             // lblBookPublisher
             // 
             this.lblBookPublisher.AutoSize = true;
-            this.lblBookPublisher.Location = new System.Drawing.Point(3, 379);
+            this.lblBookPublisher.Location = new System.Drawing.Point(3, 303);
             this.lblBookPublisher.Name = "lblBookPublisher";
-            this.lblBookPublisher.Size = new System.Drawing.Size(74, 20);
+            this.lblBookPublisher.Size = new System.Drawing.Size(67, 17);
             this.lblBookPublisher.TabIndex = 16;
             this.lblBookPublisher.Text = "Publisher";
             // 
             // txtBookName
             // 
-            this.txtBookName.Location = new System.Drawing.Point(81, 235);
-            this.txtBookName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookName.Location = new System.Drawing.Point(72, 188);
             this.txtBookName.Name = "txtBookName";
-            this.txtBookName.Size = new System.Drawing.Size(162, 26);
+            this.txtBookName.Size = new System.Drawing.Size(144, 22);
             this.txtBookName.TabIndex = 15;
             // 
             // lblBookName
             // 
             this.lblBookName.AutoSize = true;
-            this.lblBookName.Location = new System.Drawing.Point(3, 236);
+            this.lblBookName.Location = new System.Drawing.Point(3, 189);
             this.lblBookName.Name = "lblBookName";
-            this.lblBookName.Size = new System.Drawing.Size(51, 20);
+            this.lblBookName.Size = new System.Drawing.Size(45, 17);
             this.lblBookName.TabIndex = 14;
             this.lblBookName.Text = "Name";
             // 
             // tabMusics
             // 
+            this.tabMusics.Controls.Add(this.txtMusicCDsStock);
+            this.tabMusics.Controls.Add(this.lblMusicCDsStock);
             this.tabMusics.Controls.Add(this.btnUpdateMusicCDs);
             this.tabMusics.Controls.Add(this.txtMusicCDsId);
             this.tabMusics.Controls.Add(this.lblMusicCDsId);
@@ -748,10 +731,9 @@
             this.tabMusics.Controls.Add(this.lblMusicType);
             this.tabMusics.Controls.Add(this.txtMusicName);
             this.tabMusics.Controls.Add(this.lblMusicName);
-            this.tabMusics.Location = new System.Drawing.Point(4, 29);
-            this.tabMusics.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabMusics.Location = new System.Drawing.Point(4, 25);
             this.tabMusics.Name = "tabMusics";
-            this.tabMusics.Size = new System.Drawing.Size(1344, 876);
+            this.tabMusics.Size = new System.Drawing.Size(1194, 698);
             this.tabMusics.TabIndex = 2;
             this.tabMusics.Text = "Music-Cds";
             this.tabMusics.UseVisualStyleBackColor = true;
@@ -759,10 +741,9 @@
             // 
             // btnUpdateMusicCDs
             // 
-            this.btnUpdateMusicCDs.Location = new System.Drawing.Point(208, 424);
-            this.btnUpdateMusicCDs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateMusicCDs.Location = new System.Drawing.Point(187, 387);
             this.btnUpdateMusicCDs.Name = "btnUpdateMusicCDs";
-            this.btnUpdateMusicCDs.Size = new System.Drawing.Size(96, 61);
+            this.btnUpdateMusicCDs.Size = new System.Drawing.Size(85, 49);
             this.btnUpdateMusicCDs.TabIndex = 47;
             this.btnUpdateMusicCDs.Text = "Update Music CDs";
             this.btnUpdateMusicCDs.UseVisualStyleBackColor = true;
@@ -771,27 +752,25 @@
             // txtMusicCDsId
             // 
             this.txtMusicCDsId.Enabled = false;
-            this.txtMusicCDsId.Location = new System.Drawing.Point(89, 249);
-            this.txtMusicCDsId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicCDsId.Location = new System.Drawing.Point(79, 199);
             this.txtMusicCDsId.Name = "txtMusicCDsId";
-            this.txtMusicCDsId.Size = new System.Drawing.Size(162, 26);
+            this.txtMusicCDsId.Size = new System.Drawing.Size(144, 22);
             this.txtMusicCDsId.TabIndex = 46;
             // 
             // lblMusicCDsId
             // 
             this.lblMusicCDsId.AutoSize = true;
-            this.lblMusicCDsId.Location = new System.Drawing.Point(11, 252);
+            this.lblMusicCDsId.Location = new System.Drawing.Point(10, 202);
             this.lblMusicCDsId.Name = "lblMusicCDsId";
-            this.lblMusicCDsId.Size = new System.Drawing.Size(23, 20);
+            this.lblMusicCDsId.Size = new System.Drawing.Size(19, 17);
             this.lblMusicCDsId.TabIndex = 45;
             this.lblMusicCDsId.Text = "Id";
             // 
             // btnDeleteMusicCDs
             // 
-            this.btnDeleteMusicCDs.Location = new System.Drawing.Point(106, 424);
-            this.btnDeleteMusicCDs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDeleteMusicCDs.Location = new System.Drawing.Point(96, 387);
             this.btnDeleteMusicCDs.Name = "btnDeleteMusicCDs";
-            this.btnDeleteMusicCDs.Size = new System.Drawing.Size(96, 61);
+            this.btnDeleteMusicCDs.Size = new System.Drawing.Size(85, 49);
             this.btnDeleteMusicCDs.TabIndex = 44;
             this.btnDeleteMusicCDs.Text = "Delete Music CDs";
             this.btnDeleteMusicCDs.UseVisualStyleBackColor = true;
@@ -800,20 +779,18 @@
             // dgvMusicCDs
             // 
             this.dgvMusicCDs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMusicCDs.Location = new System.Drawing.Point(15, 34);
-            this.dgvMusicCDs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMusicCDs.Location = new System.Drawing.Point(13, 27);
             this.dgvMusicCDs.Name = "dgvMusicCDs";
             this.dgvMusicCDs.RowTemplate.Height = 24;
-            this.dgvMusicCDs.Size = new System.Drawing.Size(726, 188);
+            this.dgvMusicCDs.Size = new System.Drawing.Size(645, 150);
             this.dgvMusicCDs.TabIndex = 43;
             this.dgvMusicCDs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMusicCDs_CellClick);
             // 
             // btnAddMusicCDs
             // 
-            this.btnAddMusicCDs.Location = new System.Drawing.Point(3, 424);
-            this.btnAddMusicCDs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddMusicCDs.Location = new System.Drawing.Point(5, 387);
             this.btnAddMusicCDs.Name = "btnAddMusicCDs";
-            this.btnAddMusicCDs.Size = new System.Drawing.Size(96, 61);
+            this.btnAddMusicCDs.Size = new System.Drawing.Size(85, 49);
             this.btnAddMusicCDs.TabIndex = 42;
             this.btnAddMusicCDs.Text = "Add Music CDs";
             this.btnAddMusicCDs.UseVisualStyleBackColor = true;
@@ -821,74 +798,72 @@
             // 
             // txtMusicPrice
             // 
-            this.txtMusicPrice.Location = new System.Drawing.Point(89, 319);
-            this.txtMusicPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicPrice.Location = new System.Drawing.Point(79, 255);
             this.txtMusicPrice.Name = "txtMusicPrice";
-            this.txtMusicPrice.Size = new System.Drawing.Size(162, 26);
+            this.txtMusicPrice.Size = new System.Drawing.Size(144, 22);
             this.txtMusicPrice.TabIndex = 39;
             // 
             // lblMusicPrice
             // 
             this.lblMusicPrice.AutoSize = true;
-            this.lblMusicPrice.Location = new System.Drawing.Point(11, 320);
+            this.lblMusicPrice.Location = new System.Drawing.Point(10, 256);
             this.lblMusicPrice.Name = "lblMusicPrice";
-            this.lblMusicPrice.Size = new System.Drawing.Size(44, 20);
+            this.lblMusicPrice.Size = new System.Drawing.Size(40, 17);
             this.lblMusicPrice.TabIndex = 38;
             this.lblMusicPrice.Text = "Price";
             // 
             // txtMusicSinger
             // 
-            this.txtMusicSinger.Location = new System.Drawing.Point(89, 354);
-            this.txtMusicSinger.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicSinger.Location = new System.Drawing.Point(79, 283);
             this.txtMusicSinger.Name = "txtMusicSinger";
-            this.txtMusicSinger.Size = new System.Drawing.Size(162, 26);
+            this.txtMusicSinger.Size = new System.Drawing.Size(144, 22);
             this.txtMusicSinger.TabIndex = 37;
             // 
             // lblMusicSinger
             // 
             this.lblMusicSinger.AutoSize = true;
-            this.lblMusicSinger.Location = new System.Drawing.Point(11, 358);
+            this.lblMusicSinger.Location = new System.Drawing.Point(10, 286);
             this.lblMusicSinger.Name = "lblMusicSinger";
-            this.lblMusicSinger.Size = new System.Drawing.Size(55, 20);
+            this.lblMusicSinger.Size = new System.Drawing.Size(49, 17);
             this.lblMusicSinger.TabIndex = 36;
             this.lblMusicSinger.Text = "Singer";
             // 
             // txtMusicType
             // 
-            this.txtMusicType.Location = new System.Drawing.Point(89, 389);
-            this.txtMusicType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicType.Location = new System.Drawing.Point(79, 311);
             this.txtMusicType.Name = "txtMusicType";
-            this.txtMusicType.Size = new System.Drawing.Size(162, 26);
+            this.txtMusicType.Size = new System.Drawing.Size(144, 22);
             this.txtMusicType.TabIndex = 35;
             // 
             // lblMusicType
             // 
             this.lblMusicType.AutoSize = true;
-            this.lblMusicType.Location = new System.Drawing.Point(11, 392);
+            this.lblMusicType.Location = new System.Drawing.Point(10, 314);
             this.lblMusicType.Name = "lblMusicType";
-            this.lblMusicType.Size = new System.Drawing.Size(43, 20);
+            this.lblMusicType.Size = new System.Drawing.Size(40, 17);
             this.lblMusicType.TabIndex = 34;
             this.lblMusicType.Text = "Type";
             // 
             // txtMusicName
             // 
-            this.txtMusicName.Location = new System.Drawing.Point(89, 284);
-            this.txtMusicName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicName.Location = new System.Drawing.Point(79, 227);
             this.txtMusicName.Name = "txtMusicName";
-            this.txtMusicName.Size = new System.Drawing.Size(162, 26);
+            this.txtMusicName.Size = new System.Drawing.Size(144, 22);
             this.txtMusicName.TabIndex = 31;
             // 
             // lblMusicName
             // 
             this.lblMusicName.AutoSize = true;
-            this.lblMusicName.Location = new System.Drawing.Point(11, 284);
+            this.lblMusicName.Location = new System.Drawing.Point(10, 227);
             this.lblMusicName.Name = "lblMusicName";
-            this.lblMusicName.Size = new System.Drawing.Size(51, 20);
+            this.lblMusicName.Size = new System.Drawing.Size(45, 17);
             this.lblMusicName.TabIndex = 30;
             this.lblMusicName.Text = "Name";
             // 
             // tabMagazine
             // 
+            this.tabMagazine.Controls.Add(this.txtMagazineStock);
+            this.tabMagazine.Controls.Add(this.lblMagazineStock);
             this.tabMagazine.Controls.Add(this.btnUpdateMagazine);
             this.tabMagazine.Controls.Add(this.txtMagazineId);
             this.tabMagazine.Controls.Add(this.lblMagazineId);
@@ -903,10 +878,9 @@
             this.tabMagazine.Controls.Add(this.lblMagazineType);
             this.tabMagazine.Controls.Add(this.txtMagazineName);
             this.tabMagazine.Controls.Add(this.lblMagazineName);
-            this.tabMagazine.Location = new System.Drawing.Point(4, 29);
-            this.tabMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabMagazine.Location = new System.Drawing.Point(4, 25);
             this.tabMagazine.Name = "tabMagazine";
-            this.tabMagazine.Size = new System.Drawing.Size(1344, 876);
+            this.tabMagazine.Size = new System.Drawing.Size(1194, 698);
             this.tabMagazine.TabIndex = 3;
             this.tabMagazine.Text = "Magazine";
             this.tabMagazine.UseVisualStyleBackColor = true;
@@ -914,10 +888,9 @@
             // 
             // btnUpdateMagazine
             // 
-            this.btnUpdateMagazine.Location = new System.Drawing.Point(212, 394);
-            this.btnUpdateMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateMagazine.Location = new System.Drawing.Point(188, 363);
             this.btnUpdateMagazine.Name = "btnUpdateMagazine";
-            this.btnUpdateMagazine.Size = new System.Drawing.Size(96, 61);
+            this.btnUpdateMagazine.Size = new System.Drawing.Size(85, 49);
             this.btnUpdateMagazine.TabIndex = 57;
             this.btnUpdateMagazine.Text = "Update Magazine";
             this.btnUpdateMagazine.UseVisualStyleBackColor = true;
@@ -926,27 +899,25 @@
             // txtMagazineId
             // 
             this.txtMagazineId.Enabled = false;
-            this.txtMagazineId.Location = new System.Drawing.Point(81, 212);
-            this.txtMagazineId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazineId.Location = new System.Drawing.Point(72, 170);
             this.txtMagazineId.Name = "txtMagazineId";
-            this.txtMagazineId.Size = new System.Drawing.Size(162, 26);
+            this.txtMagazineId.Size = new System.Drawing.Size(144, 22);
             this.txtMagazineId.TabIndex = 56;
             // 
             // lblMagazineId
             // 
             this.lblMagazineId.AutoSize = true;
-            this.lblMagazineId.Location = new System.Drawing.Point(3, 216);
+            this.lblMagazineId.Location = new System.Drawing.Point(3, 173);
             this.lblMagazineId.Name = "lblMagazineId";
-            this.lblMagazineId.Size = new System.Drawing.Size(23, 20);
+            this.lblMagazineId.Size = new System.Drawing.Size(19, 17);
             this.lblMagazineId.TabIndex = 55;
             this.lblMagazineId.Text = "Id";
             // 
             // btnDeleteMagazine
             // 
-            this.btnDeleteMagazine.Location = new System.Drawing.Point(109, 394);
-            this.btnDeleteMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDeleteMagazine.Location = new System.Drawing.Point(97, 363);
             this.btnDeleteMagazine.Name = "btnDeleteMagazine";
-            this.btnDeleteMagazine.Size = new System.Drawing.Size(96, 61);
+            this.btnDeleteMagazine.Size = new System.Drawing.Size(85, 49);
             this.btnDeleteMagazine.TabIndex = 54;
             this.btnDeleteMagazine.Text = "Delete Magazine";
             this.btnDeleteMagazine.UseVisualStyleBackColor = true;
@@ -955,20 +926,18 @@
             // dgvMagazine
             // 
             this.dgvMagazine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMagazine.Location = new System.Drawing.Point(3, 11);
-            this.dgvMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMagazine.Location = new System.Drawing.Point(3, 9);
             this.dgvMagazine.Name = "dgvMagazine";
             this.dgvMagazine.RowTemplate.Height = 24;
-            this.dgvMagazine.Size = new System.Drawing.Size(737, 188);
+            this.dgvMagazine.Size = new System.Drawing.Size(655, 150);
             this.dgvMagazine.TabIndex = 53;
             this.dgvMagazine.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMagazine_CellClick);
             // 
             // btnAddMagazine
             // 
-            this.btnAddMagazine.Location = new System.Drawing.Point(7, 394);
-            this.btnAddMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddMagazine.Location = new System.Drawing.Point(6, 363);
             this.btnAddMagazine.Name = "btnAddMagazine";
-            this.btnAddMagazine.Size = new System.Drawing.Size(96, 61);
+            this.btnAddMagazine.Size = new System.Drawing.Size(85, 49);
             this.btnAddMagazine.TabIndex = 52;
             this.btnAddMagazine.Text = "Add Magazine";
             this.btnAddMagazine.UseVisualStyleBackColor = true;
@@ -976,89 +945,83 @@
             // 
             // txtMagazinePrice
             // 
-            this.txtMagazinePrice.Location = new System.Drawing.Point(81, 289);
-            this.txtMagazinePrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazinePrice.Location = new System.Drawing.Point(72, 231);
             this.txtMagazinePrice.Name = "txtMagazinePrice";
-            this.txtMagazinePrice.Size = new System.Drawing.Size(162, 26);
+            this.txtMagazinePrice.Size = new System.Drawing.Size(144, 22);
             this.txtMagazinePrice.TabIndex = 51;
             // 
             // lblMagazinePrice
             // 
             this.lblMagazinePrice.AutoSize = true;
-            this.lblMagazinePrice.Location = new System.Drawing.Point(3, 290);
+            this.lblMagazinePrice.Location = new System.Drawing.Point(3, 232);
             this.lblMagazinePrice.Name = "lblMagazinePrice";
-            this.lblMagazinePrice.Size = new System.Drawing.Size(44, 20);
+            this.lblMagazinePrice.Size = new System.Drawing.Size(40, 17);
             this.lblMagazinePrice.TabIndex = 50;
             this.lblMagazinePrice.Text = "Price";
             // 
             // txtMagazineIssue
             // 
-            this.txtMagazineIssue.Location = new System.Drawing.Point(81, 324);
-            this.txtMagazineIssue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazineIssue.Location = new System.Drawing.Point(72, 259);
             this.txtMagazineIssue.Name = "txtMagazineIssue";
-            this.txtMagazineIssue.Size = new System.Drawing.Size(162, 26);
+            this.txtMagazineIssue.Size = new System.Drawing.Size(144, 22);
             this.txtMagazineIssue.TabIndex = 49;
             // 
             // lblMagazineIssue
             // 
             this.lblMagazineIssue.AutoSize = true;
-            this.lblMagazineIssue.Location = new System.Drawing.Point(3, 328);
+            this.lblMagazineIssue.Location = new System.Drawing.Point(3, 262);
             this.lblMagazineIssue.Name = "lblMagazineIssue";
-            this.lblMagazineIssue.Size = new System.Drawing.Size(48, 20);
+            this.lblMagazineIssue.Size = new System.Drawing.Size(41, 17);
             this.lblMagazineIssue.TabIndex = 48;
             this.lblMagazineIssue.Text = "Issue";
             // 
             // txtMagazineType
             // 
-            this.txtMagazineType.Location = new System.Drawing.Point(81, 359);
-            this.txtMagazineType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazineType.Location = new System.Drawing.Point(72, 287);
             this.txtMagazineType.Name = "txtMagazineType";
-            this.txtMagazineType.Size = new System.Drawing.Size(162, 26);
+            this.txtMagazineType.Size = new System.Drawing.Size(144, 22);
             this.txtMagazineType.TabIndex = 47;
             // 
             // lblMagazineType
             // 
             this.lblMagazineType.AutoSize = true;
-            this.lblMagazineType.Location = new System.Drawing.Point(3, 362);
+            this.lblMagazineType.Location = new System.Drawing.Point(3, 290);
             this.lblMagazineType.Name = "lblMagazineType";
-            this.lblMagazineType.Size = new System.Drawing.Size(43, 20);
+            this.lblMagazineType.Size = new System.Drawing.Size(40, 17);
             this.lblMagazineType.TabIndex = 46;
             this.lblMagazineType.Text = "Type";
             // 
             // txtMagazineName
             // 
-            this.txtMagazineName.Location = new System.Drawing.Point(81, 254);
-            this.txtMagazineName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazineName.Location = new System.Drawing.Point(72, 203);
             this.txtMagazineName.Name = "txtMagazineName";
-            this.txtMagazineName.Size = new System.Drawing.Size(162, 26);
+            this.txtMagazineName.Size = new System.Drawing.Size(144, 22);
             this.txtMagazineName.TabIndex = 45;
             // 
             // lblMagazineName
             // 
             this.lblMagazineName.AutoSize = true;
-            this.lblMagazineName.Location = new System.Drawing.Point(3, 255);
+            this.lblMagazineName.Location = new System.Drawing.Point(3, 204);
             this.lblMagazineName.Name = "lblMagazineName";
-            this.lblMagazineName.Size = new System.Drawing.Size(51, 20);
+            this.lblMagazineName.Size = new System.Drawing.Size(45, 17);
             this.lblMagazineName.TabIndex = 44;
             this.lblMagazineName.Text = "Name";
             // 
             // tabSettings
             // 
-            this.tabSettings.Location = new System.Drawing.Point(4, 29);
-            this.tabSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabSettings.Location = new System.Drawing.Point(4, 25);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabSettings.Size = new System.Drawing.Size(1395, 955);
+            this.tabSettings.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabSettings.Size = new System.Drawing.Size(1239, 761);
             this.tabSettings.TabIndex = 1;
             this.tabSettings.Text = "Settings";
             this.tabSettings.UseVisualStyleBackColor = true;
             // 
             // tabShoppingCart
             // 
-            this.tabShoppingCart.Location = new System.Drawing.Point(4, 29);
-            this.tabShoppingCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabShoppingCart.Location = new System.Drawing.Point(4, 25);
             this.tabShoppingCart.Name = "tabShoppingCart";
-            this.tabShoppingCart.Size = new System.Drawing.Size(1395, 955);
+            this.tabShoppingCart.Size = new System.Drawing.Size(1239, 761);
             this.tabShoppingCart.TabIndex = 2;
             this.tabShoppingCart.Text = "Shopping Cart";
             this.tabShoppingCart.UseVisualStyleBackColor = true;
@@ -1067,98 +1030,150 @@
             // 
             this.tabHomePage.Controls.Add(this.flowLayoutPanel1);
             this.tabHomePage.Controls.Add(this.panel2);
-            this.tabHomePage.Location = new System.Drawing.Point(4, 29);
-            this.tabHomePage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabHomePage.Location = new System.Drawing.Point(4, 25);
             this.tabHomePage.Name = "tabHomePage";
-            this.tabHomePage.Size = new System.Drawing.Size(1395, 955);
+            this.tabHomePage.Size = new System.Drawing.Size(1239, 761);
             this.tabHomePage.TabIndex = 3;
             this.tabHomePage.Text = "Home Page";
             this.tabHomePage.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // flowLayoutPanel1
             // 
-            this.panel1.Controls.Add(this.lblShoppingCartValue);
-            this.panel1.Controls.Add(this.lblShoppingCartTitle);
-            this.panel1.Location = new System.Drawing.Point(278, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1401, 33);
-            this.panel1.TabIndex = 5;
-            // 
-            // lblShoppingCartTitle
-            // 
-            this.lblShoppingCartTitle.AutoSize = true;
-            this.lblShoppingCartTitle.Location = new System.Drawing.Point(1016, 21);
-            this.lblShoppingCartTitle.Name = "lblShoppingCartTitle";
-            this.lblShoppingCartTitle.Size = new System.Drawing.Size(111, 20);
-            this.lblShoppingCartTitle.TabIndex = 0;
-            this.lblShoppingCartTitle.Text = "Shopping Cart";
-            // 
-            // lblShoppingCartValue
-            // 
-            this.lblShoppingCartValue.AutoSize = true;
-            this.lblShoppingCartValue.Location = new System.Drawing.Point(1144, 21);
-            this.lblShoppingCartValue.Name = "lblShoppingCartValue";
-            this.lblShoppingCartValue.Size = new System.Drawing.Size(51, 20);
-            this.lblShoppingCartValue.TabIndex = 1;
-            this.lblShoppingCartValue.Text = "label2";
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(60, 76);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1060, 578);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnHomepageMagazine);
             this.panel2.Controls.Add(this.btnHomepageMusicCDs);
             this.panel2.Controls.Add(this.btnHomepageBooks);
-            this.panel2.Location = new System.Drawing.Point(10, 25);
+            this.panel2.Location = new System.Drawing.Point(9, 20);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1384, 49);
+            this.panel2.Size = new System.Drawing.Size(1230, 39);
             this.panel2.TabIndex = 0;
-            // 
-            // btnHomepageBooks
-            // 
-            this.btnHomepageBooks.Location = new System.Drawing.Point(68, 8);
-            this.btnHomepageBooks.Name = "btnHomepageBooks";
-            this.btnHomepageBooks.Size = new System.Drawing.Size(184, 34);
-            this.btnHomepageBooks.TabIndex = 0;
-            this.btnHomepageBooks.Text = "Books";
-            this.btnHomepageBooks.UseVisualStyleBackColor = true;
-            this.btnHomepageBooks.Click += new System.EventHandler(this.btnHomepageBooks_Click);
-            // 
-            // btnHomepageMusicCDs
-            // 
-            this.btnHomepageMusicCDs.Location = new System.Drawing.Point(294, 4);
-            this.btnHomepageMusicCDs.Name = "btnHomepageMusicCDs";
-            this.btnHomepageMusicCDs.Size = new System.Drawing.Size(181, 36);
-            this.btnHomepageMusicCDs.TabIndex = 1;
-            this.btnHomepageMusicCDs.Text = "Music CDs";
-            this.btnHomepageMusicCDs.UseVisualStyleBackColor = true;
-            this.btnHomepageMusicCDs.Click += new System.EventHandler(this.btnHomepageMusicCDs_Click);
             // 
             // btnHomepageMagazine
             // 
-            this.btnHomepageMagazine.Location = new System.Drawing.Point(520, 6);
+            this.btnHomepageMagazine.Location = new System.Drawing.Point(462, 5);
+            this.btnHomepageMagazine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHomepageMagazine.Name = "btnHomepageMagazine";
-            this.btnHomepageMagazine.Size = new System.Drawing.Size(260, 33);
+            this.btnHomepageMagazine.Size = new System.Drawing.Size(231, 26);
             this.btnHomepageMagazine.TabIndex = 2;
             this.btnHomepageMagazine.Text = "Magazine";
             this.btnHomepageMagazine.UseVisualStyleBackColor = true;
             this.btnHomepageMagazine.Click += new System.EventHandler(this.btnHomepageMagazine_Click);
             // 
-            // flowLayoutPanel1
+            // btnHomepageMusicCDs
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(68, 95);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1193, 722);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.btnHomepageMusicCDs.Location = new System.Drawing.Point(261, 3);
+            this.btnHomepageMusicCDs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHomepageMusicCDs.Name = "btnHomepageMusicCDs";
+            this.btnHomepageMusicCDs.Size = new System.Drawing.Size(161, 29);
+            this.btnHomepageMusicCDs.TabIndex = 1;
+            this.btnHomepageMusicCDs.Text = "Music CDs";
+            this.btnHomepageMusicCDs.UseVisualStyleBackColor = true;
+            this.btnHomepageMusicCDs.Click += new System.EventHandler(this.btnHomepageMusicCDs_Click);
+            // 
+            // btnHomepageBooks
+            // 
+            this.btnHomepageBooks.Location = new System.Drawing.Point(60, 6);
+            this.btnHomepageBooks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHomepageBooks.Name = "btnHomepageBooks";
+            this.btnHomepageBooks.Size = new System.Drawing.Size(164, 27);
+            this.btnHomepageBooks.TabIndex = 0;
+            this.btnHomepageBooks.Text = "Books";
+            this.btnHomepageBooks.UseVisualStyleBackColor = true;
+            this.btnHomepageBooks.Click += new System.EventHandler(this.btnHomepageBooks_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblShoppingCartValue);
+            this.panel1.Controls.Add(this.lblShoppingCartTitle);
+            this.panel1.Location = new System.Drawing.Point(247, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1245, 26);
+            this.panel1.TabIndex = 5;
+            // 
+            // lblShoppingCartValue
+            // 
+            this.lblShoppingCartValue.AutoSize = true;
+            this.lblShoppingCartValue.Location = new System.Drawing.Point(1017, 17);
+            this.lblShoppingCartValue.Name = "lblShoppingCartValue";
+            this.lblShoppingCartValue.Size = new System.Drawing.Size(46, 17);
+            this.lblShoppingCartValue.TabIndex = 1;
+            this.lblShoppingCartValue.Text = "label2";
+            // 
+            // lblShoppingCartTitle
+            // 
+            this.lblShoppingCartTitle.AutoSize = true;
+            this.lblShoppingCartTitle.Location = new System.Drawing.Point(903, 17);
+            this.lblShoppingCartTitle.Name = "lblShoppingCartTitle";
+            this.lblShoppingCartTitle.Size = new System.Drawing.Size(98, 17);
+            this.lblShoppingCartTitle.TabIndex = 0;
+            this.lblShoppingCartTitle.Text = "Shopping Cart";
+            // 
+            // txtBookStock
+            // 
+            this.txtBookStock.Location = new System.Drawing.Point(71, 358);
+            this.txtBookStock.Name = "txtBookStock";
+            this.txtBookStock.Size = new System.Drawing.Size(144, 22);
+            this.txtBookStock.TabIndex = 35;
+            // 
+            // lblBookStock
+            // 
+            this.lblBookStock.AutoSize = true;
+            this.lblBookStock.Location = new System.Drawing.Point(6, 363);
+            this.lblBookStock.Name = "lblBookStock";
+            this.lblBookStock.Size = new System.Drawing.Size(43, 17);
+            this.lblBookStock.TabIndex = 34;
+            this.lblBookStock.Text = "Stock";
+            // 
+            // txtMusicCDsStock
+            // 
+            this.txtMusicCDsStock.Location = new System.Drawing.Point(75, 347);
+            this.txtMusicCDsStock.Name = "txtMusicCDsStock";
+            this.txtMusicCDsStock.Size = new System.Drawing.Size(148, 22);
+            this.txtMusicCDsStock.TabIndex = 49;
+            // 
+            // lblMusicCDsStock
+            // 
+            this.lblMusicCDsStock.AutoSize = true;
+            this.lblMusicCDsStock.Location = new System.Drawing.Point(10, 352);
+            this.lblMusicCDsStock.Name = "lblMusicCDsStock";
+            this.lblMusicCDsStock.Size = new System.Drawing.Size(43, 17);
+            this.lblMusicCDsStock.TabIndex = 48;
+            this.lblMusicCDsStock.Text = "Stock";
+            // 
+            // txtMagazineStock
+            // 
+            this.txtMagazineStock.Location = new System.Drawing.Point(70, 322);
+            this.txtMagazineStock.Name = "txtMagazineStock";
+            this.txtMagazineStock.Size = new System.Drawing.Size(146, 22);
+            this.txtMagazineStock.TabIndex = 59;
+            // 
+            // lblMagazineStock
+            // 
+            this.lblMagazineStock.AutoSize = true;
+            this.lblMagazineStock.Location = new System.Drawing.Point(5, 327);
+            this.lblMagazineStock.Name = "lblMagazineStock";
+            this.lblMagazineStock.Size = new System.Drawing.Size(43, 17);
+            this.lblMagazineStock.TabIndex = 58;
+            this.lblMagazineStock.Text = "Stock";
             // 
             // BookShopForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1686, 1017);
+            this.ClientSize = new System.Drawing.Size(1499, 814);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControlGeneral);
             this.Controls.Add(this.pnlMenu);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BookShopForm";
             this.Text = "BookShopForm";
             this.Load += new System.EventHandler(this.BookShopForm_Load);
@@ -1179,9 +1194,9 @@
             this.tabMagazine.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).EndInit();
             this.tabHomePage.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1281,5 +1296,11 @@
         private System.Windows.Forms.Button btnHomepageMusicCDs;
         private System.Windows.Forms.Button btnHomepageBooks;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TextBox txtBookStock;
+        private System.Windows.Forms.Label lblBookStock;
+        private System.Windows.Forms.TextBox txtMusicCDsStock;
+        private System.Windows.Forms.Label lblMusicCDsStock;
+        private System.Windows.Forms.TextBox txtMagazineStock;
+        private System.Windows.Forms.Label lblMagazineStock;
     }
 }
