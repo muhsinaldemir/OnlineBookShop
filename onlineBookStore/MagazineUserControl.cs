@@ -29,5 +29,14 @@ namespace OnlineBookStore
             lblMagazinePrice.Text = magazinePrice.ToString();
             lblStock.Text = stock.ToString();
         }
+
+        private void btnMagazineAddToCart_Click(object sender, EventArgs e)
+        {
+            MagazineClass magazine = new MagazineClass();
+            magazine = MagazineClass.getAMagazineFromDB(magazineID);
+
+
+            ItemToPurchaseClass.itemsToPurchase.Add(new ItemToPurchaseClass(magazine, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
+        }
     }
 }

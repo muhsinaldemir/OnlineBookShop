@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBookAddToCart = new System.Windows.Forms.Button();
+            this.btnMusicCDsAddToCart = new System.Windows.Forms.Button();
             this.lblMusicCDPrice = new System.Windows.Forms.Label();
             this.lblMusicCDSinger = new System.Windows.Forms.Label();
             this.lblMusicCDName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblStock = new System.Windows.Forms.Label();
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
+            this.lblStock = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnBookAddToCart
+            // btnMusicCDsAddToCart
             // 
-            this.btnBookAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBookAddToCart.Location = new System.Drawing.Point(13, 232);
-            this.btnBookAddToCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBookAddToCart.Name = "btnBookAddToCart";
-            this.btnBookAddToCart.Size = new System.Drawing.Size(151, 46);
-            this.btnBookAddToCart.TabIndex = 10;
-            this.btnBookAddToCart.Text = "Add To Cart";
-            this.btnBookAddToCart.UseVisualStyleBackColor = true;
-            this.btnBookAddToCart.Click += new System.EventHandler(this.btnMusicCDsAddToCart_Click);
+            this.btnMusicCDsAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMusicCDsAddToCart.Location = new System.Drawing.Point(13, 232);
+            this.btnMusicCDsAddToCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMusicCDsAddToCart.Name = "btnMusicCDsAddToCart";
+            this.btnMusicCDsAddToCart.Size = new System.Drawing.Size(151, 46);
+            this.btnMusicCDsAddToCart.TabIndex = 10;
+            this.btnMusicCDsAddToCart.Text = "Add To Cart";
+            this.btnMusicCDsAddToCart.UseVisualStyleBackColor = true;
+            this.btnMusicCDsAddToCart.Click += new System.EventHandler(this.btnMusicCDsAddToCart_Click);
             // 
             // lblMusicCDPrice
             // 
@@ -110,7 +110,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.nudQuantity);
             this.panel3.Controls.Add(this.lblStock);
-            this.panel3.Controls.Add(this.btnBookAddToCart);
+            this.panel3.Controls.Add(this.btnMusicCDsAddToCart);
             this.panel3.Controls.Add(this.lblMusicCDName);
             this.panel3.Controls.Add(this.lblMusicCDSinger);
             this.panel3.Controls.Add(this.lblMusicCDPrice);
@@ -119,6 +119,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(222, 294);
             this.panel3.TabIndex = 12;
+            // 
+            // nudQuantity
+            // 
+            this.nudQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.nudQuantity.Location = new System.Drawing.Point(170, 232);
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(47, 45);
+            this.nudQuantity.TabIndex = 12;
+            this.nudQuantity.ValueChanged += new System.EventHandler(this.nudQuantity_ValueChanged);
             // 
             // lblStock
             // 
@@ -129,15 +138,6 @@
             this.lblStock.Size = new System.Drawing.Size(77, 29);
             this.lblStock.TabIndex = 11;
             this.lblStock.Text = "Stock";
-            // 
-            // nudQuantity
-            // 
-            this.nudQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.nudQuantity.Location = new System.Drawing.Point(170, 232);
-            this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.Size = new System.Drawing.Size(47, 45);
-            this.nudQuantity.TabIndex = 12;
-            this.nudQuantity.ValueChanged += new System.EventHandler(this.nudQuantity_ValueChanged);
             // 
             // MusicCDUserControl
             // 
@@ -160,7 +160,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnBookAddToCart;
+        private System.Windows.Forms.Button btnMusicCDsAddToCart;
         private System.Windows.Forms.Label lblMusicCDPrice;
         private System.Windows.Forms.Label lblMusicCDSinger;
         private System.Windows.Forms.Label lblMusicCDName;

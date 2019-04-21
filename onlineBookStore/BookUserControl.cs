@@ -32,12 +32,15 @@ namespace OnlineBookStore
 
         private void btnBookAddToCart_Click(object sender, EventArgs e)
         {
-            
-            ItemToPurchaseClass.itemsToPurchase.Add(new ItemToPurchaseClass(new BookClass(), int quantity));
+            BookClass book = new BookClass();
+            book =BookClass.getaBooksFromDBByID(bookID);
+            ItemToPurchaseClass.itemsToPurchase.Add(new ItemToPurchaseClass(book, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
 
+        }
 
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
 
-            
         }
     }
 }

@@ -65,5 +65,34 @@ namespace OnlineBookStore
 
             return magazineList;
         }
+        public static MagazineClass getAMagazineFromDB(string id)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = new SqlCommand("SELECT * FROM MagazineTable where id=@id", connection);
+            command.Parameters.AddWithValue("@id", Convert.ToInt32(id));
+            SqlDataReader readMagazine = command.ExecuteReader();
+
+            MagazineClass magazine = new MagazineClass();
+            if (readMagazine != null)
+            {
+              
+                    //bool isAdmin = (bool)readCustomer["isadmin"];                          
+                    magazine.id = readMagazine["id"].ToString();
+                    magazine.name = readMagazine["name"].ToString();
+                    magazine.price = Convert.ToDouble(readMagazine["price"]);
+                    magazine.stock = Convert.ToInt32(readMagazine["stock"]);
+                    magazine.issue = readMagazine["issue"].ToString();
+                    //  magazine.magazineType = readMagazine["type"].ToString();
+
+                    // Console.WriteLine("While ici" + book.name);
+                   
+
+               
+            }
+
+            return magazine;
+        }
     }
 }

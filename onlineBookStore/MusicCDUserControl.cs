@@ -30,5 +30,19 @@ namespace OnlineBookStore
             lblMusicCDSinger.Text = musicCDSinger;
             lblStock.Text = stock.ToString();
         }
+
+        private void nudQuantity_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMusicCDsAddToCart_Click(object sender, EventArgs e)
+        {
+            MusicCDsClass musicCDs = new MusicCDsClass();
+            musicCDs = MusicCDsClass.getAMusicCDsFromDB(musicCDID);
+
+
+            ItemToPurchaseClass.itemsToPurchase.Add(new ItemToPurchaseClass(musicCDs, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
+        }
     }
 }

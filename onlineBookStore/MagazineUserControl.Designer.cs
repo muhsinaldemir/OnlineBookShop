@@ -31,14 +31,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnBookAddToCart = new System.Windows.Forms.Button();
+            this.lblStock = new System.Windows.Forms.Label();
+            this.btnMagazineAddToCart = new System.Windows.Forms.Button();
             this.lblMagazineName = new System.Windows.Forms.Label();
             this.lblMagazineIssue = new System.Windows.Forms.Label();
             this.lblMagazinePrice = new System.Windows.Forms.Label();
-            this.lblStock = new System.Windows.Forms.Label();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,8 +66,9 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.nudQuantity);
             this.panel2.Controls.Add(this.lblStock);
-            this.panel2.Controls.Add(this.btnBookAddToCart);
+            this.panel2.Controls.Add(this.btnMagazineAddToCart);
             this.panel2.Controls.Add(this.lblMagazineName);
             this.panel2.Controls.Add(this.lblMagazineIssue);
             this.panel2.Controls.Add(this.lblMagazinePrice);
@@ -75,16 +78,27 @@
             this.panel2.Size = new System.Drawing.Size(222, 286);
             this.panel2.TabIndex = 8;
             // 
-            // btnBookAddToCart
+            // lblStock
             // 
-            this.btnBookAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBookAddToCart.Location = new System.Drawing.Point(13, 218);
-            this.btnBookAddToCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBookAddToCart.Name = "btnBookAddToCart";
-            this.btnBookAddToCart.Size = new System.Drawing.Size(186, 46);
-            this.btnBookAddToCart.TabIndex = 5;
-            this.btnBookAddToCart.Text = "Add To Cart";
-            this.btnBookAddToCart.UseVisualStyleBackColor = true;
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(29, 177);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(77, 29);
+            this.lblStock.TabIndex = 6;
+            this.lblStock.Text = "Stock";
+            // 
+            // btnMagazineAddToCart
+            // 
+            this.btnMagazineAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMagazineAddToCart.Location = new System.Drawing.Point(13, 218);
+            this.btnMagazineAddToCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMagazineAddToCart.Name = "btnMagazineAddToCart";
+            this.btnMagazineAddToCart.Size = new System.Drawing.Size(144, 46);
+            this.btnMagazineAddToCart.TabIndex = 5;
+            this.btnMagazineAddToCart.Text = "Add To Cart";
+            this.btnMagazineAddToCart.UseVisualStyleBackColor = true;
+            this.btnMagazineAddToCart.Click += new System.EventHandler(this.btnMagazineAddToCart_Click);
             // 
             // lblMagazineName
             // 
@@ -116,15 +130,13 @@
             this.lblMagazinePrice.TabIndex = 3;
             this.lblMagazinePrice.Text = "Price";
             // 
-            // lblStock
+            // nudQuantity
             // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(29, 177);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(77, 29);
-            this.lblStock.TabIndex = 6;
-            this.lblStock.Text = "Stock";
+            this.nudQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.nudQuantity.Location = new System.Drawing.Point(159, 218);
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(58, 45);
+            this.nudQuantity.TabIndex = 8;
             // 
             // MagazineUserControl
             // 
@@ -140,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -149,10 +162,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnBookAddToCart;
+        private System.Windows.Forms.Button btnMagazineAddToCart;
         private System.Windows.Forms.Label lblMagazineName;
         private System.Windows.Forms.Label lblMagazineIssue;
         private System.Windows.Forms.Label lblMagazinePrice;
         private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.NumericUpDown nudQuantity;
     }
 }
