@@ -36,9 +36,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblStock = new System.Windows.Forms.Label();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBookAddToCart
@@ -47,10 +49,11 @@
             this.btnBookAddToCart.Location = new System.Drawing.Point(13, 232);
             this.btnBookAddToCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBookAddToCart.Name = "btnBookAddToCart";
-            this.btnBookAddToCart.Size = new System.Drawing.Size(186, 46);
+            this.btnBookAddToCart.Size = new System.Drawing.Size(151, 46);
             this.btnBookAddToCart.TabIndex = 10;
             this.btnBookAddToCart.Text = "Add To Cart";
             this.btnBookAddToCart.UseVisualStyleBackColor = true;
+            this.btnBookAddToCart.Click += new System.EventHandler(this.btnMusicCDsAddToCart_Click);
             // 
             // lblMusicCDPrice
             // 
@@ -105,6 +108,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.nudQuantity);
             this.panel3.Controls.Add(this.lblStock);
             this.panel3.Controls.Add(this.btnBookAddToCart);
             this.panel3.Controls.Add(this.lblMusicCDName);
@@ -126,6 +130,15 @@
             this.lblStock.TabIndex = 11;
             this.lblStock.Text = "Stock";
             // 
+            // nudQuantity
+            // 
+            this.nudQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.nudQuantity.Location = new System.Drawing.Point(170, 232);
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(47, 45);
+            this.nudQuantity.TabIndex = 12;
+            this.nudQuantity.ValueChanged += new System.EventHandler(this.nudQuantity_ValueChanged);
+            // 
             // MusicCDUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -140,6 +153,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -154,5 +168,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.NumericUpDown nudQuantity;
     }
 }

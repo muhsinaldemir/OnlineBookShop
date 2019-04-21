@@ -101,6 +101,7 @@
             this.btnBookAddToCart.TabIndex = 5;
             this.btnBookAddToCart.Text = "Add To Cart";
             this.btnBookAddToCart.UseVisualStyleBackColor = true;
+            this.btnBookAddToCart.Click += new System.EventHandler(this.btnBookAddToCart_Click);
             // 
             // panel2
             // 

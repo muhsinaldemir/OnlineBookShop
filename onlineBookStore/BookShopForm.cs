@@ -67,7 +67,9 @@ namespace OnlineBookStore
         private void btnAddBook_Click(object sender, EventArgs e)
         {
             ////connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("INSERT INTO BookTable (name,price,isbn,author,publisher,page,cover_page_picture) values(@name,@price,@isbn,@author,@publisher,@page,@cover_page_picture)", connection);
+
             command.Parameters.AddWithValue("@name", txtBookName.Text);
             command.Parameters.AddWithValue("@price", txtBookPrice.Text);
             command.Parameters.AddWithValue("@isbn", txtBookIsbn.Text);
@@ -98,6 +100,7 @@ namespace OnlineBookStore
         private void btnAddMusicCDs_Click(object sender, EventArgs e)
         {
             ////connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("INSERT INTO MusicCDsTable (name,price,singer,type) values(@name,@price,@singer,@type)", connection);
             command.Parameters.AddWithValue("@name", txtMusicName.Text);
             command.Parameters.AddWithValue("@price", txtMusicPrice.Text);
@@ -125,6 +128,7 @@ namespace OnlineBookStore
         private void btnAddMagazine_Click(object sender, EventArgs e)
         {
             ////connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("INSERT INTO MagazineTable (name,price,issue,type) values(@name,@price,@issue,@type)", connection);
             command.Parameters.AddWithValue("@name", txtMagazineName.Text);
             command.Parameters.AddWithValue("@price", txtMagazinePrice.Text);
@@ -151,6 +155,7 @@ namespace OnlineBookStore
         private void tabUser_Click(object sender, EventArgs e)
         {
             ////connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
             DataTable dt = new DataTable();
             {
 
@@ -168,6 +173,8 @@ namespace OnlineBookStore
         {
 
             ////connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
+
             DataTable dt = new DataTable();
             {
 
@@ -186,6 +193,8 @@ namespace OnlineBookStore
         {
 
             ////connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
+
             DataTable dt = new DataTable();
             {
 
@@ -203,6 +212,8 @@ namespace OnlineBookStore
         private void tabMagazine_Click(object sender, EventArgs e)
         {
             ////connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
+
             DataTable dt = new DataTable();
             {
 
@@ -219,6 +230,8 @@ namespace OnlineBookStore
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
+            SqlConnection connection = dbHelper.getConnection();
+
             AdminUserClass au = new AdminUserClass();
 
             bool operationResult = au.userDelete(txtUserId.Text);
@@ -268,6 +281,8 @@ namespace OnlineBookStore
         private void btnDeleteBooks_Click(object sender, EventArgs e)
         {
             //connection.Open();
+            SqlConnection connection = dbHelper.getConnection();
+
             SqlCommand deleteCommand = new SqlCommand("delete from BookTable where id=@id", connection);
             deleteCommand.Parameters.AddWithValue("@id", txtBookId.Text.ToString());
             deleteCommand.ExecuteNonQuery();

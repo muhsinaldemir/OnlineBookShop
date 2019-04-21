@@ -29,5 +29,15 @@ namespace OnlineBookStore
             lblPrice.Text = bookPrice.ToString();
             lblStock.Text = stock.ToString();
         }
+
+        private void btnBookAddToCart_Click(object sender, EventArgs e)
+        {
+            
+            ItemToPurchaseClass.itemsToPurchase.Add(new ItemToPurchaseClass(new BookClass(), int quantity));
+
+
+
+            
+        }
     }
 }
