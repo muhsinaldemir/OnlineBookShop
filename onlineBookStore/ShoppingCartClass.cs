@@ -28,16 +28,27 @@ namespace OnlineBookStore
         public bool cancelOrder() { return true; }
         public bool sendInvoiceByEmail() { return true; }
 
-        public ShoppingCartClass()
+        private ShoppingCartClass()
         {
         }
 
-        public ShoppingCartClass(string customerID, ArrayList itemsToPurchase, double paymentAmount, PaymentType paymentType)
+        private static ShoppingCartClass shoppingCart = null;
+        public static ShoppingCartClass Instance
+        {
+            get
+            {
+                if (shoppingCart == null)
+                {
+                    shoppingCart = new ShoppingCartClass();
+                }
+                return shoppingCart;
+            }
+        }
+
+        private ShoppingCartClass(string customerID)
         {
             this.customerID = customerID ?? throw new ArgumentNullException(nameof(customerID));
             //this.itemsToPurchase = itemsToPurchase ?? throw new ArgumentNullException(nameof(itemsToPurchase));
-            this.paymentAmount = paymentAmount;
-            this.paymentType = paymentType;
         }
     }
 }
