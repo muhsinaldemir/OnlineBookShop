@@ -20,8 +20,11 @@ namespace OnlineBookStore
 
         //SqlConnection connection = dbHelper.getConnection();
 
-        public BookShopForm()
+        UserClass user;
+
+        public BookShopForm(UserClass user)
         {
+            this.user = user;
             InitializeComponent();
         }
 
@@ -29,7 +32,7 @@ namespace OnlineBookStore
         {
             //UserClass cs = new UserClass(); //SINGLETON PATTERN
             UserClass cs2 = CustomerClass.Instance;
-            
+            Console.WriteLine("Ana Form'da" + user.name + " " + user.isAdmin() +" " );
 
         }
 
@@ -40,9 +43,7 @@ namespace OnlineBookStore
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            AdminUserClass au = new AdminUserClass();
-
-            bool operationResult = au.userOperations("Add", txtUserId.Text,txtName.Text, txtSurname.Text, txtAddress.Text, txtEmail.Text, txtUserName.Text, txtPassword.Text, cbIsAdmin.Checked ? true : false);
+            bool operationResult = AdminUserClass.userOperations("Add", txtUserId.Text,txtName.Text, txtSurname.Text, txtAddress.Text, txtEmail.Text, txtUserName.Text, txtPassword.Text, cbIsAdmin.Checked ? true : false);
 
             if(operationResult)
             {
@@ -232,9 +233,7 @@ namespace OnlineBookStore
         {
             SqlConnection connection = dbHelper.getConnection();
 
-            AdminUserClass au = new AdminUserClass();
-
-            bool operationResult = au.userDelete(txtUserId.Text);
+            bool operationResult = AdminUserClass.userDelete(txtUserId.Text);
 
             if (operationResult)
             {
@@ -415,9 +414,8 @@ namespace OnlineBookStore
 
         private void btnUpdateUser_Click(object sender, EventArgs e)
         {
-            AdminUserClass au = new AdminUserClass();
 
-            bool operationResult = au.userOperations("Update", txtUserId.Text, txtName.Text, txtSurname.Text, txtAddress.Text, txtEmail.Text, txtUserName.Text, txtPassword.Text, cbIsAdmin.Checked ? true : false);
+            bool operationResult = AdminUserClass.userOperations("Update", txtUserId.Text, txtName.Text, txtSurname.Text, txtAddress.Text, txtEmail.Text, txtUserName.Text, txtPassword.Text, cbIsAdmin.Checked ? true : false);
 
             if (operationResult)
             {

@@ -36,7 +36,7 @@ namespace OnlineBookStore
 
         public abstract bool isAdmin();
 
-        public bool userOperations(string operationType, string id, string name, string surname, string address, string email, string username, string password, bool isadmin)
+        public static bool userOperations(string operationType, string id, string name, string surname, string address, string email, string username, string password, bool isadmin)
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             SqlConnection connection = dbHelper.getConnection();
@@ -65,7 +65,7 @@ namespace OnlineBookStore
                 return true;
         }
 
-        public bool userDelete(string userID)
+        public static bool userDelete(string userID)
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             SqlConnection connection = dbHelper.getConnection();

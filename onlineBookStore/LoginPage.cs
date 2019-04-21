@@ -30,7 +30,8 @@ namespace OnlineBookStore
             {
 
 
-                CustomerClass cs = CustomerClass.Instance; //SINGLETON PATTERN
+                UserClass cs = null;
+                //AdminUserClass au;
                 connection.Open();
                 SqlCommand commandCustomer = new SqlCommand("Select * from CustomerTable WHERE username=@username AND password=@password", connection);
                 commandCustomer.Parameters.AddWithValue("@username", txtUserName.Text);
@@ -42,8 +43,11 @@ namespace OnlineBookStore
                 {
                     while (readCustomer.Read())
                     {
-                        //bool isAdmin = (bool)readCustomer["isadmin"];                          
-
+                        bool isAdmin = (bool)readCustomer["isadmin"];
+                        if (!isAdmin)
+                            cs = CustomerClass.Instance; //SINGLETON PATTERN
+                        else
+                            cs = AdminUserClass.Instance;
                         cs.customerID = readCustomer["id"].ToString();
                         cs.name = readCustomer["name"].ToString();
                         cs.surName = readCustomer["surname"].ToString();
@@ -56,6 +60,10 @@ namespace OnlineBookStore
                     }
 
                     connection.Close();
+                    BookShopForm bookShopForm = new BookShopForm(cs);
+                    bookShopForm.Show();
+                    this.Hide();
+                    //this.Dispose();
                 }
                 else
                 {
