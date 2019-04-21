@@ -11,6 +11,7 @@ namespace OnlineBookStore
         public string name { get; set; }
         public string id { get; set; }
         public double price { get; set; }
+        public int stock { get; set; }
 
         public abstract void printProperties();
         
@@ -18,12 +19,12 @@ namespace OnlineBookStore
         {
 
         }
-        public ProductClass(string Name ,string Id ,double Price)
+        public ProductClass(string Name ,string Id ,double Price, int Stock)
         {
             name = Name;
             id = Id;
             price = Price;
-
+            stock = Stock;
         }
 
       

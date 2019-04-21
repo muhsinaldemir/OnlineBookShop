@@ -29,12 +29,14 @@ namespace OnlineBookStore
 
         public SqlConnection getConnection()
         {
-    
-            if(connection.State != ConnectionState.Open)
-            {
-                connection.Close();
-                connection.Open();
-            }
+
+            /* if(connection.State != ConnectionState.Open)
+             {
+                 connection.Close();
+                 connection.Open();
+             }*/
+            connection.Close();
+            connection.Open();
             return connection;
         }
 

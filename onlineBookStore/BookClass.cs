@@ -25,7 +25,7 @@ namespace OnlineBookStore
         {
 
         }
-        public BookClass(string Name,string Id,double Price,string ISBN,string Author,string Publisher,int Page,string Cover_page_picture):base(Name,Id,Price)
+        public BookClass(string Name, string Id, double Price, int Stock, string ISBN, string Author, string Publisher, int Page, string Cover_page_picture) : base(Name, Id, Price,Stock)
         {
             isbn = ISBN;
             author = Author;
@@ -52,6 +52,7 @@ namespace OnlineBookStore
                     book.id = readBooks["id"].ToString();
                     book.name = readBooks["name"].ToString();
                     book.price = Convert.ToDouble(readBooks["price"]);
+                    book.stock = Convert.ToInt32(readBooks["stock"]);
                     book.author = readBooks["author"].ToString();
                     book.publisher = readBooks["publisher"].ToString();
                     book.isbn = readBooks["isbn"].ToString();

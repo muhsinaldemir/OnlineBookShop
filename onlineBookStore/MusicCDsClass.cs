@@ -23,8 +23,9 @@ namespace OnlineBookStore
         {
         }
 
-        public MusicCDsClass(string Name, string Id, double Price) : base(Name, Id, Price)
+        public MusicCDsClass(string Name, string Id, double Price, int Stock, string Singer) : base(Name, Id, Price, Stock)
         {
+            singer = Singer;
         }
 
         public override void printProperties()
@@ -50,7 +51,9 @@ namespace OnlineBookStore
                     musicCDs.name = readMusicCDs["name"].ToString();
                     musicCDs.price = Convert.ToDouble(readMusicCDs["price"]);
                     musicCDs.singer = readMusicCDs["singer"].ToString();
-                   // musicCDs. = musicCDsList["type"].ToString();
+                    musicCDs.stock = Convert.ToInt32(readMusicCDs["stock"]);
+
+                    // musicCDs. = musicCDsList["type"].ToString();
 
                     // Console.WriteLine("While ici" + book.name);
                     musicCDsList.Add(musicCDs);

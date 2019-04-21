@@ -29,7 +29,7 @@ namespace OnlineBookStore
         public MagazineClass()
             {}
 
-        public MagazineClass(string Name,string Id,double Price,string Issue,magazine_type MagazineType):base(Name,Id,Price)
+        public MagazineClass(string Name,string Id,double Price,int Stock,string Issue,magazine_type MagazineType):base(Name,Id,Price, Stock)
         {
             issue = Issue;
             magazineType = MagazineType;
@@ -52,6 +52,7 @@ namespace OnlineBookStore
                     magazine.id = readMagazine["id"].ToString();
                     magazine.name = readMagazine["name"].ToString();
                     magazine.price = Convert.ToDouble(readMagazine["price"]);
+                    magazine.stock = Convert.ToInt32(readMagazine["stock"]);
                     magazine.issue = readMagazine["issue"].ToString();
                   //  magazine.magazineType = readMagazine["type"].ToString();
                     
