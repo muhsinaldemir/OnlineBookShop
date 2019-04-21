@@ -563,16 +563,16 @@ namespace OnlineBookStore
         private void populateHomePageMagazine()
         {
             
-            List<MagazineClass> allMusicCDs = MagazineClass.getAllMagazineFromDB();
+            List<MagazineClass> allmagazine = MagazineClass.getAllMagazineFromDB();
             //flowLayoutPanel1.Controls.AddRange();
 
-            MagazineUserControl[] magazineUserControls = new MagazineUserControl[allMusicCDs.Count];
+            MagazineUserControl[] magazineUserControls = new MagazineUserControl[allmagazine.Count];
 
             if (flowLayoutPanel1.Controls.Count > 0)
                 flowLayoutPanel1.Controls.Clear();
 
             int i = 0;
-            foreach (var item in allMusicCDs)
+            foreach (var item in allmagazine)
             {
                 magazineUserControls[i] = new MagazineUserControl();
                 magazineUserControls[i].magazineName = item.name;
