@@ -17,6 +17,7 @@ namespace OnlineBookStore
         public int quantity { get; set; }
         public double unitPriceValue { get; set; }
         private double totalPriceValue = 0;
+        public Type type;
         public double getTotalPriceValue()
         {
             return totalPriceValue;
@@ -56,24 +57,19 @@ namespace OnlineBookStore
         {
             var element =ShoppingCartClass.itemsToPurchase.Find(el => el.product.id == id);
             element.quantity = Convert.ToInt32(nudQuantity.Value);
-            foreach(var item in ShoppingCartClass.itemsToPurchase)
-            {
-                Console.WriteLine("Quantity change : " + item.product.name + "  " + item.quantity);
-            }
-            ShoppingCartClass.debug2();
-            lblTotalPriceValue.Text = (Convert.ToInt32(nudQuantity.Value) * unitPriceValue).ToString();
-
-            BookShopForm bookShopForm = new BookShopForm();
-            bookShopForm.lblTotalPriceValueGeneral.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
-            //bookShopForm.lblTotalPriceValueGeneral.Text = "aaa";
-
-            //lblTotalPriceValue.Text = (Convert.ToInt32(nudQuantity.Value) * unitPriceValue).ToString();
-            //totalPriceValue = (quantity * unitPriceValue);
+            //foreach(var item in ShoppingCartClass.itemsToPurchase)
+            //{
+            //    Console.WriteLine("Quantity change : " + item.product.name + "  " + item.quantity);
+            //}
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
+            ((BookShopForm)f).lblTotalPriceValueGeneral.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
-        {          
-            ShoppingCartClass.removeProduct(new ItemToPurchaseClass());
+        {
+            var element = ShoppingCartClass.itemsToPurchase.Find(el => (el.product.id == id && el.product.GetType() == type));
+            ShoppingCartClass.removeProduct(element);
+            Console.WriteLine("Type in remove " + type);
         }
     }
 }

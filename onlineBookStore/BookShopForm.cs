@@ -628,7 +628,7 @@ namespace OnlineBookStore
             populateHomePageMagazine();
         }
 
-        private void populateShoppingCartPanelView()
+        public void populateShoppingCartPanelView()
         {
             ShoppingCartItemsUserControl[] shoppingCartItemsUserControl = new ShoppingCartItemsUserControl[ShoppingCartClass.itemsToPurchase.Count];
 
@@ -644,6 +644,7 @@ namespace OnlineBookStore
                 shoppingCartItemsUserControl[i].name = item.product.name;
                 shoppingCartItemsUserControl[i].quantity = item.quantity;
                 shoppingCartItemsUserControl[i].unitPriceValue = item.product.price;
+                shoppingCartItemsUserControl[i].type = item.product.GetType();
                 //shoppingCartItemsUserControl[i].totalPriceValue = item.stock;
                 flpShoppingCart.Controls.Add(shoppingCartItemsUserControl[i]);
                 //totalPrice += item.product.price * item.quantity;
@@ -653,19 +654,7 @@ namespace OnlineBookStore
             lblTotalPriceValueGeneral.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
 
         }
-
-        public string lblTotalPriceValueGeneralText
-        {
-            get
-            {
-                return this.lblTotalPriceValueGeneral.Text;
-            }
-            set
-            {
-                this.lblTotalPriceValueGeneral.Text = value;
-            }
-        }
-
+        
         private void btnShoppingCart_Click(object sender, EventArgs e)
         {
             populateShoppingCartPanelView();
