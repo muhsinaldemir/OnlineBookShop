@@ -63,16 +63,21 @@ namespace OnlineBookStore
             shoppingCartUpdate();
         }
 
-        public void placeOrder()
+        public static void placeOrder(string customerID,double paymentAmount, PaymentType paymentType)
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("INSERT INTO ShoppingCartTable (customerid,itemtopurchase,paymentamount,paymenttype) values(@customerid,@itemtopurchase,@paymentamount,@paymenttype)", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO ShoppingCartTable (customerid,itemid,itemtype,quantity,paymentamount,paymenttype) values(@customerid,@itemid,@itemtype,@quantity,@paymentamount,@paymenttype)", connection);
 
             foreach(var item in itemsToPurchase)
             {
+                command.Parameters.Clear();
+                string t = item.product.GetType().ToString();
+                Console.WriteLine("Type i budur: " + t);
                 command.Parameters.AddWithValue("@customerid", customerID);
-                command.Parameters.AddWithValue("@itemtopurchase", item);
+                command.Parameters.AddWithValue("@itemid", item.product.id);
+                command.Parameters.AddWithValue("@itemtype", t);
+                command.Parameters.AddWithValue("@quantity", item.quantity);
                 command.Parameters.AddWithValue("@paymentamount", paymentAmount);
                 command.Parameters.AddWithValue("@paymenttype", paymentType);
                 command.ExecuteNonQuery();

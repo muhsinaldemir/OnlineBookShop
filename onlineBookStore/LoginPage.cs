@@ -60,6 +60,11 @@ namespace OnlineBookStore
                     }
 
                     connection.Close();
+
+                    //Initialize a shopping cart for logged in customer and assign its customerID
+                    ShoppingCartClass shoppingCartClass = ShoppingCartClass.Instance; //SINGLETON PATTERN
+                    shoppingCartClass.customerID = cs.customerID;
+
                     BookShopForm bookShopForm = new BookShopForm(cs);
                     bookShopForm.Show();
                     this.Hide();

@@ -12,9 +12,37 @@ namespace OnlineBookStore
 {
     public partial class PaymentForm : Form
     {
-        public PaymentForm()
+        UserClass user;
+
+        public PaymentForm(UserClass user)
         {
+            this.user = user;
             InitializeComponent();
+        }
+
+        private void PaymentForm_Load(object sender, EventArgs e)
+        {
+            lblPaymentAmountValue.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
+            lblPaymentAmountCashValue.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
+        }
+
+        private void makePayment(PaymentType paymentType)
+        {
+            ShoppingCartClass.placeOrder(user.customerID, ShoppingCartClass.calculateActualTotalPrice(), paymentType);
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Payment is successful");
+            makePayment(PaymentType.CreditCard);
+            this.Close();
+        }
+
+        private void btnPaymentCash_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Payment is successful");
+            makePayment(PaymentType.Cash);
+            this.Close();
         }
     }
 }

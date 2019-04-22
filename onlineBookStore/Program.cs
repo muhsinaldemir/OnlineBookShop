@@ -16,8 +16,8 @@ namespace OnlineBookStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BookShopForm());
-            //Application.Run(new LoginPage());
+            //Application.Run(new BookShopForm());
+            Application.Run(new LoginPage());
 
         }
     }
