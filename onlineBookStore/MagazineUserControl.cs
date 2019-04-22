@@ -34,9 +34,7 @@ namespace OnlineBookStore
         {
             MagazineClass magazine = new MagazineClass();
             magazine = MagazineClass.getAMagazineFromDB(magazineID);
-
-
-            ShoppingCartClass.itemsToPurchase.Add(new ItemToPurchaseClass(magazine, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
+            ShoppingCartClass.addProduct(new ItemToPurchaseClass(magazine, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
         }
     }
 }

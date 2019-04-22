@@ -40,9 +40,7 @@ namespace OnlineBookStore
         {
             MusicCDsClass musicCDs = new MusicCDsClass();
             musicCDs = MusicCDsClass.getAMusicCDsFromDB(musicCDID);
-
-
-            ShoppingCartClass.itemsToPurchase.Add(new ItemToPurchaseClass(musicCDs, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
+            ShoppingCartClass.addProduct(new ItemToPurchaseClass(musicCDs, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
         }
     }
 }

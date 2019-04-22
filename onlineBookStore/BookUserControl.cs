@@ -36,8 +36,7 @@ namespace OnlineBookStore
             Console.WriteLine("bookıd " + bookID);
             BookClass book = new BookClass();
             book =BookClass.getaBooksFromDBByID(bookID);
-            ShoppingCartClass.itemsToPurchase.Add(new ItemToPurchaseClass(book, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
-
+            ShoppingCartClass.addProduct(new ItemToPurchaseClass(book, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)

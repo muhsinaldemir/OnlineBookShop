@@ -28,11 +28,16 @@ namespace OnlineBookStore
             InitializeComponent();
         }
 
+        public BookShopForm()
+        {
+            InitializeComponent();
+        }
+
         private void BookShopForm_Load(object sender, EventArgs e)
         {
             //UserClass cs = new UserClass(); //SINGLETON PATTERN
             UserClass cs2 = CustomerClass.Instance;
-            Console.WriteLine("Ana Form'da" + user.name + " " + user.isAdmin() +" " );
+            //Console.WriteLine("Ana Form'da" + user.name + " " + user.isAdmin() +" " );
 
         }
 
@@ -540,8 +545,8 @@ namespace OnlineBookStore
 
             BookUserControl[] bookUserControls = new BookUserControl[allBooks.Count];
             
-            if (flowLayoutPanel1.Controls.Count > 0)
-                flowLayoutPanel1.Controls.Clear();
+            if (flpHomePage.Controls.Count > 0)
+                flpHomePage.Controls.Clear();
 
             int i = 0;
             foreach(var item in allBooks)
@@ -552,7 +557,7 @@ namespace OnlineBookStore
                 bookUserControls[i].bookAuthor = item.author;
                 bookUserControls[i].bookPrice = item.price;
                 bookUserControls[i].stock = item.stock;
-                flowLayoutPanel1.Controls.Add(bookUserControls[i]);
+                flpHomePage.Controls.Add(bookUserControls[i]);
                 i++;
             }
           
@@ -565,8 +570,8 @@ namespace OnlineBookStore
 
             MusicCDUserControl[] musicCDsUserControls = new MusicCDUserControl[allMusicCDs.Count];
 
-            if (flowLayoutPanel1.Controls.Count > 0)
-                flowLayoutPanel1.Controls.Clear();
+            if (flpHomePage.Controls.Count > 0)
+                flpHomePage.Controls.Clear();
 
             int i = 0;
             foreach (var item in allMusicCDs)
@@ -577,7 +582,7 @@ namespace OnlineBookStore
                 musicCDsUserControls[i].musicCDPrice = item.price;
                 musicCDsUserControls[i].musicCDSinger = item.singer;
                 musicCDsUserControls[i].stock = item.stock;
-                flowLayoutPanel1.Controls.Add(musicCDsUserControls[i]);
+                flpHomePage.Controls.Add(musicCDsUserControls[i]);
                 i++;
             }
         }
@@ -590,8 +595,8 @@ namespace OnlineBookStore
 
             MagazineUserControl[] magazineUserControls = new MagazineUserControl[allmagazine.Count];
 
-            if (flowLayoutPanel1.Controls.Count > 0)
-                flowLayoutPanel1.Controls.Clear();
+            if (flpHomePage.Controls.Count > 0)
+                flpHomePage.Controls.Clear();
 
             int i = 0;
             foreach (var item in allmagazine)
@@ -602,7 +607,7 @@ namespace OnlineBookStore
                 magazineUserControls[i].magazinePrice = item.price;
                 magazineUserControls[i].magazineIssue = item.issue;
                 magazineUserControls[i].stock = item.stock;
-                flowLayoutPanel1.Controls.Add(magazineUserControls[i]);
+                flpHomePage.Controls.Add(magazineUserControls[i]);
                 i++;
             }
         }
@@ -621,6 +626,33 @@ namespace OnlineBookStore
         private void btnHomepageMagazine_Click(object sender, EventArgs e)
         {
             populateHomePageMagazine();
+        }
+
+        private void populateShoppingCartPanelView()
+        {
+            ShoppingCartItemsUserControl[] shoppingCartItemsUserControl = new ShoppingCartItemsUserControl[ShoppingCartClass.itemsToPurchase.Count];
+
+            if (flpShoppingCart.Controls.Count > 0)
+                flpShoppingCart.Controls.Clear();
+
+            int i = 0;
+            foreach (ItemToPurchaseClass item in ShoppingCartClass.itemsToPurchase)
+            {
+                shoppingCartItemsUserControl[i] = new ShoppingCartItemsUserControl();
+                shoppingCartItemsUserControl[i].id = item.product.id;
+                shoppingCartItemsUserControl[i].name = item.product.name;
+                shoppingCartItemsUserControl[i].quantity = item.quantity;
+                shoppingCartItemsUserControl[i].unitPriceValue = item.product.price;
+                //shoppingCartItemsUserControl[i].totalPriceValue = item.stock;
+                flpShoppingCart.Controls.Add(shoppingCartItemsUserControl[i]);
+                i++;
+            }
+
+        }
+
+        private void btnShoppingCart_Click(object sender, EventArgs e)
+        {
+            populateShoppingCartPanelView();
         }
     }
 }

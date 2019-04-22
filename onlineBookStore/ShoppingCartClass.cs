@@ -22,7 +22,12 @@ namespace OnlineBookStore
         public static List<ItemToPurchaseClass> itemsToPurchase = new List<ItemToPurchaseClass>();
 
         public void printProducts() { }
-        public bool addProduct(ItemToPurchaseClass itemToPurchase) { return true; }
+        public static void addProduct(ItemToPurchaseClass itemToPurchase)
+        {
+            itemsToPurchase.Add(itemToPurchase);
+        }
+
+
         public bool removeProduct(ItemToPurchaseClass itemToPurchase) { return true; }
         public bool placeOrder() { return true; }
         public bool cancelOrder() { return true; }
