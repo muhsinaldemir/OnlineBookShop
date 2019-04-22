@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,7 +63,26 @@ namespace OnlineBookStore
             shoppingCartUpdate();
         }
 
-        public bool placeOrder() { return true; }
+        public void placeOrder()
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = new SqlCommand("INSERT INTO ShoppingCartTable (customerid,itemtopurchase,paymentamount,paymenttype) values(@customerid,@itemtopurchase,@paymentamount,@paymenttype)", connection);
+
+            foreach(var item in itemsToPurchase)
+            {
+                command.Parameters.AddWithValue("@customerid", customerID);
+                command.Parameters.AddWithValue("@itemtopurchase", item);
+                command.Parameters.AddWithValue("@paymentamount", paymentAmount);
+                command.Parameters.AddWithValue("@paymenttype", paymentType);
+                command.ExecuteNonQuery();
+            }
+            //int affected = command.ExecuteNonQuery();
+
+            //if (affected == 0)
+            //{
+            //}
+        }
         public bool cancelOrder() { return true; }
         public bool sendInvoiceByEmail() { return true; }
 
