@@ -636,6 +636,7 @@ namespace OnlineBookStore
                 flpShoppingCart.Controls.Clear();
 
             int i = 0;
+            //double totalPrice = 0;
             foreach (ItemToPurchaseClass item in ShoppingCartClass.itemsToPurchase)
             {
                 shoppingCartItemsUserControl[i] = new ShoppingCartItemsUserControl();
@@ -645,16 +646,35 @@ namespace OnlineBookStore
                 shoppingCartItemsUserControl[i].unitPriceValue = item.product.price;
                 //shoppingCartItemsUserControl[i].totalPriceValue = item.stock;
                 flpShoppingCart.Controls.Add(shoppingCartItemsUserControl[i]);
+                //totalPrice += item.product.price * item.quantity;
                 i++;
             }
 
+            lblTotalPriceValueGeneral.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
 
+        }
+
+        public string lblTotalPriceValueGeneralText
+        {
+            get
+            {
+                return this.lblTotalPriceValueGeneral.Text;
+            }
+            set
+            {
+                this.lblTotalPriceValueGeneral.Text = value;
+            }
         }
 
         private void btnShoppingCart_Click(object sender, EventArgs e)
         {
             populateShoppingCartPanelView();
             tabControlGeneral.SelectedTab = tabShoppingCart;
+        }
+
+        private void tabShoppingCart_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

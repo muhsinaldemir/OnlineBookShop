@@ -118,6 +118,8 @@
             this.lblMagazineName = new System.Windows.Forms.Label();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.tabShoppingCart = new System.Windows.Forms.TabPage();
+            this.lblTotalPriceValueGeneral = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.flpShoppingCart = new System.Windows.Forms.FlowLayoutPanel();
             this.tabHomePage = new System.Windows.Forms.TabPage();
             this.flpHomePage = new System.Windows.Forms.FlowLayoutPanel();
@@ -128,8 +130,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblShoppingCartValue = new System.Windows.Forms.Label();
             this.lblShoppingCartTitle = new System.Windows.Forms.Label();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.lblTotalPriceValue = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
             this.tabAdminPanel.SuspendLayout();
@@ -306,7 +306,7 @@
             this.tabAdminPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabAdminPanel.Name = "tabAdminPanel";
             this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabAdminPanel.Size = new System.Drawing.Size(1395, 955);
+            this.tabAdminPanel.Size = new System.Drawing.Size(1643, 1072);
             this.tabAdminPanel.TabIndex = 0;
             this.tabAdminPanel.Text = "Admin Panel";
             this.tabAdminPanel.UseVisualStyleBackColor = true;
@@ -1117,15 +1117,13 @@
             this.tabSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabSettings.Size = new System.Drawing.Size(1395, 955);
+            this.tabSettings.Size = new System.Drawing.Size(1643, 1072);
             this.tabSettings.TabIndex = 1;
             this.tabSettings.Text = "Settings";
             this.tabSettings.UseVisualStyleBackColor = true;
             // 
             // tabShoppingCart
             // 
-            this.tabShoppingCart.Controls.Add(this.lblTotalPriceValue);
-            this.tabShoppingCart.Controls.Add(this.lblTotalPrice);
             this.tabShoppingCart.Controls.Add(this.flpShoppingCart);
             this.tabShoppingCart.Location = new System.Drawing.Point(4, 29);
             this.tabShoppingCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1134,6 +1132,25 @@
             this.tabShoppingCart.TabIndex = 2;
             this.tabShoppingCart.Text = "Shopping Cart";
             this.tabShoppingCart.UseVisualStyleBackColor = true;
+            this.tabShoppingCart.Click += new System.EventHandler(this.tabShoppingCart_Click);
+            // 
+            // lblTotalPriceValueGeneral
+            // 
+            this.lblTotalPriceValueGeneral.AutoSize = true;
+            this.lblTotalPriceValueGeneral.Location = new System.Drawing.Point(169, 951);
+            this.lblTotalPriceValueGeneral.Name = "lblTotalPriceValueGeneral";
+            this.lblTotalPriceValueGeneral.Size = new System.Drawing.Size(51, 20);
+            this.lblTotalPriceValueGeneral.TabIndex = 2;
+            this.lblTotalPriceValueGeneral.Text = "label1";
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(50, 951);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(87, 20);
+            this.lblTotalPrice.TabIndex = 1;
+            this.lblTotalPrice.Text = "Total Price:";
             // 
             // flpShoppingCart
             // 
@@ -1149,7 +1166,7 @@
             this.tabHomePage.Location = new System.Drawing.Point(4, 29);
             this.tabHomePage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabHomePage.Name = "tabHomePage";
-            this.tabHomePage.Size = new System.Drawing.Size(1395, 955);
+            this.tabHomePage.Size = new System.Drawing.Size(1643, 1072);
             this.tabHomePage.TabIndex = 3;
             this.tabHomePage.Text = "Home Page";
             this.tabHomePage.UseVisualStyleBackColor = true;
@@ -1235,29 +1252,13 @@
             this.lblShoppingCartTitle.TabIndex = 0;
             this.lblShoppingCartTitle.Text = "Shopping Cart";
             // 
-            // lblTotalPrice
-            // 
-            this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(1177, 886);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(87, 20);
-            this.lblTotalPrice.TabIndex = 1;
-            this.lblTotalPrice.Text = "Total Price:";
-            // 
-            // lblTotalPriceValue
-            // 
-            this.lblTotalPriceValue.AutoSize = true;
-            this.lblTotalPriceValue.Location = new System.Drawing.Point(1296, 886);
-            this.lblTotalPriceValue.Name = "lblTotalPriceValue";
-            this.lblTotalPriceValue.Size = new System.Drawing.Size(51, 20);
-            this.lblTotalPriceValue.TabIndex = 2;
-            this.lblTotalPriceValue.Text = "label1";
-            // 
             // BookShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1939, 1177);
+            this.Controls.Add(this.lblTotalPriceValueGeneral);
+            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControlGeneral);
             this.Controls.Add(this.pnlMenu);
@@ -1282,12 +1283,12 @@
             this.tabMagazine.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).EndInit();
             this.tabShoppingCart.ResumeLayout(false);
-            this.tabShoppingCart.PerformLayout();
             this.tabHomePage.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1393,7 +1394,7 @@
         private System.Windows.Forms.Label lblMagazineStock;
         public System.Windows.Forms.FlowLayoutPanel flpHomePage;
         public System.Windows.Forms.FlowLayoutPanel flpShoppingCart;
-        private System.Windows.Forms.Label lblTotalPriceValue;
         private System.Windows.Forms.Label lblTotalPrice;
+        public System.Windows.Forms.Label lblTotalPriceValueGeneral;
     }
 }

@@ -56,9 +56,19 @@ namespace OnlineBookStore
         {
             var element =ShoppingCartClass.itemsToPurchase.Find(el => el.product.id == id);
             element.quantity = Convert.ToInt32(nudQuantity.Value);
-
+            foreach(var item in ShoppingCartClass.itemsToPurchase)
+            {
+                Console.WriteLine("Quantity change : " + item.product.name + "  " + item.quantity);
+            }
+            ShoppingCartClass.debug2();
             lblTotalPriceValue.Text = (Convert.ToInt32(nudQuantity.Value) * unitPriceValue).ToString();
-            totalPriceValue = (quantity * unitPriceValue);
+
+            BookShopForm bookShopForm = new BookShopForm();
+            bookShopForm.lblTotalPriceValueGeneral.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
+            //bookShopForm.lblTotalPriceValueGeneral.Text = "aaa";
+
+            //lblTotalPriceValue.Text = (Convert.ToInt32(nudQuantity.Value) * unitPriceValue).ToString();
+            //totalPriceValue = (quantity * unitPriceValue);
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

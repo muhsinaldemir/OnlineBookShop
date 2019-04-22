@@ -27,6 +27,13 @@ namespace OnlineBookStore
             itemsToPurchase.Add(itemToPurchase);
         }
 
+        public static void debug2()
+        {
+            foreach (var item in ShoppingCartClass.itemsToPurchase)
+            {
+                Console.WriteLine("Quantity change in debug: " + item.product.name + "  " + item.quantity);
+            }
+        }
         private static void shoppingCartUpdate()
         {
             ShoppingCartItemsUserControl[] shoppingCartItemsUserControl = new ShoppingCartItemsUserControl[ShoppingCartClass.itemsToPurchase.Count];
@@ -80,6 +87,16 @@ namespace OnlineBookStore
         {
             this.customerID = customerID ?? throw new ArgumentNullException(nameof(customerID));
             //this.itemsToPurchase = itemsToPurchase ?? throw new ArgumentNullException(nameof(itemsToPurchase));
+        }
+
+        public static double calculateActualTotalPrice()
+        {
+            double totalPrice = 0;
+            foreach(var item in itemsToPurchase)
+            {
+                totalPrice += item.product.price * item.quantity;
+            }
+            return totalPrice;
         }
     }
 }
