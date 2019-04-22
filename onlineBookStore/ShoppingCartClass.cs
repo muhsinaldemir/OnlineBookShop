@@ -72,7 +72,13 @@ namespace OnlineBookStore
             foreach(var item in itemsToPurchase)
             {
                 command.Parameters.Clear();
-                string t = item.product.GetType().ToString();
+                string t = "";
+                if (item.product is OnlineBookStore.BookClass)
+                    t = "Book";
+                else if (item.product is OnlineBookStore.MagazineClass)
+                    t = "Magazine";
+                else if (item.product is OnlineBookStore.MusicCDsClass)
+                    t = "MusicCDs";
                 Console.WriteLine("Type i budur: " + t);
                 command.Parameters.AddWithValue("@customerid", customerID);
                 command.Parameters.AddWithValue("@itemid", item.product.id);
