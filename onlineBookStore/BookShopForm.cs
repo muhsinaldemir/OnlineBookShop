@@ -648,11 +648,13 @@ namespace OnlineBookStore
                 i++;
             }
 
+
         }
 
         private void btnShoppingCart_Click(object sender, EventArgs e)
         {
             populateShoppingCartPanelView();
+            tabControlGeneral.SelectedTab = tabShoppingCart;
         }
     }
 }

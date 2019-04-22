@@ -13,10 +13,29 @@ namespace OnlineBookStore
     public partial class ShoppingCartItemsUserControl : UserControl
     {
         public string id { get; set; }
-        public string name { get;set;}
+        public string name { get; set; }
         public int quantity { get; set; }
         public double unitPriceValue { get; set; }
-        public double totalPriceValue { get; set; }
+        private double totalPriceValue = 0;
+        public double getTotalPriceValue()
+        {
+            return totalPriceValue;
+        }
+
+        public void setTotalPriceValue(double value)
+        {
+            totalPriceValue = value;
+        }
+        //public double totalPriceValue {
+        //    get
+        //    {
+        //        return totalPriceValue;
+        //    }
+        //    set
+        //    {
+        //        totalPriceValue = 0;
+        //    }
+        //}
 
 
         public ShoppingCartItemsUserControl()
@@ -30,11 +49,21 @@ namespace OnlineBookStore
             nudQuantity.Value = quantity;
             lblUnitPriceValue.Text = unitPriceValue.ToString();
             lblTotalPriceValue.Text = (quantity * unitPriceValue).ToString();
+            totalPriceValue += (quantity * unitPriceValue);
         }
 
         private void nudQuantity_ValueChanged(object sender, EventArgs e)
         {
+            var element =ShoppingCartClass.itemsToPurchase.Find(el => el.product.id == id);
+            element.quantity = Convert.ToInt32(nudQuantity.Value);
+
             lblTotalPriceValue.Text = (Convert.ToInt32(nudQuantity.Value) * unitPriceValue).ToString();
+            totalPriceValue = (quantity * unitPriceValue);
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {          
+            ShoppingCartClass.removeProduct(new ItemToPurchaseClass());
         }
     }
 }

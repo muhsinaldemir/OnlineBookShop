@@ -118,6 +118,7 @@
             this.lblMagazineName = new System.Windows.Forms.Label();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.tabShoppingCart = new System.Windows.Forms.TabPage();
+            this.flpShoppingCart = new System.Windows.Forms.FlowLayoutPanel();
             this.tabHomePage = new System.Windows.Forms.TabPage();
             this.flpHomePage = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -127,7 +128,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblShoppingCartValue = new System.Windows.Forms.Label();
             this.lblShoppingCartTitle = new System.Windows.Forms.Label();
-            this.flpShoppingCart = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.lblTotalPriceValue = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
             this.tabAdminPanel.SuspendLayout();
@@ -294,7 +296,7 @@
             this.tabControlGeneral.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControlGeneral.Name = "tabControlGeneral";
             this.tabControlGeneral.SelectedIndex = 0;
-            this.tabControlGeneral.Size = new System.Drawing.Size(1403, 988);
+            this.tabControlGeneral.Size = new System.Drawing.Size(1651, 1105);
             this.tabControlGeneral.TabIndex = 4;
             // 
             // tabAdminPanel
@@ -1122,14 +1124,23 @@
             // 
             // tabShoppingCart
             // 
+            this.tabShoppingCart.Controls.Add(this.lblTotalPriceValue);
+            this.tabShoppingCart.Controls.Add(this.lblTotalPrice);
             this.tabShoppingCart.Controls.Add(this.flpShoppingCart);
             this.tabShoppingCart.Location = new System.Drawing.Point(4, 29);
             this.tabShoppingCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabShoppingCart.Name = "tabShoppingCart";
-            this.tabShoppingCart.Size = new System.Drawing.Size(1395, 955);
+            this.tabShoppingCart.Size = new System.Drawing.Size(1643, 1072);
             this.tabShoppingCart.TabIndex = 2;
             this.tabShoppingCart.Text = "Shopping Cart";
             this.tabShoppingCart.UseVisualStyleBackColor = true;
+            // 
+            // flpShoppingCart
+            // 
+            this.flpShoppingCart.Location = new System.Drawing.Point(3, 31);
+            this.flpShoppingCart.Name = "flpShoppingCart";
+            this.flpShoppingCart.Size = new System.Drawing.Size(1373, 817);
+            this.flpShoppingCart.TabIndex = 0;
             // 
             // tabHomePage
             // 
@@ -1200,10 +1211,10 @@
             // 
             this.panel1.Controls.Add(this.lblShoppingCartValue);
             this.panel1.Controls.Add(this.lblShoppingCartTitle);
-            this.panel1.Location = new System.Drawing.Point(278, 4);
+            this.panel1.Location = new System.Drawing.Point(302, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1401, 32);
+            this.panel1.Size = new System.Drawing.Size(1609, 27);
             this.panel1.TabIndex = 5;
             // 
             // lblShoppingCartValue
@@ -1224,18 +1235,29 @@
             this.lblShoppingCartTitle.TabIndex = 0;
             this.lblShoppingCartTitle.Text = "Shopping Cart";
             // 
-            // flpShoppingCart
+            // lblTotalPrice
             // 
-            this.flpShoppingCart.Location = new System.Drawing.Point(3, 31);
-            this.flpShoppingCart.Name = "flpShoppingCart";
-            this.flpShoppingCart.Size = new System.Drawing.Size(1123, 685);
-            this.flpShoppingCart.TabIndex = 0;
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(1177, 886);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(87, 20);
+            this.lblTotalPrice.TabIndex = 1;
+            this.lblTotalPrice.Text = "Total Price:";
+            // 
+            // lblTotalPriceValue
+            // 
+            this.lblTotalPriceValue.AutoSize = true;
+            this.lblTotalPriceValue.Location = new System.Drawing.Point(1296, 886);
+            this.lblTotalPriceValue.Name = "lblTotalPriceValue";
+            this.lblTotalPriceValue.Size = new System.Drawing.Size(51, 20);
+            this.lblTotalPriceValue.TabIndex = 2;
+            this.lblTotalPriceValue.Text = "label1";
             // 
             // BookShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1686, 1018);
+            this.ClientSize = new System.Drawing.Size(1939, 1177);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControlGeneral);
             this.Controls.Add(this.pnlMenu);
@@ -1260,6 +1282,7 @@
             this.tabMagazine.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).EndInit();
             this.tabShoppingCart.ResumeLayout(false);
+            this.tabShoppingCart.PerformLayout();
             this.tabHomePage.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1362,13 +1385,15 @@
         private System.Windows.Forms.Button btnHomepageMagazine;
         private System.Windows.Forms.Button btnHomepageMusicCDs;
         private System.Windows.Forms.Button btnHomepageBooks;
-        private System.Windows.Forms.FlowLayoutPanel flpHomePage;
         private System.Windows.Forms.TextBox txtBookStock;
         private System.Windows.Forms.Label lblBookStock;
         private System.Windows.Forms.TextBox txtMusicCDsStock;
         private System.Windows.Forms.Label lblMusicCDsStock;
         private System.Windows.Forms.TextBox txtMagazineStock;
         private System.Windows.Forms.Label lblMagazineStock;
-        private System.Windows.Forms.FlowLayoutPanel flpShoppingCart;
+        public System.Windows.Forms.FlowLayoutPanel flpHomePage;
+        public System.Windows.Forms.FlowLayoutPanel flpShoppingCart;
+        private System.Windows.Forms.Label lblTotalPriceValue;
+        private System.Windows.Forms.Label lblTotalPrice;
     }
 }

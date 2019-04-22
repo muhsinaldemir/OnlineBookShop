@@ -27,8 +27,34 @@ namespace OnlineBookStore
             itemsToPurchase.Add(itemToPurchase);
         }
 
+        private static void shoppingCartUpdate()
+        {
+            ShoppingCartItemsUserControl[] shoppingCartItemsUserControl = new ShoppingCartItemsUserControl[ShoppingCartClass.itemsToPurchase.Count];
 
-        public bool removeProduct(ItemToPurchaseClass itemToPurchase) { return true; }
+            BookShopForm bookShopForm = new BookShopForm();
+            if (bookShopForm.flpShoppingCart.Controls.Count > 0)
+                bookShopForm.flpShoppingCart.Controls.Clear();
+
+            int i = 0;
+            foreach (ItemToPurchaseClass item in ShoppingCartClass.itemsToPurchase)
+            {
+                shoppingCartItemsUserControl[i] = new ShoppingCartItemsUserControl();
+                shoppingCartItemsUserControl[i].id = item.product.id;
+                shoppingCartItemsUserControl[i].name = item.product.name;
+                shoppingCartItemsUserControl[i].quantity = item.quantity;
+                shoppingCartItemsUserControl[i].unitPriceValue = item.product.price;
+                bookShopForm.flpShoppingCart.Controls.Add(shoppingCartItemsUserControl[i]);
+                i++;
+            }
+
+        }
+        public static void removeProduct(ItemToPurchaseClass itemToPurchase)
+        {
+            var element = itemsToPurchase.Find(el => el.product.id == itemToPurchase.product.id);
+            itemsToPurchase.Remove(element);
+            shoppingCartUpdate();
+        }
+
         public bool placeOrder() { return true; }
         public bool cancelOrder() { return true; }
         public bool sendInvoiceByEmail() { return true; }

@@ -21,5 +21,11 @@ namespace OnlineBookStore
             this.product = product;
             this.quantity = quantity;
         }
+
+        //public ItemToPurchaseClass(string id)
+        //{
+        //    ProductClass product = new ProductClass();
+        //    product.id = id;
+        //}
     }
 }

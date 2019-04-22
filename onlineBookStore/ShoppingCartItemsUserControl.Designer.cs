@@ -110,8 +110,9 @@
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(105, 49);
             this.btnRemove.TabIndex = 10;
-            this.btnRemove.Text = "Cancel";
+            this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // nudQuantity
             // 
