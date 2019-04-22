@@ -160,7 +160,7 @@
             this.pnlMenu.Controls.Add(this.btnUrunler);
             this.pnlMenu.Controls.Add(this.btnHomePage);
             this.pnlMenu.Location = new System.Drawing.Point(1, 0);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(244, 763);
             this.pnlMenu.TabIndex = 3;
@@ -174,7 +174,7 @@
             this.btnShoppingCart.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnShoppingCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnShoppingCart.Location = new System.Drawing.Point(0, 385);
-            this.btnShoppingCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShoppingCart.Margin = new System.Windows.Forms.Padding(4);
             this.btnShoppingCart.Name = "btnShoppingCart";
             this.btnShoppingCart.Size = new System.Drawing.Size(243, 74);
             this.btnShoppingCart.TabIndex = 6;
@@ -192,7 +192,7 @@
             this.button11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button11.Location = new System.Drawing.Point(0, 142);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(243, 74);
             this.button11.TabIndex = 5;
@@ -209,7 +209,7 @@
             this.btnReport.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnReport.Location = new System.Drawing.Point(0, 548);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(243, 74);
             this.btnReport.TabIndex = 4;
@@ -226,7 +226,7 @@
             this.btnSettings.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnSettings.Location = new System.Drawing.Point(0, 466);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(243, 74);
             this.btnSettings.TabIndex = 3;
@@ -243,7 +243,7 @@
             this.btnAdminPanel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAdminPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnAdminPanel.Location = new System.Drawing.Point(0, 304);
-            this.btnAdminPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdminPanel.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdminPanel.Name = "btnAdminPanel";
             this.btnAdminPanel.Size = new System.Drawing.Size(243, 74);
             this.btnAdminPanel.TabIndex = 2;
@@ -261,7 +261,7 @@
             this.btnUrunler.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUrunler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnUrunler.Location = new System.Drawing.Point(0, 223);
-            this.btnUrunler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUrunler.Margin = new System.Windows.Forms.Padding(4);
             this.btnUrunler.Name = "btnUrunler";
             this.btnUrunler.Size = new System.Drawing.Size(243, 74);
             this.btnUrunler.TabIndex = 1;
@@ -278,7 +278,7 @@
             this.btnHomePage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHomePage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnHomePage.Location = new System.Drawing.Point(0, 62);
-            this.btnHomePage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHomePage.Margin = new System.Windows.Forms.Padding(4);
             this.btnHomePage.Name = "btnHomePage";
             this.btnHomePage.Size = new System.Drawing.Size(243, 74);
             this.btnHomePage.TabIndex = 0;
@@ -296,7 +296,7 @@
             this.tabControlGeneral.Location = new System.Drawing.Point(247, 36);
             this.tabControlGeneral.Name = "tabControlGeneral";
             this.tabControlGeneral.SelectedIndex = 0;
-            this.tabControlGeneral.Size = new System.Drawing.Size(1032, 727);
+            this.tabControlGeneral.Size = new System.Drawing.Size(1037, 727);
             this.tabControlGeneral.TabIndex = 4;
             // 
             // tabAdminPanel
@@ -304,7 +304,7 @@
             this.tabAdminPanel.Controls.Add(this.tabControlAdmin);
             this.tabAdminPanel.Location = new System.Drawing.Point(4, 25);
             this.tabAdminPanel.Name = "tabAdminPanel";
-            this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(3);
             this.tabAdminPanel.Size = new System.Drawing.Size(1024, 698);
             this.tabAdminPanel.TabIndex = 0;
             this.tabAdminPanel.Text = "Admin Panel";
@@ -345,7 +345,7 @@
             this.tabUser.Controls.Add(this.dgvUsers);
             this.tabUser.Location = new System.Drawing.Point(4, 25);
             this.tabUser.Name = "tabUser";
-            this.tabUser.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabUser.Padding = new System.Windows.Forms.Padding(3);
             this.tabUser.Size = new System.Drawing.Size(1017, 667);
             this.tabUser.TabIndex = 0;
             this.tabUser.Text = "User";
@@ -543,7 +543,7 @@
             this.tabBooks.Controls.Add(this.lblBookName);
             this.tabBooks.Location = new System.Drawing.Point(4, 25);
             this.tabBooks.Name = "tabBooks";
-            this.tabBooks.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabBooks.Padding = new System.Windows.Forms.Padding(3);
             this.tabBooks.Size = new System.Drawing.Size(1017, 667);
             this.tabBooks.TabIndex = 1;
             this.tabBooks.Text = "Books";
@@ -1065,8 +1065,8 @@
             // 
             this.tabSettings.Location = new System.Drawing.Point(4, 25);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabSettings.Size = new System.Drawing.Size(1460, 855);
+            this.tabSettings.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSettings.Size = new System.Drawing.Size(1024, 698);
             this.tabSettings.TabIndex = 1;
             this.tabSettings.Text = "Settings";
             this.tabSettings.UseVisualStyleBackColor = true;
@@ -1079,7 +1079,7 @@
             this.tabShoppingCart.Controls.Add(this.flpShoppingCart);
             this.tabShoppingCart.Location = new System.Drawing.Point(4, 25);
             this.tabShoppingCart.Name = "tabShoppingCart";
-            this.tabShoppingCart.Size = new System.Drawing.Size(1460, 855);
+            this.tabShoppingCart.Size = new System.Drawing.Size(1029, 698);
             this.tabShoppingCart.TabIndex = 2;
             this.tabShoppingCart.Text = "Shopping Cart";
             this.tabShoppingCart.UseVisualStyleBackColor = true;
@@ -1087,7 +1087,7 @@
             // 
             // btnPlaceOrder
             // 
-            this.btnPlaceOrder.Location = new System.Drawing.Point(1064, 748);
+            this.btnPlaceOrder.Location = new System.Drawing.Point(874, 652);
             this.btnPlaceOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
             this.btnPlaceOrder.Size = new System.Drawing.Size(150, 44);
@@ -1099,7 +1099,7 @@
             // lblTotalPriceValueGeneral
             // 
             this.lblTotalPriceValueGeneral.AutoSize = true;
-            this.lblTotalPriceValueGeneral.Location = new System.Drawing.Point(1152, 709);
+            this.lblTotalPriceValueGeneral.Location = new System.Drawing.Point(957, 633);
             this.lblTotalPriceValueGeneral.Name = "lblTotalPriceValueGeneral";
             this.lblTotalPriceValueGeneral.Size = new System.Drawing.Size(46, 17);
             this.lblTotalPriceValueGeneral.TabIndex = 2;
@@ -1108,7 +1108,7 @@
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(1046, 709);
+            this.lblTotalPrice.Location = new System.Drawing.Point(871, 633);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(80, 17);
             this.lblTotalPrice.TabIndex = 1;
@@ -1119,7 +1119,7 @@
             this.flpShoppingCart.Location = new System.Drawing.Point(3, 25);
             this.flpShoppingCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpShoppingCart.Name = "flpShoppingCart";
-            this.flpShoppingCart.Size = new System.Drawing.Size(1220, 654);
+            this.flpShoppingCart.Size = new System.Drawing.Size(1021, 606);
             this.flpShoppingCart.TabIndex = 0;
             // 
             // tabHomePage
@@ -1218,7 +1218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 759);
+            this.ClientSize = new System.Drawing.Size(1285, 766);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControlGeneral);
             this.Controls.Add(this.pnlMenu);
