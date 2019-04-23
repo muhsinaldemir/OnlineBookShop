@@ -54,10 +54,15 @@ namespace OnlineBookStore
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             dbHelper.shoppingCartPlaceOrder(customerID, paymentType);
+
         }
 
-        public void cancelOrder()
+        public void cancelOrder(string name)
         {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            dbHelper.shoppingCartCancelOrder(name);
+            EmailClass email = new EmailClass("***REMOVED***","denzemine@gmail.com","emine deniz",111,"***REMOVED***");
+            email.sendEmail();
 
         }
         public bool sendInvoiceByEmail() { return true; }
