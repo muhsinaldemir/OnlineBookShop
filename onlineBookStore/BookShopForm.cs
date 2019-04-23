@@ -38,6 +38,11 @@ namespace OnlineBookStore
         {
             //UserClass cs = new UserClass(); //SINGLETON PATTERN
             //UserClass cs2 = CustomerClass.Instance;
+            if(!user.isAdmin())
+            {
+                pbAdminPanel.Visible = false;
+                pbReport.Visible = false;
+            }
             lblGeneralUserName.Text = user.name + " " + user.surName;
 
             //Console.WriteLine("Ana Form'da" + user.name + " " + user.isAdmin() +" " );
@@ -797,6 +802,11 @@ namespace OnlineBookStore
         private void pnlMenu_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pbMyAccount_Click(object sender, EventArgs e)
+        {
+            tabControlGeneral.SelectedTab = tabMyAccount;
         }
     }
 }

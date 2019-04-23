@@ -42,7 +42,6 @@ namespace OnlineBookStore
         {
             System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
             ((BookShopForm)f).populateShoppingCartPanelView();
-
         }
         public static void removeProduct(ItemToPurchaseClass itemToPurchase)
         {
@@ -57,7 +56,10 @@ namespace OnlineBookStore
             dbHelper.shoppingCartPlaceOrder(customerID, paymentType);
         }
 
-        public bool cancelOrder() { return true; }
+        public void cancelOrder()
+        {
+
+        }
         public bool sendInvoiceByEmail() { return true; }
 
         private ShoppingCartClass()
