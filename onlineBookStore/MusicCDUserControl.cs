@@ -41,6 +41,7 @@ namespace OnlineBookStore
             MusicCDsClass musicCDs = new MusicCDsClass();
             musicCDs = MusicCDsClass.getAMusicCDsFromDB(musicCDID);
             ShoppingCartClass.addProduct(new ItemToPurchaseClass(musicCDs, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
+            MessageBox.Show("Added to cart.", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

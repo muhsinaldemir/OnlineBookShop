@@ -52,7 +52,7 @@ namespace OnlineBookStore
 
             if(operationResult)
             {
-                MessageBox.Show("User added successfully");
+                MessageBox.Show("User added successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtName.Clear();
                 txtSurname.Clear();
                 txtAddress.Clear();
@@ -91,7 +91,7 @@ namespace OnlineBookStore
             }
             else
             {
-                MessageBox.Show("Book added successfully");
+                MessageBox.Show("Book added successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtBookAuthor.Clear();
                 txtBookIsbn.Clear();
                 txtBookName.Clear();
@@ -121,7 +121,7 @@ namespace OnlineBookStore
             }
             else
             {
-                MessageBox.Show("Music CDs added successfully");
+                MessageBox.Show("Music CDs added successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMusicName.Clear();
                 txtMusicPrice.Clear();
                 txtMusicSinger.Clear();
@@ -145,11 +145,11 @@ namespace OnlineBookStore
 
             if (affected == 0)
             {
-                MessageBox.Show("Error not successful");
+                MessageBox.Show("Error not successful","INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Magazine added successfully");
+                MessageBox.Show("Magazine added successfully","INFORMATION",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 txtMagazineIssue.Clear();
                 txtMagazineName.Clear();
                 txtMagazinePrice.Clear();
@@ -242,11 +242,11 @@ namespace OnlineBookStore
 
             if (operationResult)
             {
-                MessageBox.Show("User deleted successfully");
+                MessageBox.Show("User deleted successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Error!");
+                MessageBox.Show("Error!","INFORMATION",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
         }
@@ -670,6 +670,11 @@ namespace OnlineBookStore
         {
             PaymentForm paymentForm = new PaymentForm(user);
             paymentForm.Show();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

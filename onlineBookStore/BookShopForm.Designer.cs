@@ -29,13 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnShoppingCart = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.btnAdminPanel = new System.Windows.Forms.Button();
-            this.btnUrunler = new System.Windows.Forms.Button();
-            this.btnHomePage = new System.Windows.Forms.Button();
             this.tabControlGeneral = new System.Windows.Forms.TabControl();
             this.tabAdminPanel = new System.Windows.Forms.TabPage();
             this.tabControlAdmin = new System.Windows.Forms.TabControl();
@@ -131,6 +125,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblShoppingCartValue = new System.Windows.Forms.Label();
             this.lblShoppingCartTitle = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbAdminPanel = new System.Windows.Forms.PictureBox();
+            this.pbHomePage = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
             this.tabAdminPanel.SuspendLayout();
@@ -147,58 +145,26 @@
             this.tabHomePage.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHomePage)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnlMenu.Controls.Add(this.btnShoppingCart);
-            this.pnlMenu.Controls.Add(this.button11);
+            this.pnlMenu.BackColor = System.Drawing.Color.White;
+            this.pnlMenu.Controls.Add(this.panel1);
+            this.pnlMenu.Controls.Add(this.pictureBox2);
+            this.pnlMenu.Controls.Add(this.pictureBox1);
+            this.pnlMenu.Controls.Add(this.pbAdminPanel);
+            this.pnlMenu.Controls.Add(this.pbHomePage);
             this.pnlMenu.Controls.Add(this.btnReport);
-            this.pnlMenu.Controls.Add(this.btnSettings);
-            this.pnlMenu.Controls.Add(this.btnAdminPanel);
-            this.pnlMenu.Controls.Add(this.btnUrunler);
-            this.pnlMenu.Controls.Add(this.btnHomePage);
             this.pnlMenu.Location = new System.Drawing.Point(1, 0);
             this.pnlMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(244, 763);
+            this.pnlMenu.Size = new System.Drawing.Size(149, 757);
             this.pnlMenu.TabIndex = 3;
-            // 
-            // btnShoppingCart
-            // 
-            this.btnShoppingCart.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowText;
-            this.btnShoppingCart.FlatAppearance.BorderSize = 0;
-            this.btnShoppingCart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnShoppingCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShoppingCart.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnShoppingCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnShoppingCart.Location = new System.Drawing.Point(0, 385);
-            this.btnShoppingCart.Margin = new System.Windows.Forms.Padding(4);
-            this.btnShoppingCart.Name = "btnShoppingCart";
-            this.btnShoppingCart.Size = new System.Drawing.Size(243, 74);
-            this.btnShoppingCart.TabIndex = 6;
-            this.btnShoppingCart.Text = "Shopping Cart";
-            this.btnShoppingCart.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnShoppingCart.UseVisualStyleBackColor = true;
-            this.btnShoppingCart.Click += new System.EventHandler(this.btnShoppingCart_Click);
-            // 
-            // button11
-            // 
-            this.button11.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowText;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button11.Location = new System.Drawing.Point(0, 142);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(243, 74);
-            this.button11.TabIndex = 5;
-            this.button11.Text = "-";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // btnReport
             // 
@@ -208,7 +174,7 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnReport.Location = new System.Drawing.Point(0, 548);
+            this.btnReport.Location = new System.Drawing.Point(-91, 683);
             this.btnReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(243, 74);
@@ -216,76 +182,7 @@
             this.btnReport.Text = "Rapor";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowText;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSettings.Location = new System.Drawing.Point(0, 466);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(243, 74);
-            this.btnSettings.TabIndex = 3;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSettings.UseVisualStyleBackColor = true;
-            // 
-            // btnAdminPanel
-            // 
-            this.btnAdminPanel.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowText;
-            this.btnAdminPanel.FlatAppearance.BorderSize = 0;
-            this.btnAdminPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdminPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminPanel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAdminPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAdminPanel.Location = new System.Drawing.Point(0, 304);
-            this.btnAdminPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdminPanel.Name = "btnAdminPanel";
-            this.btnAdminPanel.Size = new System.Drawing.Size(243, 74);
-            this.btnAdminPanel.TabIndex = 2;
-            this.btnAdminPanel.Text = "Admin Panel";
-            this.btnAdminPanel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdminPanel.UseVisualStyleBackColor = true;
-            this.btnAdminPanel.Click += new System.EventHandler(this.btnAdminPanel_Click);
-            // 
-            // btnUrunler
-            // 
-            this.btnUrunler.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowText;
-            this.btnUrunler.FlatAppearance.BorderSize = 0;
-            this.btnUrunler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnUrunler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunler.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUrunler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnUrunler.Location = new System.Drawing.Point(0, 223);
-            this.btnUrunler.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUrunler.Name = "btnUrunler";
-            this.btnUrunler.Size = new System.Drawing.Size(243, 74);
-            this.btnUrunler.TabIndex = 1;
-            this.btnUrunler.Text = "-";
-            this.btnUrunler.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUrunler.UseVisualStyleBackColor = true;
-            // 
-            // btnHomePage
-            // 
-            this.btnHomePage.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowText;
-            this.btnHomePage.FlatAppearance.BorderSize = 0;
-            this.btnHomePage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnHomePage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHomePage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnHomePage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnHomePage.Location = new System.Drawing.Point(0, 62);
-            this.btnHomePage.Margin = new System.Windows.Forms.Padding(4);
-            this.btnHomePage.Name = "btnHomePage";
-            this.btnHomePage.Size = new System.Drawing.Size(243, 74);
-            this.btnHomePage.TabIndex = 0;
-            this.btnHomePage.Text = "Home Page";
-            this.btnHomePage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHomePage.UseVisualStyleBackColor = true;
-            this.btnHomePage.Click += new System.EventHandler(this.btnHomePage_Click);
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // tabControlGeneral
             // 
@@ -293,7 +190,7 @@
             this.tabControlGeneral.Controls.Add(this.tabSettings);
             this.tabControlGeneral.Controls.Add(this.tabShoppingCart);
             this.tabControlGeneral.Controls.Add(this.tabHomePage);
-            this.tabControlGeneral.Location = new System.Drawing.Point(247, 36);
+            this.tabControlGeneral.Location = new System.Drawing.Point(153, 37);
             this.tabControlGeneral.Name = "tabControlGeneral";
             this.tabControlGeneral.SelectedIndex = 0;
             this.tabControlGeneral.Size = new System.Drawing.Size(1037, 727);
@@ -305,7 +202,7 @@
             this.tabAdminPanel.Location = new System.Drawing.Point(4, 25);
             this.tabAdminPanel.Name = "tabAdminPanel";
             this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminPanel.Size = new System.Drawing.Size(1024, 698);
+            this.tabAdminPanel.Size = new System.Drawing.Size(1029, 698);
             this.tabAdminPanel.TabIndex = 0;
             this.tabAdminPanel.Text = "Admin Panel";
             this.tabAdminPanel.UseVisualStyleBackColor = true;
@@ -1066,7 +963,7 @@
             this.tabSettings.Location = new System.Drawing.Point(4, 25);
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSettings.Size = new System.Drawing.Size(1024, 698);
+            this.tabSettings.Size = new System.Drawing.Size(1029, 698);
             this.tabSettings.TabIndex = 1;
             this.tabSettings.Text = "Settings";
             this.tabSettings.UseVisualStyleBackColor = true;
@@ -1128,7 +1025,7 @@
             this.tabHomePage.Controls.Add(this.panel2);
             this.tabHomePage.Location = new System.Drawing.Point(4, 25);
             this.tabHomePage.Name = "tabHomePage";
-            this.tabHomePage.Size = new System.Drawing.Size(1024, 698);
+            this.tabHomePage.Size = new System.Drawing.Size(1029, 698);
             this.tabHomePage.TabIndex = 3;
             this.tabHomePage.Text = "Home Page";
             this.tabHomePage.UseVisualStyleBackColor = true;
@@ -1190,7 +1087,7 @@
             // 
             this.panel1.Controls.Add(this.lblShoppingCartValue);
             this.panel1.Controls.Add(this.lblShoppingCartTitle);
-            this.panel1.Location = new System.Drawing.Point(247, 9);
+            this.panel1.Location = new System.Drawing.Point(152, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1028, 34);
@@ -1214,12 +1111,51 @@
             this.lblShoppingCartTitle.TabIndex = 0;
             this.lblShoppingCartTitle.Text = "Shopping Cart";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::OnlineBookStore.Properties.Resources.shoppingcartblack;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 188);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(146, 136);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::OnlineBookStore.Properties.Resources.exitblack;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 540);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(146, 136);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbAdminPanel
+            // 
+            this.pbAdminPanel.Image = global::OnlineBookStore.Properties.Resources.adminblack;
+            this.pbAdminPanel.Location = new System.Drawing.Point(4, 374);
+            this.pbAdminPanel.Name = "pbAdminPanel";
+            this.pbAdminPanel.Size = new System.Drawing.Size(146, 136);
+            this.pbAdminPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAdminPanel.TabIndex = 8;
+            this.pbAdminPanel.TabStop = false;
+            // 
+            // pbHomePage
+            // 
+            this.pbHomePage.Image = global::OnlineBookStore.Properties.Resources.homepageblack;
+            this.pbHomePage.Location = new System.Drawing.Point(0, 0);
+            this.pbHomePage.Name = "pbHomePage";
+            this.pbHomePage.Size = new System.Drawing.Size(146, 136);
+            this.pbHomePage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHomePage.TabIndex = 7;
+            this.pbHomePage.TabStop = false;
+            // 
             // BookShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 766);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1185, 763);
             this.Controls.Add(this.tabControlGeneral);
             this.Controls.Add(this.pnlMenu);
             this.Name = "BookShopForm";
@@ -1247,6 +1183,10 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHomePage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1254,13 +1194,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlMenu;
-        private System.Windows.Forms.Button btnShoppingCart;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnSettings;
-        private System.Windows.Forms.Button btnAdminPanel;
-        private System.Windows.Forms.Button btnUrunler;
-        private System.Windows.Forms.Button btnHomePage;
         private System.Windows.Forms.TabControl tabControlGeneral;
         private System.Windows.Forms.TabPage tabAdminPanel;
         private System.Windows.Forms.TabPage tabSettings;
@@ -1356,5 +1290,9 @@
         private System.Windows.Forms.Label lblTotalPrice;
         public System.Windows.Forms.Label lblTotalPriceValueGeneral;
         private System.Windows.Forms.Button btnPlaceOrder;
+        private System.Windows.Forms.PictureBox pbAdminPanel;
+        private System.Windows.Forms.PictureBox pbHomePage;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

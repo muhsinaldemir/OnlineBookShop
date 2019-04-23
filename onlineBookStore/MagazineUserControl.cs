@@ -35,6 +35,7 @@ namespace OnlineBookStore
             MagazineClass magazine = new MagazineClass();
             magazine = MagazineClass.getAMagazineFromDB(magazineID);
             ShoppingCartClass.addProduct(new ItemToPurchaseClass(magazine, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
+            MessageBox.Show("Added to cart.", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
