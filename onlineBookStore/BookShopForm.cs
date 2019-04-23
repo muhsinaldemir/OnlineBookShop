@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.IO;
 
 namespace OnlineBookStore
 {
@@ -82,7 +83,7 @@ namespace OnlineBookStore
             command.Parameters.AddWithValue("@author", txtBookAuthor.Text);
             command.Parameters.AddWithValue("@publisher", txtBookPublisher.Text);
             command.Parameters.AddWithValue("@page", txtBookPage.Text);
-            command.Parameters.AddWithValue("@cover_page_picture", txtCoverPagePicture.Text);
+            command.Parameters.AddWithValue("@cover_page_picture", txtBookImage.Text);
             int affected = command.ExecuteNonQuery();
 
             if (affected == 0)
@@ -674,6 +675,24 @@ namespace OnlineBookStore
 
         private void btnReport_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Multiselect = false;
+            openFileDialog1.Filter = "All Files |*.png; *.jpeg;*.jpg| PNG Files (*.png)|*.png|JPEG Files (*.jpeg)|*.jpeg|JPG Files (*.jpg)|*.jpg";
+            openFileDialog1.Title = "Dosya seçiniz.";
+            openFileDialog1.ShowDialog();
+            string filepath = openFileDialog1.FileName;
+            string destPath = Application.StartupPath + @"\Resources\BookPictures\" + openFileDialog1.SafeFileName + ".png";
+            Directory.CreateDirectory(Application.StartupPath + @"\Resources\BookPictures\");
+            File.Copy(filepath, destPath, true);
+           
+            pbBook.Image = Image.FromFile(filepath);
+            txtBookImage.Text = openFileDialog1.SafeFileName + ".png";
+
 
         }
     }

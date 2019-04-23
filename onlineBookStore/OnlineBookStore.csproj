@@ -173,5 +173,8 @@
   <ItemGroup>
     <None Include="bin\Debug\Resources\exitblack.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\reportblack.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
