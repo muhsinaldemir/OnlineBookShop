@@ -18,16 +18,16 @@ namespace OnlineBookStore
     class MusicCDsClass : ProductClass
     {
         public string singer { get; set; }
-        public string picture { get; set; }
+        //public string picture { get; set; }
 
         public MusicCDsClass()
         {
         }
 
-        public MusicCDsClass(string Name, string Id, double Price, int Stock, string Singer,string Picture) : base(Name, Id, Price, Stock)
+        public MusicCDsClass(string Name, string Id, double Price, int Stock, string Singer,string Picture) : base(Name, Id, Price, Stock,Picture)
         {
             singer = Singer;
-            picture = Picture;
+            //picture = Picture;
         }
 
         public override void printProperties()
@@ -54,7 +54,7 @@ namespace OnlineBookStore
                     musicCDs.price = Convert.ToDouble(readMusicCDs["price"]);
                     musicCDs.singer = readMusicCDs["singer"].ToString();
                     musicCDs.stock = Convert.ToInt32(readMusicCDs["stock"]);
-                    musicCDs.picture = readMusicCDs["picture"].ToString();
+                    musicCDs.cover_page_picture = readMusicCDs["picture"].ToString();
 
                     // musicCDs. = musicCDsList["type"].ToString();
 
@@ -87,7 +87,7 @@ namespace OnlineBookStore
                     musicCDs.price = Convert.ToDouble(readMusicCDs["price"]);
                     musicCDs.singer = readMusicCDs["singer"].ToString();
                     musicCDs.stock = Convert.ToInt32(readMusicCDs["stock"]);
-                    musicCDs.picture = readMusicCDs["picture"].ToString();
+                    musicCDs.cover_page_picture = readMusicCDs["picture"].ToString();
 
                     // musicCDs. = musicCDsList["type"].ToString();
 

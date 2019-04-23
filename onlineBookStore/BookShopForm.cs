@@ -37,8 +37,8 @@ namespace OnlineBookStore
         private void BookShopForm_Load(object sender, EventArgs e)
         {
             //UserClass cs = new UserClass(); //SINGLETON PATTERN
-            UserClass cs2 = CustomerClass.Instance;
-            lblGeneralUserName.Text = cs2.name + " " + cs2.surName;
+            //UserClass cs2 = CustomerClass.Instance;
+            lblGeneralUserName.Text = user.name + " " + user.surName;
 
             //Console.WriteLine("Ana Form'da" + user.name + " " + user.isAdmin() +" " );
 
@@ -616,7 +616,7 @@ namespace OnlineBookStore
                 musicCDsUserControls[i].musicCDPrice = item.price;
                 musicCDsUserControls[i].musicCDSinger = item.singer;
                 musicCDsUserControls[i].stock = item.stock;
-                musicCDsUserControls[i].picture = item.picture;
+                musicCDsUserControls[i].picture = item.cover_page_picture;
                 flpHomePage.Controls.Add(musicCDsUserControls[i]);
                 i++;
             }
@@ -681,6 +681,7 @@ namespace OnlineBookStore
                 shoppingCartItemsUserControl[i].quantity = item.quantity;
                 shoppingCartItemsUserControl[i].unitPriceValue = item.product.price;
                 shoppingCartItemsUserControl[i].type = item.product.GetType();
+                shoppingCartItemsUserControl[i].picture = item.product.cover_page_picture;
                 //shoppingCartItemsUserControl[i].totalPriceValue = item.stock;
                 flpShoppingCart.Controls.Add(shoppingCartItemsUserControl[i]);
                 //totalPrice += item.product.price * item.quantity;
@@ -772,6 +773,7 @@ namespace OnlineBookStore
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            populateShoppingCartPanelView();
             tabControlGeneral.SelectedTab = tabShoppingCart;
         }
 
@@ -790,6 +792,11 @@ namespace OnlineBookStore
                 Application.Exit();
             }
            
+        }
+
+        private void pnlMenu_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

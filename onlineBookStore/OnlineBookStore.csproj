@@ -179,5 +179,8 @@
   <ItemGroup>
     <None Include="bin\Debug\Resources\logout.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\shopcart2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,7 +14,6 @@ namespace OnlineBookStore
         public string author { get; set; }
         public string publisher { get; set; }
         public int page { get; set; }
-        public string cover_page_picture { get; set; }
 
         public override void printProperties()
         {
@@ -25,13 +24,12 @@ namespace OnlineBookStore
         {
 
         }
-        public BookClass(string Name, string Id, double Price, int Stock, string ISBN, string Author, string Publisher, int Page, string Cover_page_picture) : base(Name, Id, Price,Stock)
+        public BookClass(string Name, string Id, double Price, int Stock, string ISBN, string Author, string Publisher, int Page, string Cover_page_picture) : base(Name, Id, Price,Stock, Cover_page_picture)
         {
             isbn = ISBN;
             author = Author;
             publisher = Publisher;
             page = Page;
-            cover_page_picture = Cover_page_picture;
         }
 
         public static List<BookClass> getAllBooksFromDB()

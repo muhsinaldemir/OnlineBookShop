@@ -39,6 +39,15 @@ namespace OnlineBookStore
             BookClass book = new BookClass();
             book =BookClass.getaBooksFromDBByID(bookID);
             ShoppingCartClass.addProduct(new ItemToPurchaseClass(book, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
+
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
+            int quantity = 0;
+            foreach (var item in ShoppingCartClass.itemsToPurchase)
+            {
+                quantity += item.quantity;
+            }
+            ((BookShopForm)f).lblShoppinCartValue.Text = quantity.ToString();
+
             MessageBox.Show("Added to cart.", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

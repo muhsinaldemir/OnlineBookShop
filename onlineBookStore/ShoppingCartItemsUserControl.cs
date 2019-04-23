@@ -18,6 +18,7 @@ namespace OnlineBookStore
         public double unitPriceValue { get; set; }
         private double totalPriceValue = 0;
         public Type type;
+        public string picture { get; set; }
         public double getTotalPriceValue()
         {
             return totalPriceValue;
@@ -48,6 +49,7 @@ namespace OnlineBookStore
         {
             lblName.Text = name;
             nudQuantity.Value = quantity;
+            pbShoppingCart.ImageLocation = @"Resources\AllPictures\" + picture;
             lblUnitPriceValue.Text = unitPriceValue.ToString();
             lblTotalPriceValue.Text = (quantity * unitPriceValue).ToString();
             totalPriceValue += (quantity * unitPriceValue);
@@ -57,6 +59,7 @@ namespace OnlineBookStore
         {
             var element =ShoppingCartClass.itemsToPurchase.Find(el => el.product.id == id);
             element.quantity = Convert.ToInt32(nudQuantity.Value);
+            lblTotalPriceValue.Text = (Convert.ToInt32(nudQuantity.Value) * unitPriceValue).ToString();
             //foreach(var item in ShoppingCartClass.itemsToPurchase)
             //{
             //    Console.WriteLine("Quantity change : " + item.product.name + "  " + item.quantity);
@@ -69,7 +72,14 @@ namespace OnlineBookStore
         {
             var element = ShoppingCartClass.itemsToPurchase.Find(el => (el.product.id == id && el.product.GetType() == type));
             ShoppingCartClass.removeProduct(element);
-            Console.WriteLine("Type in remove " + type);
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
+            int quantity = 0;
+            foreach (var item in ShoppingCartClass.itemsToPurchase)
+            {
+                quantity += item.quantity;
+            }
+            ((BookShopForm)f).lblShoppinCartValue.Text = quantity.ToString();
+            //Console.WriteLine("Type in remove " + type);
         }
     }
 }

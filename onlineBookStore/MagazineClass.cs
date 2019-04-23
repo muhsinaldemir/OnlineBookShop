@@ -21,7 +21,6 @@ namespace OnlineBookStore
     {
         public string issue { get; set; }
         public magazine_type magazineType { get; set; }
-        public string cover_page_picture { get; set; }
 
         public override void printProperties()
         {
@@ -30,11 +29,10 @@ namespace OnlineBookStore
         public MagazineClass()
             {}
 
-        public MagazineClass(string Name,string Id,double Price,int Stock,string Issue,magazine_type MagazineType,string Cover_page_picture):base(Name,Id,Price, Stock)
+        public MagazineClass(string Name,string Id,double Price,int Stock,string Issue,magazine_type MagazineType,string Cover_page_picture):base(Name,Id,Price, Stock, Cover_page_picture)
         {
             issue = Issue;
             magazineType = MagazineType;
-            cover_page_picture = Cover_page_picture;
         }
         public static List<MagazineClass> getAllMagazineFromDB()
         {
