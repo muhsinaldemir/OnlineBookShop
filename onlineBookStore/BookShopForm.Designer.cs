@@ -134,6 +134,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblGeneralUserName = new System.Windows.Forms.Label();
             this.lblShoppinCartValue = new System.Windows.Forms.Label();
+            this.tabMyAccount = new System.Windows.Forms.TabPage();
+            this.flpMyAccount = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbUserLogout = new System.Windows.Forms.PictureBox();
             this.pbBook = new System.Windows.Forms.PictureBox();
@@ -145,8 +147,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbAdminPanel = new System.Windows.Forms.PictureBox();
             this.pbHomePage = new System.Windows.Forms.PictureBox();
-            this.tabMyAccount = new System.Windows.Forms.TabPage();
-            this.flpMyAccount = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
@@ -164,6 +164,7 @@
             this.tabHomePage.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.tabMyAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBook)).BeginInit();
@@ -175,7 +176,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomePage)).BeginInit();
-            this.tabMyAccount.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -1157,7 +1157,7 @@
             // 
             // btnPlaceOrder
             // 
-            this.btnPlaceOrder.Location = new System.Drawing.Point(985, 1054);
+            this.btnPlaceOrder.Location = new System.Drawing.Point(979, 1042);
             this.btnPlaceOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
             this.btnPlaceOrder.Size = new System.Drawing.Size(169, 55);
@@ -1289,6 +1289,23 @@
             this.lblShoppinCartValue.TabIndex = 13;
             this.lblShoppinCartValue.Text = "0";
             // 
+            // tabMyAccount
+            // 
+            this.tabMyAccount.Controls.Add(this.flpMyAccount);
+            this.tabMyAccount.Location = new System.Drawing.Point(4, 29);
+            this.tabMyAccount.Name = "tabMyAccount";
+            this.tabMyAccount.Size = new System.Drawing.Size(1159, 1111);
+            this.tabMyAccount.TabIndex = 4;
+            this.tabMyAccount.Text = "My Account";
+            this.tabMyAccount.UseVisualStyleBackColor = true;
+            // 
+            // flpMyAccount
+            // 
+            this.flpMyAccount.Location = new System.Drawing.Point(3, 3);
+            this.flpMyAccount.Name = "flpMyAccount";
+            this.flpMyAccount.Size = new System.Drawing.Size(1148, 1096);
+            this.flpMyAccount.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::OnlineBookStore.Properties.Resources.shopcart2;
@@ -1412,23 +1429,6 @@
             this.pbHomePage.TabStop = false;
             this.pbHomePage.Click += new System.EventHandler(this.pbHomePage_Click);
             // 
-            // tabMyAccount
-            // 
-            this.tabMyAccount.Controls.Add(this.flpMyAccount);
-            this.tabMyAccount.Location = new System.Drawing.Point(4, 29);
-            this.tabMyAccount.Name = "tabMyAccount";
-            this.tabMyAccount.Size = new System.Drawing.Size(1159, 1111);
-            this.tabMyAccount.TabIndex = 4;
-            this.tabMyAccount.Text = "My Account";
-            this.tabMyAccount.UseVisualStyleBackColor = true;
-            // 
-            // flpMyAccount
-            // 
-            this.flpMyAccount.Location = new System.Drawing.Point(3, 3);
-            this.flpMyAccount.Name = "flpMyAccount";
-            this.flpMyAccount.Size = new System.Drawing.Size(1148, 1096);
-            this.flpMyAccount.TabIndex = 0;
-            // 
             // BookShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1465,6 +1465,7 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tabMyAccount.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserLogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBook)).EndInit();
@@ -1476,7 +1477,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomePage)).EndInit();
-            this.tabMyAccount.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

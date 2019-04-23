@@ -57,11 +57,12 @@ namespace OnlineBookStore
 
         }
 
-        public void cancelOrder(string name)
+        public static void cancelOrder(string name)
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             dbHelper.shoppingCartCancelOrder(name);
             EmailClass email = new EmailClass("***REMOVED***","denzemine@gmail.com","emine deniz",111,"***REMOVED***");
+            Console.WriteLine("Cancel order in shopping cart");
             email.sendEmail();
 
         }

@@ -28,8 +28,13 @@ namespace OnlineBookStore
             lblName.Text = name;
             lblMyAccountQuantity.Text = quantity.ToString();
             pbShoppingCart.ImageLocation = @"Resources\AllPictures\" + picture;
-            lblUnitPrice.Text = unitPriceValue.ToString();
+            lblUnitPriceValue.Text = unitPriceValue.ToString();
             lblTotalPriceValue.Text = (quantity * unitPriceValue).ToString();
+        }
+
+        private void pbCancelOrder_Click(object sender, EventArgs e)
+        {
+            ShoppingCartClass.cancelOrder(name);
         }
     }
 }

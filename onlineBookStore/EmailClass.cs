@@ -35,13 +35,13 @@ namespace OnlineBookStore
             client.Timeout = 10000;
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.UseDefaultCredentials = false;
-            client.Credentials = new System.Net.NetworkCredential("wristlyy@gmail.com", "");
+            client.Credentials = new System.Net.NetworkCredential(fromAddress, password);
             string message = "Dear " + customerName + "\n\n Your Order from KitapKurdu has been cancelled. \n\n Your money will be returned in 3 work days.\n\n";
             message += "Order Amount: " + totalValue + " Euro" +  "\n\nHave a nice day." + "\n\n KitapKurdu, Emine DENİZ & Muhsin ALDEMİR";
 
             MailMessage mm = new MailMessage(fromAddress, toAddress, "Information", message);
             mm.BodyEncoding = UTF8Encoding.UTF8;
-            
+            Console.WriteLine("Email Class in Email Class Şayze Çiki bom bom");
             client.Send(mm);
 
         }

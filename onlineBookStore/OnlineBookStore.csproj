@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="CustomerClass.cs" />
     <Compile Include="DatabaseHelperClass.cs" />
+    <Compile Include="EmailClass.cs" />
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
