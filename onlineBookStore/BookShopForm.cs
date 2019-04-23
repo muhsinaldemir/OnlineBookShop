@@ -614,6 +614,7 @@ namespace OnlineBookStore
                 musicCDsUserControls[i].musicCDPrice = item.price;
                 musicCDsUserControls[i].musicCDSinger = item.singer;
                 musicCDsUserControls[i].stock = item.stock;
+                musicCDsUserControls[i].picture = item.picture;
                 flpHomePage.Controls.Add(musicCDsUserControls[i]);
                 i++;
             }
@@ -639,6 +640,7 @@ namespace OnlineBookStore
                 magazineUserControls[i].magazinePrice = item.price;
                 magazineUserControls[i].magazineIssue = item.issue;
                 magazineUserControls[i].stock = item.stock;
+                magazineUserControls[i].cover_page_picture = item.cover_page_picture;
                 flpHomePage.Controls.Add(magazineUserControls[i]);
                 i++;
             }
@@ -759,6 +761,33 @@ namespace OnlineBookStore
             pbMagazine.Image = Image.FromFile(filepath);
             txtMagazineImage.Text = ofdMagazine.SafeFileName;
 
+        }
+
+        private void pbHomePage_Click(object sender, EventArgs e)
+        {
+            tabControlGeneral.SelectedTab = tabHomePage;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            tabControlGeneral.SelectedTab = tabShoppingCart;
+        }
+
+        private void pbAdminPanel_Click(object sender, EventArgs e)
+        {
+            tabControlGeneral.SelectedTab = tabAdminPanel;
+        }
+
+        private void pbExit_Click(object sender, EventArgs e)
+        {
+            const string message = "Really want to exit?";
+            const string caption = "EXIT";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+           
         }
     }
 }

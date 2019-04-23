@@ -17,6 +17,7 @@ namespace OnlineBookStore
         public string musicCDSinger { get; set; }
         public double musicCDPrice { get; set; }
         public int stock { get; set; }
+        public string picture { get; set; }
 
         public MusicCDUserControl()
         {
@@ -29,6 +30,7 @@ namespace OnlineBookStore
             lblMusicCDPrice.Text = musicCDPrice.ToString();
             lblMusicCDSinger.Text = musicCDSinger;
             lblStock.Text = stock.ToString();
+            pbMusicCDs.ImageLocation = @"Resources\AllPictures\" + picture;
         }
 
         private void nudQuantity_ValueChanged(object sender, EventArgs e)

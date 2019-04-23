@@ -33,18 +33,18 @@
             this.lblMusicCDSinger = new System.Windows.Forms.Label();
             this.lblMusicCDName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
-            this.lblStock = new System.Windows.Forms.Label();
             this.lbl_musicCDs_stock = new System.Windows.Forms.Label();
             this.lbl_musicCDs_price = new System.Windows.Forms.Label();
             this.lbl_musicCDs_singer = new System.Windows.Forms.Label();
             this.lbl_musicCDs_name = new System.Windows.Forms.Label();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
+            this.lblStock = new System.Windows.Forms.Label();
+            this.pbMusicCDs = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMusicCDs)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMusicCDsAddToCart
@@ -91,23 +91,14 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(104, 28);
+            this.panel2.Controls.Add(this.pbMusicCDs);
+            this.panel2.Location = new System.Drawing.Point(78, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(175, 160);
+            this.panel2.Size = new System.Drawing.Size(201, 186);
             this.panel2.TabIndex = 11;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(9, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(156, 130);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // panel3
             // 
@@ -127,25 +118,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(311, 294);
             this.panel3.TabIndex = 12;
-            // 
-            // nudQuantity
-            // 
-            this.nudQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.nudQuantity.Location = new System.Drawing.Point(169, 211);
-            this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.Size = new System.Drawing.Size(47, 45);
-            this.nudQuantity.TabIndex = 12;
-            this.nudQuantity.ValueChanged += new System.EventHandler(this.nudQuantity_ValueChanged);
-            // 
-            // lblStock
-            // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(135, 167);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(77, 29);
-            this.lblStock.TabIndex = 11;
-            this.lblStock.Text = "Stock";
             // 
             // lbl_musicCDs_stock
             // 
@@ -183,6 +155,35 @@
             this.lbl_musicCDs_name.TabIndex = 16;
             this.lbl_musicCDs_name.Text = "MusicCDs NAME:";
             // 
+            // nudQuantity
+            // 
+            this.nudQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.nudQuantity.Location = new System.Drawing.Point(169, 211);
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(47, 45);
+            this.nudQuantity.TabIndex = 12;
+            this.nudQuantity.ValueChanged += new System.EventHandler(this.nudQuantity_ValueChanged);
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(135, 167);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(77, 29);
+            this.lblStock.TabIndex = 11;
+            this.lblStock.Text = "Stock";
+            // 
+            // pbMusicCDs
+            // 
+            this.pbMusicCDs.Location = new System.Drawing.Point(12, 7);
+            this.pbMusicCDs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMusicCDs.Name = "pbMusicCDs";
+            this.pbMusicCDs.Size = new System.Drawing.Size(175, 168);
+            this.pbMusicCDs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMusicCDs.TabIndex = 0;
+            this.pbMusicCDs.TabStop = false;
+            // 
             // MusicCDUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -194,10 +195,10 @@
             this.Size = new System.Drawing.Size(368, 418);
             this.Load += new System.EventHandler(this.MusicCDUserControl_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMusicCDs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,7 +210,7 @@
         private System.Windows.Forms.Label lblMusicCDSinger;
         private System.Windows.Forms.Label lblMusicCDName;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbMusicCDs;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.NumericUpDown nudQuantity;

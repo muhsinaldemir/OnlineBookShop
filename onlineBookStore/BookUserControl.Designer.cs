@@ -79,21 +79,22 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pbBook);
-            this.panel1.Location = new System.Drawing.Point(85, 16);
+            this.panel1.Location = new System.Drawing.Point(90, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(175, 160);
+            this.panel1.Size = new System.Drawing.Size(190, 185);
             this.panel1.TabIndex = 4;
             // 
             // pbBook
             // 
-            this.pbBook.Location = new System.Drawing.Point(9, 15);
+            this.pbBook.Location = new System.Drawing.Point(8, 13);
             this.pbBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbBook.Name = "pbBook";
-            this.pbBook.Size = new System.Drawing.Size(156, 130);
+            this.pbBook.Size = new System.Drawing.Size(171, 155);
+            this.pbBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBook.TabIndex = 0;
             this.pbBook.TabStop = false;
             // 
@@ -122,7 +123,7 @@
             this.panel2.Controls.Add(this.lblBookName);
             this.panel2.Controls.Add(this.lblBookAuthor);
             this.panel2.Controls.Add(this.lblPrice);
-            this.panel2.Location = new System.Drawing.Point(20, 106);
+            this.panel2.Location = new System.Drawing.Point(31, 131);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(303, 263);
@@ -191,7 +192,7 @@
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BookUserControl";
-            this.Size = new System.Drawing.Size(352, 389);
+            this.Size = new System.Drawing.Size(366, 411);
             this.Load += new System.EventHandler(this.BookUserControl_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbBook)).EndInit();

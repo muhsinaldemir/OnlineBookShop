@@ -22,12 +22,15 @@ namespace OnlineBookStore
         public string magazineIssue { get; set; }
         public double magazinePrice { get; set; }
         public int stock { get; set; }
+        public string cover_page_picture { get; set; }
         private void MagazineUserControl_Load(object sender, EventArgs e)
         {
             lblMagazineName.Text = magazineName;
             lblMagazineIssue.Text = magazineIssue;
             lblMagazinePrice.Text = magazinePrice.ToString();
             lblStock.Text = stock.ToString();
+            pbMagazine.ImageLocation = @"Resources\AllPictures\" + cover_page_picture;
+
         }
 
         private void btnMagazineAddToCart_Click(object sender, EventArgs e)

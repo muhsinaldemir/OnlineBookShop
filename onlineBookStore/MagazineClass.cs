@@ -21,6 +21,7 @@ namespace OnlineBookStore
     {
         public string issue { get; set; }
         public magazine_type magazineType { get; set; }
+        public string cover_page_picture { get; set; }
 
         public override void printProperties()
         {
@@ -29,10 +30,11 @@ namespace OnlineBookStore
         public MagazineClass()
             {}
 
-        public MagazineClass(string Name,string Id,double Price,int Stock,string Issue,magazine_type MagazineType):base(Name,Id,Price, Stock)
+        public MagazineClass(string Name,string Id,double Price,int Stock,string Issue,magazine_type MagazineType,string Cover_page_picture):base(Name,Id,Price, Stock)
         {
             issue = Issue;
             magazineType = MagazineType;
+            cover_page_picture = Cover_page_picture;
         }
         public static List<MagazineClass> getAllMagazineFromDB()
         {
@@ -54,8 +56,9 @@ namespace OnlineBookStore
                     magazine.price = Convert.ToDouble(readMagazine["price"]);
                     magazine.stock = Convert.ToInt32(readMagazine["stock"]);
                     magazine.issue = readMagazine["issue"].ToString();
-                  //  magazine.magazineType = readMagazine["type"].ToString();
-                    
+                    magazine.cover_page_picture= readMagazine["cover_page_picture"].ToString();
+                    //  magazine.magazineType = readMagazine["type"].ToString();
+
                     // Console.WriteLine("While ici" + book.name);
                     magazineList.Add(magazine);
 
@@ -86,6 +89,7 @@ namespace OnlineBookStore
                     magazine.price = Convert.ToDouble(readMagazine["price"]);
                     magazine.stock = Convert.ToInt32(readMagazine["stock"]);
                     magazine.issue = readMagazine["issue"].ToString();
+                    magazine.cover_page_picture= readMagazine["cover_page_picture"].ToString();
                     //  magazine.magazineType = readMagazine["type"].ToString();
 
                     // Console.WriteLine("While ici" + book.name);

@@ -40,22 +40,22 @@
             this.lblMagazineName = new System.Windows.Forms.Label();
             this.lblMagazineIssue = new System.Windows.Forms.Label();
             this.lblMagazinePrice = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbMagazine = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMagazine)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(97, 14);
+            this.panel1.Controls.Add(this.pbMagazine);
+            this.panel1.Location = new System.Drawing.Point(97, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(175, 160);
+            this.panel1.Size = new System.Drawing.Size(190, 173);
             this.panel1.TabIndex = 7;
             // 
             // panel2
@@ -173,15 +173,16 @@
             this.lblMagazinePrice.TabIndex = 3;
             this.lblMagazinePrice.Text = "Price";
             // 
-            // pictureBox1
+            // pbMagazine
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(9, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 130);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pbMagazine.Location = new System.Drawing.Point(6, 9);
+            this.pbMagazine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMagazine.Name = "pbMagazine";
+            this.pbMagazine.Size = new System.Drawing.Size(176, 151);
+            this.pbMagazine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMagazine.TabIndex = 0;
+            this.pbMagazine.TabStop = false;
+            this.pbMagazine.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MagazineUserControl
             // 
@@ -197,7 +198,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMagazine)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,7 +206,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbMagazine;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnMagazineAddToCart;
         private System.Windows.Forms.Label lblMagazineName;

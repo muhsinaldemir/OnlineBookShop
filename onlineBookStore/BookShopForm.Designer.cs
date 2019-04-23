@@ -124,7 +124,7 @@
             this.lblShoppingCartValue = new System.Windows.Forms.Label();
             this.lblShoppingCartTitle = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbExit = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbAdminPanel = new System.Windows.Forms.PictureBox();
             this.pbHomePage = new System.Windows.Forms.PictureBox();
@@ -156,7 +156,7 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomePage)).BeginInit();
@@ -170,7 +170,7 @@
             this.pnlMenu.BackColor = System.Drawing.Color.White;
             this.pnlMenu.Controls.Add(this.pictureBox3);
             this.pnlMenu.Controls.Add(this.panel1);
-            this.pnlMenu.Controls.Add(this.pictureBox1);
+            this.pnlMenu.Controls.Add(this.pbExit);
             this.pnlMenu.Controls.Add(this.pictureBox2);
             this.pnlMenu.Controls.Add(this.pbAdminPanel);
             this.pnlMenu.Controls.Add(this.pbHomePage);
@@ -1120,15 +1120,16 @@
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox1
+            // pbExit
             // 
-            this.pictureBox1.Image = global::OnlineBookStore.Properties.Resources.exitblack;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 722);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 136);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.pbExit.Image = global::OnlineBookStore.Properties.Resources.exitblack;
+            this.pbExit.Location = new System.Drawing.Point(0, 722);
+            this.pbExit.Name = "pbExit";
+            this.pbExit.Size = new System.Drawing.Size(146, 136);
+            this.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbExit.TabIndex = 9;
+            this.pbExit.TabStop = false;
+            this.pbExit.Click += new System.EventHandler(this.pbExit_Click);
             // 
             // pictureBox2
             // 
@@ -1139,6 +1140,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pbAdminPanel
             // 
@@ -1149,6 +1151,7 @@
             this.pbAdminPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAdminPanel.TabIndex = 8;
             this.pbAdminPanel.TabStop = false;
+            this.pbAdminPanel.Click += new System.EventHandler(this.pbAdminPanel_Click);
             // 
             // pbHomePage
             // 
@@ -1159,6 +1162,7 @@
             this.pbHomePage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbHomePage.TabIndex = 7;
             this.pbHomePage.TabStop = false;
+            this.pbHomePage.Click += new System.EventHandler(this.pbHomePage_Click);
             // 
             // btnImageBook
             // 
@@ -1292,7 +1296,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomePage)).EndInit();
@@ -1402,7 +1406,7 @@
         private System.Windows.Forms.Button btnPlaceOrder;
         private System.Windows.Forms.PictureBox pbAdminPanel;
         private System.Windows.Forms.PictureBox pbHomePage;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbExit;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pbBook;
