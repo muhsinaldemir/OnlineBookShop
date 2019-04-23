@@ -28,7 +28,7 @@ namespace OnlineBookStore
 
         private void makePayment(PaymentType paymentType)
         {
-            ShoppingCartClass.placeOrder(user.customerID, ShoppingCartClass.calculateActualTotalPrice(), paymentType);
+            ShoppingCartClass.placeOrder(user.customerID, paymentType);
         }
 
         private void btnPay_Click(object sender, EventArgs e)

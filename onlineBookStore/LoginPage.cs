@@ -86,11 +86,16 @@ namespace OnlineBookStore
 
         private void btnPasswordVisible_Click(object sender, EventArgs e)
         {
-           if( txtPassword.PasswordChar=='*')
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
             {
                 txtPassword.PasswordChar = '\0';
             }
-           else if(txtPassword.PasswordChar=='\0')
+            else if (txtPassword.PasswordChar == '\0')
             {
                 txtPassword.PasswordChar = '*';
             }

@@ -28,17 +28,6 @@ namespace OnlineBookStore
         {
             totalPriceValue = value;
         }
-        //public double totalPriceValue {
-        //    get
-        //    {
-        //        return totalPriceValue;
-        //    }
-        //    set
-        //    {
-        //        totalPriceValue = 0;
-        //    }
-        //}
-
 
         public ShoppingCartItemsUserControl()
         {
@@ -70,6 +59,10 @@ namespace OnlineBookStore
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
             var element = ShoppingCartClass.itemsToPurchase.Find(el => (el.product.id == id && el.product.GetType() == type));
             ShoppingCartClass.removeProduct(element);
             System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
@@ -80,6 +73,7 @@ namespace OnlineBookStore
             }
             ((BookShopForm)f).lblShoppinCartValue.Text = quantity.ToString();
             //Console.WriteLine("Type in remove " + type);
+
         }
     }
 }

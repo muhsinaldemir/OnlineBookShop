@@ -40,5 +40,32 @@ namespace OnlineBookStore
             return connection;
         }
 
+        public void shoppingCartPlaceOrder(string customerID, PaymentType paymentType)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = new SqlCommand("INSERT INTO ShoppingCartTable (customerid,itemid,itemtype,quantity,paymentamount,paymenttype) values(@customerid,@itemid,@itemtype,@quantity,@paymentamount,@paymenttype)", connection);
+
+            foreach (var item in ShoppingCartClass.itemsToPurchase)
+            {
+                command.Parameters.Clear();
+                string t = "";
+                if (item.product is OnlineBookStore.BookClass)
+                    t = "Book";
+                else if (item.product is OnlineBookStore.MagazineClass)
+                    t = "Magazine";
+                else if (item.product is OnlineBookStore.MusicCDsClass)
+                    t = "MusicCDs";
+                Console.WriteLine("Type i budur: " + t);
+                command.Parameters.AddWithValue("@customerid", customerID);
+                command.Parameters.AddWithValue("@itemid", item.product.id);
+                command.Parameters.AddWithValue("@itemtype", t);
+                command.Parameters.AddWithValue("@quantity", item.quantity);
+                command.Parameters.AddWithValue("@paymentamount", item.product.price);
+                command.Parameters.AddWithValue("@paymenttype", paymentType);
+                command.ExecuteNonQuery();
+            }
+
+        }
     }
 }

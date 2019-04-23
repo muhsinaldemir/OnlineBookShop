@@ -182,5 +182,8 @@
   <ItemGroup>
     <None Include="bin\Debug\Resources\shopcart2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\removeblack.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
