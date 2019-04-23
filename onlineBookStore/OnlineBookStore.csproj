@@ -82,6 +82,12 @@
     <Compile Include="MusicCDUserControl.Designer.cs">
       <DependentUpon>MusicCDUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyAccountUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyAccountUserControl.Designer.cs">
+      <DependentUpon>MyAccountUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MusicCDUserControl.resx">
       <DependentUpon>MusicCDUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyAccountUserControl.resx">
+      <DependentUpon>MyAccountUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
@@ -184,6 +193,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Resources\removeblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\myAccount.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

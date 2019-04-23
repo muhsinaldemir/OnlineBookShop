@@ -44,7 +44,7 @@ namespace OnlineBookStore
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("INSERT INTO ShoppingCartTable (customerid,itemid,itemtype,quantity,paymentamount,paymenttype) values(@customerid,@itemid,@itemtype,@quantity,@paymentamount,@paymenttype)", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO ShoppingCartTable (customerid,itemid,name,itemtype,quantity,paymentamount,paymenttype,picture) values(@customerid,@itemid,@name,@itemtype,@quantity,@paymentamount,@paymenttype,@picture)", connection);
 
             foreach (var item in ShoppingCartClass.itemsToPurchase)
             {
@@ -59,12 +59,50 @@ namespace OnlineBookStore
                 Console.WriteLine("Type i budur: " + t);
                 command.Parameters.AddWithValue("@customerid", customerID);
                 command.Parameters.AddWithValue("@itemid", item.product.id);
+                command.Parameters.AddWithValue("@name", item.product.name);
                 command.Parameters.AddWithValue("@itemtype", t);
                 command.Parameters.AddWithValue("@quantity", item.quantity);
                 command.Parameters.AddWithValue("@paymentamount", item.product.price);
                 command.Parameters.AddWithValue("@paymenttype", paymentType);
+                command.Parameters.AddWithValue("@picture", item.product.cover_page_picture);
                 command.ExecuteNonQuery();
             }
+        }
+
+        public void shoppingCartCancelOrder(string name)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = new SqlCommand("DELETE FROM ShoppingCartTable WHERE name=@name)", connection);
+            command.Parameters.AddWithValue("@name", name);
+        }
+
+        public List<ItemToPurchaseClass> getAllUserPurchases(int userID)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = new SqlCommand("SELECT * FROM ShoppingCartTable WHERE customerid=@id", connection);
+            command.Parameters.AddWithValue("@id", userID);
+
+            List<ItemToPurchaseClass> list = new List<ItemToPurchaseClass>();
+            SqlDataReader readShoppingCart = command.ExecuteReader();
+            if (readShoppingCart != null)
+            {
+                while (readShoppingCart.Read())
+                {
+                    ItemToPurchaseClass item = new ItemToPurchaseClass();
+                    ProductClass book = new BookClass();
+                    item.product = book;
+                    item.product.id = readShoppingCart["itemid"].ToString();
+                    item.quantity = Convert.ToInt32(readShoppingCart["quantity"]);
+                    item.product.price = Convert.ToDouble(readShoppingCart["paymentamount"]);
+                    item.product.name = readShoppingCart["name"].ToString();
+                    item.product.cover_page_picture = readShoppingCart["picture"].ToString();
+                    list.Add(item);
+                }
+            }
+
+            return list;
 
         }
     }

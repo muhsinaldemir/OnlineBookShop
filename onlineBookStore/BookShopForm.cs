@@ -804,8 +804,33 @@ namespace OnlineBookStore
 
         }
 
+        private void populateMyAccount()
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON
+            List<ItemToPurchaseClass> list =  dbHelper.getAllUserPurchases(Convert.ToInt32(user.customerID));
+            MyAccountUserControl[] myAccountUserControls = new MyAccountUserControl[list.Count];
+
+            if (flpMyAccount.Controls.Count > 0)
+                flpMyAccount.Controls.Clear();
+
+            int i = 0;
+            foreach (ItemToPurchaseClass item in list)
+            {
+                myAccountUserControls[i] = new MyAccountUserControl();
+                myAccountUserControls[i].id = item.product.id;
+                myAccountUserControls[i].name = item.product.name;
+                myAccountUserControls[i].quantity = item.quantity;
+                myAccountUserControls[i].unitPriceValue = item.product.price;
+                myAccountUserControls[i].picture = item.product.cover_page_picture;
+                flpMyAccount.Controls.Add(myAccountUserControls[i]);
+                i++;
+            }
+
+
+        }
         private void pbMyAccount_Click(object sender, EventArgs e)
         {
+            populateMyAccount();
             tabControlGeneral.SelectedTab = tabMyAccount;
         }
     }

@@ -146,6 +146,7 @@
             this.pbAdminPanel = new System.Windows.Forms.PictureBox();
             this.pbHomePage = new System.Windows.Forms.PictureBox();
             this.tabMyAccount = new System.Windows.Forms.TabPage();
+            this.flpMyAccount = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
@@ -174,6 +175,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomePage)).BeginInit();
+            this.tabMyAccount.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -1412,12 +1414,20 @@
             // 
             // tabMyAccount
             // 
+            this.tabMyAccount.Controls.Add(this.flpMyAccount);
             this.tabMyAccount.Location = new System.Drawing.Point(4, 29);
             this.tabMyAccount.Name = "tabMyAccount";
             this.tabMyAccount.Size = new System.Drawing.Size(1159, 1111);
             this.tabMyAccount.TabIndex = 4;
             this.tabMyAccount.Text = "My Account";
             this.tabMyAccount.UseVisualStyleBackColor = true;
+            // 
+            // flpMyAccount
+            // 
+            this.flpMyAccount.Location = new System.Drawing.Point(3, 3);
+            this.flpMyAccount.Name = "flpMyAccount";
+            this.flpMyAccount.Size = new System.Drawing.Size(1148, 1096);
+            this.flpMyAccount.TabIndex = 0;
             // 
             // BookShopForm
             // 
@@ -1466,6 +1476,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomePage)).EndInit();
+            this.tabMyAccount.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1590,5 +1601,6 @@
         public System.Windows.Forms.Label lblShoppinCartValue;
         private System.Windows.Forms.PictureBox pbMyAccount;
         private System.Windows.Forms.TabPage tabMyAccount;
+        private System.Windows.Forms.FlowLayoutPanel flpMyAccount;
     }
 }
