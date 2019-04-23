@@ -37,5 +37,10 @@ namespace OnlineBookStore
             ShoppingCartClass.addProduct(new ItemToPurchaseClass(magazine, Convert.ToInt32(Math.Round(nudQuantity.Value, 0))));
             MessageBox.Show("Added to cart.", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

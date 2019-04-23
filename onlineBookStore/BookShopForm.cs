@@ -75,10 +75,11 @@ namespace OnlineBookStore
         {
             ////connection.Open();
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("INSERT INTO BookTable (name,price,isbn,author,publisher,page,cover_page_picture) values(@name,@price,@isbn,@author,@publisher,@page,@cover_page_picture)", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO BookTable (name,price,stock,isbn,author,publisher,page,cover_page_picture) values(@name,@price,@stock,@isbn,@author,@publisher,@page,@cover_page_picture)", connection);
 
             command.Parameters.AddWithValue("@name", txtBookName.Text);
             command.Parameters.AddWithValue("@price", txtBookPrice.Text);
+            command.Parameters.AddWithValue("@stock", txtBookStock.Text);
             command.Parameters.AddWithValue("@isbn", txtBookIsbn.Text);
             command.Parameters.AddWithValue("@author", txtBookAuthor.Text);
             command.Parameters.AddWithValue("@publisher", txtBookPublisher.Text);
@@ -96,6 +97,7 @@ namespace OnlineBookStore
                 txtBookAuthor.Clear();
                 txtBookIsbn.Clear();
                 txtBookName.Clear();
+                txtBookStock.Clear();
                 txtBookPage.Clear();
                 txtBookPrice.Clear();
                 txtBookPublisher.Clear();
@@ -108,9 +110,10 @@ namespace OnlineBookStore
         {
             ////connection.Open();
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("INSERT INTO MusicCDsTable (name,price,singer,type,picture) values(@name,@price,@singer,@type,@picture)", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO MusicCDsTable (name,price,stock,singer,type,picture) values(@name,@price,@stock,@singer,@type,@picture)", connection);
             command.Parameters.AddWithValue("@name", txtMusicName.Text);
             command.Parameters.AddWithValue("@price", txtMusicPrice.Text);
+            command.Parameters.AddWithValue("@stock", txtMusicCDsStock.Text);
             command.Parameters.AddWithValue("@singer", txtMusicSinger.Text);
             command.Parameters.AddWithValue("@type", txtMusicType.Text);
             command.Parameters.AddWithValue("@picture", txtMusicCDsImage.Text);
@@ -126,6 +129,7 @@ namespace OnlineBookStore
                 txtMusicName.Clear();
                 txtMusicPrice.Clear();
                 txtMusicSinger.Clear();
+                txtMusicCDsStock.Clear();
                 txtMusicType.Clear();
                 txtMusicCDsImage.Clear();
             }
@@ -137,9 +141,10 @@ namespace OnlineBookStore
         {
             ////connection.Open();
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("INSERT INTO MagazineTable (name,price,issue,type,cover_page_picture) values(@name,@price,@issue,@type,@cover_page_picture)", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO MagazineTable (name,price,stock,issue,type,cover_page_picture) values(@name,@price,@stock,@issue,@type,@cover_page_picture)", connection);
             command.Parameters.AddWithValue("@name", txtMagazineName.Text);
             command.Parameters.AddWithValue("@price", txtMagazinePrice.Text);
+            command.Parameters.AddWithValue("@stock", txtMagazineStock.Text);
             command.Parameters.AddWithValue("@issue", txtMagazineIssue.Text);
             command.Parameters.AddWithValue("@type", txtMagazineType.Text);
             command.Parameters.AddWithValue("@cover_page_picture", txtMagazineImage.Text);
@@ -155,6 +160,7 @@ namespace OnlineBookStore
                 txtMagazineIssue.Clear();
                 txtMagazineName.Clear();
                 txtMagazinePrice.Clear();
+                txtMagazineStock.Clear();
                 txtMagazineType.Clear();
                 txtMagazineImage.Clear();
             }
@@ -368,20 +374,24 @@ namespace OnlineBookStore
             string id = dgvBooks.Rows[selectedValue].Cells[0].Value.ToString();
             string name = dgvBooks.Rows[selectedValue].Cells[1].Value.ToString();
             string price = dgvBooks.Rows[selectedValue].Cells[2].Value.ToString();
-            string isbn = dgvBooks.Rows[selectedValue].Cells[3].Value.ToString();
-            string author = dgvBooks.Rows[selectedValue].Cells[4].Value.ToString();
-            string publisher = dgvBooks.Rows[selectedValue].Cells[5].Value.ToString();
-            string page = dgvBooks.Rows[selectedValue].Cells[6].Value.ToString();
-            string cover_page_picture = dgvBooks.Rows[selectedValue].Cells[6].Value.ToString();
+            string stock= dgvBooks.Rows[selectedValue].Cells[3].Value.ToString();
+            string isbn = dgvBooks.Rows[selectedValue].Cells[4].Value.ToString();
+            string author = dgvBooks.Rows[selectedValue].Cells[5].Value.ToString();
+            string publisher = dgvBooks.Rows[selectedValue].Cells[6].Value.ToString();
+            string page = dgvBooks.Rows[selectedValue].Cells[7].Value.ToString();
+            string cover_page_picture = dgvBooks.Rows[selectedValue].Cells[8].Value.ToString();
 
             txtBookId.Text = id;
             txtBookName.Text = name;
             txtBookPrice.Text = price;
+            txtBookStock.Text = stock;
             txtBookIsbn.Text = isbn;
             txtBookAuthor.Text = author;
             txtBookPublisher.Text = publisher;
             txtBookPage.Text = page;
             txtBookImage.Text = cover_page_picture;
+            pbBook.ImageLocation = @"Resources\AllPictures\" + cover_page_picture;
+            Console.WriteLine("dneme:" + pbBook.ImageLocation);
 
         }
 
@@ -391,15 +401,19 @@ namespace OnlineBookStore
             string id = dgvMusicCDs.Rows[selectedValue].Cells[0].Value.ToString();
             string name = dgvMusicCDs.Rows[selectedValue].Cells[1].Value.ToString();
             string price = dgvMusicCDs.Rows[selectedValue].Cells[2].Value.ToString();
-            string singer = dgvMusicCDs.Rows[selectedValue].Cells[3].Value.ToString();
-            string type = dgvMusicCDs.Rows[selectedValue].Cells[4].Value.ToString();
-           
+            string stock= dgvMusicCDs.Rows[selectedValue].Cells[3].Value.ToString();
+            string singer = dgvMusicCDs.Rows[selectedValue].Cells[4].Value.ToString();
+            string type = dgvMusicCDs.Rows[selectedValue].Cells[5].Value.ToString();
+           string picture = dgvMusicCDs.Rows[selectedValue].Cells[6].Value.ToString();
 
             txtMusicCDsId.Text = id;
             txtMusicName.Text = name;
             txtMusicPrice.Text = price;
+            txtMusicCDsStock.Text = stock;
             txtMusicSinger.Text = singer;
             txtMusicType.Text = type;
+            txtMusicCDsImage.Text = picture;
+            pbMusic.ImageLocation=@"Resources\AllPictures\" + picture;
            
         }
 
@@ -409,15 +423,20 @@ namespace OnlineBookStore
             string id = dgvMagazine.Rows[selectedValue].Cells[0].Value.ToString();
             string name = dgvMagazine.Rows[selectedValue].Cells[1].Value.ToString();
             string price = dgvMagazine.Rows[selectedValue].Cells[2].Value.ToString();
-            string issue = dgvMagazine.Rows[selectedValue].Cells[3].Value.ToString();
-            string type = dgvMagazine.Rows[selectedValue].Cells[4].Value.ToString();
+            string stock= dgvMagazine.Rows[selectedValue].Cells[3].Value.ToString();
+            string issue = dgvMagazine.Rows[selectedValue].Cells[4].Value.ToString();
+            string type = dgvMagazine.Rows[selectedValue].Cells[5].Value.ToString();
+            string cover_page_picture = dgvMagazine.Rows[selectedValue].Cells[6].Value.ToString();
 
 
             txtMagazineId.Text = id;
             txtMagazineName.Text = name;
             txtMagazinePrice.Text = price;
+            txtMagazineStock.Text = stock;
             txtMagazineIssue.Text = issue;
             txtMagazineType.Text = type;
+            txtMagazineImage.Text = cover_page_picture;
+            pbMagazine.ImageLocation = @"Resources\AllPictures\"+ cover_page_picture;
         }
 
         private void btnUpdateUser_Click(object sender, EventArgs e)
@@ -447,10 +466,11 @@ namespace OnlineBookStore
         {
             //connection.Open();
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("UPDATE BookTable SET name=@name,price=@price,isbn=@isbn,author=@author,publisher=@publisher,page=@page,cover_page_picture=@cover_page_picture", connection);
+            SqlCommand command = new SqlCommand("UPDATE BookTable SET name=@name,price=@price,stock=@stock,isbn=@isbn,author=@author,publisher=@publisher,page=@page,cover_page_picture=@cover_page_picture WHERE id=@id", connection);
             command.Parameters.AddWithValue("@id", txtBookId.Text.ToString());
             command.Parameters.AddWithValue("@name", txtBookName.Text);
             command.Parameters.AddWithValue("@price", txtBookPrice.Text);
+            command.Parameters.AddWithValue("@stock", txtBookStock.Text);
             command.Parameters.AddWithValue("@isbn", txtBookIsbn.Text);
             command.Parameters.AddWithValue("@author", txtBookAuthor.Text);
             command.Parameters.AddWithValue("@publisher", txtBookPublisher.Text);
@@ -470,6 +490,7 @@ namespace OnlineBookStore
                 txtBookName.Clear();
                 txtBookPage.Clear();
                 txtBookPrice.Clear();
+                txtBookStock.Clear();
                 txtBookPublisher.Clear();
                 txtBookImage.Clear();
             }
@@ -481,13 +502,14 @@ namespace OnlineBookStore
         {
             //connection.Open();
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("UPDATE MusicCDsTable SET name=@name,price=@price,singer=@singer,type=@type", connection);
+            SqlCommand command = new SqlCommand("UPDATE MusicCDsTable SET name=@name,price=@price,stock=@stock,singer=@singer,type=@type,picture=@picture WHERE id=@id", connection);
             command.Parameters.AddWithValue("@id", txtMusicCDsId.Text.ToString());
             command.Parameters.AddWithValue("@name", txtMusicName.Text);
             command.Parameters.AddWithValue("@price", txtMusicPrice.Text);
+            command.Parameters.AddWithValue("@stock", txtMusicCDsStock.Text);
             command.Parameters.AddWithValue("@singer", txtMusicSinger.Text);
             command.Parameters.AddWithValue("@type", txtMusicType.Text);
-
+            command.Parameters.AddWithValue("@picture", txtMusicCDsImage.Text);
             int affected = command.ExecuteNonQuery();
 
             if (affected == 0)
@@ -499,8 +521,10 @@ namespace OnlineBookStore
                 MessageBox.Show("Music CDs updated successfully");
                 txtMusicName.Clear();
                 txtMusicPrice.Clear();
+                txtMusicCDsStock.Clear();
                 txtMusicSinger.Clear();
                 txtMusicType.Clear();
+                txtMusicCDsImage.Clear();
             }
             //connection.Close();
 
@@ -510,12 +534,14 @@ namespace OnlineBookStore
         {
             //connection.Open();
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("UPDATE MagazineTable SET name=@name,price=@price,issue=@issue,type=@type", connection);
+            SqlCommand command = new SqlCommand("UPDATE MagazineTable SET name=@name,price=@price,stock=@stock,issue=@issue,type=@type,cover_page_picture=@cover_page_picture WHERE id=@id", connection);
             command.Parameters.AddWithValue("@id", txtMagazineId.Text.ToString());
             command.Parameters.AddWithValue("@name", txtMagazineName.Text);
             command.Parameters.AddWithValue("@price", txtMagazinePrice.Text);
+            command.Parameters.AddWithValue("@stock", txtMagazineStock.Text);
             command.Parameters.AddWithValue("@issue", txtMagazineIssue.Text);
             command.Parameters.AddWithValue("@type", txtMagazineType.Text);
+            command.Parameters.AddWithValue("@cover_page_picture", txtMagazineImage.Text);
 
             int affected = command.ExecuteNonQuery();
 
@@ -528,8 +554,10 @@ namespace OnlineBookStore
                 MessageBox.Show("Magazine updated successfully");
                 txtMagazineIssue.Clear();
                 txtMagazineName.Clear();
+                txtMagazineStock.Clear();
                 txtMagazinePrice.Clear();
                 txtMagazineType.Clear();
+                txtMagazineImage.Clear();
             }
             //connection.Close();
 
@@ -560,6 +588,7 @@ namespace OnlineBookStore
                 bookUserControls[i].bookAuthor = item.author;
                 bookUserControls[i].bookPrice = item.price;
                 bookUserControls[i].stock = item.stock;
+                bookUserControls[i].cover_page_picture = item.cover_page_picture;
                 flpHomePage.Controls.Add(bookUserControls[i]);
                 i++;
             }

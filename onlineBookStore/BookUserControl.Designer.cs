@@ -32,17 +32,17 @@
             this.lblBookAuthor = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbBook = new System.Windows.Forms.PictureBox();
             this.btnBookAddToCart = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblStock = new System.Windows.Forms.Label();
-            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
-            this.lbl_book_name = new System.Windows.Forms.Label();
-            this.lbl_author = new System.Windows.Forms.Label();
-            this.lbl_price = new System.Windows.Forms.Label();
             this.lbl_stock = new System.Windows.Forms.Label();
+            this.lbl_price = new System.Windows.Forms.Label();
+            this.lbl_author = new System.Windows.Forms.Label();
+            this.lbl_book_name = new System.Windows.Forms.Label();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
+            this.lblStock = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBook)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.SuspendLayout();
@@ -81,21 +81,21 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pbBook);
             this.panel1.Location = new System.Drawing.Point(85, 16);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(175, 160);
             this.panel1.TabIndex = 4;
             // 
-            // pictureBox1
+            // pbBook
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(9, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 130);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbBook.Location = new System.Drawing.Point(9, 15);
+            this.pbBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbBook.Name = "pbBook";
+            this.pbBook.Size = new System.Drawing.Size(156, 130);
+            this.pbBook.TabIndex = 0;
+            this.pbBook.TabStop = false;
             // 
             // btnBookAddToCart
             // 
@@ -128,42 +128,14 @@
             this.panel2.Size = new System.Drawing.Size(303, 263);
             this.panel2.TabIndex = 6;
             // 
-            // lblStock
+            // lbl_stock
             // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(101, 158);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(77, 29);
-            this.lblStock.TabIndex = 6;
-            this.lblStock.Text = "Stock";
-            // 
-            // nudQuantity
-            // 
-            this.nudQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.nudQuantity.Location = new System.Drawing.Point(159, 199);
-            this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.Size = new System.Drawing.Size(58, 45);
-            this.nudQuantity.TabIndex = 7;
-            this.nudQuantity.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // lbl_book_name
-            // 
-            this.lbl_book_name.AutoSize = true;
-            this.lbl_book_name.Location = new System.Drawing.Point(5, 77);
-            this.lbl_book_name.Name = "lbl_book_name";
-            this.lbl_book_name.Size = new System.Drawing.Size(95, 17);
-            this.lbl_book_name.TabIndex = 8;
-            this.lbl_book_name.Text = "BOOK NAME:";
-            // 
-            // lbl_author
-            // 
-            this.lbl_author.AutoSize = true;
-            this.lbl_author.Location = new System.Drawing.Point(31, 104);
-            this.lbl_author.Name = "lbl_author";
-            this.lbl_author.Size = new System.Drawing.Size(71, 17);
-            this.lbl_author.TabIndex = 9;
-            this.lbl_author.Text = "AUTHOR:";
+            this.lbl_stock.AutoSize = true;
+            this.lbl_stock.Location = new System.Drawing.Point(39, 164);
+            this.lbl_stock.Name = "lbl_stock";
+            this.lbl_stock.Size = new System.Drawing.Size(59, 17);
+            this.lbl_stock.TabIndex = 11;
+            this.lbl_stock.Text = "STOCK:";
             // 
             // lbl_price
             // 
@@ -174,14 +146,42 @@
             this.lbl_price.TabIndex = 10;
             this.lbl_price.Text = "PRİCE:";
             // 
-            // lbl_stock
+            // lbl_author
             // 
-            this.lbl_stock.AutoSize = true;
-            this.lbl_stock.Location = new System.Drawing.Point(39, 164);
-            this.lbl_stock.Name = "lbl_stock";
-            this.lbl_stock.Size = new System.Drawing.Size(59, 17);
-            this.lbl_stock.TabIndex = 11;
-            this.lbl_stock.Text = "STOCK:";
+            this.lbl_author.AutoSize = true;
+            this.lbl_author.Location = new System.Drawing.Point(31, 104);
+            this.lbl_author.Name = "lbl_author";
+            this.lbl_author.Size = new System.Drawing.Size(71, 17);
+            this.lbl_author.TabIndex = 9;
+            this.lbl_author.Text = "AUTHOR:";
+            // 
+            // lbl_book_name
+            // 
+            this.lbl_book_name.AutoSize = true;
+            this.lbl_book_name.Location = new System.Drawing.Point(5, 77);
+            this.lbl_book_name.Name = "lbl_book_name";
+            this.lbl_book_name.Size = new System.Drawing.Size(95, 17);
+            this.lbl_book_name.TabIndex = 8;
+            this.lbl_book_name.Text = "BOOK NAME:";
+            // 
+            // nudQuantity
+            // 
+            this.nudQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.nudQuantity.Location = new System.Drawing.Point(159, 199);
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(58, 45);
+            this.nudQuantity.TabIndex = 7;
+            this.nudQuantity.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(101, 158);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(77, 29);
+            this.lblStock.TabIndex = 6;
+            this.lblStock.Text = "Stock";
             // 
             // BookUserControl
             // 
@@ -194,7 +194,7 @@
             this.Size = new System.Drawing.Size(352, 389);
             this.Load += new System.EventHandler(this.BookUserControl_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBook)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
@@ -204,7 +204,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbBook;
         private System.Windows.Forms.Label lblBookName;
         private System.Windows.Forms.Label lblBookAuthor;
         private System.Windows.Forms.Label lblPrice;

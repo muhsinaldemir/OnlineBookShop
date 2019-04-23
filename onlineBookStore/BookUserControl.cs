@@ -22,6 +22,7 @@ namespace OnlineBookStore
         public string bookAuthor { get; set; }
         public double bookPrice { get; set; }
         public int stock { get; set; }
+        public string cover_page_picture { get; set; }
         private void BookUserControl_Load(object sender, EventArgs e)
         {
 
@@ -29,6 +30,7 @@ namespace OnlineBookStore
             lblBookAuthor.Text = bookAuthor;
             lblPrice.Text = bookPrice.ToString();
             lblStock.Text = stock.ToString();
+            pbBook.ImageLocation = @"Resources\AllPictures\" + cover_page_picture;
         }
         
         private void btnBookAddToCart_Click(object sender, EventArgs e)
