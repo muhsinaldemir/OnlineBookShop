@@ -59,7 +59,6 @@
             this.txtBookId = new System.Windows.Forms.TextBox();
             this.lblBookId = new System.Windows.Forms.Label();
             this.btnDeleteBooks = new System.Windows.Forms.Button();
-            this.txtCoverPagePicture = new System.Windows.Forms.TextBox();
             this.lblCoverPagePicture = new System.Windows.Forms.Label();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.btnAddBook = new System.Windows.Forms.Button();
@@ -138,6 +137,8 @@
             this.btnAddImageMagazine = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBookImage = new System.Windows.Forms.TextBox();
+            this.txtMusicCDsImage = new System.Windows.Forms.TextBox();
+            this.txtMagazineImage = new System.Windows.Forms.TextBox();
             this.pnlMenu.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
             this.tabAdminPanel.SuspendLayout();
@@ -420,7 +421,6 @@
             this.tabBooks.Controls.Add(this.txtBookId);
             this.tabBooks.Controls.Add(this.lblBookId);
             this.tabBooks.Controls.Add(this.btnDeleteBooks);
-            this.tabBooks.Controls.Add(this.txtCoverPagePicture);
             this.tabBooks.Controls.Add(this.lblCoverPagePicture);
             this.tabBooks.Controls.Add(this.dgvBooks);
             this.tabBooks.Controls.Add(this.btnAddBook);
@@ -497,13 +497,6 @@
             this.btnDeleteBooks.Text = "Delete Books";
             this.btnDeleteBooks.UseVisualStyleBackColor = true;
             this.btnDeleteBooks.Click += new System.EventHandler(this.btnDeleteBooks_Click);
-            // 
-            // txtCoverPagePicture
-            // 
-            this.txtCoverPagePicture.Location = new System.Drawing.Point(424, 261);
-            this.txtCoverPagePicture.Name = "txtCoverPagePicture";
-            this.txtCoverPagePicture.Size = new System.Drawing.Size(144, 22);
-            this.txtCoverPagePicture.TabIndex = 29;
             // 
             // lblCoverPagePicture
             // 
@@ -632,6 +625,7 @@
             // 
             // tabMusics
             // 
+            this.tabMusics.Controls.Add(this.txtMusicCDsImage);
             this.tabMusics.Controls.Add(this.pbMusic);
             this.tabMusics.Controls.Add(this.btnAddMusic);
             this.tabMusics.Controls.Add(this.label1);
@@ -798,6 +792,7 @@
             // 
             // tabMagazine
             // 
+            this.tabMagazine.Controls.Add(this.txtMagazineImage);
             this.tabMagazine.Controls.Add(this.pbMagazine);
             this.tabMagazine.Controls.Add(this.btnAddImageMagazine);
             this.tabMagazine.Controls.Add(this.label2);
@@ -1186,7 +1181,7 @@
             // 
             // pbMusic
             // 
-            this.pbMusic.Location = new System.Drawing.Point(636, 55);
+            this.pbMusic.Location = new System.Drawing.Point(636, 47);
             this.pbMusic.Name = "pbMusic";
             this.pbMusic.Size = new System.Drawing.Size(123, 96);
             this.pbMusic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1195,17 +1190,18 @@
             // 
             // btnAddMusic
             // 
-            this.btnAddMusic.Location = new System.Drawing.Point(636, 163);
+            this.btnAddMusic.Location = new System.Drawing.Point(635, 170);
             this.btnAddMusic.Name = "btnAddMusic";
             this.btnAddMusic.Size = new System.Drawing.Size(124, 33);
             this.btnAddMusic.TabIndex = 51;
             this.btnAddMusic.Text = "Add MusicCDS";
             this.btnAddMusic.UseVisualStyleBackColor = true;
+            this.btnAddMusic.Click += new System.EventHandler(this.btnAddMusic_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(672, 35);
+            this.label1.Location = new System.Drawing.Point(672, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 50;
@@ -1222,12 +1218,13 @@
             // 
             // btnAddImageMagazine
             // 
-            this.btnAddImageMagazine.Location = new System.Drawing.Point(615, 150);
+            this.btnAddImageMagazine.Location = new System.Drawing.Point(615, 158);
             this.btnAddImageMagazine.Name = "btnAddImageMagazine";
             this.btnAddImageMagazine.Size = new System.Drawing.Size(124, 33);
             this.btnAddImageMagazine.TabIndex = 61;
-            this.btnAddImageMagazine.Text = "Add Mgazine";
+            this.btnAddImageMagazine.Text = "Add Magazine";
             this.btnAddImageMagazine.UseVisualStyleBackColor = true;
+            this.btnAddImageMagazine.Click += new System.EventHandler(this.btnAddImageMagazine_Click);
             // 
             // label2
             // 
@@ -1245,6 +1242,22 @@
             this.txtBookImage.Size = new System.Drawing.Size(123, 22);
             this.txtBookImage.TabIndex = 38;
             this.txtBookImage.Visible = false;
+            // 
+            // txtMusicCDsImage
+            // 
+            this.txtMusicCDsImage.Location = new System.Drawing.Point(636, 149);
+            this.txtMusicCDsImage.Name = "txtMusicCDsImage";
+            this.txtMusicCDsImage.Size = new System.Drawing.Size(123, 22);
+            this.txtMusicCDsImage.TabIndex = 53;
+            this.txtMusicCDsImage.Visible = false;
+            // 
+            // txtMagazineImage
+            // 
+            this.txtMagazineImage.Location = new System.Drawing.Point(615, 142);
+            this.txtMagazineImage.Name = "txtMagazineImage";
+            this.txtMagazineImage.Size = new System.Drawing.Size(123, 22);
+            this.txtMagazineImage.TabIndex = 63;
+            this.txtMagazineImage.Visible = false;
             // 
             // BookShopForm
             // 
@@ -1317,7 +1330,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.DataGridView dgvUsers;
-        private System.Windows.Forms.TextBox txtCoverPagePicture;
         private System.Windows.Forms.Label lblCoverPagePicture;
         private System.Windows.Forms.DataGridView dgvBooks;
         private System.Windows.Forms.Button btnAddBook;
@@ -1402,5 +1414,7 @@
         private System.Windows.Forms.Button btnAddImageMagazine;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBookImage;
+        private System.Windows.Forms.TextBox txtMusicCDsImage;
+        private System.Windows.Forms.TextBox txtMagazineImage;
     }
 }

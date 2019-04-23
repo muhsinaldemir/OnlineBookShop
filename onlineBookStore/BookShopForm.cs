@@ -99,7 +99,7 @@ namespace OnlineBookStore
                 txtBookPage.Clear();
                 txtBookPrice.Clear();
                 txtBookPublisher.Clear();
-                txtCoverPagePicture.Clear();
+                txtBookImage.Clear();
             }
             ////connection.Close();
         }
@@ -108,12 +108,12 @@ namespace OnlineBookStore
         {
             ////connection.Open();
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("INSERT INTO MusicCDsTable (name,price,singer,type) values(@name,@price,@singer,@type)", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO MusicCDsTable (name,price,singer,type,picture) values(@name,@price,@singer,@type,@picture)", connection);
             command.Parameters.AddWithValue("@name", txtMusicName.Text);
             command.Parameters.AddWithValue("@price", txtMusicPrice.Text);
             command.Parameters.AddWithValue("@singer", txtMusicSinger.Text);
             command.Parameters.AddWithValue("@type", txtMusicType.Text);
-          
+            command.Parameters.AddWithValue("@picture", txtMusicCDsImage.Text);
             int affected = command.ExecuteNonQuery();
 
             if (affected == 0)
@@ -127,6 +127,7 @@ namespace OnlineBookStore
                 txtMusicPrice.Clear();
                 txtMusicSinger.Clear();
                 txtMusicType.Clear();
+                txtMusicCDsImage.Clear();
             }
             ////connection.Close();
 
@@ -136,12 +137,12 @@ namespace OnlineBookStore
         {
             ////connection.Open();
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("INSERT INTO MagazineTable (name,price,issue,type) values(@name,@price,@issue,@type)", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO MagazineTable (name,price,issue,type,cover_page_picture) values(@name,@price,@issue,@type,@cover_page_picture)", connection);
             command.Parameters.AddWithValue("@name", txtMagazineName.Text);
             command.Parameters.AddWithValue("@price", txtMagazinePrice.Text);
             command.Parameters.AddWithValue("@issue", txtMagazineIssue.Text);
             command.Parameters.AddWithValue("@type", txtMagazineType.Text);
-
+            command.Parameters.AddWithValue("@cover_page_picture", txtMagazineImage.Text);
             int affected = command.ExecuteNonQuery();
 
             if (affected == 0)
@@ -155,6 +156,7 @@ namespace OnlineBookStore
                 txtMagazineName.Clear();
                 txtMagazinePrice.Clear();
                 txtMagazineType.Clear();
+                txtMagazineImage.Clear();
             }
             ////connection.Close();
         }
@@ -379,7 +381,7 @@ namespace OnlineBookStore
             txtBookAuthor.Text = author;
             txtBookPublisher.Text = publisher;
             txtBookPage.Text = page;
-            txtCoverPagePicture.Text = cover_page_picture;
+            txtBookImage.Text = cover_page_picture;
 
         }
 
@@ -453,7 +455,7 @@ namespace OnlineBookStore
             command.Parameters.AddWithValue("@author", txtBookAuthor.Text);
             command.Parameters.AddWithValue("@publisher", txtBookPublisher.Text);
             command.Parameters.AddWithValue("@page", txtBookPage.Text);
-            command.Parameters.AddWithValue("@cover_page_picture", txtCoverPagePicture.Text);
+            command.Parameters.AddWithValue("@cover_page_picture", txtBookImage.Text);
             int affected = command.ExecuteNonQuery();
 
             if (affected == 0)
@@ -469,7 +471,7 @@ namespace OnlineBookStore
                 txtBookPage.Clear();
                 txtBookPrice.Clear();
                 txtBookPublisher.Clear();
-                txtCoverPagePicture.Clear();
+                txtBookImage.Clear();
             }
             //connection.Close();
 
@@ -686,13 +688,47 @@ namespace OnlineBookStore
             openFileDialog1.Title = "Dosya seçiniz.";
             openFileDialog1.ShowDialog();
             string filepath = openFileDialog1.FileName;
-            string destPath = Application.StartupPath + @"\Resources\BookPictures\" + openFileDialog1.SafeFileName + ".png";
-            Directory.CreateDirectory(Application.StartupPath + @"\Resources\BookPictures\");
+            string destPath = Application.StartupPath + @"\Resources\AllPictures\" + openFileDialog1.SafeFileName ;
+            Directory.CreateDirectory(Application.StartupPath + @"\Resources\AllPictures\");
             File.Copy(filepath, destPath, true);
            
             pbBook.Image = Image.FromFile(filepath);
-            txtBookImage.Text = openFileDialog1.SafeFileName + ".png";
+            txtBookImage.Text = openFileDialog1.SafeFileName ;
 
+
+        }
+
+        private void btnAddMusic_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog ofdMusic = new OpenFileDialog();
+            ofdMusic.Multiselect = false;
+            ofdMusic.Filter = "All Files |*.png; *.jpeg;*.jpg| PNG Files (*.png)|*.png|JPEG Files (*.jpeg)|*.jpeg|JPG Files (*.jpg)|*.jpg";
+            ofdMusic.Title = "Dosya seçiniz.";
+            ofdMusic.ShowDialog();
+            string filepath = ofdMusic.FileName;
+            string destPath = Application.StartupPath + @"\Resources\AllPictures\" + ofdMusic.SafeFileName;
+            Directory.CreateDirectory(Application.StartupPath + @"\Resources\AllPictures\");
+            File.Copy(filepath, destPath, true);
+
+            pbMusic.Image = Image.FromFile(filepath);
+            txtMusicCDsImage.Text = ofdMusic.SafeFileName;
+        }
+
+        private void btnAddImageMagazine_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofdMagazine = new OpenFileDialog();
+            ofdMagazine.Multiselect = false;
+            ofdMagazine.Filter = "All Files |*.png; *.jpeg;*.jpg| PNG Files (*.png)|*.png|JPEG Files (*.jpeg)|*.jpeg|JPG Files (*.jpg)|*.jpg";
+            ofdMagazine.Title = "Dosya seçiniz.";
+            ofdMagazine.ShowDialog();
+            string filepath = ofdMagazine.FileName;
+            string destPath = Application.StartupPath + @"\Resources\AllPictures\" + ofdMagazine.SafeFileName;
+            Directory.CreateDirectory(Application.StartupPath + @"\Resources\AllPictures\");
+            File.Copy(filepath, destPath, true);
+
+            pbMagazine.Image = Image.FromFile(filepath);
+            txtMagazineImage.Text = ofdMagazine.SafeFileName;
 
         }
     }
