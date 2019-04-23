@@ -38,6 +38,8 @@ namespace OnlineBookStore
         {
             //UserClass cs = new UserClass(); //SINGLETON PATTERN
             UserClass cs2 = CustomerClass.Instance;
+            lblGeneralUserName.Text = cs2.name + " " + cs2.surName;
+
             //Console.WriteLine("Ana Form'da" + user.name + " " + user.isAdmin() +" " );
 
         }
