@@ -53,7 +53,9 @@ namespace OnlineBookStore
         {
             tabControlGeneral.SelectedTab = tabAdminPanel;
         }
-
+        /** @brief add user
+         *add user to create a user class and calls adminuserclass.useroperations
+         */
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             bool operationResult = AdminUserClass.userOperations("Add", txtUserId.Text,txtName.Text, txtSurname.Text, txtAddress.Text, txtEmail.Text, txtUserName.Text, txtPassword.Text, cbIsAdmin.Checked ? true : false);

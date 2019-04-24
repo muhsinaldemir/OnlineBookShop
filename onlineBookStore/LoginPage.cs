@@ -101,5 +101,17 @@ namespace OnlineBookStore
             }
 
         }
+
+        private void panelLogin_Paint(object sender, PaintEventArgs e)
+        {
+            panelLogin.Left = (this.ClientSize.Width - panelLogin.Width) / 2;
+            panelLogin.Top=(this.ClientSize.Height-panelLogin.Height)/ 2;
+        }
+
+        private void LoginPage_SizeChanged(object sender, EventArgs e)
+        {
+            panelLogin.Left = (this.ClientSize.Width - panelLogin.Width) / 2;
+            panelLogin.Top = (this.ClientSize.Height - panelLogin.Height) / 2;
+        }
     }
 }
