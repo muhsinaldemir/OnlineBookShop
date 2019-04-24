@@ -827,5 +827,10 @@ namespace OnlineBookStore
             populateMyAccount();
             tabControlGeneral.SelectedTab = tabMyAccount;
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

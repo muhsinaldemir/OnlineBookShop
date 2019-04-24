@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineBookStore
 {
+    ///abstract class "ProductClass"
     public abstract class ProductClass
     {
         public string name { get; set; }
@@ -14,11 +15,23 @@ namespace OnlineBookStore
         public int stock { get; set; }
         public string cover_page_picture { get; set; }
         public abstract void printProperties();
-        
+        /**  
+         * @brief Default Constructor
+         * Constructs the object with default parameters 
+         */ 
         public ProductClass()
         {
 
         }
+        /**  
+         * @brief Default Constructor
+         * Constructs the object with default parameters  
+         * @param string Name 
+         * @param string Id
+         * @param double Price
+         * @param int Stock
+         * @param string Cover_Page_Picture
+         */
         public ProductClass(string Name ,string Id ,double Price, int Stock, string Cover_Page_Picture)
         {
             name = Name;
@@ -27,7 +40,5 @@ namespace OnlineBookStore
             stock = Stock;
             cover_page_picture = Cover_Page_Picture;
         }
-
-      
     }
 }

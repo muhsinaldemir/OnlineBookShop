@@ -8,6 +8,7 @@ using System.Globalization;
 
 namespace OnlineBookStore
 {
+    ///create a new BookClass instance of ProductClass
     class BookClass : ProductClass
     {
         public string isbn { get; set; }
@@ -19,11 +20,28 @@ namespace OnlineBookStore
         {
             throw new NotImplementedException();// to do 
         }
-
+        /**   
+         * @brief Default Constructor 
+         * Constructs the object with default parameters
+         */
         public BookClass()
         {
 
         }
+        /**   
+         * @brief Default Constructor 
+         * Constructs the object with default parameters
+         * this constructor inherit from product class so have already parameter Name, Id, Price,Stock, Cover_page_picture 
+         * @param string Name
+         * @param string Id
+         * @param double Price
+         * @param int Stock
+         * @param string ISBN
+         * @param string Author
+         * @param string Publisher
+         * @param int Page
+         * @param string Cover_page_picture
+         */
         public BookClass(string Name, string Id, double Price, int Stock, string ISBN, string Author, string Publisher, int Page, string Cover_page_picture) : base(Name, Id, Price,Stock, Cover_page_picture)
         {
             isbn = ISBN;
@@ -31,7 +49,12 @@ namespace OnlineBookStore
             publisher = Publisher;
             page = Page;
         }
-
+        /**
+         * books list created from BookClass
+         * this function reads book items in database
+         * and add in books
+         * @return book
+         */
         public static List<BookClass> getAllBooksFromDB()
         {
             List<BookClass> books = new List<BookClass>();
@@ -45,8 +68,7 @@ namespace OnlineBookStore
             {
                 while (readBooks.Read())
                 {
-                    BookClass book = new BookClass();
-                    //bool isAdmin = (bool)readCustomer["isadmin"];                          
+                    BookClass book = new BookClass();                          
                     book.id = readBooks["id"].ToString();
                     book.name = readBooks["name"].ToString();
                     book.price = Convert.ToDouble(readBooks["price"]);
@@ -56,7 +78,6 @@ namespace OnlineBookStore
                     book.isbn = readBooks["isbn"].ToString();
                     book.page = Convert.ToInt32(readBooks["page"]);
                     book.cover_page_picture = readBooks["cover_page_picture"].ToString();
-                   // Console.WriteLine("While ici" + book.name);
                     books. Add(book);
                     
                 }
@@ -65,13 +86,14 @@ namespace OnlineBookStore
            
             return books;
         }
-
-
+        /**this function read book item in database
+         * and assign bookclass parameter(id,name,price,stock,author,publisher,isbn,page,cover_page_picture)
+        * @param string id
+        * @return book
+       */
         public static BookClass getaBooksFromDBByID(string id)
         {
-           
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
-
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("SELECT * FROM BookTable WHERE id=@id", connection);
             command.Parameters.AddWithValue("@id",Convert.ToInt32(id));
@@ -82,7 +104,6 @@ namespace OnlineBookStore
             {
                 while (readBooks.Read())
                 {
-                    //bool isAdmin = (bool)readCustomer["isadmin"];      
                     Console.WriteLine(readBooks["id"].ToString());
                     book.id = readBooks["id"].ToString();
                     book.name = readBooks["name"].ToString();
@@ -93,10 +114,8 @@ namespace OnlineBookStore
                     book.isbn = readBooks["isbn"].ToString();
                     book.page = Convert.ToInt32(readBooks["page"]);
                     book.cover_page_picture = readBooks["cover_page_picture"].ToString();
-                    // Console.WriteLine("While ici" + book.name);
                 }
             }
-
             return book;
         }
     }

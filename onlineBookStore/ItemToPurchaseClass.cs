@@ -6,26 +6,29 @@ using System.Threading.Tasks;
 
 namespace OnlineBookStore
 {
+    ///  class of "ItemToPurchaseClass"
     public class ItemToPurchaseClass
     {
         public ProductClass product { get; set; }
         public int quantity { get; set; }
-     
 
-        public ItemToPurchaseClass()
-        {
-        }
-
+        /** 
+        * @brief Default Constructor
+        * Constructs the object with default parameters
+        */ 
+       public ItemToPurchaseClass()
+       {
+       }
+       /** 
+        * @brief Default Constructor
+        * Constructs the object with default parameters
+        * @param ProductClass product
+        * @param int quantity
+        */
         public ItemToPurchaseClass(ProductClass product, int quantity)
         {
             this.product = product;
             this.quantity = quantity;
         }
-
-        //public ItemToPurchaseClass(string id)
-        //{
-        //    ProductClass product = new ProductClass();
-        //    product.id = id;
-        //}
     }
 }

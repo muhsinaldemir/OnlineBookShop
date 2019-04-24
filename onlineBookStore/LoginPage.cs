@@ -18,7 +18,10 @@ namespace OnlineBookStore
         {
             InitializeComponent();
         }
-
+        /**
+         * click the login button if usernam and password are correct ,opens bookshopform
+         * and read customer's information from database
+         */ 
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
@@ -28,11 +31,8 @@ namespace OnlineBookStore
             }
             else
             {
-
-
                 UserClass cs = null;
-                //AdminUserClass au;
-                connection.Open();
+               connection.Open();
                 SqlCommand commandCustomer = new SqlCommand("Select * from CustomerTable WHERE username=@username AND password=@password", connection);
                 commandCustomer.Parameters.AddWithValue("@username", txtUserName.Text);
                 commandCustomer.Parameters.AddWithValue("@password", txtPassword.Text);
@@ -56,29 +56,20 @@ namespace OnlineBookStore
                         cs.userName = readCustomer["username"].ToString();
                         cs.password = readCustomer["password"].ToString();
                         cs.IsAdmin = (bool)readCustomer["isadmin"];
-                        Console.WriteLine(cs.email);
                     }
-
                     connection.Close();
-
-                    //Initialize a shopping cart for logged in customer and assign its customerID
                     ShoppingCartClass shoppingCartClass = ShoppingCartClass.Instance; //SINGLETON PATTERN
                     shoppingCartClass.customerID = cs.customerID;
-
                     BookShopForm bookShopForm = new BookShopForm(cs);
                     bookShopForm.Show();
                     this.Hide();
-                    //this.Dispose();
                 }
                 else
                 {
                     MessageBox.Show("username or password is not correct!");
                 }
-
             }
-
         }
-
         private void LoginPage_Load(object sender, EventArgs e)
         {
 
@@ -88,7 +79,7 @@ namespace OnlineBookStore
         {
 
         }
-
+        ///if click on the picturebox password visible 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (txtPassword.PasswordChar == '*')
@@ -101,13 +92,14 @@ namespace OnlineBookStore
             }
 
         }
-
+     
+        /// change form application width in left direction
         private void panelLogin_Paint(object sender, PaintEventArgs e)
         {
             panelLogin.Left = (this.ClientSize.Width - panelLogin.Width) / 2;
             panelLogin.Top=(this.ClientSize.Height-panelLogin.Height)/ 2;
         }
-
+        /// change loginpage's size application width in left direction 
         private void LoginPage_SizeChanged(object sender, EventArgs e)
         {
             panelLogin.Left = (this.ClientSize.Width - panelLogin.Width) / 2;
