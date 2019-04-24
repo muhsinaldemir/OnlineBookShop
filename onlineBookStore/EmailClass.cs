@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnlineBookStore
 {
+    ///class  "EmailClass
     public class EmailClass
     {
         public string fromAddress { get; set; }
@@ -15,6 +16,15 @@ namespace OnlineBookStore
         public double totalValue { get; set; }
         public string password { get; set; }
 
+        /**   
+         * @brief Default Constructor
+         * Constructs the object with default parameters 
+         * @param string fromAddress
+         * @param string toAddress
+         * @param string customerName
+         * @param double totalValue
+         * @param string password
+         */
         public EmailClass(string fromAddress, string toAddress, string customerName, double totalValue, string password)
         {
             this.fromAddress = fromAddress;
@@ -23,8 +33,13 @@ namespace OnlineBookStore
             this.totalValue = totalValue;
             this.password = password;
         }
-
+        /** 
+         * @brief Default Constructor 
+         * Constructs the object with default parameters   
+         */
         public EmailClass() { }
+        
+        /// send email
 
         public void sendEmail()
         {

@@ -13,6 +13,10 @@ namespace OnlineBookStore
     {
         private SqlConnection connection = new SqlConnection(@"Server=tcp: oop2.database.windows.net;Database=bookshop; User ID = oop2admin@oop2.database.windows.net; Password=oop2_project;Trusted_Connection=False; Encrypt=True;");
 
+        /**
+         * create a new object dbhelper from DatabaseHelperClass
+         * and initialized
+         */ 
         private static DatabaseHelperClass dbHelper = null;
 
         public static DatabaseHelperClass Instance
@@ -26,14 +30,19 @@ namespace OnlineBookStore
                 return dbHelper;
             }
         }
-
+        /// connect to sqlconnection
+        
         public SqlConnection getConnection()
         {
             connection.Close();
             connection.Open();
             return connection;
         }
-
+        /**
+         * 
+         * @param string customerID
+         * @param PaymentType paymentType
+         */
         public void shoppingCartPlaceOrder(string customerID, PaymentType paymentType)
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
@@ -70,6 +79,10 @@ namespace OnlineBookStore
             SqlCommand command = new SqlCommand("DELETE FROM ShoppingCartTable WHERE name=@name)", connection);
             command.Parameters.AddWithValue("@name", name);
         }
+        /**@brief getAllUserPurchases() function
+         * 
+         * @param int userID
+         */
 
         public List<ItemToPurchaseClass> getAllUserPurchases(int userID)
         {

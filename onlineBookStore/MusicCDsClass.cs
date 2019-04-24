@@ -15,14 +15,25 @@ namespace OnlineBookStore
         pop,
         romance
     };
+    /// create a new instance of MagazineClass from ProductClass
     class MusicCDsClass : ProductClass
     {
         public string singer { get; set; }
-     
+        /**  @brief Default Constructor
+           * Constructs the object with default parameters  
+           */
         public MusicCDsClass()
         {
         }
-
+        /** @brief Default Constructor 
+         * Constructs the object with default parameters 
+         * @param string Name
+         * @param string Id
+         * @param double Price
+         * @param int Stock
+         * @param string singer
+         * @param string picture
+        */
         public MusicCDsClass(string Name, string Id, double Price, int Stock, string Singer,string Picture) : base(Name, Id, Price, Stock,Picture)
         {
             singer = Singer;
@@ -32,6 +43,12 @@ namespace OnlineBookStore
         {
             throw new NotImplementedException();
         }
+        /**
+         * musicCDsList created from MusicCDsClass
+         * this function reads musicCDs items in database
+         * and add in musicCDsList
+         * @return musicCDsList
+         */
         public static List<MusicCDsClass> getAllMusicCDsFromDB()
         {
             List<MusicCDsClass> musicCDsList = new List<MusicCDsClass>();
@@ -58,6 +75,10 @@ namespace OnlineBookStore
 
             return musicCDsList;
         }
+        /**this function read a musicCDs item in a database
+        * @param string id
+        * @return musicCDs
+       */
         public static MusicCDsClass getAMusicCDsFromDB(string id)
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
