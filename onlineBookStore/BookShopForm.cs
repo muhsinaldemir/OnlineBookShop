@@ -15,14 +15,13 @@ namespace OnlineBookStore
 {
     public partial class BookShopForm : Form
     {
-        //SqlConnection connection = new SqlConnection(@"Server=tcp: oop2.database.windows.net;Database=bookshop; User ID = oop2admin@oop2.database.windows.net; Password=oop2_project;Trusted_Connection=False; Encrypt=True;");
-
+        ///dbHelper created from DatabaseHelperClass
         static DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
-
-        //SqlConnection connection = dbHelper.getConnection();
-
+        ///  user created from UserClass to send to BookShopForm's parameter.
         UserClass user;
-
+        /**  @brief Default Constructor   
+         * Constructs the object with default parameters  
+         */
         public BookShopForm(UserClass user)
         {
             this.user = user;
@@ -33,28 +32,31 @@ namespace OnlineBookStore
         {
             InitializeComponent();
         }
-
+        /**  BookShopForm_Load() finds whether the user is admin or not.
+         * If the user is admin, the admin panel and report panel'visibility will be true .
+         * 
+         */
         private void BookShopForm_Load(object sender, EventArgs e)
         {
-            //UserClass cs = new UserClass(); //SINGLETON PATTERN
-            //UserClass cs2 = CustomerClass.Instance;
+            
             if(!user.isAdmin())
             {
                 pbAdminPanel.Visible = false;
                 pbReport.Visible = false;
             }
             lblGeneralUserName.Text = user.name + " " + user.surName;
-
-            //Console.WriteLine("Ana Form'da" + user.name + " " + user.isAdmin() +" " );
-
         }
 
+        /// If tabcontrolgeneral is selected, tabadminpanel will open.
+       
         private void btnAdminPanel_Click(object sender, EventArgs e)
         {
             tabControlGeneral.SelectedTab = tabAdminPanel;
         }
-        /** @brief add user
-         *add user to create a user class and calls adminuserclass.useroperations
+        /** @brief  buton add user
+         *add user to create a user class and calls adminuserclass.useroperations. 
+         * if it is not added, the error message is printed on the screen.
+         * after adding,clears the textboxes.
          */
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -76,13 +78,15 @@ namespace OnlineBookStore
                 MessageBox.Show("Error!");
               
             }
-
-            ////connection.Close();
         }
+        /** @brief click on the add  book button to print to the database.
+         * writes the information entered to the textboxes into the database.
+         * if it is not added book the database, the error message is printed on the screen.
+         * after adding,clears the textboxes.
+         */
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            ////connection.Open();
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("INSERT INTO BookTable (name,price,stock,isbn,author,publisher,page,cover_page_picture) values(@name,@price,@stock,@isbn,@author,@publisher,@page,@cover_page_picture)", connection);
 
@@ -112,12 +116,14 @@ namespace OnlineBookStore
                 txtBookPublisher.Clear();
                 txtBookImage.Clear();
             }
-            ////connection.Close();
         }
-
+        /** @brief click on the add musicsCDs button to print to the database.
+         * writes the information entered to the textboxes into the database.
+         * if it is not added musicsCDs the database, the error message is printed on the screen.
+         * after adding,clears the textboxes.
+         */
         private void btnAddMusicCDs_Click(object sender, EventArgs e)
         {
-            ////connection.Open();
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("INSERT INTO MusicCDsTable (name,price,stock,singer,type,picture) values(@name,@price,@stock,@singer,@type,@picture)", connection);
             command.Parameters.AddWithValue("@name", txtMusicName.Text);
@@ -142,13 +148,15 @@ namespace OnlineBookStore
                 txtMusicType.Clear();
                 txtMusicCDsImage.Clear();
             }
-            ////connection.Close();
-
         }
+        /** @brief click on the add magazine button to print to the database.
+        * writes the information entered to the textboxes into the database.
+        * if it is not added magazine the database, the error message is printed on the screen.
+        * after adding,clears the textboxes.
+        */
 
         private void btnAddMagazine_Click(object sender, EventArgs e)
         {
-            ////connection.Open();
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("INSERT INTO MagazineTable (name,price,stock,issue,type,cover_page_picture) values(@name,@price,@stock,@issue,@type,@cover_page_picture)", connection);
             command.Parameters.AddWithValue("@name", txtMagazineName.Text);
@@ -173,12 +181,12 @@ namespace OnlineBookStore
                 txtMagazineType.Clear();
                 txtMagazineImage.Clear();
             }
-            ////connection.Close();
         }
-
+        /**
+         * finds the selected customer information in datagridview from  CustomerTable in the database.
+         */
         private void tabUser_Click(object sender, EventArgs e)
         {
-            ////connection.Open();
             SqlConnection connection = dbHelper.getConnection();
             DataTable dt = new DataTable();
             {
@@ -188,15 +196,13 @@ namespace OnlineBookStore
                     command.Fill(dt);
                     dgvUsers.DataSource = dt;
                 }
-
             }
-            ////connection.Close();
         }
-
+        /**
+         * finds the selected book information in datagridview from  BookTable in the database.
+         */
         private void tabBooks_Click(object sender, EventArgs e)
         {
-
-            ////connection.Open();
             SqlConnection connection = dbHelper.getConnection();
 
             DataTable dt = new DataTable();
@@ -208,15 +214,13 @@ namespace OnlineBookStore
                     command.Fill(dt);
                     dgvBooks.DataSource = dt;
                 }
-
             }
-            ////connection.Close();
         }
-
+        /**
+         * finds the selected MusicCDs information in datagridview from  MusicCDsTable in the database.
+         */
         private void tabMusics_Click(object sender, EventArgs e)
         {
-
-            ////connection.Open();
             SqlConnection connection = dbHelper.getConnection();
 
             DataTable dt = new DataTable();
@@ -230,8 +234,10 @@ namespace OnlineBookStore
                 }
 
             }
-            ////connection.Close();
         }
+        /**
+         * finds the selected magazine information in datagridview from  MagazineTable in the database.
+         */
 
         private void tabMagazine_Click(object sender, EventArgs e)
         {
@@ -247,10 +253,12 @@ namespace OnlineBookStore
                     command.Fill(dt);
                     dgvMagazine.DataSource = dt;
                 }
-
             }
-            ////connection.Close();
         }
+        /** @brief button delete user
+         * call userDelete() function in AdminUserClass
+         * The parameter of the userDelete() function is id.
+         */
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
@@ -273,7 +281,10 @@ namespace OnlineBookStore
         {
 
         }
-
+        /**
+        * finds the selected user information in datagridview
+        * and prints this information to the corresponding textboxes.
+        */
         private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedValue = dgvUsers.SelectedCells[0].RowIndex;
@@ -299,10 +310,13 @@ namespace OnlineBookStore
                 cbIsAdmin.Checked = false;
 
         }
+        /**
+         * button delete books from the database
+        */
 
         private void btnDeleteBooks_Click(object sender, EventArgs e)
         {
-            //connection.Open();
+            
             SqlConnection connection = dbHelper.getConnection();
 
             SqlCommand deleteCommand = new SqlCommand("delete from BookTable where id=@id", connection);
@@ -310,71 +324,38 @@ namespace OnlineBookStore
             deleteCommand.ExecuteNonQuery();
             int affected = 0;
             affected = deleteCommand.ExecuteNonQuery();
-            /*  MessageBox.Show(affected.ToString());
-              if (affected == 0)
-              {
-                  MessageBox.Show("Error not successful");
-
-
-              }
-              else
-              {
-                  MessageBox.Show("successfully deleted.");
-              }*/
-            //connection.Close();
-
-            // listele();
-        }
-
+        // listele();
+    }
+        /**
+         * button delete MusicCDs from the database
+        */
         private void btnDeleteMusicCDs_Click(object sender, EventArgs e)
         {
-            //connection.Open();
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand deleteCommand = new SqlCommand("delete from MusicCDsTable where id=@id", connection);
             deleteCommand.Parameters.AddWithValue("@id", txtMusicCDsId.Text.ToString());
             deleteCommand.ExecuteNonQuery();
             int affected = 0;
-            affected = deleteCommand.ExecuteNonQuery();
-            /*  MessageBox.Show(affected.ToString());
-              if (affected == 0)
-              {
-                  MessageBox.Show("Error not successful");
-
-
-              }
-              else
-              {
-                  MessageBox.Show("successfully deleted.");
-              }*/
-            //connection.Close();
-
             // listele();
-        }
+        } 
+        /**
+         * button delete MusicCDs from the database
+        */
 
         private void btnDeleteMagazine_Click(object sender, EventArgs e)
         {
-            //connection.Open();
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand deleteCommand = new SqlCommand("delete from MagazineTable where id=@id", connection);
             deleteCommand.Parameters.AddWithValue("@id", txtMagazineId.Text.ToString());
             deleteCommand.ExecuteNonQuery();
             int affected = 0;
             affected = deleteCommand.ExecuteNonQuery();
-            /*  MessageBox.Show(affected.ToString());
-              if (affected == 0)
-              {
-                  MessageBox.Show("Error not successful");
-
-
-              }
-              else
-              {
-                  MessageBox.Show("successfully deleted.");
-              }*/
-            //connection.Close();
-
             // listele();
         }
+        /**
+        * finds the selected book information in datagridview 
+        * and prints this information to the corresponding textboxes.
+        */
 
         private void dgvBooks_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -400,9 +381,12 @@ namespace OnlineBookStore
             txtBookPage.Text = page;
             txtBookImage.Text = cover_page_picture;
             pbBook.ImageLocation = @"Resources\AllPictures\" + cover_page_picture;
-            Console.WriteLine("dneme:" + pbBook.ImageLocation);
 
         }
+        /**
+        * finds the selected MusicCDs information in datagridview 
+        * and prints this information to the corresponding textboxes.
+        */
 
         private void dgvMusicCDs_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -425,7 +409,10 @@ namespace OnlineBookStore
             pbMusic.ImageLocation=@"Resources\AllPictures\" + picture;
            
         }
-
+        /**
+        * finds the selected Magazine information in datagridview 
+        * and prints this information to the corresponding textboxes.
+        */
         private void dgvMagazine_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedValue = dgvMagazine.SelectedCells[0].RowIndex;
@@ -447,6 +434,10 @@ namespace OnlineBookStore
             txtMagazineImage.Text = cover_page_picture;
             pbMagazine.ImageLocation = @"Resources\AllPictures\"+ cover_page_picture;
         }
+        /** @brief buton update user
+         * call userOperations() function in AdminUserClass
+         * The parameter of the userDelete() function is id,name,surname,address,email,username,password.
+         */
 
         private void btnUpdateUser_Click(object sender, EventArgs e)
         {
@@ -470,10 +461,10 @@ namespace OnlineBookStore
             }
 
         }
-
+        /// buton update book
+        
         private void btnUpdateBook_Click(object sender, EventArgs e)
         {
-            //connection.Open();
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("UPDATE BookTable SET name=@name,price=@price,stock=@stock,isbn=@isbn,author=@author,publisher=@publisher,page=@page,cover_page_picture=@cover_page_picture WHERE id=@id", connection);
             command.Parameters.AddWithValue("@id", txtBookId.Text.ToString());
@@ -503,13 +494,10 @@ namespace OnlineBookStore
                 txtBookPublisher.Clear();
                 txtBookImage.Clear();
             }
-            //connection.Close();
-
         }
 
         private void btnUpdateMusicCDs_Click(object sender, EventArgs e)
         {
-            //connection.Open();
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("UPDATE MusicCDsTable SET name=@name,price=@price,stock=@stock,singer=@singer,type=@type,picture=@picture WHERE id=@id", connection);
             command.Parameters.AddWithValue("@id", txtMusicCDsId.Text.ToString());
@@ -535,13 +523,10 @@ namespace OnlineBookStore
                 txtMusicType.Clear();
                 txtMusicCDsImage.Clear();
             }
-            //connection.Close();
-
         }
 
         private void btnUpdateMagazine_Click(object sender, EventArgs e)
         {
-            //connection.Open();
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("UPDATE MagazineTable SET name=@name,price=@price,stock=@stock,issue=@issue,type=@type,cover_page_picture=@cover_page_picture WHERE id=@id", connection);
             command.Parameters.AddWithValue("@id", txtMagazineId.Text.ToString());
@@ -568,21 +553,21 @@ namespace OnlineBookStore
                 txtMagazineType.Clear();
                 txtMagazineImage.Clear();
             }
-            //connection.Close();
-
         }
-
+        /// If tabcontrolgeneral is selected, tabhomepage will open.
         private void btnHomePage_Click(object sender, EventArgs e)
         {
             tabControlGeneral.SelectedTab = tabHomePage;
 
         }
-
+        /**
+         * A list of allbooks in the book class' getAllBooksFromDB() function is created.
+         * bookUserControlsis created from the  BookUserControl class.
+         * The size of bookusercontrols is up to the length of allbooks.
+        */
         private void populateHomePageBooks()
         {
             List<BookClass> allBooks = BookClass.getAllBooksFromDB();
-            //flowLayoutPanel1.Controls.AddRange();
-
             BookUserControl[] bookUserControls = new BookUserControl[allBooks.Count];
             
             if (flpHomePage.Controls.Count > 0)
@@ -603,13 +588,16 @@ namespace OnlineBookStore
             }
           
         }
+        /**
+         * A list of allMusicCDs in the MusicCDsClass' getAllMusicCDsFromDB() function is created.
+         * musicCDsUserControls is created from the  MusicCDUserControl.
+         * The size of musicCDsUserControls is up to the length of allMusicCDs.
+        */
 
         private void populateHomePageMusicCDs()
         {
             List<MusicCDsClass> allMusicCDs = MusicCDsClass.getAllMusicCDsFromDB();
-            //flowLayoutPanel1.Controls.AddRange();
-
-            MusicCDUserControl[] musicCDsUserControls = new MusicCDUserControl[allMusicCDs.Count];
+             MusicCDUserControl[] musicCDsUserControls = new MusicCDUserControl[allMusicCDs.Count];
 
             if (flpHomePage.Controls.Count > 0)
                 flpHomePage.Controls.Clear();
@@ -628,14 +616,15 @@ namespace OnlineBookStore
                 i++;
             }
         }
-
+        /**
+        * A list of allmagazine in the  MagazineClass' getAllMagazineFromDB() function is created.
+        * magazineUserControls is created from the  MagazineUserControls
+        * The size of  MagazineUserControls is up to the length of allmagazine
+       */
         private void populateHomePageMagazine()
         {
-            
             List<MagazineClass> allmagazine = MagazineClass.getAllMagazineFromDB();
-            //flowLayoutPanel1.Controls.AddRange();
-
-            MagazineUserControl[] magazineUserControls = new MagazineUserControl[allmagazine.Count];
+           MagazineUserControl[] magazineUserControls = new MagazineUserControl[allmagazine.Count];
 
             if (flpHomePage.Controls.Count > 0)
                 flpHomePage.Controls.Clear();
@@ -654,32 +643,30 @@ namespace OnlineBookStore
                 i++;
             }
         }
-
-
+        /// calls  populateHomePageBooks() function
         private void btnHomepageBooks_Click(object sender, EventArgs e)
         {
             populateHomePageBooks();
         }
-
+        /// calls  populateHomePageMusicCDs() function
         private void btnHomepageMusicCDs_Click(object sender, EventArgs e)
         {
             populateHomePageMusicCDs();
         }
-
+        /// calls populateHomePageMagazine() function
         private void btnHomepageMagazine_Click(object sender, EventArgs e)
         {
             populateHomePageMagazine();
         }
 
+
         public void populateShoppingCartPanelView()
         {
             ShoppingCartItemsUserControl[] shoppingCartItemsUserControl = new ShoppingCartItemsUserControl[ShoppingCartClass.itemsToPurchase.Count];
-
             if (flpShoppingCart.Controls.Count > 0)
                 flpShoppingCart.Controls.Clear();
 
             int i = 0;
-            //double totalPrice = 0;
             foreach (ItemToPurchaseClass item in ShoppingCartClass.itemsToPurchase)
             {
                 shoppingCartItemsUserControl[i] = new ShoppingCartItemsUserControl();
@@ -689,27 +676,24 @@ namespace OnlineBookStore
                 shoppingCartItemsUserControl[i].unitPriceValue = item.product.price;
                 shoppingCartItemsUserControl[i].type = item.product.GetType();
                 shoppingCartItemsUserControl[i].picture = item.product.cover_page_picture;
-                //shoppingCartItemsUserControl[i].totalPriceValue = item.stock;
                 flpShoppingCart.Controls.Add(shoppingCartItemsUserControl[i]);
-                //totalPrice += item.product.price * item.quantity;
                 i++;
             }
-
             lblTotalPriceValueGeneral.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
-
         }
-        
+      /// call populateShoppingCartPanelView() function
         private void btnShoppingCart_Click(object sender, EventArgs e)
         {
             populateShoppingCartPanelView();
             tabControlGeneral.SelectedTab = tabShoppingCart;
         }
-
         private void tabShoppingCart_Click(object sender, EventArgs e)
         {
 
         }
-
+        /**
+         * a new paymentform is created and show that on screen
+        */
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
             PaymentForm paymentForm = new PaymentForm(user);
@@ -720,7 +704,7 @@ namespace OnlineBookStore
         {
 
         }
-
+        /// button add image book
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -738,7 +722,7 @@ namespace OnlineBookStore
 
 
         }
-
+        /// button add image musicCDs
         private void btnAddMusic_Click(object sender, EventArgs e)
         {
 
@@ -755,7 +739,8 @@ namespace OnlineBookStore
             pbMusic.Image = Image.FromFile(filepath);
             txtMusicCDsImage.Text = ofdMusic.SafeFileName;
         }
-
+        /// button add image magazine
+       
         private void btnAddImageMagazine_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofdMagazine = new OpenFileDialog();
@@ -788,6 +773,10 @@ namespace OnlineBookStore
         {
             tabControlGeneral.SelectedTab = tabAdminPanel;
         }
+        /** @brief button exit
+         * if click exit button print message  on the screen ,
+         * If yes is clicked, the application closes. 
+         */
 
         private void pbExit_Click(object sender, EventArgs e)
         {
@@ -798,17 +787,19 @@ namespace OnlineBookStore
             {
                 Application.Exit();
             }
-           
         }
-
         private void pnlMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
+        /** dbHelper created from DatabaseHelperClass 
+         * A list of list in the  ItemToPurchaseClass' getAllUserPurchases() function is created.
+        * myAccountUserControls array is created from the  MyAccountUserControl
+        * The size of  myAccountUserControls is up to the length of list
+        */
         private void populateMyAccount()
         {
-            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             List<ItemToPurchaseClass> list =  dbHelper.getAllUserPurchases(Convert.ToInt32(user.customerID));
             MyAccountUserControl[] myAccountUserControls = new MyAccountUserControl[list.Count];
 
@@ -827,9 +818,10 @@ namespace OnlineBookStore
                 flpMyAccount.Controls.Add(myAccountUserControls[i]);
                 i++;
             }
-
-
         }
+        /** calls  populateMyAccount()
+         * If tabcontrolgeneral is selected, tabMyAccount will open.
+        */
         private void pbMyAccount_Click(object sender, EventArgs e)
         {
             populateMyAccount();
