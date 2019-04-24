@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace OnlineBookStore
 {
+    /// ShoppingCartItemsUserControl class inherited from UserControl class
     public partial class ShoppingCartItemsUserControl : UserControl
     {
         public string id { get; set; }
@@ -19,11 +20,18 @@ namespace OnlineBookStore
         private double totalPriceValue = 0;
         public Type type;
         public string picture { get; set; }
+        /**  
+        * @brief Getter function of the totalPriceValue attribute   
+        * @return totalPriceValue
+       */
         public double getTotalPriceValue()
         {
             return totalPriceValue;
         }
-
+        /**  
+         * @brief Setter function of the totalPriceValue attribute   
+         * @param double value (must be greater than zero)  
+         */
         public void setTotalPriceValue(double value)
         {
             totalPriceValue = value;
@@ -33,7 +41,7 @@ namespace OnlineBookStore
         {
             InitializeComponent();
         }
-
+        ///adding to shopping cart panel from  the added books in the admin panel.
         private void ShoppingCartItemsUserControl_Load(object sender, EventArgs e)
         {
             lblName.Text = name;
@@ -43,16 +51,12 @@ namespace OnlineBookStore
             lblTotalPriceValue.Text = (quantity * unitPriceValue).ToString();
             totalPriceValue += (quantity * unitPriceValue);
         }
-
+        /// calculate quantity and total price value for each ıtems
         private void nudQuantity_ValueChanged(object sender, EventArgs e)
         {
             var element =ShoppingCartClass.itemsToPurchase.Find(el => el.product.id == id);
             element.quantity = Convert.ToInt32(nudQuantity.Value);
             lblTotalPriceValue.Text = (Convert.ToInt32(nudQuantity.Value) * unitPriceValue).ToString();
-            //foreach(var item in ShoppingCartClass.itemsToPurchase)
-            //{
-            //    Console.WriteLine("Quantity change : " + item.product.name + "  " + item.quantity);
-            //}
             System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
             ((BookShopForm)f).lblTotalPriceValueGeneral.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
         }
@@ -72,7 +76,6 @@ namespace OnlineBookStore
                 quantity += item.quantity;
             }
             ((BookShopForm)f).lblShoppinCartValue.Text = quantity.ToString();
-            //Console.WriteLine("Type in remove " + type);
 
         }
     }

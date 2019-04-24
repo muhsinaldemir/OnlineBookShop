@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace OnlineBookStore
 {
+    /// MagazineUserControl class inherited from UserControl class
     public partial class MagazineUserControl : UserControl
     {
         public MagazineUserControl()
@@ -23,6 +24,8 @@ namespace OnlineBookStore
         public double magazinePrice { get; set; }
         public int stock { get; set; }
         public string cover_page_picture { get; set; }
+
+        ///adding a homepage to the added magazine in the admin panel.
         private void MagazineUserControl_Load(object sender, EventArgs e)
         {
             lblMagazineName.Text = magazineName;
@@ -32,7 +35,10 @@ namespace OnlineBookStore
             pbMagazine.ImageLocation = @"Resources\AllPictures\" + cover_page_picture;
 
         }
-
+        /** @ brief adds the purchased magzine to the shopping cart
+        * create a magzine from MagazineClass
+        * and item added shoppingcartclass 
+        */
         private void btnMagazineAddToCart_Click(object sender, EventArgs e)
         {
             MagazineClass magazine = new MagazineClass();

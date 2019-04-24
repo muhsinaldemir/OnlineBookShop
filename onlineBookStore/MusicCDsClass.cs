@@ -18,8 +18,7 @@ namespace OnlineBookStore
     class MusicCDsClass : ProductClass
     {
         public string singer { get; set; }
-        //public string picture { get; set; }
-
+     
         public MusicCDsClass()
         {
         }
@@ -27,7 +26,6 @@ namespace OnlineBookStore
         public MusicCDsClass(string Name, string Id, double Price, int Stock, string Singer,string Picture) : base(Name, Id, Price, Stock,Picture)
         {
             singer = Singer;
-            //picture = Picture;
         }
 
         public override void printProperties()
@@ -47,22 +45,15 @@ namespace OnlineBookStore
             {
                 while (readMusicCDs.Read())
                 {
-                    MusicCDsClass musicCDs = new MusicCDsClass();
-                    //bool isAdmin = (bool)readCustomer["isadmin"];                          
+                    MusicCDsClass musicCDs = new MusicCDsClass();                        
                     musicCDs.id = readMusicCDs["id"].ToString();
                     musicCDs.name = readMusicCDs["name"].ToString();
                     musicCDs.price = Convert.ToDouble(readMusicCDs["price"]);
                     musicCDs.singer = readMusicCDs["singer"].ToString();
                     musicCDs.stock = Convert.ToInt32(readMusicCDs["stock"]);
                     musicCDs.cover_page_picture = readMusicCDs["picture"].ToString();
-
-                    // musicCDs. = musicCDsList["type"].ToString();
-
-                    // Console.WriteLine("While ici" + book.name);
                     musicCDsList.Add(musicCDs);
-
                 }
-
             }
 
             return musicCDsList;
@@ -70,7 +61,6 @@ namespace OnlineBookStore
         public static MusicCDsClass getAMusicCDsFromDB(string id)
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
-
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("SELECT * FROM MusicCDsTable where id=@id", connection);
             command.Parameters.AddWithValue("@id", Convert.ToInt32(id));
@@ -78,22 +68,15 @@ namespace OnlineBookStore
             MusicCDsClass musicCDs = new MusicCDsClass();
             if (readMusicCDs != null)
             {
-
                 while (readMusicCDs.Read())
-                {
-                    //bool isAdmin = (bool)readCustomer["isadmin"];                          
+                {                        
                     musicCDs.id = readMusicCDs["id"].ToString();
                     musicCDs.name = readMusicCDs["name"].ToString();
                     musicCDs.price = Convert.ToDouble(readMusicCDs["price"]);
                     musicCDs.singer = readMusicCDs["singer"].ToString();
                     musicCDs.stock = Convert.ToInt32(readMusicCDs["stock"]);
                     musicCDs.cover_page_picture = readMusicCDs["picture"].ToString();
-
-                    // musicCDs. = musicCDsList["type"].ToString();
-
-                    // Console.WriteLine("While ici" + book.name);
                 }
-
             }
             return musicCDs;
         }

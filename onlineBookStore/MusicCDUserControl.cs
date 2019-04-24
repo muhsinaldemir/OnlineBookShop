@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OnlineBookStore
-{
+{/// MusicCDUserControl inherited from UserControl
     public partial class MusicCDUserControl : UserControl
     {
         public string musicCDID { get; set; }
@@ -23,7 +23,7 @@ namespace OnlineBookStore
         {
             InitializeComponent();
         }
-
+        ///adding a homepage to the added musicCDs in the admin panel.
         private void MusicCDUserControl_Load(object sender, EventArgs e)
         {
             lblMusicCDName.Text = musicCDName;
@@ -37,6 +37,10 @@ namespace OnlineBookStore
         {
 
         }
+        /** @ brief adds the purchased musicCDs to the shopping cart
+        * create a book from MusicCDsClass
+        * and item added shoppingcartclass 
+        */
 
         private void btnMusicCDsAddToCart_Click(object sender, EventArgs e)
         {
