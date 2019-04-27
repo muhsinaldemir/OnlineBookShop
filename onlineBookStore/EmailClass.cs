@@ -58,7 +58,7 @@ namespace OnlineBookStore
                 "Information", message);
             mm.BodyEncoding = UTF8Encoding.UTF8;
             //Console.WriteLine("Email Class in Email Class");
-            client.Send(mm);
+            //client.Send(mm);
 
         }
     }

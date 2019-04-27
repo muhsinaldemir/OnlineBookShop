@@ -117,6 +117,7 @@ namespace OnlineBookStore
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("DELETE FROM ShoppingCartTable WHERE name=@name", connection);
             command.Parameters.AddWithValue("@name", name);
+            command.ExecuteNonQuery();
         }
     }
 }

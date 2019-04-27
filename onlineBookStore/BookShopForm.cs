@@ -796,7 +796,7 @@ namespace OnlineBookStore
         * myAccountUserControls array is created from the  MyAccountUserControl
         * The size of  myAccountUserControls is up to the length of list
         */
-        private void populateMyAccount()
+        public void populateMyAccount()
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             List<ItemToPurchaseClass> list =  dbHelper.getAllUserPurchases(Convert.ToInt32(user.customerID));
