@@ -40,7 +40,7 @@ namespace OnlineBookStore
          */
         private void makePayment(PaymentType paymentType)
         {
-            ShoppingCartClass.placeOrder(user.customerID, paymentType);
+            ShoppingCartClass.placeOrder(user.customerID, paymentType, ShoppingCartClass.calculateActualTotalPrice());
         }
       
          /// click credit card button 

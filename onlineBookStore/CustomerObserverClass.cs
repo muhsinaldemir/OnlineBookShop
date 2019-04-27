@@ -8,17 +8,17 @@ namespace OnlineBookStore
 {
     class CustomerObserverClass : ObserverClass
     {
-        public override void update(string communicationType,string customerID, string name, double unitPriceValue)
+        public override void update(string communicationType,UserClass user, string product_name, double unitPriceValue)
         {
             if(communicationType=="email")
             {
-                EmailClass email = new EmailClass("***REMOVED***", "denzemine@gmail.com", "emine deniz", 111, "***REMOVED***");
-                Console.WriteLine("Cancel order in shopping cart");
+                EmailClass email = new EmailClass(AppConstants.EMAIL, user, product_name, unitPriceValue, AppConstants.EMAIL_PASSWORD);
+                Console.WriteLine("Place order in shopping cart");
                 email.sendEmail();
             }
             else if(communicationType == "sms")
             {
-                SMSClass sms = new SMSClass("OurNumber", "CustomerNumber", name ,unitPriceValue);
+                SMSClass sms = new SMSClass(AppConstants.SMS_NUMBER, user.name, product_name, unitPriceValue);
                 sms.sendSMS();
             }
         }

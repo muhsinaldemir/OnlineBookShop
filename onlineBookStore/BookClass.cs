@@ -78,7 +78,7 @@ namespace OnlineBookStore
                     book.isbn = readBooks["isbn"].ToString();
                     book.page = Convert.ToInt32(readBooks["page"]);
                     book.cover_page_picture = readBooks["cover_page_picture"].ToString();
-                    books. Add(book);
+                    books.Add(book);
                     
                 }
 

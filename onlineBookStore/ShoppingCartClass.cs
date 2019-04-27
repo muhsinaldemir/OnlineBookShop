@@ -17,6 +17,9 @@ namespace OnlineBookStore
     class ShoppingCartClass
     {
         public static string customerID { get; set; }
+
+        public static UserClass user { get; set; }
+
        // public ArrayList itemsToPurchase { get; set; }
         public static double paymentAmount { get; set; }
         public PaymentType paymentType { get; set; }
@@ -36,14 +39,14 @@ namespace OnlineBookStore
             _observers.Remove(observer);
         }
 
-        public static void notifyEmail()
+        public static void notifyEmail(double unitPriceValue)
         {
-            //_observers.ForEach(o => { o.update("email", customerID); });
+            _observers.ForEach(o => { o.update("email", user,null,unitPriceValue); });
         }
 
         public static void notifySms(string name, double unitPriceValue)
         {
-            _observers.ForEach(o => { o.update("sms",customerID, name, unitPriceValue); });
+            _observers.ForEach(o => { o.update("sms",user, name, unitPriceValue); });
         }
 
 
@@ -81,11 +84,11 @@ namespace OnlineBookStore
          * @param PaymentType paymentType
          * calls shoppingCartPlaceOrder() function
          */
-        public static void placeOrder(string customerID, PaymentType paymentType)
+        public static void placeOrder(string customerID, PaymentType paymentType, double unitPriceValue)
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             dbHelper.shoppingCartPlaceOrder(customerID, paymentType);
-            notifyEmail();
+            sendInvoiceByEmail(unitPriceValue);
         }
         /** @brief cancelorder() function
         * @param string string name
@@ -98,7 +101,11 @@ namespace OnlineBookStore
             dbHelper.shoppingCartCancelOrder(name);
             notifySms(name,unitPriceValue);
         }
-        public bool sendInvoiceByEmail() { return true; }
+        public static void sendInvoiceByEmail(double unitPriceValue) { 
+
+            notifyEmail(unitPriceValue);
+
+        }
         /**   
          * @brief Default Constructor
          * Constructs the object with default parameters 

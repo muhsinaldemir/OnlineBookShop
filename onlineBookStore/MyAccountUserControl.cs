@@ -35,6 +35,9 @@ namespace OnlineBookStore
         private void pbCancelOrder_Click(object sender, EventArgs e)
         {
             ShoppingCartClass.cancelOrder(name,unitPriceValue);
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            dbHelper.removeSelectedItemsFromShoppingCart(name);
+
         }
     }
 }

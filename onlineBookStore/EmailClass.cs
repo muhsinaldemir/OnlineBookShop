@@ -11,8 +11,8 @@ namespace OnlineBookStore
     public class EmailClass
     {
         public string fromAddress { get; set; }
-        public string toAddress { get; set; }
-        public string customerName { get; set; }
+        public UserClass user { get; set; }
+        public string productName { get; set; }
         public double totalValue { get; set; }
         public string password { get; set; }
 
@@ -25,11 +25,11 @@ namespace OnlineBookStore
          * @param double totalValue
          * @param string password
          */
-        public EmailClass(string fromAddress, string toAddress, string customerName, double totalValue, string password)
+        public EmailClass(string fromAddress, UserClass user, string productName, double totalValue, string password)
         {
             this.fromAddress = fromAddress;
-            this.toAddress = toAddress;
-            this.customerName = customerName;
+            this.user = user;
+            this.productName = productName;
             this.totalValue = totalValue;
             this.password = password;
         }
@@ -51,12 +51,13 @@ namespace OnlineBookStore
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.UseDefaultCredentials = false;
             client.Credentials = new System.Net.NetworkCredential(fromAddress, password);
-            string message = "Dear " + customerName + "\n\n Your Order from KitapKurdu has been cancelled. \n\n Your money will be returned in 3 work days.\n\n";
-            message += "Order Amount: " + totalValue + " Euro" +  "\n\nHave a nice day." + "\n\n KitapKurdu, Emine DENİZ & Muhsin ALDEMİR";
+            string message = "Dear " + user.name + " " + user.surName + "\n\n Your Order from KitapKurdu has been placed. \n\n Your items will be sent shortly.\n\n";
+            message += "\nOrder Amount: " + totalValue + " TL" +  "\n\nHave a nice day." + "\n\n KitapKurdu, Emine DENİZ & Muhsin ALDEMİR";
 
-            MailMessage mm = new MailMessage(fromAddress, toAddress, "Information", message);
+            MailMessage mm = new MailMessage(fromAddress, user.email, "Your Order" +
+                "Information", message);
             mm.BodyEncoding = UTF8Encoding.UTF8;
-            Console.WriteLine("Email Class in Email Class");
+            //Console.WriteLine("Email Class in Email Class");
             client.Send(mm);
 
         }

@@ -30,6 +30,5 @@ namespace OnlineBookStore
             Console.WriteLine("SMS is send\n" + message);
         }
 
-
     }
 }

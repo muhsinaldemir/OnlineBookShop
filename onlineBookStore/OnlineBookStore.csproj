@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminUserClass.cs" />
+    <Compile Include="AppConstants.cs" />
     <Compile Include="BookClass.cs" />
     <Compile Include="BookShopForm.cs">
       <SubType>Form</SubType>

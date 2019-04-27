@@ -108,9 +108,15 @@ namespace OnlineBookStore
                     list.Add(item);
                 }
             }
-
             return list;
+        }
 
+        public void removeSelectedItemsFromShoppingCart(string name)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = new SqlCommand("DELETE FROM ShoppingCartTable WHERE name=@name", connection);
+            command.Parameters.AddWithValue("@name", name);
         }
     }
 }
