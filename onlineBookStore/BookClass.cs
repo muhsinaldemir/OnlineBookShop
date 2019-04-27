@@ -18,7 +18,28 @@ namespace OnlineBookStore
 
         public override void printProperties()
         {
-            throw new NotImplementedException();// to do 
+            // throw new NotImplementedException();// to do 
+            List<BookClass> allBooks = BookClass.getAllBooksFromDB();
+            BookUserControl[] bookUserControls = new BookUserControl[allBooks.Count];
+
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
+          
+            if (((BookShopForm)f).flpHomePage.Controls.Count > 0)
+                ((BookShopForm)f).flpHomePage.Controls.Clear();
+
+            int i = 0;
+            foreach (var item in allBooks)
+            {
+                bookUserControls[i] = new BookUserControl();
+                bookUserControls[i].bookID = item.id;
+                bookUserControls[i].bookName = item.name;
+                bookUserControls[i].bookAuthor = item.author;
+                bookUserControls[i].bookPrice = item.price;
+                bookUserControls[i].stock = item.stock;
+                bookUserControls[i].cover_page_picture = item.cover_page_picture;
+                ((BookShopForm)f).flpHomePage.Controls.Add(bookUserControls[i]);
+                i++;
+            }
         }
         /**   
          * @brief Default Constructor 

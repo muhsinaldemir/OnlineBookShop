@@ -181,7 +181,6 @@ namespace OnlineBookStore
             {
                 MessageBox.Show("Magazine added successfully","INFORMATION",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 clearMagazineControls();
-
             }
         }
         /**
@@ -212,7 +211,6 @@ namespace OnlineBookStore
 
                 SqlDataAdapter command = new SqlDataAdapter(" select * FROM BookTable", connection);
                 {
-
                     command.Fill(dt);
                     dgvBooks.DataSource = dt;
                 }
@@ -234,7 +232,6 @@ namespace OnlineBookStore
                     command.Fill(dt);
                     dgvMusicCDs.DataSource = dt;
                 }
-
             }
         }
         /**
@@ -251,7 +248,6 @@ namespace OnlineBookStore
 
                 SqlDataAdapter command = new SqlDataAdapter(" select * FROM MagazineTable", connection);
                 {
-
                     command.Fill(dt);
                     dgvMagazine.DataSource = dt;
                 }
@@ -276,7 +272,6 @@ namespace OnlineBookStore
             {
                 MessageBox.Show("Error!","INFORMATION",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-
         }
 
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -318,7 +313,6 @@ namespace OnlineBookStore
 
         private void btnDeleteBooks_Click(object sender, EventArgs e)
         {
-            
             SqlConnection connection = dbHelper.getConnection();
 
             SqlCommand deleteCommand = new SqlCommand("delete from BookTable where id=@id", connection);
@@ -326,8 +320,7 @@ namespace OnlineBookStore
             deleteCommand.ExecuteNonQuery();
             int affected = 0;
             affected = deleteCommand.ExecuteNonQuery();
-        // listele();
-    }
+        }
         /**
          * button delete MusicCDs from the database
         */
@@ -587,25 +580,25 @@ namespace OnlineBookStore
         */
         private void populateHomePageBooks()
         {
-            List<BookClass> allBooks = BookClass.getAllBooksFromDB();
-            BookUserControl[] bookUserControls = new BookUserControl[allBooks.Count];
+            //List<BookClass> allBooks = BookClass.getAllBooksFromDB();
+            //BookUserControl[] bookUserControls = new BookUserControl[allBooks.Count];
             
-            if (flpHomePage.Controls.Count > 0)
-                flpHomePage.Controls.Clear();
+            //if (flpHomePage.Controls.Count > 0)
+            //    flpHomePage.Controls.Clear();
 
-            int i = 0;
-            foreach(var item in allBooks)
-            {
-                bookUserControls[i] = new BookUserControl();
-                bookUserControls[i].bookID = item.id;
-                bookUserControls[i].bookName = item.name;
-                bookUserControls[i].bookAuthor = item.author;
-                bookUserControls[i].bookPrice = item.price;
-                bookUserControls[i].stock = item.stock;
-                bookUserControls[i].cover_page_picture = item.cover_page_picture;
-                flpHomePage.Controls.Add(bookUserControls[i]);
-                i++;
-            }
+            //int i = 0;
+            //foreach(var item in allBooks)
+            //{
+            //    bookUserControls[i] = new BookUserControl();
+            //    bookUserControls[i].bookID = item.id;
+            //    bookUserControls[i].bookName = item.name;
+            //    bookUserControls[i].bookAuthor = item.author;
+            //    bookUserControls[i].bookPrice = item.price;
+            //    bookUserControls[i].stock = item.stock;
+            //    bookUserControls[i].cover_page_picture = item.cover_page_picture;
+            //    flpHomePage.Controls.Add(bookUserControls[i]);
+            //    i++;
+            //}
           
         }
         /**
@@ -866,7 +859,9 @@ namespace OnlineBookStore
 
         private void pbBooks_Click(object sender, EventArgs e)
         {
-            populateHomePageBooks();
+            //populateHomePageBooks();
+            BookClass book = new BookClass();
+            book.printProperties();
         }
 
         private void pbMusicCds_Click(object sender, EventArgs e)
