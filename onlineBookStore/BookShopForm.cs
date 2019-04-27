@@ -45,6 +45,7 @@ namespace OnlineBookStore
                 pbReport.Visible = false;
             }
             lblGeneralUserName.Text = user.name + " " + user.surName;
+            tabControlGeneral.SelectedTab = tabHomePage;
         }
 
         /// If tabcontrolgeneral is selected, tabadminpanel will open.
@@ -646,17 +647,14 @@ namespace OnlineBookStore
         /// calls  populateHomePageBooks() function
         private void btnHomepageBooks_Click(object sender, EventArgs e)
         {
-            populateHomePageBooks();
         }
         /// calls  populateHomePageMusicCDs() function
         private void btnHomepageMusicCDs_Click(object sender, EventArgs e)
         {
-            populateHomePageMusicCDs();
         }
         /// calls populateHomePageMagazine() function
         private void btnHomepageMagazine_Click(object sender, EventArgs e)
         {
-            populateHomePageMagazine();
         }
 
 
@@ -831,6 +829,21 @@ namespace OnlineBookStore
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pbMagazines_Click(object sender, EventArgs e)
+        {
+            populateHomePageMagazine();
+        }
+
+        private void pbBooks_Click(object sender, EventArgs e)
+        {
+            populateHomePageBooks();
+        }
+
+        private void pbMusicCds_Click(object sender, EventArgs e)
+        {
+            populateHomePageMusicCDs();
         }
     }
 }
