@@ -76,6 +76,7 @@ namespace OnlineBookStore
                 quantity += item.quantity;
             }
             ((BookShopForm)f).lblShoppinCartValue.Text = quantity.ToString();
+            ShoppingCartClass.printProducts();
 
         }
     }

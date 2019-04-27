@@ -51,10 +51,32 @@ namespace OnlineBookStore
 
 
 
-        public void printProducts()
+        public static void printProducts()
         {
-            
+            ShoppingCartItemsUserControl[] shoppingCartItemsUserControl = new ShoppingCartItemsUserControl[ShoppingCartClass.itemsToPurchase.Count];
+
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
+
+            if (((BookShopForm)f).flpShoppingCart.Controls.Count > 0)
+                ((BookShopForm)f).flpShoppingCart.Controls.Clear();
+
+            int i = 0;
+            foreach (ItemToPurchaseClass item in ShoppingCartClass.itemsToPurchase)
+            {
+                shoppingCartItemsUserControl[i] = new ShoppingCartItemsUserControl();
+                shoppingCartItemsUserControl[i].id = item.product.id;
+                shoppingCartItemsUserControl[i].name = item.product.name;
+                shoppingCartItemsUserControl[i].quantity = item.quantity;
+                shoppingCartItemsUserControl[i].unitPriceValue = item.product.price;
+                shoppingCartItemsUserControl[i].type = item.product.GetType();
+                shoppingCartItemsUserControl[i].picture = item.product.cover_page_picture;
+                ((BookShopForm)f).flpShoppingCart.Controls.Add(shoppingCartItemsUserControl[i]);
+                i++;
+            }
+            ((BookShopForm)f).lblTotalPriceValueGeneral.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
+
         }
+
         /**@brief add itemToPurchase
          * @param ItemToPurchaseClass itemToPurchase
          */
@@ -102,9 +124,7 @@ namespace OnlineBookStore
             notifySms(name,unitPriceValue);
         }
         public static void sendInvoiceByEmail(double unitPriceValue) { 
-
             notifyEmail(unitPriceValue);
-
         }
         /**   
          * @brief Default Constructor
