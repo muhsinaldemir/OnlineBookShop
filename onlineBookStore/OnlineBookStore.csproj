@@ -215,5 +215,26 @@
   <ItemGroup>
     <None Include="bin\Debug\Resources\music cds.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ad1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ad2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ad3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ad4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ad5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

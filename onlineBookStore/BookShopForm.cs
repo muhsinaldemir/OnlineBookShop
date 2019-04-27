@@ -22,6 +22,7 @@ namespace OnlineBookStore
         /**  @brief Default Constructor   
          * Constructs the object with default parameters  
          */
+        int imageIndex = 1;
         public BookShopForm(UserClass user)
         {
             this.user = user;
@@ -89,18 +90,11 @@ namespace OnlineBookStore
             if(operationResult)
             {
                 MessageBox.Show("User added successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtName.Clear();
-                txtSurname.Clear();
-                txtAddress.Clear();
-                txtEmail.Clear();
-                txtUserName.Clear();
-                txtPassword.Clear();
-                cbIsAdmin.Checked = false;
+                clearUserControls();
             }
             else
             {
                 MessageBox.Show("Error!");
-              
             }
         }
         /** @brief click on the add  book button to print to the database.
@@ -131,14 +125,7 @@ namespace OnlineBookStore
             else
             {
                 MessageBox.Show("Book added successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtBookAuthor.Clear();
-                txtBookIsbn.Clear();
-                txtBookName.Clear();
-                txtBookStock.Clear();
-                txtBookPage.Clear();
-                txtBookPrice.Clear();
-                txtBookPublisher.Clear();
-                txtBookImage.Clear();
+                clearBookControls();
             }
         }
         /** @brief click on the add musicsCDs button to print to the database.
@@ -165,12 +152,7 @@ namespace OnlineBookStore
             else
             {
                 MessageBox.Show("Music CDs added successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMusicName.Clear();
-                txtMusicPrice.Clear();
-                txtMusicSinger.Clear();
-                txtMusicCDsStock.Clear();
-                txtMusicType.Clear();
-                txtMusicCDsImage.Clear();
+                clearMusicCDsControl();
             }
         }
         /** @brief click on the add magazine button to print to the database.
@@ -198,12 +180,8 @@ namespace OnlineBookStore
             else
             {
                 MessageBox.Show("Magazine added successfully","INFORMATION",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                txtMagazineIssue.Clear();
-                txtMagazineName.Clear();
-                txtMagazinePrice.Clear();
-                txtMagazineStock.Clear();
-                txtMagazineType.Clear();
-                txtMagazineImage.Clear();
+                clearMagazineControls();
+
             }
         }
         /**
@@ -462,6 +440,17 @@ namespace OnlineBookStore
          * call userOperations() function in AdminUserClass
          * The parameter of the userDelete() function is id,name,surname,address,email,username,password.
          */
+        
+        private void clearUserControls()
+        {
+            txtName.Clear();
+            txtSurname.Clear();
+            txtAddress.Clear();
+            txtEmail.Clear();
+            txtUserName.Clear();
+            txtPassword.Clear();
+            cbIsAdmin.Checked = false;
+        }
 
         private void btnUpdateUser_Click(object sender, EventArgs e)
         {
@@ -471,13 +460,7 @@ namespace OnlineBookStore
             if (operationResult)
             {
                 MessageBox.Show("User Updated successfully");
-                txtName.Clear();
-                txtSurname.Clear();
-                txtAddress.Clear();
-                txtEmail.Clear();
-                txtUserName.Clear();
-                txtPassword.Clear();
-                cbIsAdmin.Checked = false;
+                clearUserControls();
             }
             else
             {
@@ -487,6 +470,18 @@ namespace OnlineBookStore
         }
         /// buton update book
         
+        private void clearBookControls()
+        {
+            txtBookAuthor.Clear();
+            txtBookIsbn.Clear();
+            txtBookName.Clear();
+            txtBookPage.Clear();
+            txtBookPrice.Clear();
+            txtBookStock.Clear();
+            txtBookPublisher.Clear();
+            txtBookImage.Clear();
+        }
+
         private void btnUpdateBook_Click(object sender, EventArgs e)
         {
             SqlConnection connection = dbHelper.getConnection();
@@ -509,17 +504,19 @@ namespace OnlineBookStore
             else
             {
                 MessageBox.Show("Book updated successfully");
-                txtBookAuthor.Clear();
-                txtBookIsbn.Clear();
-                txtBookName.Clear();
-                txtBookPage.Clear();
-                txtBookPrice.Clear();
-                txtBookStock.Clear();
-                txtBookPublisher.Clear();
-                txtBookImage.Clear();
+                clearBookControls();
             }
         }
 
+        private void clearMusicCDsControl()
+        {
+            txtMusicName.Clear();
+            txtMusicPrice.Clear();
+            txtMusicCDsStock.Clear();
+            txtMusicSinger.Clear();
+            txtMusicType.Clear();
+            txtMusicCDsImage.Clear();
+        }
         private void btnUpdateMusicCDs_Click(object sender, EventArgs e)
         {
             SqlConnection connection = dbHelper.getConnection();
@@ -540,15 +537,19 @@ namespace OnlineBookStore
             else
             {
                 MessageBox.Show("Music CDs updated successfully");
-                txtMusicName.Clear();
-                txtMusicPrice.Clear();
-                txtMusicCDsStock.Clear();
-                txtMusicSinger.Clear();
-                txtMusicType.Clear();
-                txtMusicCDsImage.Clear();
+                clearMusicCDsControl();
             }
         }
 
+        private void clearMagazineControls()
+        {
+            txtMagazineIssue.Clear();
+            txtMagazineName.Clear();
+            txtMagazineStock.Clear();
+            txtMagazinePrice.Clear();
+            txtMagazineType.Clear();
+            txtMagazineImage.Clear();
+        }
         private void btnUpdateMagazine_Click(object sender, EventArgs e)
         {
             SqlConnection connection = dbHelper.getConnection();
@@ -570,12 +571,7 @@ namespace OnlineBookStore
             else
             {
                 MessageBox.Show("Magazine updated successfully");
-                txtMagazineIssue.Clear();
-                txtMagazineName.Clear();
-                txtMagazineStock.Clear();
-                txtMagazinePrice.Clear();
-                txtMagazineType.Clear();
-                txtMagazineImage.Clear();
+                clearMagazineControls();
             }
         }
         /// If tabcontrolgeneral is selected, tabhomepage will open.
@@ -680,6 +676,14 @@ namespace OnlineBookStore
         {
         }
 
+        private void changeAd()
+        {
+            if (imageIndex >= 5)
+            { imageIndex = 1; }
+            pbAd.ImageLocation = @"Resources\Ad\" + "Ad" + imageIndex +".png";
+            Console.WriteLine(pbAd.ImageLocation);
+            imageIndex = imageIndex + 1;
+        }
 
         public void populateShoppingCartPanelView()
         {
@@ -782,6 +786,7 @@ namespace OnlineBookStore
         private void pbHomePage_Click(object sender, EventArgs e)
         {
             tabControlGeneral.SelectedTab = tabHomePage;
+            populateHomePageBooks();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -867,6 +872,11 @@ namespace OnlineBookStore
         private void pbMusicCds_Click(object sender, EventArgs e)
         {
             populateHomePageMusicCDs();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            changeAd();
         }
     }
 }
