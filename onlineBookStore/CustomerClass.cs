@@ -10,8 +10,39 @@ namespace OnlineBookStore
 
     public class CustomerClass : UserClass
     {
-        public void printCustomerDetails() { }
-        public void printCustomerPurchases() { }
+       
+        /** dbHelper created from DatabaseHelperClass 
+        * A list of list in the  ItemToPurchaseClass' getAllUserPurchases() function is created.
+        * myAccountUserControls array is created from the  MyAccountUserControl
+        * The size of  myAccountUserControls is up to the length of list
+        */
+
+        public void printCustomerPurchases(string customerID)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            List<ItemToPurchaseClass> list = dbHelper.getAllUserPurchases(Convert.ToInt32(customerID));
+            Console.WriteLine("Custo" + customerID);
+            MyAccountUserControl[] myAccountUserControls = new MyAccountUserControl[list.Count];
+
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
+
+
+            if (((BookShopForm)f).flpMyAccount.Controls.Count > 0)
+                ((BookShopForm)f).flpMyAccount.Controls.Clear();
+
+            int i = 0;
+            foreach (ItemToPurchaseClass item in list)
+            {
+                myAccountUserControls[i] = new MyAccountUserControl();
+                myAccountUserControls[i].id = item.product.id;
+                myAccountUserControls[i].name = item.product.name;
+                myAccountUserControls[i].quantity = item.quantity;
+                myAccountUserControls[i].unitPriceValue = item.product.price;
+                myAccountUserControls[i].picture = item.product.cover_page_picture;
+                ((BookShopForm)f).flpMyAccount.Controls.Add(myAccountUserControls[i]);
+                i++;
+            }
+        }
         /**
          * override function
          * @return false
@@ -66,6 +97,11 @@ namespace OnlineBookStore
             this.userName = UserName;
             this.password = Password;
             this.IsAdmin = IsAdmin;
+        }
+
+        public void printCustomerDetails()
+        {
+            Console.WriteLine("CustomerID: " + customerID, "  Name" + name + "  SurName:" + surName + "  Address" + address + " Email" + " UserName" + userName + " Password" + password + " IsAdmin" + (IsAdmin ? " Admin" : "Not Admin"));
         }
     }
 }

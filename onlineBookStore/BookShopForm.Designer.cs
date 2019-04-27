@@ -1711,7 +1711,6 @@
         public System.Windows.Forms.Label lblShoppinCartValue;
         private System.Windows.Forms.PictureBox pbMyAccount;
         private System.Windows.Forms.TabPage tabMyAccount;
-        private System.Windows.Forms.FlowLayoutPanel flpMyAccount;
         private System.Windows.Forms.PictureBox pbBooks;
         private System.Windows.Forms.PictureBox pbMagazines;
         private System.Windows.Forms.PictureBox pbMusicCds;
@@ -1722,5 +1721,6 @@
         private System.Windows.Forms.PictureBox pbAd;
         private System.Windows.Forms.Timer timerChangeAd;
         private System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.FlowLayoutPanel flpMyAccount;
     }
 }

@@ -745,32 +745,34 @@ namespace OnlineBookStore
         */
         public void populateMyAccount()
         {
-            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
-            List<ItemToPurchaseClass> list =  dbHelper.getAllUserPurchases(Convert.ToInt32(user.customerID));
-            MyAccountUserControl[] myAccountUserControls = new MyAccountUserControl[list.Count];
+            //DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            //List<ItemToPurchaseClass> list =  dbHelper.getAllUserPurchases(Convert.ToInt32(user.customerID));
+            //MyAccountUserControl[] myAccountUserControls = new MyAccountUserControl[list.Count];
 
-            if (flpMyAccount.Controls.Count > 0)
-                flpMyAccount.Controls.Clear();
+            //if (flpMyAccount.Controls.Count > 0)
+            //    flpMyAccount.Controls.Clear();
 
-            int i = 0;
-            foreach (ItemToPurchaseClass item in list)
-            {
-                myAccountUserControls[i] = new MyAccountUserControl();
-                myAccountUserControls[i].id = item.product.id;
-                myAccountUserControls[i].name = item.product.name;
-                myAccountUserControls[i].quantity = item.quantity;
-                myAccountUserControls[i].unitPriceValue = item.product.price;
-                myAccountUserControls[i].picture = item.product.cover_page_picture;
-                flpMyAccount.Controls.Add(myAccountUserControls[i]);
-                i++;
-            }
+            //int i = 0;
+            //foreach (ItemToPurchaseClass item in list)
+            //{
+            //    myAccountUserControls[i] = new MyAccountUserControl();
+            //    myAccountUserControls[i].id = item.product.id;
+            //    myAccountUserControls[i].name = item.product.name;
+            //    myAccountUserControls[i].quantity = item.quantity;
+            //    myAccountUserControls[i].unitPriceValue = item.product.price;
+            //    myAccountUserControls[i].picture = item.product.cover_page_picture;
+            //    flpMyAccount.Controls.Add(myAccountUserControls[i]);
+            //    i++;
+            //}
         }
         /** calls  populateMyAccount()
          * If tabcontrolgeneral is selected, tabMyAccount will open.
         */
         private void pbMyAccount_Click(object sender, EventArgs e)
         {
-            populateMyAccount();
+            CustomerClass cUser = CustomerClass.Instance;
+            cUser.printCustomerPurchases(user.customerID);
+
             tabControlGeneral.SelectedTab = tabMyAccount;
         }
 
