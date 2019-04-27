@@ -38,7 +38,8 @@ namespace OnlineBookStore
          */
         private void BookShopForm_Load(object sender, EventArgs e)
         {
-            
+            ShoppingCartClass.attach(new CustomerObserverClass());
+
             if(!user.isAdmin())
             {
                 pbAdminPanel.Visible = false;

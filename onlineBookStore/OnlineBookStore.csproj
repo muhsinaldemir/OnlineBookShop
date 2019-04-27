@@ -60,6 +60,7 @@
       <DependentUpon>BookUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerClass.cs" />
+    <Compile Include="CustomerObserverClass.cs" />
     <Compile Include="DatabaseHelperClass.cs" />
     <Compile Include="EmailClass.cs" />
     <Compile Include="LoginPage.cs">
@@ -89,6 +90,7 @@
     <Compile Include="MyAccountUserControl.Designer.cs">
       <DependentUpon>MyAccountUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ObserverClass.cs" />
     <Compile Include="PaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +107,7 @@
     <Compile Include="ShoppingCartItemsUserControl.Designer.cs">
       <DependentUpon>ShoppingCartItemsUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SMSClass.cs" />
     <Compile Include="UserClass.cs" />
     <EmbeddedResource Include="BookShopForm.resx">
       <DependentUpon>BookShopForm.cs</DependentUpon>
@@ -200,6 +203,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Resources\kitapkurdu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\magazines.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\music cds.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

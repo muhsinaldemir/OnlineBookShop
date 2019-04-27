@@ -128,9 +128,6 @@
             this.tabHomePage = new System.Windows.Forms.TabPage();
             this.flpHomePage = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHomepageMagazine = new System.Windows.Forms.Button();
-            this.btnHomepageMusicCDs = new System.Windows.Forms.Button();
-            this.btnHomepageBooks = new System.Windows.Forms.Button();
             this.tabMyAccount = new System.Windows.Forms.TabPage();
             this.flpMyAccount = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -1233,47 +1230,11 @@
             this.panel2.Controls.Add(this.pbMusicCds);
             this.panel2.Controls.Add(this.pbMagazines);
             this.panel2.Controls.Add(this.pbBooks);
-            this.panel2.Controls.Add(this.btnHomepageMagazine);
-            this.panel2.Controls.Add(this.btnHomepageMusicCDs);
-            this.panel2.Controls.Add(this.btnHomepageBooks);
             this.panel2.Location = new System.Drawing.Point(0, 42);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1158, 171);
             this.panel2.TabIndex = 0;
-            // 
-            // btnHomepageMagazine
-            // 
-            this.btnHomepageMagazine.Location = new System.Drawing.Point(918, 0);
-            this.btnHomepageMagazine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnHomepageMagazine.Name = "btnHomepageMagazine";
-            this.btnHomepageMagazine.Size = new System.Drawing.Size(233, 46);
-            this.btnHomepageMagazine.TabIndex = 2;
-            this.btnHomepageMagazine.Text = "Magazine";
-            this.btnHomepageMagazine.UseVisualStyleBackColor = true;
-            this.btnHomepageMagazine.Click += new System.EventHandler(this.btnHomepageMagazine_Click);
-            // 
-            // btnHomepageMusicCDs
-            // 
-            this.btnHomepageMusicCDs.Location = new System.Drawing.Point(878, 105);
-            this.btnHomepageMusicCDs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnHomepageMusicCDs.Name = "btnHomepageMusicCDs";
-            this.btnHomepageMusicCDs.Size = new System.Drawing.Size(245, 49);
-            this.btnHomepageMusicCDs.TabIndex = 1;
-            this.btnHomepageMusicCDs.Text = "Music CDs";
-            this.btnHomepageMusicCDs.UseVisualStyleBackColor = true;
-            this.btnHomepageMusicCDs.Click += new System.EventHandler(this.btnHomepageMusicCDs_Click);
-            // 
-            // btnHomepageBooks
-            // 
-            this.btnHomepageBooks.Location = new System.Drawing.Point(853, 50);
-            this.btnHomepageBooks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnHomepageBooks.Name = "btnHomepageBooks";
-            this.btnHomepageBooks.Size = new System.Drawing.Size(234, 49);
-            this.btnHomepageBooks.TabIndex = 0;
-            this.btnHomepageBooks.Text = "Books";
-            this.btnHomepageBooks.UseVisualStyleBackColor = true;
-            this.btnHomepageBooks.Click += new System.EventHandler(this.btnHomepageBooks_Click);
             // 
             // tabMyAccount
             // 
@@ -1654,9 +1615,6 @@
         private System.Windows.Forms.Label lblShoppingCartValue;
         private System.Windows.Forms.Label lblShoppingCartTitle;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnHomepageMagazine;
-        private System.Windows.Forms.Button btnHomepageMusicCDs;
-        private System.Windows.Forms.Button btnHomepageBooks;
         private System.Windows.Forms.TextBox txtBookStock;
         private System.Windows.Forms.Label lblBookStock;
         private System.Windows.Forms.TextBox txtMusicCDsStock;

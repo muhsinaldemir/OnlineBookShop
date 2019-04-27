@@ -59,7 +59,7 @@ namespace OnlineBookStore
                     }
                     connection.Close();
                     ShoppingCartClass shoppingCartClass = ShoppingCartClass.Instance; //SINGLETON PATTERN
-                    shoppingCartClass.customerID = cs.customerID;
+                    ShoppingCartClass.customerID = cs.customerID;
                     BookShopForm bookShopForm = new BookShopForm(cs);
                     bookShopForm.Show();
                     this.Hide();

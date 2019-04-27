@@ -16,16 +16,41 @@ namespace OnlineBookStore
 
     class ShoppingCartClass
     {
-        public string customerID { get; set; }
+        public static string customerID { get; set; }
        // public ArrayList itemsToPurchase { get; set; }
-        public double paymentAmount { get; set; }
+        public static double paymentAmount { get; set; }
         public PaymentType paymentType { get; set; }
         /// create new  list object itemsToPurchase fromItemToPurchaseClass
         public static List<ItemToPurchaseClass> itemsToPurchase = new List<ItemToPurchaseClass>();
 
+
+        private static List<ObserverClass> _observers = new List<ObserverClass>();
+
+        public static void attach(ObserverClass observer)
+        {
+            _observers.Add(observer);
+        }
+
+        public static void detach(ObserverClass observer)
+        {
+            _observers.Remove(observer);
+        }
+
+        public static void notifyEmail()
+        {
+            //_observers.ForEach(o => { o.update("email", customerID); });
+        }
+
+        public static void notifySms(string name, double unitPriceValue)
+        {
+            _observers.ForEach(o => { o.update("sms",customerID, name, unitPriceValue); });
+        }
+
+
+
         public void printProducts()
         {
-
+            
         }
         /**@brief add itemToPurchase
          * @param ItemToPurchaseClass itemToPurchase
@@ -60,21 +85,18 @@ namespace OnlineBookStore
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             dbHelper.shoppingCartPlaceOrder(customerID, paymentType);
-
+            notifyEmail();
         }
         /** @brief cancelorder() function
         * @param string string name
         * create a new object email from EmailClass
         * calls shoppingCartCancelOrder() and sendEmail() function
         */
-        public static void cancelOrder(string name)
+        public static void cancelOrder(string name,double unitPriceValue)
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             dbHelper.shoppingCartCancelOrder(name);
-            EmailClass email = new EmailClass("***REMOVED***","denzemine@gmail.com","emine deniz",111,"***REMOVED***");
-            Console.WriteLine("Cancel order in shopping cart");
-            email.sendEmail();
-
+            notifySms(name,unitPriceValue);
         }
         public bool sendInvoiceByEmail() { return true; }
         /**   
@@ -105,7 +127,7 @@ namespace OnlineBookStore
 
         private ShoppingCartClass(string customerID)
         {
-            this.customerID = customerID ?? throw new ArgumentNullException(nameof(customerID));
+            customerID = customerID ?? throw new ArgumentNullException(nameof(customerID));
         }
         /** @brief  calculateActualTotalPrice() function
          * @return totalPrice

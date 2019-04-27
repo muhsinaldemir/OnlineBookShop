@@ -34,7 +34,7 @@ namespace OnlineBookStore
 
         private void pbCancelOrder_Click(object sender, EventArgs e)
         {
-            ShoppingCartClass.cancelOrder(name);
+            ShoppingCartClass.cancelOrder(name,unitPriceValue);
         }
     }
 }
