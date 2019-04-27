@@ -36,10 +36,14 @@ namespace OnlineBookStore
         {
             ShoppingCartClass.cancelOrder(name,unitPriceValue);
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
-            dbHelper.removeSelectedItemsFromShoppingCart(name);
-
-            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
-            ((BookShopForm)f).populateMyAccount();
+            DialogResult dialogResult = MessageBox.Show("Want to cancel your item? ", "Information", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+            if(dialogResult==DialogResult.Yes)
+            {
+                dbHelper.removeSelectedItemsFromShoppingCart(name);
+                System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
+                ((BookShopForm)f).populateMyAccount();
+            }
+           
 
         }
     }
