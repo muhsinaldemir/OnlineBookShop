@@ -13,7 +13,7 @@ using System.IO;
 
 namespace OnlineBookStore
 {
-    public partial class BookShopForm : Form
+    public partial class BookShopForm : Form, IMessageFilter
     {
         ///dbHelper created from DatabaseHelperClass
         static DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
@@ -26,12 +26,34 @@ namespace OnlineBookStore
         {
             this.user = user;
             InitializeComponent();
+            Application.AddMessageFilter(this);
+            this.FormClosed += (o, e) => Application.RemoveMessageFilter(this);
         }
 
         public BookShopForm()
         {
             InitializeComponent();
+            Application.AddMessageFilter(this);
+            this.FormClosed += (o, e) => Application.RemoveMessageFilter(this);
         }
+
+
+        public bool PreFilterMessage(ref Message m)
+        {
+            if (m.Msg == 0x201 || m.Msg == 0x203)
+            {  // Trap left click + double-click
+                string name = "Unknown";
+                Control ctl = Control.FromHandle(m.HWnd);
+                if (ctl != null) name = ctl.Name;
+                //Point pos = new Point(m.LParam.ToInt32());
+                string message = "Username " + user.userName + " Clicked object " + name + " at " + DateTime.Now.ToLongDateString() + " "+ DateTime.Now.ToLongTimeString();
+                FileWriterClass.WriteFile(AppConstants.LOG_FILE_LOCATION, message);
+                Console.WriteLine("Click {0}", message);
+            }
+            return false;
+        }
+
+
         /**  BookShopForm_Load() finds whether the user is admin or not.
          * If the user is admin, the admin panel and report panel'visibility will be true .
          * 

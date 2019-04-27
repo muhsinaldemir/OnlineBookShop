@@ -11,12 +11,14 @@ using System.Data.SqlClient;
 using System.Globalization;
 namespace OnlineBookStore
 {
-    public partial class LoginPage : Form
+    public partial class LoginPage : Form, IMessageFilter
     {
         SqlConnection connection = new SqlConnection(@"Server=tcp: oop2.database.windows.net;Database=bookshop; User ID = oop2admin@oop2.database.windows.net; Password=oop2_project;Trusted_Connection=False; Encrypt=True;");
         public LoginPage()
         {
             InitializeComponent();
+            Application.AddMessageFilter(this);
+            this.FormClosed += (o, e) => Application.RemoveMessageFilter(this);
         }
         /**
          * click the login button if usernam and password are correct ,opens bookshopform
@@ -93,7 +95,22 @@ namespace OnlineBookStore
             }
 
         }
-     
+
+        public bool PreFilterMessage(ref Message m)
+        {
+            if (m.Msg == 0x201 || m.Msg == 0x203)
+            {  // Trap left click + double-click
+                string name = "Unknown";
+                Control ctl = Control.FromHandle(m.HWnd);
+                if (ctl != null) name = ctl.Name;
+                //Point pos = new Point(m.LParam.ToInt32());
+                string message = "A click occurred in Login Page at " + name + " at " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
+                //FileWriterClass.WriteFile(AppConstants.LOG_FILE_LOCATION, message);
+                //Console.WriteLine("Click {0}", message);
+            }
+            return false;
+        }
+
         /// change form application width in left direction
         private void panelLogin_Paint(object sender, PaintEventArgs e)
         {

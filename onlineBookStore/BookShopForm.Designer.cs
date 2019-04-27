@@ -150,6 +150,7 @@
             this.lblBooks = new System.Windows.Forms.Label();
             this.lblMagazines = new System.Windows.Forms.Label();
             this.lblMusicCds = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
@@ -1238,6 +1239,7 @@
             // 
             // tabMyAccount
             // 
+            this.tabMyAccount.Controls.Add(this.label3);
             this.tabMyAccount.Controls.Add(this.flpMyAccount);
             this.tabMyAccount.Location = new System.Drawing.Point(4, 29);
             this.tabMyAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1249,10 +1251,10 @@
             // 
             // flpMyAccount
             // 
-            this.flpMyAccount.Location = new System.Drawing.Point(3, 2);
+            this.flpMyAccount.Location = new System.Drawing.Point(3, 63);
             this.flpMyAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpMyAccount.Name = "flpMyAccount";
-            this.flpMyAccount.Size = new System.Drawing.Size(1148, 1096);
+            this.flpMyAccount.Size = new System.Drawing.Size(1148, 1035);
             this.flpMyAccount.TabIndex = 0;
             // 
             // panel3
@@ -1475,6 +1477,16 @@
             this.lblMusicCds.TabIndex = 8;
             this.lblMusicCds.Text = "Music CDs";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(-3, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(408, 32);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Your Previously Ordered Items:";
+            // 
             // BookShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1512,6 +1524,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabMyAccount.ResumeLayout(false);
+            this.tabMyAccount.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1656,5 +1669,6 @@
         private System.Windows.Forms.Label lblMusicCds;
         private System.Windows.Forms.Label lblMagazines;
         private System.Windows.Forms.Label lblBooks;
+        private System.Windows.Forms.Label label3;
     }
 }

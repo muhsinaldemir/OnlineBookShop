@@ -64,6 +64,7 @@
     <Compile Include="CustomerObserverClass.cs" />
     <Compile Include="DatabaseHelperClass.cs" />
     <Compile Include="EmailClass.cs" />
+    <Compile Include="FileWriterClass.cs" />
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>

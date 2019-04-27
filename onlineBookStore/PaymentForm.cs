@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace OnlineBookStore
 {
-    public partial class PaymentForm : Form
+    public partial class PaymentForm : Form, IMessageFilter
     {
         /// create new object user from UserClass
         UserClass user;
@@ -23,7 +23,25 @@ namespace OnlineBookStore
         {
             this.user = user;
             InitializeComponent();
+            Application.AddMessageFilter(this);
+            this.FormClosed += (o, e) => Application.RemoveMessageFilter(this);
         }
+
+        public bool PreFilterMessage(ref Message m)
+        {
+            if (m.Msg == 0x201 || m.Msg == 0x203)
+            {  // Trap left click + double-click
+                string name = "Unknown";
+                Control ctl = Control.FromHandle(m.HWnd);
+                if (ctl != null) name = ctl.Name;
+                //Point pos = new Point(m.LParam.ToInt32());
+                string message = "Username " + user.userName + " Clicked object " + name + " at " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
+                FileWriterClass.WriteFile(AppConstants.LOG_FILE_LOCATION, message);
+                Console.WriteLine("Click {0}", message);
+            }
+            return false;
+        }
+
         /**
          * call calculateActualTotalPrice() from ShoppingCartClass
          * and assign lblPaymentAmountValue and lblPaymentAmountCashValue
