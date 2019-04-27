@@ -16,6 +16,12 @@ namespace OnlineBookStore
         public string publisher { get; set; }
         public int page { get; set; }
 
+         /**
+         * A list of allbooks in the book class' getAllBooksFromDB() function is created.
+         * bookUserControlsis created from the  BookUserControl class.
+         * The size of bookusercontrols is up to the length of allbooks.
+        */
+
         public override void printProperties()
         {
             // throw new NotImplementedException();// to do 
@@ -50,7 +56,7 @@ namespace OnlineBookStore
 
         }
         /**   
-         * @brief Default Constructor 
+         * @brief Constructor 
          * Constructs the object with default parameters
          * this constructor inherit from product class so have already parameter Name, Id, Price,Stock, Cover_page_picture 
          * @param string Name

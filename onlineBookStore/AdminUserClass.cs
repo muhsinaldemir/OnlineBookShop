@@ -40,8 +40,17 @@ namespace OnlineBookStore
         {
             return true;
         }
-        ///Initialize static member of AdminUserClass
-        private static AdminUserClass admin = null;
+
+        public override bool saveCustomer(string id, string name, string surname, string address, string email, string username, string password, bool isadmin)
+        {
+            bool operationResult = AdminUserClass.userOperations("Add", id, name, surname, address, email, username, password, isadmin);
+            return operationResult;
+        }
+
+    
+
+    ///Initialize static member of AdminUserClass
+    private static AdminUserClass admin = null;
         public static AdminUserClass Instance
         {
             get

@@ -85,9 +85,18 @@ namespace OnlineBookStore
          */
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            bool operationResult = AdminUserClass.userOperations("Add", txtUserId.Text,txtName.Text, txtSurname.Text, txtAddress.Text, txtEmail.Text, txtUserName.Text, txtPassword.Text, cbIsAdmin.Checked ? true : false);
+            UserClass user;
+            if (cbIsAdmin.Checked)
+            {
+                user = CustomerClass.Instance;
+            }
+            else
+            {
+                user = AdminUserClass.Instance;
+            }
+            bool operationResult = user.saveCustomer(txtUserId.Text, txtName.Text, txtSurname.Text, txtAddress.Text, txtEmail.Text, txtUserName.Text, txtPassword.Text, cbIsAdmin.Checked ? true : false);
 
-            if(operationResult)
+            if (operationResult)
             {
                 MessageBox.Show("User added successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearUserControls();
@@ -573,90 +582,7 @@ namespace OnlineBookStore
             tabControlGeneral.SelectedTab = tabHomePage;
 
         }
-        /**
-         * A list of allbooks in the book class' getAllBooksFromDB() function is created.
-         * bookUserControlsis created from the  BookUserControl class.
-         * The size of bookusercontrols is up to the length of allbooks.
-        */
-        private void populateHomePageBooks()
-        {
-            //List<BookClass> allBooks = BookClass.getAllBooksFromDB();
-            //BookUserControl[] bookUserControls = new BookUserControl[allBooks.Count];
-            
-            //if (flpHomePage.Controls.Count > 0)
-            //    flpHomePage.Controls.Clear();
 
-            //int i = 0;
-            //foreach(var item in allBooks)
-            //{
-            //    bookUserControls[i] = new BookUserControl();
-            //    bookUserControls[i].bookID = item.id;
-            //    bookUserControls[i].bookName = item.name;
-            //    bookUserControls[i].bookAuthor = item.author;
-            //    bookUserControls[i].bookPrice = item.price;
-            //    bookUserControls[i].stock = item.stock;
-            //    bookUserControls[i].cover_page_picture = item.cover_page_picture;
-            //    flpHomePage.Controls.Add(bookUserControls[i]);
-            //    i++;
-            //}
-          
-        }
-        /**
-         * A list of allMusicCDs in the MusicCDsClass' getAllMusicCDsFromDB() function is created.
-         * musicCDsUserControls is created from the  MusicCDUserControl.
-         * The size of musicCDsUserControls is up to the length of allMusicCDs.
-        */
-
-        private void populateHomePageMusicCDs()
-        {
-            List<MusicCDsClass> allMusicCDs = MusicCDsClass.getAllMusicCDsFromDB();
-             MusicCDUserControl[] musicCDsUserControls = new MusicCDUserControl[allMusicCDs.Count];
-
-            if (flpHomePage.Controls.Count > 0)
-                flpHomePage.Controls.Clear();
-
-            int i = 0;
-            foreach (var item in allMusicCDs)
-            {
-                musicCDsUserControls[i] = new MusicCDUserControl();
-                musicCDsUserControls[i].musicCDID = item.id;
-                musicCDsUserControls[i].musicCDName = item.name;
-                musicCDsUserControls[i].musicCDPrice = item.price;
-                musicCDsUserControls[i].musicCDSinger = item.singer;
-                musicCDsUserControls[i].stock = item.stock;
-                musicCDsUserControls[i].picture = item.cover_page_picture;
-                flpHomePage.Controls.Add(musicCDsUserControls[i]);
-                i++;
-            }
-        }
-        /**
-        * A list of allmagazine in the  MagazineClass' getAllMagazineFromDB() function is created.
-        * magazineUserControls is created from the  MagazineUserControls
-        * The size of  MagazineUserControls is up to the length of allmagazine
-       */
-        private void populateHomePageMagazine()
-        {
-            List<MagazineClass> allmagazine = MagazineClass.getAllMagazineFromDB();
-           MagazineUserControl[] magazineUserControls = new MagazineUserControl[allmagazine.Count];
-
-            if (flpHomePage.Controls.Count > 0)
-                flpHomePage.Controls.Clear();
-
-            int i = 0;
-            foreach (var item in allmagazine)
-            {
-                magazineUserControls[i] = new MagazineUserControl();
-                magazineUserControls[i].magazineID = item.id;
-                magazineUserControls[i].magazineName = item.name;
-                magazineUserControls[i].magazinePrice = item.price;
-                magazineUserControls[i].magazineIssue = item.issue;
-                magazineUserControls[i].stock = item.stock;
-                magazineUserControls[i].cover_page_picture = item.cover_page_picture;
-                flpHomePage.Controls.Add(magazineUserControls[i]);
-                i++;
-            }
-        }
-        /// calls  populateHomePageBooks() function
         private void btnHomepageBooks_Click(object sender, EventArgs e)
         {
         }
@@ -779,7 +705,8 @@ namespace OnlineBookStore
         private void pbHomePage_Click(object sender, EventArgs e)
         {
             tabControlGeneral.SelectedTab = tabHomePage;
-            populateHomePageBooks();
+            BookClass book = new BookClass();
+            book.printProperties();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -854,19 +781,20 @@ namespace OnlineBookStore
 
         private void pbMagazines_Click(object sender, EventArgs e)
         {
-            populateHomePageMagazine();
+            MagazineClass magazine = new MagazineClass();
+            magazine.printProperties();
         }
 
         private void pbBooks_Click(object sender, EventArgs e)
         {
-            //populateHomePageBooks();
             BookClass book = new BookClass();
             book.printProperties();
         }
 
         private void pbMusicCds_Click(object sender, EventArgs e)
         {
-            populateHomePageMusicCDs();
+            MusicCDsClass music = new MusicCDsClass();
+            music.printProperties();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

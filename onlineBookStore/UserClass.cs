@@ -9,7 +9,6 @@ using System.Globalization;
 namespace OnlineBookStore
 {
     /// abstract class "UserClass"
-
     public abstract class UserClass
     {
         public string customerID { get; set; }
@@ -50,6 +49,11 @@ namespace OnlineBookStore
         public UserClass() { }
         ///abstract method ' isAdmin()'
         public abstract bool isAdmin();
+
+        public abstract bool saveCustomer(string id, string name, string surname, string address, string email, string username, string password, bool isadmin);
+
+
+
         /**
          * add and update operation in the database
          * @param string operationType
