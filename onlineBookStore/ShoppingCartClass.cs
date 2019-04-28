@@ -54,10 +54,10 @@ namespace OnlineBookStore
         public static ShoppingCartItemsUserControl[] printProducts()
         {
             ShoppingCartItemsUserControl[] shoppingCartItemsUserControl = new ShoppingCartItemsUserControl[ShoppingCartClass.itemsToPurchase.Count];
-
-            //System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
-
+               
+            //Prepare items to show at shoppingcart 
             int i = 0;
+            Console.WriteLine("Items in customers shopping cart are:");
             foreach (ItemToPurchaseClass item in ShoppingCartClass.itemsToPurchase)
             {
                 shoppingCartItemsUserControl[i] = new ShoppingCartItemsUserControl();
@@ -67,6 +67,8 @@ namespace OnlineBookStore
                 shoppingCartItemsUserControl[i].unitPriceValue = item.product.price;
                 shoppingCartItemsUserControl[i].type = item.product.GetType();
                 shoppingCartItemsUserControl[i].picture = item.product.cover_page_picture;
+                //Print the item details to Console
+                Console.WriteLine("Id: " + item.product.id + " Name: " + item.product.name + " Quantity: " + item.quantity + " Unit Price Value: " + item.product.price + " Item Type: " + item.product.GetType());
                 i++;
             }
             return shoppingCartItemsUserControl;
@@ -80,7 +82,6 @@ namespace OnlineBookStore
             itemsToPurchase.Add(itemToPurchase);
         }
         ///shoppingCartUpdate() function
-         
         private static void shoppingCartUpdate()
         {
             System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];

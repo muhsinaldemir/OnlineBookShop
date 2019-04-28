@@ -779,14 +779,32 @@ namespace OnlineBookStore
             //    i++;
             //}
         }
+
+        private void populateMyAccountView()
+        {
+            MyAccountUserControl[] myAccountUserControls = CustomerClass.printCustomerPurchases(user.customerID);
+            if (flpMyAccount.Controls.Count > 0)
+                flpMyAccount.Controls.Clear();
+
+            int i = 0;
+            foreach (var item in myAccountUserControls)
+            {
+                flpMyAccount.Controls.Add(myAccountUserControls[i]);
+                i++;
+            }
+
+
+
+        }
+
         /** calls  populateMyAccount()
          * If tabcontrolgeneral is selected, tabMyAccount will open.
         */
         private void pbMyAccount_Click(object sender, EventArgs e)
         {
-            CustomerClass cUser = CustomerClass.Instance;
-            cUser.printCustomerPurchases(user.customerID);
-
+            //CustomerClass cUser = CustomerClass.Instance;
+            //cUser.printCustomerPurchases(user.customerID);
+            populateMyAccountView();
             tabControlGeneral.SelectedTab = tabMyAccount;
         }
 

@@ -17,20 +17,15 @@ namespace OnlineBookStore
         * The size of  myAccountUserControls is up to the length of list
         */
 
-        public void printCustomerPurchases(string customerID)
+        public static MyAccountUserControl[] printCustomerPurchases(string customerID)
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             List<ItemToPurchaseClass> list = dbHelper.getAllUserPurchases(Convert.ToInt32(customerID));
-            Console.WriteLine("Custo" + customerID);
+            //Console.WriteLine("Custo" + customerID);
             MyAccountUserControl[] myAccountUserControls = new MyAccountUserControl[list.Count];
 
-            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
-
-
-            if (((BookShopForm)f).flpMyAccount.Controls.Count > 0)
-                ((BookShopForm)f).flpMyAccount.Controls.Clear();
-
             int i = 0;
+            Console.WriteLine("Customer Purchases are:");
             foreach (ItemToPurchaseClass item in list)
             {
                 myAccountUserControls[i] = new MyAccountUserControl();
@@ -39,9 +34,10 @@ namespace OnlineBookStore
                 myAccountUserControls[i].quantity = item.quantity;
                 myAccountUserControls[i].unitPriceValue = item.product.price;
                 myAccountUserControls[i].picture = item.product.cover_page_picture;
-                ((BookShopForm)f).flpMyAccount.Controls.Add(myAccountUserControls[i]);
+                Console.WriteLine("Id: " + item.product.id + " Name: " + item.product.name + " Quantity: " + item.quantity + " Unit Price Value: " + item.product.price + " Item Type: " + item.product.GetType());
                 i++;
             }
+            return myAccountUserControls;
         }
         /**
          * override function
@@ -98,7 +94,9 @@ namespace OnlineBookStore
             this.password = Password;
             this.IsAdmin = IsAdmin;
         }
-
+        /**   
+        * Prints Customer Details   
+        */
         public void printCustomerDetails()
         {
             Console.WriteLine("CustomerID: " + customerID, "  Name" + name + "  SurName:" + surName + "  Address" + address + " Email" + " UserName" + userName + " Password" + password + " IsAdmin" + (IsAdmin ? " Admin" : "Not Admin"));
