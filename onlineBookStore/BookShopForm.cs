@@ -127,6 +127,7 @@ namespace OnlineBookStore
             command.Parameters.AddWithValue("@cover_page_picture", txtBookImage.Text);
             int affected = command.ExecuteNonQuery();
 
+            
             if (affected == 0)
             {
                 MessageBox.Show("Error not successful");
@@ -136,6 +137,7 @@ namespace OnlineBookStore
                 MessageBox.Show("Book added successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearBookControls();
             }
+
         }
         /** @brief click on the add musicsCDs button to print to the database.
          * writes the information entered to the textboxes into the database.
@@ -786,22 +788,112 @@ namespace OnlineBookStore
 
         }
 
+        /**
+        * A list of allmagazine in the  MagazineClass' getAllMagazineFromDB() function is created.
+        * magazineUserControls is created from the  MagazineUserControls
+        * The size of  MagazineUserControls is up to the length of allmagazine
+        */
+        private void populateMagazinesViewInHomePage()
+        {
+            List<MagazineClass> allmagazine = MagazineClass.getAllMagazineFromDB();
+            MagazineUserControl[] magazineUserControls = new MagazineUserControl[allmagazine.Count];
+
+            if (flpHomePage.Controls.Count > 0)
+                flpHomePage.Controls.Clear();
+
+            int i = 0;
+            foreach (var item in allmagazine)
+            {
+                magazineUserControls[i] = new MagazineUserControl();
+                magazineUserControls[i].magazineID = item.id;
+                magazineUserControls[i].magazineName = item.name;
+                magazineUserControls[i].magazinePrice = item.price;
+                magazineUserControls[i].magazineIssue = item.issue;
+                magazineUserControls[i].stock = item.stock;
+                magazineUserControls[i].cover_page_picture = item.cover_page_picture;
+                flpHomePage.Controls.Add(magazineUserControls[i]);
+                i++;
+            }
+        }
+
         private void pbMagazines_Click(object sender, EventArgs e)
         {
+            /*
             MagazineClass magazine = new MagazineClass();
             magazine.printProperties();
+            */
+            populateMagazinesViewInHomePage();
+        }
+
+        /**
+       * A list of allbooks in the book class' getAllBooksFromDB() function is created.
+       * bookUserControlsis created from the  BookUserControl class.
+       * The size of bookusercontrols is up to the length of allbooks.
+      */
+        private void populateBooksViewInHomePage()
+        {
+            List<BookClass> allBooks = BookClass.getAllBooksFromDB();
+            BookUserControl[] bookUserControls = new BookUserControl[allBooks.Count];
+
+            if (flpHomePage.Controls.Count > 0)
+                flpHomePage.Controls.Clear();
+
+            int i = 0;
+            foreach (var item in allBooks)
+            {
+                bookUserControls[i] = new BookUserControl();
+                bookUserControls[i].bookID = item.id;
+                bookUserControls[i].bookName = item.name;
+                bookUserControls[i].bookAuthor = item.author;
+                bookUserControls[i].bookPrice = item.price;
+                bookUserControls[i].stock = item.stock;
+                bookUserControls[i].cover_page_picture = item.cover_page_picture;
+                flpHomePage.Controls.Add(bookUserControls[i]);
+                i++;
+            }
         }
 
         private void pbBooks_Click(object sender, EventArgs e)
         {
-            BookClass book = new BookClass();
+            /*BookClass book = new BookClass();
             book.printProperties();
+            */
+            populateBooksViewInHomePage();
+
+        }
+
+        /**
+        * A list of allMusicCDs in the MusicCDsClass' getAllMusicCDsFromDB() function is created.
+        * musicCDsUserControls is created from the  MusicCDUserControl.
+        * The size of musicCDsUserControls is up to the length of allMusicCDs.
+        */
+
+        private void populateMusicCDsViewInHomePage()
+        {
+            List<MusicCDsClass> allMusicCDs = MusicCDsClass.getAllMusicCDsFromDB();
+            MusicCDUserControl[] musicCDsUserControls = new MusicCDUserControl[allMusicCDs.Count];
+
+            if (flpHomePage.Controls.Count > 0)
+                flpHomePage.Controls.Clear();
+
+            int i = 0;
+            foreach (var item in allMusicCDs)
+            {
+                musicCDsUserControls[i] = new MusicCDUserControl();
+                musicCDsUserControls[i].musicCDID = item.id;
+                musicCDsUserControls[i].musicCDName = item.name;
+                musicCDsUserControls[i].musicCDPrice = item.price;
+                musicCDsUserControls[i].musicCDSinger = item.singer;
+                musicCDsUserControls[i].stock = item.stock;
+                musicCDsUserControls[i].picture = item.cover_page_picture;
+                flpHomePage.Controls.Add(musicCDsUserControls[i]);
+                i++;
+            }
         }
 
         private void pbMusicCds_Click(object sender, EventArgs e)
         {
-            MusicCDsClass music = new MusicCDsClass();
-            music.printProperties();
+            populateMusicCDsViewInHomePage();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

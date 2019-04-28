@@ -120,7 +120,7 @@ namespace OnlineBookStore
             command.ExecuteNonQuery();
         }
 
-        public static List<BookClass> getAllBooksFromDB()
+        public List<BookClass> getAllBooksFromDB()
         {
             List<BookClass> books = new List<BookClass>();
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
@@ -148,6 +148,35 @@ namespace OnlineBookStore
             }
             return books;
         }
+
+        public BookClass getABookFromDBByID(string id)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = new SqlCommand("SELECT * FROM BookTable WHERE id=@id", connection);
+            command.Parameters.AddWithValue("@id", Convert.ToInt32(id));
+            //Console.WriteLine("id " + Convert.ToInt32(id));
+            SqlDataReader readBooks = command.ExecuteReader();
+            BookClass book = new BookClass();
+            if (readBooks != null)
+            {
+                while (readBooks.Read())
+                {
+                    Console.WriteLine(readBooks["id"].ToString());
+                    book.id = readBooks["id"].ToString();
+                    book.name = readBooks["name"].ToString();
+                    book.price = Convert.ToDouble(readBooks["price"]);
+                    book.stock = Convert.ToInt32(readBooks["stock"]);
+                    book.author = readBooks["author"].ToString();
+                    book.publisher = readBooks["publisher"].ToString();
+                    book.isbn = readBooks["isbn"].ToString();
+                    book.page = Convert.ToInt32(readBooks["page"]);
+                    book.cover_page_picture = readBooks["cover_page_picture"].ToString();
+                }
+            }
+            return book;
+        }
+
 
 
         public void addBook()

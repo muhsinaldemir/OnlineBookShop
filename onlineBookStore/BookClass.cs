@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace OnlineBookStore
 {
@@ -17,37 +18,15 @@ namespace OnlineBookStore
         public int page { get; set; }
 
          /**
-         * A list of allbooks in the book class' getAllBooksFromDB() function is created.
-         * bookUserControlsis created from the  BookUserControl class.
-         * The size of bookusercontrols is up to the length of allbooks.
+         * Prints the properties of a Book object.
         */
-
         public override void printProperties()
         {
-            // throw new NotImplementedException();// to do 
-            List<BookClass> allBooks = getAllBooksFromDB();
-            BookUserControl[] bookUserControls = new BookUserControl[allBooks.Count];
-
-            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
-          
-            if (((BookShopForm)f).flpHomePage.Controls.Count > 0)
-                ((BookShopForm)f).flpHomePage.Controls.Clear();
-
-            int i = 0;
-            foreach (var item in allBooks)
-            {
-                bookUserControls[i] = new BookUserControl();
-                bookUserControls[i].bookID = item.id;
-                bookUserControls[i].bookName = item.name;
-                bookUserControls[i].bookAuthor = item.author;
-                bookUserControls[i].bookPrice = item.price;
-                bookUserControls[i].stock = item.stock;
-                bookUserControls[i].cover_page_picture = item.cover_page_picture;
-                ((BookShopForm)f).flpHomePage.Controls.Add(bookUserControls[i]);
-                i++;
-            }
+            Console.WriteLine("Name: " + name + " ID: " + id + " Price: " + price + " ISBN" + isbn + " Author: " + author + " Publisher: " + publisher + "Page: " + page);
         }
+
         /**   
+         * 
          * @brief Default Constructor 
          * Constructs the object with default parameters
          */

@@ -24,40 +24,20 @@ namespace OnlineBookStore
         public magazine_type magazineType { get; set; }
 
         /**
-       * A list of allmagazine in the  MagazineClass' getAllMagazineFromDB() function is created.
-       * magazineUserControls is created from the  MagazineUserControls
-       * The size of  MagazineUserControls is up to the length of allmagazine
-      */
+        * Prints the properties of a Magazine object.
+        */
         public override void printProperties()
         {
-            List<MagazineClass> allmagazine = MagazineClass.getAllMagazineFromDB();
-            MagazineUserControl[] magazineUserControls = new MagazineUserControl[allmagazine.Count];
-
-            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
-
-                if (((BookShopForm)f).flpHomePage.Controls.Count > 0)
-                    ((BookShopForm)f).flpHomePage.Controls.Clear();
-
-            int i = 0;
-            foreach (var item in allmagazine)
-            {
-                magazineUserControls[i] = new MagazineUserControl();
-                magazineUserControls[i].magazineID = item.id;
-                magazineUserControls[i].magazineName = item.name;
-                magazineUserControls[i].magazinePrice = item.price;
-                magazineUserControls[i].magazineIssue = item.issue;
-                magazineUserControls[i].stock = item.stock;
-                magazineUserControls[i].cover_page_picture = item.cover_page_picture;
-                ((BookShopForm)f).flpHomePage.Controls.Add(magazineUserControls[i]);
-                i++;
-            }
+            Console.WriteLine("Name: " + name + " ID: " + id + " Price: " + price + " Issue" + issue + " Magazine Type: " + magazineType);
         }
+
         /**  @brief Default Constructor
          * Constructs the object with default parameters  
          */
         public MagazineClass()
          {}
-        /** @brief Default Constructor 
+
+        /** @brief Constructor 
          * Constructs the object with default parameters 
          * @param string Name
          * @param string Id

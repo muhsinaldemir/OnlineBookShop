@@ -15,6 +15,8 @@ namespace OnlineBookStore
         pop,
         romance
     };
+
+
     /// create a new instance of MagazineClass from ProductClass
     class MusicCDsClass : ProductClass
     {
@@ -22,6 +24,8 @@ namespace OnlineBookStore
         /**  @brief Default Constructor
            * Constructs the object with default parameters  
            */
+        public musicCDs_type type { get; set; }
+
         public MusicCDsClass()
         {
         }
@@ -40,36 +44,13 @@ namespace OnlineBookStore
         }
 
         /**
- * A list of allMusicCDs in the MusicCDsClass' getAllMusicCDsFromDB() function is created.
- * musicCDsUserControls is created from the  MusicCDUserControl.
- * The size of musicCDsUserControls is up to the length of allMusicCDs.
-*/
+        * Prints the properties of a Music CDs object.
+       */
         public override void printProperties()
         {
-            List<MusicCDsClass> allMusicCDs = MusicCDsClass.getAllMusicCDsFromDB();
-            MusicCDUserControl[] musicCDsUserControls = new MusicCDUserControl[allMusicCDs.Count];
-
-            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
-
-            if (((BookShopForm)f).flpHomePage.Controls.Count > 0)
-                ((BookShopForm)f).flpHomePage.Controls.Clear();
-
-
-            int i = 0;
-            foreach (var item in allMusicCDs)
-            {
-                musicCDsUserControls[i] = new MusicCDUserControl();
-                musicCDsUserControls[i].musicCDID = item.id;
-                musicCDsUserControls[i].musicCDName = item.name;
-                musicCDsUserControls[i].musicCDPrice = item.price;
-                musicCDsUserControls[i].musicCDSinger = item.singer;
-                musicCDsUserControls[i].stock = item.stock;
-                musicCDsUserControls[i].picture = item.cover_page_picture;
-                ((BookShopForm)f).flpHomePage.Controls.Add(musicCDsUserControls[i]);
-                i++;
-            }
-
+            Console.WriteLine("Name: " + name + " ID: " + id + " Price: " + price + " Singer" + singer + " Type: " + type);
         }
+
         /**
          * musicCDsList created from MusicCDsClass
          * this function reads musicCDs items in database
