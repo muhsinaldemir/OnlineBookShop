@@ -709,10 +709,23 @@ namespace OnlineBookStore
             book.printProperties();
         }
 
+        private void populateShoppingCartView()
+        {
+            ShoppingCartItemsUserControl[] shoppingCartItemsUserControl = new ShoppingCartItemsUserControl[ShoppingCartClass.itemsToPurchase.Count];
+            shoppingCartItemsUserControl = ShoppingCartClass.printProducts();
+            if (flpShoppingCart.Controls.Count > 0)
+                flpShoppingCart.Controls.Clear();
+            int i = 0;
+            foreach (ItemToPurchaseClass item in ShoppingCartClass.itemsToPurchase)
+            {
+                flpShoppingCart.Controls.Add(shoppingCartItemsUserControl[i]);
+                i++;
+            }
+            lblTotalPriceValueGeneral.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
+        }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            ShoppingCartClass.printProducts();
-            //populateShoppingCartPanelView();
+            populateShoppingCartView();
             tabControlGeneral.SelectedTab = tabShoppingCart;
         }
 

@@ -51,14 +51,11 @@ namespace OnlineBookStore
 
 
 
-        public static void printProducts()
+        public static ShoppingCartItemsUserControl[] printProducts()
         {
             ShoppingCartItemsUserControl[] shoppingCartItemsUserControl = new ShoppingCartItemsUserControl[ShoppingCartClass.itemsToPurchase.Count];
 
-            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
-
-            if (((BookShopForm)f).flpShoppingCart.Controls.Count > 0)
-                ((BookShopForm)f).flpShoppingCart.Controls.Clear();
+            //System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
 
             int i = 0;
             foreach (ItemToPurchaseClass item in ShoppingCartClass.itemsToPurchase)
@@ -70,11 +67,9 @@ namespace OnlineBookStore
                 shoppingCartItemsUserControl[i].unitPriceValue = item.product.price;
                 shoppingCartItemsUserControl[i].type = item.product.GetType();
                 shoppingCartItemsUserControl[i].picture = item.product.cover_page_picture;
-                ((BookShopForm)f).flpShoppingCart.Controls.Add(shoppingCartItemsUserControl[i]);
                 i++;
             }
-            ((BookShopForm)f).lblTotalPriceValueGeneral.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
-
+            return shoppingCartItemsUserControl;
         }
 
         /**@brief add itemToPurchase

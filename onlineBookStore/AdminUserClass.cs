@@ -47,8 +47,6 @@ namespace OnlineBookStore
             return operationResult;
         }
 
-    
-
     ///Initialize static member of AdminUserClass
     private static AdminUserClass admin = null;
         public static AdminUserClass Instance
