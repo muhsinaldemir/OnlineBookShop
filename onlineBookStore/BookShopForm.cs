@@ -521,6 +521,7 @@ namespace OnlineBookStore
             txtMusicType.Clear();
             txtMusicCDsImage.Clear();
         }
+
         private void btnUpdateMusicCDs_Click(object sender, EventArgs e)
         {
             SqlConnection connection = dbHelper.getConnection();
@@ -732,28 +733,6 @@ namespace OnlineBookStore
         * myAccountUserControls array is created from the  MyAccountUserControl
         * The size of  myAccountUserControls is up to the length of list
         */
-        public void populateMyAccount()
-        {
-            //DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
-            //List<ItemToPurchaseClass> list =  dbHelper.getAllUserPurchases(Convert.ToInt32(user.customerID));
-            //MyAccountUserControl[] myAccountUserControls = new MyAccountUserControl[list.Count];
-
-            //if (flpMyAccount.Controls.Count > 0)
-            //    flpMyAccount.Controls.Clear();
-
-            //int i = 0;
-            //foreach (ItemToPurchaseClass item in list)
-            //{
-            //    myAccountUserControls[i] = new MyAccountUserControl();
-            //    myAccountUserControls[i].id = item.product.id;
-            //    myAccountUserControls[i].name = item.product.name;
-            //    myAccountUserControls[i].quantity = item.quantity;
-            //    myAccountUserControls[i].unitPriceValue = item.product.price;
-            //    myAccountUserControls[i].picture = item.product.cover_page_picture;
-            //    flpMyAccount.Controls.Add(myAccountUserControls[i]);
-            //    i++;
-            //}
-        }
 
         private void populateMyAccountView()
         {
@@ -867,7 +846,6 @@ namespace OnlineBookStore
         * musicCDsUserControls is created from the  MusicCDUserControl.
         * The size of musicCDsUserControls is up to the length of allMusicCDs.
         */
-
         private void populateMusicCDsViewInHomePage()
         {
             List<MusicCDsClass> allMusicCDs = MusicCDsClass.getAllMusicCDsFromDB();
@@ -903,7 +881,8 @@ namespace OnlineBookStore
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-
+            BookClass book = new BookClass();
+            DatabaseHelperClass.addBookToDB2(book);
         }
     }
 }

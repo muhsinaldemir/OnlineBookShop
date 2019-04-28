@@ -176,13 +176,89 @@ namespace OnlineBookStore
             }
             return book;
         }
+        public static void addBookToDB2(ProductClass product)
+        {
+            Console.WriteLine("product.GetType(): " + product.GetType());
+            Console.WriteLine("typeof(OnlineBookStore.BookClass): " + typeof(OnlineBookStore.BookClass));
+            //if (product.GetType() == typeof(OnlineBookStore.BookClass))
+
+            //    Console.WriteLine(((MagazineClass)product).issue);
+                
+        }
 
 
+        
+        public bool addBookToDB(ProductClass product)
+        {
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command  =null;
+            if(product.GetType()==typeof(OnlineBookStore.BookClass))
+            {
+                command = new SqlCommand("INSERT INTO BookTable (name,price,stock,isbn,author,publisher,page,cover_page_picture) values(@name,@price,@stock,@isbn,@author,@publisher,@page,@cover_page_picture)", connection);
+                command.Parameters.AddWithValue("@name", ((BookClass)product).name);
+                command.Parameters.AddWithValue("@price", ((BookClass)product).price);
+                command.Parameters.AddWithValue("@stock", ((BookClass)product).stock);
+                command.Parameters.AddWithValue("@isbn", ((BookClass)product).isbn);
+                command.Parameters.AddWithValue("@author", ((BookClass)product).author);
+                command.Parameters.AddWithValue("@publisher", ((BookClass)product).publisher);
+                command.Parameters.AddWithValue("@page", ((BookClass)product).page);
+                command.Parameters.AddWithValue("@cover_page_picture", ((BookClass)product).cover_page_picture);
+            }
+            else if(product.GetType() == typeof(OnlineBookStore.MagazineClass))
+            {
+                command = new SqlCommand("INSERT INTO MagazineTable (name,price,stock,issue,type,cover_page_picture) values(@name,@price,@stock,@issue,@type,@cover_page_picture)", connection);
+                command.Parameters.AddWithValue("@name", ((MagazineClass)product).name);
+                command.Parameters.AddWithValue("@price", ((MagazineClass)product).price);
+                command.Parameters.AddWithValue("@stock", ((MagazineClass)product).stock);
+                command.Parameters.AddWithValue("@issue", ((MagazineClass)product).issue);
+                command.Parameters.AddWithValue("@type", ((MagazineClass)product).magazineType);
+                command.Parameters.AddWithValue("@cover_page_picture", ((MagazineClass)product).cover_page_picture);
+            }
+            else if(product.GetType() == typeof(OnlineBookStore.MusicCDsClass))
+            {
+                command = new SqlCommand("INSERT INTO MusicCDsTable (name,price,stock,singer,type,picture) values(@name,@price,@stock,@singer,@type,@picture)", connection);
+                command.Parameters.AddWithValue("@name", ((MusicCDsClass)product).name);
+                command.Parameters.AddWithValue("@price", ((MusicCDsClass)product).price);
+                command.Parameters.AddWithValue("@stock", ((MusicCDsClass)product).stock);
+                command.Parameters.AddWithValue("@singer", ((MusicCDsClass)product).singer);
+                command.Parameters.AddWithValue("@type", ((MusicCDsClass)product).type);
+                command.Parameters.AddWithValue("@picture", ((MusicCDsClass)product).cover_page_picture);
+            }
 
-        public void addBook()
+
+            int affected = command.ExecuteNonQuery();
+
+            if (affected > 0)
+                return true;
+            return false;
+        }
+        
+        /*
+        public bool updateBookFromDB()
         {
 
         }
+
+        public bool deleteBookFromDB()
+        {
+
+        }
+
+        public bool addMagazineToDB()
+        {
+
+        }
+
+        public bool updateMagazineFromDB()
+        {
+
+        }
+
+        public deleteMagazineFromDB()
+        {
+
+        }
+        */
 
 
     }
