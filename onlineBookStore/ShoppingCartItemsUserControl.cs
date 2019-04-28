@@ -69,14 +69,13 @@ namespace OnlineBookStore
         {
             var element = ShoppingCartClass.itemsToPurchase.Find(el => (el.product.id == id && el.product.GetType() == type));
             ShoppingCartClass.removeProduct(element);
-            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
             int quantity = 0;
             foreach (var item in ShoppingCartClass.itemsToPurchase)
             {
                 quantity += item.quantity;
             }
-            ((BookShopForm)f).lblShoppinCartValue.Text = quantity.ToString();
-            //ShoppingCartClass.printProducts();
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
+            ((BookShopForm)f).populateShoppingCartView();
             ((BookShopForm)f).lblShoppinCartValue.Text = quantity.ToString();
 
         }

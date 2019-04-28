@@ -502,19 +502,7 @@ namespace OnlineBookStore
             tabControlGeneral.SelectedTab = tabHomePage;
 
         }
-
-        private void btnHomepageBooks_Click(object sender, EventArgs e)
-        {
-        }
-        /// calls  populateHomePageMusicCDs() function
-        private void btnHomepageMusicCDs_Click(object sender, EventArgs e)
-        {
-        }
-        /// calls populateHomePageMagazine() function
-        private void btnHomepageMagazine_Click(object sender, EventArgs e)
-        {
-        }
-
+        
         private void changeAd()
         {
             if (imageIndex >= 5)
@@ -537,10 +525,7 @@ namespace OnlineBookStore
             paymentForm.Show();
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
-        {
 
-        }
         /// button add image book
         private void button1_Click(object sender, EventArgs e)
         {
@@ -602,7 +587,7 @@ namespace OnlineBookStore
             book.printProperties();
         }
 
-        private void populateShoppingCartView()
+        public void populateShoppingCartView()
         {
             ShoppingCartItemsUserControl[] shoppingCartItemsUserControl = new ShoppingCartItemsUserControl[ShoppingCartClass.itemsToPurchase.Count];
             shoppingCartItemsUserControl = ShoppingCartClass.printProducts();
@@ -651,7 +636,7 @@ namespace OnlineBookStore
         * The size of  myAccountUserControls is up to the length of list
         */
 
-        private void populateMyAccountView()
+        public void populateMyAccountView()
         {
             MyAccountUserControl[] myAccountUserControls = CustomerClass.printCustomerPurchases(user.customerID);
             if (flpMyAccount.Controls.Count > 0)
@@ -663,9 +648,6 @@ namespace OnlineBookStore
                 flpMyAccount.Controls.Add(myAccountUserControls[i]);
                 i++;
             }
-
-
-
         }
 
         /** calls  populateMyAccount()
@@ -677,11 +659,6 @@ namespace OnlineBookStore
             //cUser.printCustomerPurchases(user.customerID);
             populateMyAccountView();
             tabControlGeneral.SelectedTab = tabMyAccount;
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         /**
@@ -798,8 +775,6 @@ namespace OnlineBookStore
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            BookClass book = new BookClass();
-            DatabaseHelperClass.addBookToDB2(book);
         }
     }
 }

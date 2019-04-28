@@ -123,5 +123,10 @@ namespace OnlineBookStore
             panelLogin.Left = (this.ClientSize.Width - panelLogin.Width) / 2;
             panelLogin.Top = (this.ClientSize.Height - panelLogin.Height) / 2;
         }
+
+        private void pbLoginExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace OnlineBookStore
             {
                 dbHelper.removeSelectedItemsFromShoppingCart(name);
                 System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
-                //((BookShopForm)f).populateMyAccount();
+                ((BookShopForm)f).populateMyAccountView();
             }
            
 
