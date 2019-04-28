@@ -13,7 +13,7 @@ namespace OnlineBookStore
             if(communicationType=="email")
             {
                 EmailClass email = new EmailClass(AppConstants.EMAIL, user, product_name, unitPriceValue, AppConstants.EMAIL_PASSWORD);
-                Console.WriteLine("Place order in shopping cart");
+                //Console.WriteLine("Place order in shopping cart");
                 email.sendEmail();
             }
             else if(communicationType == "sms")

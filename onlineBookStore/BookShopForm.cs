@@ -604,33 +604,6 @@ namespace OnlineBookStore
             imageIndex = imageIndex + 1;
         }
 
-        public void populateShoppingCartPanelView()
-        {
-            //ShoppingCartItemsUserControl[] shoppingCartItemsUserControl = new ShoppingCartItemsUserControl[ShoppingCartClass.itemsToPurchase.Count];
-            //if (flpShoppingCart.Controls.Count > 0)
-            //    flpShoppingCart.Controls.Clear();
-
-            //int i = 0;
-            //foreach (ItemToPurchaseClass item in ShoppingCartClass.itemsToPurchase)
-            //{
-            //    shoppingCartItemsUserControl[i] = new ShoppingCartItemsUserControl();
-            //    shoppingCartItemsUserControl[i].id = item.product.id;
-            //    shoppingCartItemsUserControl[i].name = item.product.name;
-            //    shoppingCartItemsUserControl[i].quantity = item.quantity;
-            //    shoppingCartItemsUserControl[i].unitPriceValue = item.product.price;
-            //    shoppingCartItemsUserControl[i].type = item.product.GetType();
-            //    shoppingCartItemsUserControl[i].picture = item.product.cover_page_picture;
-            //    flpShoppingCart.Controls.Add(shoppingCartItemsUserControl[i]);
-            //    i++;
-            //}
-            //lblTotalPriceValueGeneral.Text = ShoppingCartClass.calculateActualTotalPrice().ToString();
-        }
-      /// call populateShoppingCartPanelView() function
-        private void btnShoppingCart_Click(object sender, EventArgs e)
-        {
-            populateShoppingCartPanelView();
-            tabControlGeneral.SelectedTab = tabShoppingCart;
-        }
         private void tabShoppingCart_Click(object sender, EventArgs e)
         {
 
@@ -834,6 +807,11 @@ namespace OnlineBookStore
         private void timer1_Tick(object sender, EventArgs e)
         {
             changeAd();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

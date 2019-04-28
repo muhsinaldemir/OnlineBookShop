@@ -119,5 +119,42 @@ namespace OnlineBookStore
             command.Parameters.AddWithValue("@name", name);
             command.ExecuteNonQuery();
         }
+
+        public static List<BookClass> getAllBooksFromDB()
+        {
+            List<BookClass> books = new List<BookClass>();
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = new SqlCommand("SELECT * FROM BookTable", connection);
+
+            SqlDataReader readBooks = command.ExecuteReader();
+            if (readBooks != null)
+            {
+                while (readBooks.Read())
+                {
+                    BookClass book = new BookClass();
+                    book.id = readBooks["id"].ToString();
+                    book.name = readBooks["name"].ToString();
+                    book.price = Convert.ToDouble(readBooks["price"]);
+                    book.stock = Convert.ToInt32(readBooks["stock"]);
+                    book.author = readBooks["author"].ToString();
+                    book.publisher = readBooks["publisher"].ToString();
+                    book.isbn = readBooks["isbn"].ToString();
+                    book.page = Convert.ToInt32(readBooks["page"]);
+                    book.cover_page_picture = readBooks["cover_page_picture"].ToString();
+                    books.Add(book);
+                }
+            }
+            return books;
+        }
+
+
+        public void addBook()
+        {
+
+        }
+
+
     }
 }

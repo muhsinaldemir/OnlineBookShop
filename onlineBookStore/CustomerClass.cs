@@ -21,7 +21,6 @@ namespace OnlineBookStore
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             List<ItemToPurchaseClass> list = dbHelper.getAllUserPurchases(Convert.ToInt32(customerID));
-            //Console.WriteLine("Custo" + customerID);
             MyAccountUserControl[] myAccountUserControls = new MyAccountUserControl[list.Count];
 
             int i = 0;
@@ -72,7 +71,7 @@ namespace OnlineBookStore
             }
         }
         /**   
-        * @ brief Default Constructor   
+        * @ brief Parameterized Constructor   
         * Constructs the object with default parameters  
         * @param string CustomerID
         * @param string Name

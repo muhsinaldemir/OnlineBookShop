@@ -17,16 +17,47 @@ namespace OnlineBookStore
     class ShoppingCartClass
     {
         public static string customerID { get; set; }
-
         public static UserClass user { get; set; }
 
-       // public ArrayList itemsToPurchase { get; set; }
+        /**   
+         * @brief Default Constructor
+         * Constructs the object with default parameters 
+         */
+        private ShoppingCartClass()
+        {
+        }
+
+        ///Initialize static member of ShoppingCartClass
+        private static ShoppingCartClass shoppingCart = null;
+        public static ShoppingCartClass Instance
+        {
+            get
+            {
+                if (shoppingCart == null)
+                {
+                    shoppingCart = new ShoppingCartClass();
+                }
+                return shoppingCart;
+            }
+        }
+        /**   
+         * @brief Default Constructor
+         * Constructs the object with default parameters 
+         * @param string customerID
+         */
+
+        private ShoppingCartClass(string customerID)
+        {
+            customerID = customerID ?? throw new ArgumentNullException(nameof(customerID));
+        }
+
         public static double paymentAmount { get; set; }
         public PaymentType paymentType { get; set; }
+
         /// create new  list object itemsToPurchase fromItemToPurchaseClass
         public static List<ItemToPurchaseClass> itemsToPurchase = new List<ItemToPurchaseClass>();
 
-
+        //Observer Pattern Necessary Functions:
         private static List<ObserverClass> _observers = new List<ObserverClass>();
 
         public static void attach(ObserverClass observer)
@@ -48,8 +79,6 @@ namespace OnlineBookStore
         {
             _observers.ForEach(o => { o.update("sms",user, name, unitPriceValue); });
         }
-
-
 
         public static ShoppingCartItemsUserControl[] printProducts()
         {
@@ -81,12 +110,7 @@ namespace OnlineBookStore
         {
             itemsToPurchase.Add(itemToPurchase);
         }
-        ///shoppingCartUpdate() function
-        private static void shoppingCartUpdate()
-        {
-            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
-            ((BookShopForm)f).populateShoppingCartPanelView();
-        }
+        
         /** @brief remove product() function
          * @param ItemToPurchaseClass itemToPurchase
          * calls remove() and   shoppingCartUpdate() function
@@ -95,8 +119,8 @@ namespace OnlineBookStore
         {
             var element = itemsToPurchase.Find(el => el.product.id == itemToPurchase.product.id);
             itemsToPurchase.Remove(element);
-            shoppingCartUpdate();
         }
+
         /** @brief place order() function
          * @param string customerID
          * @param PaymentType paymentType
@@ -119,39 +143,11 @@ namespace OnlineBookStore
             dbHelper.shoppingCartCancelOrder(name);
             notifySms(name,unitPriceValue);
         }
-        public static void sendInvoiceByEmail(double unitPriceValue) { 
+        public static void sendInvoiceByEmail(double unitPriceValue)
+        { 
             notifyEmail(unitPriceValue);
         }
-        /**   
-         * @brief Default Constructor
-         * Constructs the object with default parameters 
-         */
-        private ShoppingCartClass()
-        {
-        }
-        ///Initialize static member of ShoppingCartClass
-        private static ShoppingCartClass shoppingCart = null;
-        public static ShoppingCartClass Instance
-        {
-            get
-            {
-                if (shoppingCart == null)
-                {
-                    shoppingCart = new ShoppingCartClass();
-                }
-                return shoppingCart;
-            }
-        }
-        /**   
-         * @brief Default Constructor
-         * Constructs the object with default parameters 
-         * @param string customerID
-         */
 
-        private ShoppingCartClass(string customerID)
-        {
-            customerID = customerID ?? throw new ArgumentNullException(nameof(customerID));
-        }
         /** @brief  calculateActualTotalPrice() function
          * @return totalPrice
          */

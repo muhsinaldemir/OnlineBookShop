@@ -25,7 +25,7 @@ namespace OnlineBookStore
         public override void printProperties()
         {
             // throw new NotImplementedException();// to do 
-            List<BookClass> allBooks = BookClass.getAllBooksFromDB();
+            List<BookClass> allBooks = getAllBooksFromDB();
             BookUserControl[] bookUserControls = new BookUserControl[allBooks.Count];
 
             System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["BookShopForm"];
@@ -86,31 +86,7 @@ namespace OnlineBookStore
         {
             List<BookClass> books = new List<BookClass>();
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
-
-            SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("SELECT * FROM BookTable", connection);
-
-            SqlDataReader readBooks = command.ExecuteReader();
-            if (readBooks != null)
-            {
-                while (readBooks.Read())
-                {
-                    BookClass book = new BookClass();                          
-                    book.id = readBooks["id"].ToString();
-                    book.name = readBooks["name"].ToString();
-                    book.price = Convert.ToDouble(readBooks["price"]);
-                    book.stock = Convert.ToInt32(readBooks["stock"]);
-                    book.author = readBooks["author"].ToString();
-                    book.publisher = readBooks["publisher"].ToString();
-                    book.isbn = readBooks["isbn"].ToString();
-                    book.page = Convert.ToInt32(readBooks["page"]);
-                    book.cover_page_picture = readBooks["cover_page_picture"].ToString();
-                    books.Add(book);
-                    
-                }
-
-            }
-           
+            books = dbHelper.getAllBooksFromDB();
             return books;
         }
         /**this function read book item in database
@@ -121,28 +97,8 @@ namespace OnlineBookStore
         public static BookClass getaBooksFromDBByID(string id)
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
-            SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("SELECT * FROM BookTable WHERE id=@id", connection);
-            command.Parameters.AddWithValue("@id",Convert.ToInt32(id));
-            Console.WriteLine("id " + Convert.ToInt32(id));
-            SqlDataReader readBooks = command.ExecuteReader();
             BookClass book = new BookClass();
-            if (readBooks != null)
-            {
-                while (readBooks.Read())
-                {
-                    Console.WriteLine(readBooks["id"].ToString());
-                    book.id = readBooks["id"].ToString();
-                    book.name = readBooks["name"].ToString();
-                    book.price = Convert.ToDouble(readBooks["price"]);
-                    book.stock = Convert.ToInt32(readBooks["stock"]);
-                    book.author = readBooks["author"].ToString();
-                    book.publisher = readBooks["publisher"].ToString();
-                    book.isbn = readBooks["isbn"].ToString();
-                    book.page = Convert.ToInt32(readBooks["page"]);
-                    book.cover_page_picture = readBooks["cover_page_picture"].ToString();
-                }
-            }
+            book = dbHelper.getABookFromDBByID(id);
             return book;
         }
     }
