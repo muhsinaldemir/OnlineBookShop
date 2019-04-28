@@ -300,33 +300,41 @@ namespace OnlineBookStore
                 return true;
             return false;
         }
-        /*
-        public bool updateBookFromDB()
+        
+        public DataTable getAllItemsForAClassFromATableByItsType(Type type)
         {
+            SqlConnection connection = dbHelper.getConnection();
+            DataTable dt = new DataTable();
 
+            SqlDataAdapter command = null;
+            if (type == typeof(OnlineBookStore.UserClass))
+            {
+                command = new SqlDataAdapter("SELECT * FROM BookTable", connection);
+            }
+            else if (type == typeof(OnlineBookStore.BookClass))
+            {
+                command = new SqlDataAdapter("SELECT * FROM BookTable", connection);
+            }
+            else if (type == typeof(OnlineBookStore.MagazineClass))
+            {
+                command = new SqlDataAdapter("SELECT * FROM MagazineTable", connection);
+            }
+            else if (type == typeof(OnlineBookStore.MusicCDsClass))
+            {
+                command = new SqlDataAdapter("SELECT * FROM MusicCDsTable", connection);
+            }
+            else
+            {
+                return null;
+            }
+            {
+                command.Fill(dt);
+            }
+            return dt;
         }
 
-        public bool deleteBookFromDB()
-        {
-
         }
-
-        public bool addMagazineToDB()
-        {
-
-        }
-
-        public bool updateMagazineFromDB()
-        {
-
-        }
-
-        public deleteMagazineFromDB()
-        {
-
-        }
-        */
 
 
     }
-}
+

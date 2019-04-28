@@ -172,51 +172,22 @@ namespace OnlineBookStore
          */
         private void tabUser_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = dbHelper.getConnection();
-            DataTable dt = new DataTable();
-            {
-
-                SqlDataAdapter command = new SqlDataAdapter(" select * FROM CustomerTable", connection);
-                {
-                    command.Fill(dt);
-                    dgvUsers.DataSource = dt;
-                }
-            }
+            dgvBooks.DataSource = dbHelper.getAllItemsForAClassFromATableByItsType(typeof(OnlineBookStore.UserClass));
         }
         /**
          * finds the selected book information in datagridview from  BookTable in the database.
          */
         private void tabBooks_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = dbHelper.getConnection();
-
-            DataTable dt = new DataTable();
-            {
-
-                SqlDataAdapter command = new SqlDataAdapter(" select * FROM BookTable", connection);
-                {
-                    command.Fill(dt);
-                    dgvBooks.DataSource = dt;
-                }
-            }
+            dgvBooks.DataSource = dbHelper.getAllItemsForAClassFromATableByItsType(typeof(OnlineBookStore.BookClass));
         }
         /**
          * finds the selected MusicCDs information in datagridview from  MusicCDsTable in the database.
          */
         private void tabMusics_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = dbHelper.getConnection();
+            dgvBooks.DataSource = dbHelper.getAllItemsForAClassFromATableByItsType(typeof(OnlineBookStore.MusicCDsClass));
 
-            DataTable dt = new DataTable();
-            {
-
-                SqlDataAdapter command = new SqlDataAdapter(" select * FROM MusicCDsTable", connection);
-                {
-
-                    command.Fill(dt);
-                    dgvMusicCDs.DataSource = dt;
-                }
-            }
         }
         /**
          * finds the selected magazine information in datagridview from  MagazineTable in the database.
@@ -224,18 +195,7 @@ namespace OnlineBookStore
 
         private void tabMagazine_Click(object sender, EventArgs e)
         {
-            ////connection.Open();
-            SqlConnection connection = dbHelper.getConnection();
-
-            DataTable dt = new DataTable();
-            {
-
-                SqlDataAdapter command = new SqlDataAdapter(" select * FROM MagazineTable", connection);
-                {
-                    command.Fill(dt);
-                    dgvMagazine.DataSource = dt;
-                }
-            }
+            dgvBooks.DataSource = dbHelper.getAllItemsForAClassFromATableByItsType(typeof(OnlineBookStore.MagazineClass));
         }
         /** @brief button delete user
          * call userDelete() function in AdminUserClass
