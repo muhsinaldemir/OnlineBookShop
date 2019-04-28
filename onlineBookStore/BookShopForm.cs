@@ -114,9 +114,12 @@ namespace OnlineBookStore
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("INSERT INTO BookTable (name,price,stock,isbn,author,publisher,page,cover_page_picture) values(@name,@price,@stock,@isbn,@author,@publisher,@page,@cover_page_picture)", connection);
+            //SqlConnection connection = dbHelper.getConnection();
+            BookClass book = new BookClass(txtBookName.Text, null, Convert.ToDouble(txtBookPrice.Text), Convert.ToInt32(txtBookStock.Text), txtBookIsbn.Text, txtBookAuthor.Text, txtBookPublisher.Text, Convert.ToInt32(txtBookPage.Text), txtBookImage.Text);
+            bool affected = dbHelper.addAProductToDB(book);
 
+            /*
+            SqlCommand command = new SqlCommand("INSERT INTO BookTable (name,price,stock,isbn,author,publisher,page,cover_page_picture) values(@name,@price,@stock,@isbn,@author,@publisher,@page,@cover_page_picture)", connection);
             command.Parameters.AddWithValue("@name", txtBookName.Text);
             command.Parameters.AddWithValue("@price", txtBookPrice.Text);
             command.Parameters.AddWithValue("@stock", txtBookStock.Text);
@@ -126,9 +129,9 @@ namespace OnlineBookStore
             command.Parameters.AddWithValue("@page", txtBookPage.Text);
             command.Parameters.AddWithValue("@cover_page_picture", txtBookImage.Text);
             int affected = command.ExecuteNonQuery();
+            */
 
-            
-            if (affected == 0)
+            if (!affected)
             {
                 MessageBox.Show("Error not successful");
             }
@@ -146,7 +149,11 @@ namespace OnlineBookStore
          */
         private void btnAddMusicCDs_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = dbHelper.getConnection();
+            //SqlConnection connection = dbHelper.getConnection();
+            MusicCDsClass music = new MusicCDsClass(txtMusicName.Text, null, Convert.ToDouble(txtMusicPrice.Text), Convert.ToInt32(txtMusicCDsStock.Text), txtMusicSinger.Text, txtMusicType.Text, txtMusicCDsImage.Text);
+            bool affected = dbHelper.addAProductToDB(music);
+
+            /*
             SqlCommand command = new SqlCommand("INSERT INTO MusicCDsTable (name,price,stock,singer,type,picture) values(@name,@price,@stock,@singer,@type,@picture)", connection);
             command.Parameters.AddWithValue("@name", txtMusicName.Text);
             command.Parameters.AddWithValue("@price", txtMusicPrice.Text);
@@ -155,8 +162,9 @@ namespace OnlineBookStore
             command.Parameters.AddWithValue("@type", txtMusicType.Text);
             command.Parameters.AddWithValue("@picture", txtMusicCDsImage.Text);
             int affected = command.ExecuteNonQuery();
+            */
 
-            if (affected == 0)
+            if (!affected)
             {
                 MessageBox.Show("Error not successful");
             }
@@ -171,9 +179,11 @@ namespace OnlineBookStore
         * if it is not added magazine the database, the error message is printed on the screen.
         * after adding,clears the textboxes.
         */
-
         private void btnAddMagazine_Click(object sender, EventArgs e)
         {
+            MagazineClass magazine = new MagazineClass(txtMagazineName.Text, null, Convert.ToDouble(txtMagazinePrice.Text), Convert.ToInt32(txtMagazineStock.Text), txtMagazineIssue.Text, txtMagazineType.Text, txtMagazineImage.Text);
+            bool affected = dbHelper.addAProductToDB(magazine);
+            /*
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command = new SqlCommand("INSERT INTO MagazineTable (name,price,stock,issue,type,cover_page_picture) values(@name,@price,@stock,@issue,@type,@cover_page_picture)", connection);
             command.Parameters.AddWithValue("@name", txtMagazineName.Text);
@@ -183,8 +193,9 @@ namespace OnlineBookStore
             command.Parameters.AddWithValue("@type", txtMagazineType.Text);
             command.Parameters.AddWithValue("@cover_page_picture", txtMagazineImage.Text);
             int affected = command.ExecuteNonQuery();
+            */
 
-            if (affected == 0)
+            if (!affected)
             {
                 MessageBox.Show("Error not successful","INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -324,26 +335,34 @@ namespace OnlineBookStore
 
         private void btnDeleteBooks_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = dbHelper.getConnection();
-
-            SqlCommand deleteCommand = new SqlCommand("delete from BookTable where id=@id", connection);
-            deleteCommand.Parameters.AddWithValue("@id", txtBookId.Text.ToString());
-            deleteCommand.ExecuteNonQuery();
-            int affected = 0;
-            affected = deleteCommand.ExecuteNonQuery();
+            bool affected = dbHelper.deleteAProductFromDB(typeof(OnlineBookStore.BookClass), txtBookId.Text.ToString());
+            if (!affected)
+            {
+                MessageBox.Show("Error not successful");
+            }
+            else
+            {
+                MessageBox.Show("Book deleted successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearBookControls();
+            }
+           
         }
         /**
          * button delete MusicCDs from the database
         */
         private void btnDeleteMusicCDs_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = dbHelper.getConnection();
-            SqlCommand deleteCommand = new SqlCommand("delete from MusicCDsTable where id=@id", connection);
-            deleteCommand.Parameters.AddWithValue("@id", txtMusicCDsId.Text.ToString());
-            deleteCommand.ExecuteNonQuery();
-            int affected = 0;
-            // listele();
-        } 
+            bool affected = dbHelper.deleteAProductFromDB(typeof(OnlineBookStore.MusicCDsClass), txtMusicCDsId.Text.ToString());
+            if (!affected)
+            {
+                MessageBox.Show("Error not successful");
+            }
+            else
+            {
+                MessageBox.Show("MusicCD is deleted successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearMusicCDsControl();
+            }
+        }
         /**
          * button delete MusicCDs from the database
         */

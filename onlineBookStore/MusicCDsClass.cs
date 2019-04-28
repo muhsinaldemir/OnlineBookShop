@@ -38,7 +38,7 @@ namespace OnlineBookStore
          * @param string singer
          * @param string picture
         */
-        public MusicCDsClass(string Name, string Id, double Price, int Stock, string Singer,string Picture) : base(Name, Id, Price, Stock,Picture)
+        public MusicCDsClass(string Name, string Id, double Price, int Stock, string Singer,string type,string Picture) : base(Name, Id, Price, Stock,Picture)
         {
             singer = Singer;
         }

@@ -188,7 +188,7 @@ namespace OnlineBookStore
 
 
         
-        public bool addBookToDB(ProductClass product)
+        public bool addAProductToDB(ProductClass product)
         {
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand command  =null;
@@ -232,7 +232,27 @@ namespace OnlineBookStore
                 return true;
             return false;
         }
-        
+
+        public bool deleteAProductFromDB(Type type,string id)
+        {
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand deleteCommand = null;
+            if (type == typeof(OnlineBookStore.BookClass))
+                deleteCommand = new SqlCommand("delete from BookTable where id=@id", connection);
+            else if (type == typeof(OnlineBookStore.MagazineClass))
+                deleteCommand = new SqlCommand("delete from MagazineTable where id=@id", connection);
+            else if (type == typeof(OnlineBookStore.MusicCDsClass))
+                deleteCommand = new SqlCommand("delete from MusicCDsTable where id=@id", connection);
+
+            deleteCommand.Parameters.AddWithValue("@id", id);
+            int affected = deleteCommand.ExecuteNonQuery();
+
+            if (affected > 0)
+                return true;
+            return false;
+        }
+
+
         /*
         public bool updateBookFromDB()
         {

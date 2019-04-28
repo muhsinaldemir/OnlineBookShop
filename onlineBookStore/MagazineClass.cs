@@ -47,10 +47,10 @@ namespace OnlineBookStore
          * @param magazine_type MagazineType
          * @param string Cover_page_picture
         */
-        public MagazineClass(string Name,string Id,double Price,int Stock,string Issue,magazine_type MagazineType,string Cover_page_picture):base(Name,Id,Price, Stock, Cover_page_picture)
+        public MagazineClass(string Name,string Id,double Price,int Stock,string Issue,string MagazineType,string Cover_page_picture):base(Name,Id,Price, Stock, Cover_page_picture)
         {
             issue = Issue;
-            magazineType = MagazineType;
+            //magazineType = MagazineType;
         }
         /**
          * magazineList created fromMagazineClass
