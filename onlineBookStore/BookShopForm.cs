@@ -114,22 +114,8 @@ namespace OnlineBookStore
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            //SqlConnection connection = dbHelper.getConnection();
             BookClass book = new BookClass(txtBookName.Text, null, Convert.ToDouble(txtBookPrice.Text), Convert.ToInt32(txtBookStock.Text), txtBookIsbn.Text, txtBookAuthor.Text, txtBookPublisher.Text, Convert.ToInt32(txtBookPage.Text), txtBookImage.Text);
             bool affected = dbHelper.addAProductToDB(book);
-
-            /*
-            SqlCommand command = new SqlCommand("INSERT INTO BookTable (name,price,stock,isbn,author,publisher,page,cover_page_picture) values(@name,@price,@stock,@isbn,@author,@publisher,@page,@cover_page_picture)", connection);
-            command.Parameters.AddWithValue("@name", txtBookName.Text);
-            command.Parameters.AddWithValue("@price", txtBookPrice.Text);
-            command.Parameters.AddWithValue("@stock", txtBookStock.Text);
-            command.Parameters.AddWithValue("@isbn", txtBookIsbn.Text);
-            command.Parameters.AddWithValue("@author", txtBookAuthor.Text);
-            command.Parameters.AddWithValue("@publisher", txtBookPublisher.Text);
-            command.Parameters.AddWithValue("@page", txtBookPage.Text);
-            command.Parameters.AddWithValue("@cover_page_picture", txtBookImage.Text);
-            int affected = command.ExecuteNonQuery();
-            */
 
             if (!affected)
             {
@@ -149,21 +135,8 @@ namespace OnlineBookStore
          */
         private void btnAddMusicCDs_Click(object sender, EventArgs e)
         {
-            //SqlConnection connection = dbHelper.getConnection();
             MusicCDsClass music = new MusicCDsClass(txtMusicName.Text, null, Convert.ToDouble(txtMusicPrice.Text), Convert.ToInt32(txtMusicCDsStock.Text), txtMusicSinger.Text, txtMusicType.Text, txtMusicCDsImage.Text);
             bool affected = dbHelper.addAProductToDB(music);
-
-            /*
-            SqlCommand command = new SqlCommand("INSERT INTO MusicCDsTable (name,price,stock,singer,type,picture) values(@name,@price,@stock,@singer,@type,@picture)", connection);
-            command.Parameters.AddWithValue("@name", txtMusicName.Text);
-            command.Parameters.AddWithValue("@price", txtMusicPrice.Text);
-            command.Parameters.AddWithValue("@stock", txtMusicCDsStock.Text);
-            command.Parameters.AddWithValue("@singer", txtMusicSinger.Text);
-            command.Parameters.AddWithValue("@type", txtMusicType.Text);
-            command.Parameters.AddWithValue("@picture", txtMusicCDsImage.Text);
-            int affected = command.ExecuteNonQuery();
-            */
-
             if (!affected)
             {
                 MessageBox.Show("Error not successful");
@@ -183,18 +156,7 @@ namespace OnlineBookStore
         {
             MagazineClass magazine = new MagazineClass(txtMagazineName.Text, null, Convert.ToDouble(txtMagazinePrice.Text), Convert.ToInt32(txtMagazineStock.Text), txtMagazineIssue.Text, txtMagazineType.Text, txtMagazineImage.Text);
             bool affected = dbHelper.addAProductToDB(magazine);
-            /*
-            SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("INSERT INTO MagazineTable (name,price,stock,issue,type,cover_page_picture) values(@name,@price,@stock,@issue,@type,@cover_page_picture)", connection);
-            command.Parameters.AddWithValue("@name", txtMagazineName.Text);
-            command.Parameters.AddWithValue("@price", txtMagazinePrice.Text);
-            command.Parameters.AddWithValue("@stock", txtMagazineStock.Text);
-            command.Parameters.AddWithValue("@issue", txtMagazineIssue.Text);
-            command.Parameters.AddWithValue("@type", txtMagazineType.Text);
-            command.Parameters.AddWithValue("@cover_page_picture", txtMagazineImage.Text);
-            int affected = command.ExecuteNonQuery();
-            */
-
+           
             if (!affected)
             {
                 MessageBox.Show("Error not successful","INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -369,13 +331,16 @@ namespace OnlineBookStore
 
         private void btnDeleteMagazine_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = dbHelper.getConnection();
-            SqlCommand deleteCommand = new SqlCommand("delete from MagazineTable where id=@id", connection);
-            deleteCommand.Parameters.AddWithValue("@id", txtMagazineId.Text.ToString());
-            deleteCommand.ExecuteNonQuery();
-            int affected = 0;
-            affected = deleteCommand.ExecuteNonQuery();
-            // listele();
+            bool affected = dbHelper.deleteAProductFromDB(typeof(OnlineBookStore.MagazineClass), txtMagazineId.Text.ToString());
+            if (!affected)
+            {
+                MessageBox.Show("Error not successful");
+            }
+            else
+            {
+                MessageBox.Show("Magazine is deleted successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearMagazineControls();
+            }
         }
         /**
         * finds the selected book information in datagridview 
@@ -507,26 +472,16 @@ namespace OnlineBookStore
 
         private void btnUpdateBook_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("UPDATE BookTable SET name=@name,price=@price,stock=@stock,isbn=@isbn,author=@author,publisher=@publisher,page=@page,cover_page_picture=@cover_page_picture WHERE id=@id", connection);
-            command.Parameters.AddWithValue("@id", txtBookId.Text.ToString());
-            command.Parameters.AddWithValue("@name", txtBookName.Text);
-            command.Parameters.AddWithValue("@price", txtBookPrice.Text);
-            command.Parameters.AddWithValue("@stock", txtBookStock.Text);
-            command.Parameters.AddWithValue("@isbn", txtBookIsbn.Text);
-            command.Parameters.AddWithValue("@author", txtBookAuthor.Text);
-            command.Parameters.AddWithValue("@publisher", txtBookPublisher.Text);
-            command.Parameters.AddWithValue("@page", txtBookPage.Text);
-            command.Parameters.AddWithValue("@cover_page_picture", txtBookImage.Text);
-            int affected = command.ExecuteNonQuery();
+            BookClass book = new BookClass(txtBookName.Text, txtBookId.Text, Convert.ToDouble(txtBookPrice.Text), Convert.ToInt32(txtBookStock.Text), txtBookIsbn.Text, txtBookAuthor.Text, txtBookPublisher.Text, Convert.ToInt32(txtBookPage.Text), txtBookImage.Text);
+            bool affected = dbHelper.updateAProductAtDB(book);
 
-            if (affected == 0)
+            if (!affected)
             {
                 MessageBox.Show("Error not successful");
             }
             else
             {
-                MessageBox.Show("Book updated successfully");
+                MessageBox.Show("Book updated successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearBookControls();
             }
         }
@@ -543,24 +498,15 @@ namespace OnlineBookStore
 
         private void btnUpdateMusicCDs_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("UPDATE MusicCDsTable SET name=@name,price=@price,stock=@stock,singer=@singer,type=@type,picture=@picture WHERE id=@id", connection);
-            command.Parameters.AddWithValue("@id", txtMusicCDsId.Text.ToString());
-            command.Parameters.AddWithValue("@name", txtMusicName.Text);
-            command.Parameters.AddWithValue("@price", txtMusicPrice.Text);
-            command.Parameters.AddWithValue("@stock", txtMusicCDsStock.Text);
-            command.Parameters.AddWithValue("@singer", txtMusicSinger.Text);
-            command.Parameters.AddWithValue("@type", txtMusicType.Text);
-            command.Parameters.AddWithValue("@picture", txtMusicCDsImage.Text);
-            int affected = command.ExecuteNonQuery();
-
-            if (affected == 0)
+            MusicCDsClass music = new MusicCDsClass(txtMusicName.Text, txtMusicCDsId.Text, Convert.ToDouble(txtMusicPrice.Text), Convert.ToInt32(txtMusicCDsStock.Text), txtMusicSinger.Text, txtMusicType.Text, txtMusicCDsImage.Text);
+            bool affected = dbHelper.updateAProductAtDB(music);
+            if (!affected)
             {
                 MessageBox.Show("Error not successful");
             }
             else
             {
-                MessageBox.Show("Music CDs updated successfully");
+                MessageBox.Show("Music CDs updated successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearMusicCDsControl();
             }
         }
@@ -576,28 +522,20 @@ namespace OnlineBookStore
         }
         private void btnUpdateMagazine_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("UPDATE MagazineTable SET name=@name,price=@price,stock=@stock,issue=@issue,type=@type,cover_page_picture=@cover_page_picture WHERE id=@id", connection);
-            command.Parameters.AddWithValue("@id", txtMagazineId.Text.ToString());
-            command.Parameters.AddWithValue("@name", txtMagazineName.Text);
-            command.Parameters.AddWithValue("@price", txtMagazinePrice.Text);
-            command.Parameters.AddWithValue("@stock", txtMagazineStock.Text);
-            command.Parameters.AddWithValue("@issue", txtMagazineIssue.Text);
-            command.Parameters.AddWithValue("@type", txtMagazineType.Text);
-            command.Parameters.AddWithValue("@cover_page_picture", txtMagazineImage.Text);
+            MagazineClass magazine = new MagazineClass(txtMagazineName.Text, txtMagazineId.Text, Convert.ToDouble(txtMagazinePrice.Text), Convert.ToInt32(txtMagazineStock.Text), txtMagazineIssue.Text, txtMagazineType.Text, txtMagazineImage.Text);
+            bool affected = dbHelper.updateAProductAtDB(magazine);
 
-            int affected = command.ExecuteNonQuery();
-
-            if (affected == 0)
+            if (!affected)
             {
-                MessageBox.Show("Error not successful");
+                MessageBox.Show("Error not successful", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Magazine updated successfully");
+                MessageBox.Show("Magazine added successfully", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearMagazineControls();
-            }
+            }     
         }
+
         /// If tabcontrolgeneral is selected, tabhomepage will open.
         private void btnHomePage_Click(object sender, EventArgs e)
         {

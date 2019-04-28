@@ -253,6 +253,53 @@ namespace OnlineBookStore
         }
 
 
+        public bool updateAProductAtDB(ProductClass product)
+        {
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = null;
+            if (product.GetType() == typeof(OnlineBookStore.BookClass))
+            {
+                command = new SqlCommand("UPDATE BookTable SET name=@name,price=@price,stock=@stock,isbn=@isbn,author=@author,publisher=@publisher,page=@page,cover_page_picture=@cover_page_picture WHERE id=@id", connection);
+                command.Parameters.AddWithValue("@id", ((BookClass)product).id);
+                command.Parameters.AddWithValue("@name", ((BookClass)product).name);
+                command.Parameters.AddWithValue("@price", ((BookClass)product).price);
+                command.Parameters.AddWithValue("@stock", ((BookClass)product).stock);
+                command.Parameters.AddWithValue("@isbn", ((BookClass)product).isbn);
+                command.Parameters.AddWithValue("@author", ((BookClass)product).author);
+                command.Parameters.AddWithValue("@publisher", ((BookClass)product).publisher);
+                command.Parameters.AddWithValue("@page", ((BookClass)product).page);
+                command.Parameters.AddWithValue("@cover_page_picture", ((BookClass)product).cover_page_picture);
+            }
+            else if (product.GetType() == typeof(OnlineBookStore.MagazineClass))
+            {
+                command = new SqlCommand("UPDATE MagazineTable SET name=@name,price=@price,stock=@stock,issue=@issue,type=@type,cover_page_picture=@cover_page_picture WHERE id=@id", connection);
+                command.Parameters.AddWithValue("@id", ((MagazineClass)product).id);
+                command.Parameters.AddWithValue("@name", ((MagazineClass)product).name);
+                command.Parameters.AddWithValue("@price", ((MagazineClass)product).price);
+                command.Parameters.AddWithValue("@stock", ((MagazineClass)product).stock);
+                command.Parameters.AddWithValue("@issue", ((MagazineClass)product).issue);
+                command.Parameters.AddWithValue("@type", ((MagazineClass)product).magazineType);
+                command.Parameters.AddWithValue("@cover_page_picture", ((MagazineClass)product).cover_page_picture);
+            }
+            else if (product.GetType() == typeof(OnlineBookStore.MusicCDsClass))
+            {
+                command = new SqlCommand("UPDATE MusicCDsTable SET name=@name,price=@price,stock=@stock,singer=@singer,type=@type,picture=@picture WHERE id=@id", connection);
+                command.Parameters.AddWithValue("@id", ((MusicCDsClass)product).id);
+                command.Parameters.AddWithValue("@name", ((MusicCDsClass)product).name);
+                command.Parameters.AddWithValue("@price", ((MusicCDsClass)product).price);
+                command.Parameters.AddWithValue("@stock", ((MusicCDsClass)product).stock);
+                command.Parameters.AddWithValue("@singer", ((MusicCDsClass)product).singer);
+                command.Parameters.AddWithValue("@type", ((MusicCDsClass)product).type);
+                command.Parameters.AddWithValue("@picture", ((MusicCDsClass)product).cover_page_picture);
+            }
+
+
+            int affected = command.ExecuteNonQuery();
+
+            if (affected > 0)
+                return true;
+            return false;
+        }
         /*
         public bool updateBookFromDB()
         {
