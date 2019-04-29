@@ -263,6 +263,7 @@ namespace OnlineBookStore
         private void btnDeleteBooks_Click(object sender, EventArgs e)
         {
             //bool affected = dbHelper.deleteAProductFromDB(typeof(OnlineBookStore.BookClass), txtBookId.Text.ToString());
+            
             AdminUserClass adminOps = AdminUserClass.Instance;
             bool affected = adminOps.deleteProduct(typeof(OnlineBookStore.BookClass), txtBookId.Text.ToString());
 
@@ -448,8 +449,9 @@ namespace OnlineBookStore
         private void btnUpdateBook_Click(object sender, EventArgs e)
         {
             BookClass book = new BookClass(txtBookName.Text, txtBookId.Text, Convert.ToDouble(txtBookPrice.Text), Convert.ToInt32(txtBookStock.Text), txtBookIsbn.Text, txtBookAuthor.Text, txtBookPublisher.Text, Convert.ToInt32(txtBookPage.Text), txtBookImage.Text);
-            bool affected = dbHelper.updateAProductAtDB(book);
-
+            //bool affected = dbHelper.updateAProductAtDB(book);
+            AdminUserClass adminOps = AdminUserClass.Instance;
+            bool affected = adminOps.updateProduct(book);
             if (!affected)
             {
                 MessageBox.Show("Error not successful");
@@ -474,7 +476,10 @@ namespace OnlineBookStore
         private void btnUpdateMusicCDs_Click(object sender, EventArgs e)
         {
             MusicCDsClass music = new MusicCDsClass(txtMusicName.Text, txtMusicCDsId.Text, Convert.ToDouble(txtMusicPrice.Text), Convert.ToInt32(txtMusicCDsStock.Text), txtMusicSinger.Text, txtMusicType.Text, txtMusicCDsImage.Text);
-            bool affected = dbHelper.updateAProductAtDB(music);
+            //bool affected = dbHelper.updateAProductAtDB(music);
+            AdminUserClass adminOps = AdminUserClass.Instance;
+            bool affected = adminOps.updateProduct(music);
+
             if (!affected)
             {
                 MessageBox.Show("Error not successful");
@@ -498,8 +503,9 @@ namespace OnlineBookStore
         private void btnUpdateMagazine_Click(object sender, EventArgs e)
         {
             MagazineClass magazine = new MagazineClass(txtMagazineName.Text, txtMagazineId.Text, Convert.ToDouble(txtMagazinePrice.Text), Convert.ToInt32(txtMagazineStock.Text), txtMagazineIssue.Text, txtMagazineType.Text, txtMagazineImage.Text);
-            bool affected = dbHelper.updateAProductAtDB(magazine);
-
+            //bool affected = dbHelper.updateAProductAtDB(magazine);
+            AdminUserClass adminOps = AdminUserClass.Instance;
+            bool affected = adminOps.updateProduct(magazine);
             if (!affected)
             {
                 MessageBox.Show("Error not successful", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Error);

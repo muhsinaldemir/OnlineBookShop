@@ -51,6 +51,13 @@ namespace OnlineBookStore
             return affected;
         }
 
+        public bool updateProduct(ProductClass product)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance;
+            bool affected = dbHelper.updateAProductAtDB(product);
+            return affected;
+        }
+
         public override bool isAdmin()
         {
             return true;
