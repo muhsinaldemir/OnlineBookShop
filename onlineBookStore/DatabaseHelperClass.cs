@@ -114,7 +114,7 @@ namespace OnlineBookStore
         {
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             SqlConnection connection = dbHelper.getConnection();
-            SqlCommand command = new SqlCommand("SELECT S.itemid,S.picture,S.name,S.paymentamount,SUM(S.quantity) AS totalquantity FROM ShoppingCartTable S WHERE S.itemtype = @itemtype GROUP BY S.itemid, S.picture, S.name, S.paymentamount", connection);
+            SqlCommand command = new SqlCommand("SELECT S.itemid,S.picture,S.name,S.paymentamount,SUM(S.quantity) AS totalquantity FROM ShoppingCartTable S WHERE S.itemtype = @itemtype GROUP BY S.itemid, S.picture, S.name, S.paymentamount Order by totalquantity desc", connection);
             command.Parameters.AddWithValue("@itemtype", itemtype);
 
             List<ItemToPurchaseClass> list = new List<ItemToPurchaseClass>();
