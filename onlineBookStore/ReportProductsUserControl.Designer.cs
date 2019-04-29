@@ -75,9 +75,9 @@
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblQuantity.Location = new System.Drawing.Point(413, 14);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(107, 29);
+            this.lblQuantity.Size = new System.Drawing.Size(134, 29);
             this.lblQuantity.TabIndex = 28;
-            this.lblQuantity.Text = "Quantity";
+            this.lblQuantity.Text = "Total Sold ";
             // 
             // lblName
             // 
@@ -121,7 +121,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.panel1);
             this.Name = "ReportProductsUserControl";
-            this.Size = new System.Drawing.Size(893, 150);
+            this.Size = new System.Drawing.Size(686, 150);
             this.Load += new System.EventHandler(this.ReportProductsUserControl_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbShoppingCart)).EndInit();

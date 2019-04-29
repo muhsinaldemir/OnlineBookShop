@@ -157,6 +157,8 @@
             this.pbHomePage = new System.Windows.Forms.PictureBox();
             this.tabPageReport = new System.Windows.Forms.TabPage();
             this.flpReportBooks = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpMusicCDs = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpMagazine = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
@@ -1486,6 +1488,8 @@
             // 
             // tabPageReport
             // 
+            this.tabPageReport.Controls.Add(this.flpMagazine);
+            this.tabPageReport.Controls.Add(this.flpMusicCDs);
             this.tabPageReport.Controls.Add(this.flpReportBooks);
             this.tabPageReport.Location = new System.Drawing.Point(4, 25);
             this.tabPageReport.Name = "tabPageReport";
@@ -1498,8 +1502,22 @@
             // 
             this.flpReportBooks.Location = new System.Drawing.Point(17, 26);
             this.flpReportBooks.Name = "flpReportBooks";
-            this.flpReportBooks.Size = new System.Drawing.Size(554, 263);
+            this.flpReportBooks.Size = new System.Drawing.Size(782, 381);
             this.flpReportBooks.TabIndex = 0;
+            // 
+            // flpMusicCDs
+            // 
+            this.flpMusicCDs.Location = new System.Drawing.Point(827, 23);
+            this.flpMusicCDs.Name = "flpMusicCDs";
+            this.flpMusicCDs.Size = new System.Drawing.Size(635, 366);
+            this.flpMusicCDs.TabIndex = 1;
+            // 
+            // flpMagazine
+            // 
+            this.flpMagazine.Location = new System.Drawing.Point(17, 413);
+            this.flpMagazine.Name = "flpMagazine";
+            this.flpMagazine.Size = new System.Drawing.Size(755, 366);
+            this.flpMagazine.TabIndex = 2;
             // 
             // BookShopForm
             // 
@@ -1694,5 +1712,7 @@
         private System.Windows.Forms.Panel panelUserOps;
         private System.Windows.Forms.TabPage tabPageReport;
         private System.Windows.Forms.FlowLayoutPanel flpReportBooks;
+        private System.Windows.Forms.FlowLayoutPanel flpMagazine;
+        private System.Windows.Forms.FlowLayoutPanel flpMusicCDs;
     }
 }

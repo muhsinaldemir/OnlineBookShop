@@ -809,9 +809,9 @@ namespace OnlineBookStore
             login.Show();
             this.Close();
         }
-        private void populateReport()
+        private ReportProductsUserControl[] populateReport(string type)
         {
-            List<ItemToPurchaseClass> list = dbHelper.getMostBoughtItems("Book");
+            List<ItemToPurchaseClass> list = dbHelper.getMostBoughtItems(type);
             ReportProductsUserControl[] myAccountUserControls = new ReportProductsUserControl[list.Count];
 
 
@@ -827,15 +827,47 @@ namespace OnlineBookStore
                 myAccountUserControls[i].quantity = item.quantity;
                 myAccountUserControls[i].unitPriceValue = item.product.price;
                 myAccountUserControls[i].picture = item.product.cover_page_picture;
-                //Console.WriteLine("Id: " + item.product.id + " Name: " + item.product.name + " Quantity: " + item.quantity + " Unit Price Value: " + item.product.price + " Item Type: " + item.product.GetType());
-                flpReportBooks.Controls.Add(myAccountUserControls[i]);
-
                 i++;
             }
+            return myAccountUserControls;
         }
         private void pbReport_Click(object sender, EventArgs e)
         {
-            populateReport();
+            ReportProductsUserControl[] myAccountUserControlsBook = populateReport("Book");
+
+            if (flpReportBooks.Controls.Count > 0)
+                flpReportBooks.Controls.Clear();
+            int i = 0;
+            foreach (var item in myAccountUserControlsBook)
+            {
+                flpReportBooks.Controls.Add(myAccountUserControlsBook[i]);
+                i++;
+            }
+
+           ReportProductsUserControl[] myAccountUserControlsMagazine = populateReport("Magazine");
+
+            if (flpMagazine.Controls.Count > 0)
+                flpMagazine.Controls.Clear();
+            int j = 0;
+            foreach (var item in myAccountUserControlsMagazine)
+            {
+                flpMagazine.Controls.Add(myAccountUserControlsMagazine[j]);
+                j++;
+            }
+
+
+            ReportProductsUserControl[] myAccountUserControlsMusic = populateReport("MusicCDs");
+
+            if (flpMusicCDs.Controls.Count > 0)
+                flpMusicCDs.Controls.Clear();
+            int k= 0;
+            foreach (var item in myAccountUserControlsMusic)
+            {
+                flpMusicCDs.Controls.Add(myAccountUserControlsMusic[k]);
+                k++;
+            }
+
+    
             tabControlGeneral.SelectedTab = tabPageReport;
         }
     }
