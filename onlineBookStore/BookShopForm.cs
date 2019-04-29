@@ -38,7 +38,9 @@ namespace OnlineBookStore
             this.FormClosed += (o, e) => Application.RemoveMessageFilter(this);
         }
 
-
+        /**  
+         * Log Operations. Calls FileWriterClass.WriteFile() method with necessary parameters.
+         */
         public bool PreFilterMessage(ref Message m)
         {
             if (m.Msg == 0x201 || m.Msg == 0x203)
@@ -70,6 +72,7 @@ namespace OnlineBookStore
             }
             lblGeneralUserName.Text = user.name + " " + user.surName;
             tabControlGeneral.SelectedTab = tabHomePage;
+            populateBooksViewInHomePage();
         }
 
         /// If tabcontrolgeneral is selected, tabadminpanel will open.
@@ -796,6 +799,15 @@ namespace OnlineBookStore
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void pbUserLogout_Click(object sender, EventArgs e)
+        {
+            user = null;
+            GC.Collect();
+            LoginPage login = new LoginPage();
+            login.Show();
+            this.Close();
         }
     }
 }
