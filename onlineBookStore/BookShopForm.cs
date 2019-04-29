@@ -115,8 +115,9 @@ namespace OnlineBookStore
         private void btnAddBook_Click(object sender, EventArgs e)
         {
             BookClass book = new BookClass(txtBookName.Text, null, Convert.ToDouble(txtBookPrice.Text), Convert.ToInt32(txtBookStock.Text), txtBookIsbn.Text, txtBookAuthor.Text, txtBookPublisher.Text, Convert.ToInt32(txtBookPage.Text), txtBookImage.Text);
-            bool affected = dbHelper.addAProductToDB(book);
-
+            //bool affected = dbHelper.addAProductToDB(book);
+            AdminUserClass adminOps = AdminUserClass.Instance;
+            bool affected = adminOps.addNewProduct(book);
             if (!affected)
             {
                 MessageBox.Show("Error not successful");
@@ -136,7 +137,10 @@ namespace OnlineBookStore
         private void btnAddMusicCDs_Click(object sender, EventArgs e)
         {
             MusicCDsClass music = new MusicCDsClass(txtMusicName.Text, null, Convert.ToDouble(txtMusicPrice.Text), Convert.ToInt32(txtMusicCDsStock.Text), txtMusicSinger.Text, txtMusicType.Text, txtMusicCDsImage.Text);
-            bool affected = dbHelper.addAProductToDB(music);
+            //bool affected = dbHelper.addAProductToDB(music);
+            AdminUserClass adminOps = AdminUserClass.Instance;
+            bool affected = adminOps.addNewProduct(music);
+
             if (!affected)
             {
                 MessageBox.Show("Error not successful");
@@ -155,8 +159,9 @@ namespace OnlineBookStore
         private void btnAddMagazine_Click(object sender, EventArgs e)
         {
             MagazineClass magazine = new MagazineClass(txtMagazineName.Text, null, Convert.ToDouble(txtMagazinePrice.Text), Convert.ToInt32(txtMagazineStock.Text), txtMagazineIssue.Text, txtMagazineType.Text, txtMagazineImage.Text);
-            bool affected = dbHelper.addAProductToDB(magazine);
-           
+            //bool affected = dbHelper.addAProductToDB(magazine);
+            AdminUserClass adminOps = AdminUserClass.Instance;
+            bool affected = adminOps.addNewProduct(magazine);
             if (!affected)
             {
                 MessageBox.Show("Error not successful","INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -172,7 +177,7 @@ namespace OnlineBookStore
          */
         private void tabUser_Click(object sender, EventArgs e)
         {
-            dgvBooks.DataSource = dbHelper.getAllItemsForAClassFromATableByItsType(typeof(OnlineBookStore.UserClass));
+            dgvUsers.DataSource = dbHelper.getAllItemsForAClassFromATableByItsType(typeof(OnlineBookStore.UserClass));
         }
         /**
          * finds the selected book information in datagridview from  BookTable in the database.
@@ -186,7 +191,7 @@ namespace OnlineBookStore
          */
         private void tabMusics_Click(object sender, EventArgs e)
         {
-            dgvBooks.DataSource = dbHelper.getAllItemsForAClassFromATableByItsType(typeof(OnlineBookStore.MusicCDsClass));
+            dgvMusicCDs.DataSource = dbHelper.getAllItemsForAClassFromATableByItsType(typeof(OnlineBookStore.MusicCDsClass));
 
         }
         /**
@@ -195,7 +200,7 @@ namespace OnlineBookStore
 
         private void tabMagazine_Click(object sender, EventArgs e)
         {
-            dgvBooks.DataSource = dbHelper.getAllItemsForAClassFromATableByItsType(typeof(OnlineBookStore.MagazineClass));
+            dgvMagazine.DataSource = dbHelper.getAllItemsForAClassFromATableByItsType(typeof(OnlineBookStore.MagazineClass));
         }
         /** @brief button delete user
          * call userDelete() function in AdminUserClass
@@ -257,7 +262,10 @@ namespace OnlineBookStore
 
         private void btnDeleteBooks_Click(object sender, EventArgs e)
         {
-            bool affected = dbHelper.deleteAProductFromDB(typeof(OnlineBookStore.BookClass), txtBookId.Text.ToString());
+            //bool affected = dbHelper.deleteAProductFromDB(typeof(OnlineBookStore.BookClass), txtBookId.Text.ToString());
+            AdminUserClass adminOps = AdminUserClass.Instance;
+            bool affected = adminOps.deleteProduct(typeof(OnlineBookStore.BookClass), txtBookId.Text.ToString());
+
             if (!affected)
             {
                 MessageBox.Show("Error not successful");
@@ -274,7 +282,10 @@ namespace OnlineBookStore
         */
         private void btnDeleteMusicCDs_Click(object sender, EventArgs e)
         {
-            bool affected = dbHelper.deleteAProductFromDB(typeof(OnlineBookStore.MusicCDsClass), txtMusicCDsId.Text.ToString());
+            //bool affected = dbHelper.deleteAProductFromDB(typeof(OnlineBookStore.MusicCDsClass), txtMusicCDsId.Text.ToString());
+            AdminUserClass adminOps = AdminUserClass.Instance;
+            bool affected = adminOps.deleteProduct(typeof(OnlineBookStore.MusicCDsClass), txtMusicCDsId.Text.ToString());
+
             if (!affected)
             {
                 MessageBox.Show("Error not successful");
@@ -291,7 +302,11 @@ namespace OnlineBookStore
 
         private void btnDeleteMagazine_Click(object sender, EventArgs e)
         {
-            bool affected = dbHelper.deleteAProductFromDB(typeof(OnlineBookStore.MagazineClass), txtMagazineId.Text.ToString());
+            //bool affected = dbHelper.deleteAProductFromDB(typeof(OnlineBookStore.MagazineClass), txtMagazineId.Text.ToString());
+
+            AdminUserClass adminOps = AdminUserClass.Instance;
+            bool affected = adminOps.deleteProduct(typeof(OnlineBookStore.MagazineClass), txtMagazineId.Text.ToString());
+
             if (!affected)
             {
                 MessageBox.Show("Error not successful");

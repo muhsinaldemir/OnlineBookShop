@@ -32,9 +32,24 @@ namespace OnlineBookStore
         private AdminUserClass() : base() { }//singleton pattern
 
         public bool addCustomer() { return true; }
-        public bool addNewBook() { return true; }
-        public bool addNewMagazine() { return true; }
-        public bool addNewMusicCD() { return true; }
+
+        /**
+        * Addnew Book, Magazine, MusicCD is gathered under 1 function as they all derived from ProductClass
+        */
+        public bool addNewProduct(ProductClass product)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance;
+            bool affected = dbHelper.addAProductToDB(product);
+            return affected;
+        }
+       
+
+        public bool deleteProduct(Type type, string id)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance;
+            bool affected = dbHelper.deleteAnItemObjectFromDBByID(type, id);
+            return affected;
+        }
 
         public override bool isAdmin()
         {

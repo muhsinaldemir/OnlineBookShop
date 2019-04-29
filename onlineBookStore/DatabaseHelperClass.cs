@@ -233,10 +233,12 @@ namespace OnlineBookStore
             return false;
         }
 
-        public bool deleteAProductFromDB(Type type,string id)
+        public bool deleteAnItemObjectFromDBByID(Type type,string id)
         {
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand deleteCommand = null;
+            if (type == typeof(OnlineBookStore.UserClass))
+                deleteCommand = new SqlCommand("delete from CustomerTable where id=@id", connection);
             if (type == typeof(OnlineBookStore.BookClass))
                 deleteCommand = new SqlCommand("delete from BookTable where id=@id", connection);
             else if (type == typeof(OnlineBookStore.MagazineClass))
@@ -309,7 +311,7 @@ namespace OnlineBookStore
             SqlDataAdapter command = null;
             if (type == typeof(OnlineBookStore.UserClass))
             {
-                command = new SqlDataAdapter("SELECT * FROM BookTable", connection);
+                command = new SqlDataAdapter("SELECT * FROM CustomerTable", connection);
             }
             else if (type == typeof(OnlineBookStore.BookClass))
             {

@@ -98,6 +98,10 @@ namespace OnlineBookStore
          */ 
         public static bool userDelete(string userID)
         {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance;
+            bool affected = dbHelper.deleteAnItemObjectFromDBByID(typeof(OnlineBookStore.UserClass), userID);
+            return affected;
+            /*
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             SqlConnection connection = dbHelper.getConnection();
             SqlCommand deleteCommand = new SqlCommand("delete from CustomerTable where id=@id", connection);
@@ -109,6 +113,7 @@ namespace OnlineBookStore
                 return false;
             else
                 return true;
+                */
         }
     }
 }

@@ -34,7 +34,7 @@ namespace OnlineBookStore
             else
             {
                 UserClass cs = null;
-               connection.Open();
+                connection.Open();
                 SqlCommand commandCustomer = new SqlCommand("Select * from CustomerTable WHERE username=@username AND password=@password", connection);
                 commandCustomer.Parameters.AddWithValue("@username", txtUserName.Text);
                 commandCustomer.Parameters.AddWithValue("@password", txtPassword.Text);

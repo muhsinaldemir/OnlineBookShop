@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace OnlineBookStore
 {
     ///create a new BookClass instance of ProductClass
-    class BookClass : ProductClass
+    public class BookClass : ProductClass
     {
         public string isbn { get; set; }
         public string author { get; set; }
