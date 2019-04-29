@@ -143,6 +143,10 @@
             this.lblShoppinCartValue = new System.Windows.Forms.Label();
             this.lblGeneralUserName = new System.Windows.Forms.Label();
             this.timerChangeAd = new System.Windows.Forms.Timer(this.components);
+            this.lblBestSellerBooks = new System.Windows.Forms.Label();
+            this.lblBestSellerMagazines = new System.Windows.Forms.Label();
+            this.lblBestSellerMusicCDs = new System.Windows.Forms.Label();
+            this.flpUser = new System.Windows.Forms.FlowLayoutPanel();
             this.pbUserLogout = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbBook = new System.Windows.Forms.PictureBox();
@@ -159,9 +163,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbAdminPanel = new System.Windows.Forms.PictureBox();
             this.pbHomePage = new System.Windows.Forms.PictureBox();
-            this.lblBestSellerBooks = new System.Windows.Forms.Label();
-            this.lblBestSellerMagazines = new System.Windows.Forms.Label();
-            this.lblBestSellerMusicCDs = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
@@ -224,7 +226,7 @@
             // 
             this.panel1.Controls.Add(this.lblShoppingCartValue);
             this.panel1.Controls.Add(this.lblShoppingCartTitle);
-            this.panel1.Location = new System.Drawing.Point(152, 0);
+            this.panel1.Location = new System.Drawing.Point(152, 477);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1028, 34);
@@ -1269,6 +1271,8 @@
             // 
             // tabPageReport
             // 
+            this.tabPageReport.Controls.Add(this.label4);
+            this.tabPageReport.Controls.Add(this.flpUser);
             this.tabPageReport.Controls.Add(this.lblBestSellerMusicCDs);
             this.tabPageReport.Controls.Add(this.lblBestSellerMagazines);
             this.tabPageReport.Controls.Add(this.lblBestSellerBooks);
@@ -1279,7 +1283,6 @@
             this.tabPageReport.Name = "tabPageReport";
             this.tabPageReport.Size = new System.Drawing.Size(2002, 1301);
             this.tabPageReport.TabIndex = 5;
-            this.tabPageReport.Text = "Report";
             this.tabPageReport.UseVisualStyleBackColor = true;
             this.tabPageReport.Click += new System.EventHandler(this.tabPageReport_Click);
             // 
@@ -1288,7 +1291,7 @@
             this.flpMagazine.AutoScroll = true;
             this.flpMagazine.Location = new System.Drawing.Point(1095, 65);
             this.flpMagazine.Name = "flpMagazine";
-            this.flpMagazine.Size = new System.Drawing.Size(522, 381);
+            this.flpMagazine.Size = new System.Drawing.Size(522, 346);
             this.flpMagazine.TabIndex = 2;
             // 
             // flpMusicCDs
@@ -1296,7 +1299,7 @@
             this.flpMusicCDs.AutoScroll = true;
             this.flpMusicCDs.Location = new System.Drawing.Point(555, 65);
             this.flpMusicCDs.Name = "flpMusicCDs";
-            this.flpMusicCDs.Size = new System.Drawing.Size(519, 381);
+            this.flpMusicCDs.Size = new System.Drawing.Size(519, 346);
             this.flpMusicCDs.TabIndex = 1;
             // 
             // flpReportBooks
@@ -1304,7 +1307,7 @@
             this.flpReportBooks.AutoScroll = true;
             this.flpReportBooks.Location = new System.Drawing.Point(3, 65);
             this.flpReportBooks.Name = "flpReportBooks";
-            this.flpReportBooks.Size = new System.Drawing.Size(517, 381);
+            this.flpReportBooks.Size = new System.Drawing.Size(517, 346);
             this.flpReportBooks.TabIndex = 0;
             this.flpReportBooks.Paint += new System.Windows.Forms.PaintEventHandler(this.flpReportBooks_Paint);
             // 
@@ -1356,6 +1359,43 @@
             this.timerChangeAd.Enabled = true;
             this.timerChangeAd.Interval = 5000;
             this.timerChangeAd.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblBestSellerBooks
+            // 
+            this.lblBestSellerBooks.AutoSize = true;
+            this.lblBestSellerBooks.Font = new System.Drawing.Font("Mistral", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBestSellerBooks.Location = new System.Drawing.Point(3, 33);
+            this.lblBestSellerBooks.Name = "lblBestSellerBooks";
+            this.lblBestSellerBooks.Size = new System.Drawing.Size(157, 29);
+            this.lblBestSellerBooks.TabIndex = 3;
+            this.lblBestSellerBooks.Text = "Best Seller Books";
+            // 
+            // lblBestSellerMagazines
+            // 
+            this.lblBestSellerMagazines.AutoSize = true;
+            this.lblBestSellerMagazines.Font = new System.Drawing.Font("Mistral", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBestSellerMagazines.Location = new System.Drawing.Point(550, 33);
+            this.lblBestSellerMagazines.Name = "lblBestSellerMagazines";
+            this.lblBestSellerMagazines.Size = new System.Drawing.Size(195, 29);
+            this.lblBestSellerMagazines.TabIndex = 4;
+            this.lblBestSellerMagazines.Text = "Best Seller Magazines";
+            // 
+            // lblBestSellerMusicCDs
+            // 
+            this.lblBestSellerMusicCDs.AutoSize = true;
+            this.lblBestSellerMusicCDs.Font = new System.Drawing.Font("Mistral", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBestSellerMusicCDs.Location = new System.Drawing.Point(1099, 33);
+            this.lblBestSellerMusicCDs.Name = "lblBestSellerMusicCDs";
+            this.lblBestSellerMusicCDs.Size = new System.Drawing.Size(192, 29);
+            this.lblBestSellerMusicCDs.TabIndex = 5;
+            this.lblBestSellerMusicCDs.Text = "Best Seller MusicCDs";
+            // 
+            // flpUser
+            // 
+            this.flpUser.Location = new System.Drawing.Point(0, 469);
+            this.flpUser.Name = "flpUser";
+            this.flpUser.Size = new System.Drawing.Size(519, 307);
+            this.flpUser.TabIndex = 6;
             // 
             // pbUserLogout
             // 
@@ -1455,7 +1495,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::OnlineBookStore.Properties.Resources.logo;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 15);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 492);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(144, 122);
@@ -1467,7 +1507,7 @@
             // pbMyAccount
             // 
             this.pbMyAccount.Image = global::OnlineBookStore.Properties.Resources.myAccount;
-            this.pbMyAccount.Location = new System.Drawing.Point(-1, 565);
+            this.pbMyAccount.Location = new System.Drawing.Point(-1, 1042);
             this.pbMyAccount.Name = "pbMyAccount";
             this.pbMyAccount.Size = new System.Drawing.Size(146, 136);
             this.pbMyAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1478,7 +1518,7 @@
             // pbReport
             // 
             this.pbReport.Image = global::OnlineBookStore.Properties.Resources.reportblack;
-            this.pbReport.Location = new System.Drawing.Point(2, 1006);
+            this.pbReport.Location = new System.Drawing.Point(2, 1483);
             this.pbReport.Name = "pbReport";
             this.pbReport.Size = new System.Drawing.Size(143, 136);
             this.pbReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1489,7 +1529,7 @@
             // pbExit
             // 
             this.pbExit.Image = global::OnlineBookStore.Properties.Resources.exitblack;
-            this.pbExit.Location = new System.Drawing.Point(4, 781);
+            this.pbExit.Location = new System.Drawing.Point(4, 1258);
             this.pbExit.Name = "pbExit";
             this.pbExit.Size = new System.Drawing.Size(146, 136);
             this.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1500,7 +1540,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::OnlineBookStore.Properties.Resources.shoppingcartblack;
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 353);
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 830);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(146, 136);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1511,7 +1551,7 @@
             // pbAdminPanel
             // 
             this.pbAdminPanel.Image = global::OnlineBookStore.Properties.Resources.adminblack;
-            this.pbAdminPanel.Location = new System.Drawing.Point(4, 1234);
+            this.pbAdminPanel.Location = new System.Drawing.Point(4, 1711);
             this.pbAdminPanel.Name = "pbAdminPanel";
             this.pbAdminPanel.Size = new System.Drawing.Size(146, 136);
             this.pbAdminPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1522,7 +1562,7 @@
             // pbHomePage
             // 
             this.pbHomePage.Image = global::OnlineBookStore.Properties.Resources.homepageblack;
-            this.pbHomePage.Location = new System.Drawing.Point(-1, 154);
+            this.pbHomePage.Location = new System.Drawing.Point(-1, 631);
             this.pbHomePage.Name = "pbHomePage";
             this.pbHomePage.Size = new System.Drawing.Size(146, 136);
             this.pbHomePage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1530,35 +1570,15 @@
             this.pbHomePage.TabStop = false;
             this.pbHomePage.Click += new System.EventHandler(this.pbHomePage_Click);
             // 
-            // lblBestSellerBooks
+            // label4
             // 
-            this.lblBestSellerBooks.AutoSize = true;
-            this.lblBestSellerBooks.Font = new System.Drawing.Font("Mistral", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBestSellerBooks.Location = new System.Drawing.Point(3, 33);
-            this.lblBestSellerBooks.Name = "lblBestSellerBooks";
-            this.lblBestSellerBooks.Size = new System.Drawing.Size(157, 29);
-            this.lblBestSellerBooks.TabIndex = 3;
-            this.lblBestSellerBooks.Text = "Best Seller Books";
-            // 
-            // lblBestSellerMagazines
-            // 
-            this.lblBestSellerMagazines.AutoSize = true;
-            this.lblBestSellerMagazines.Font = new System.Drawing.Font("Mistral", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBestSellerMagazines.Location = new System.Drawing.Point(550, 33);
-            this.lblBestSellerMagazines.Name = "lblBestSellerMagazines";
-            this.lblBestSellerMagazines.Size = new System.Drawing.Size(195, 29);
-            this.lblBestSellerMagazines.TabIndex = 4;
-            this.lblBestSellerMagazines.Text = "Best Seller Magazines";
-            // 
-            // lblBestSellerMusicCDs
-            // 
-            this.lblBestSellerMusicCDs.AutoSize = true;
-            this.lblBestSellerMusicCDs.Font = new System.Drawing.Font("Mistral", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBestSellerMusicCDs.Location = new System.Drawing.Point(1099, 33);
-            this.lblBestSellerMusicCDs.Name = "lblBestSellerMusicCDs";
-            this.lblBestSellerMusicCDs.Size = new System.Drawing.Size(192, 29);
-            this.lblBestSellerMusicCDs.TabIndex = 5;
-            this.lblBestSellerMusicCDs.Text = "Best Seller MusicCDs";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Mistral", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(3, 437);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(167, 29);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Richest Customers";
             // 
             // BookShopForm
             // 
@@ -1759,5 +1779,7 @@
         private System.Windows.Forms.Label lblBestSellerMusicCDs;
         private System.Windows.Forms.Label lblBestSellerMagazines;
         private System.Windows.Forms.Label lblBestSellerBooks;
+        private System.Windows.Forms.FlowLayoutPanel flpUser;
+        private System.Windows.Forms.Label label4;
     }
 }

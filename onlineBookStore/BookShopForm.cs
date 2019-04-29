@@ -813,9 +813,7 @@ namespace OnlineBookStore
         {
             List<ItemToPurchaseClass> list = dbHelper.getMostBoughtItems(type);
             ReportProductsUserControl[] myAccountUserControls = new ReportProductsUserControl[list.Count];
-
-
-          
+            
 
             int i = 0;
             foreach (ItemToPurchaseClass item in list)
@@ -830,6 +828,24 @@ namespace OnlineBookStore
             }
             return myAccountUserControls;
         }
+        private CustomerUserControl[] populateUserReport()
+        {
+            List<ReportUserClass> list = dbHelper.getMostRichCustomers();
+            CustomerUserControl[] myAccountUserControls = new CustomerUserControl[list.Count];
+
+
+            int i = 0;
+            foreach (ReportUserClass item in list)
+            {
+                myAccountUserControls[i] = new CustomerUserControl();
+                myAccountUserControls[i].name = item.name;
+                myAccountUserControls[i].surname = item.surName;
+                myAccountUserControls[i].totalpayment = item.totalpayment;
+                i++;
+            }
+            return myAccountUserControls;
+        }
+
         private void pbReport_Click(object sender, EventArgs e)
         {
             ReportProductsUserControl[] myAccountUserControlsBook = populateReport("Book");
@@ -865,8 +881,17 @@ namespace OnlineBookStore
                 flpMusicCDs.Controls.Add(myAccountUserControlsMusic[k]);
                 k++;
             }
+            CustomerUserControl[] myAccountUserControlsUser = populateUserReport();
+            if (flpUser.Controls.Count > 0)
+                flpUser.Controls.Clear();
+            int l = 0;
+            foreach (var item in myAccountUserControlsUser)
+            {
+                flpUser.Controls.Add(myAccountUserControlsUser[l]);
+                l++;
+            }
 
-    
+
             tabControlGeneral.SelectedTab = tabPageReport;
         }
 

@@ -136,6 +136,29 @@ namespace OnlineBookStore
             }
             return list;
         }
+        public List<ReportUserClass> getMostRichCustomers()
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = new SqlCommand("SELECT S.customerid,C.name,C.surname,SUM(S.paymentamount) AS totalpayment FROM ShoppingCartTable S, CustomerTable C WHERE S.customerid = C.id GROUP BY S.customerid, C.name, C.surname Order by totalpayment desc", connection);
+            
+
+            List<ReportUserClass> list = new List<ReportUserClass>();
+            SqlDataReader read = command.ExecuteReader();
+            if (read != null)
+            {
+                while (read.Read())
+                {
+                    ReportUserClass item = new ReportUserClass();
+                    item.customerID = read["customerid"].ToString();
+                    item.name = read["name"].ToString();
+                    item.surName = read["surname"].ToString();
+                    item.totalpayment = Convert.ToDouble( read["totalpayment"]);
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
 
         public void removeSelectedItemsFromShoppingCart(string name)
         {

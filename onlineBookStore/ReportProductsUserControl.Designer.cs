@@ -43,10 +43,10 @@
             // 
             this.lblMyAccountQuantity.AutoSize = true;
             this.lblMyAccountQuantity.BackColor = System.Drawing.Color.White;
-            this.lblMyAccountQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMyAccountQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblMyAccountQuantity.Location = new System.Drawing.Point(283, 60);
             this.lblMyAccountQuantity.Name = "lblMyAccountQuantity";
-            this.lblMyAccountQuantity.Size = new System.Drawing.Size(53, 20);
+            this.lblMyAccountQuantity.Size = new System.Drawing.Size(60, 24);
             this.lblMyAccountQuantity.TabIndex = 33;
             this.lblMyAccountQuantity.Text = "label1";
             // 
@@ -54,10 +54,10 @@
             // 
             this.lblUnitPriceValue.AutoSize = true;
             this.lblUnitPriceValue.BackColor = System.Drawing.Color.White;
-            this.lblUnitPriceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUnitPriceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUnitPriceValue.Location = new System.Drawing.Point(393, 60);
             this.lblUnitPriceValue.Name = "lblUnitPriceValue";
-            this.lblUnitPriceValue.Size = new System.Drawing.Size(53, 20);
+            this.lblUnitPriceValue.Size = new System.Drawing.Size(60, 24);
             this.lblUnitPriceValue.TabIndex = 31;
             this.lblUnitPriceValue.Text = "label1";
             // 
@@ -65,10 +65,10 @@
             // 
             this.lblUnitPrice.AutoSize = true;
             this.lblUnitPrice.BackColor = System.Drawing.Color.White;
-            this.lblUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUnitPrice.Location = new System.Drawing.Point(376, 28);
             this.lblUnitPrice.Name = "lblUnitPrice";
-            this.lblUnitPrice.Size = new System.Drawing.Size(83, 20);
+            this.lblUnitPrice.Size = new System.Drawing.Size(90, 24);
             this.lblUnitPrice.TabIndex = 29;
             this.lblUnitPrice.Text = "Unit Price";
             // 
@@ -76,20 +76,20 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.BackColor = System.Drawing.Color.White;
-            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblQuantity.Location = new System.Drawing.Point(265, 28);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(89, 20);
+            this.lblQuantity.Size = new System.Drawing.Size(99, 24);
             this.lblQuantity.TabIndex = 28;
             this.lblQuantity.Text = "Total Sold ";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblName.Location = new System.Drawing.Point(127, 55);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(68, 25);
+            this.lblName.Size = new System.Drawing.Size(65, 24);
             this.lblName.TabIndex = 27;
             this.lblName.Text = "Name";
             // 
