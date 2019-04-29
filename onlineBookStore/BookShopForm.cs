@@ -809,5 +809,34 @@ namespace OnlineBookStore
             login.Show();
             this.Close();
         }
+        private void populateReport()
+        {
+            List<ItemToPurchaseClass> list = dbHelper.getMostBoughtItems("Book");
+            ReportProductsUserControl[] myAccountUserControls = new ReportProductsUserControl[list.Count];
+
+
+            if (flpReportBooks.Controls.Count > 0)
+                flpReportBooks.Controls.Clear();
+
+            int i = 0;
+            foreach (ItemToPurchaseClass item in list)
+            {
+                myAccountUserControls[i] = new ReportProductsUserControl();
+                myAccountUserControls[i].id = item.product.id;
+                myAccountUserControls[i].name = item.product.name;
+                myAccountUserControls[i].quantity = item.quantity;
+                myAccountUserControls[i].unitPriceValue = item.product.price;
+                myAccountUserControls[i].picture = item.product.cover_page_picture;
+                //Console.WriteLine("Id: " + item.product.id + " Name: " + item.product.name + " Quantity: " + item.quantity + " Unit Price Value: " + item.product.price + " Item Type: " + item.product.GetType());
+                flpReportBooks.Controls.Add(myAccountUserControls[i]);
+
+                i++;
+            }
+        }
+        private void pbReport_Click(object sender, EventArgs e)
+        {
+            populateReport();
+            tabControlGeneral.SelectedTab = tabPageReport;
+        }
     }
 }

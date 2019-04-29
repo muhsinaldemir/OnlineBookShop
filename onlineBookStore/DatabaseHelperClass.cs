@@ -110,6 +110,32 @@ namespace OnlineBookStore
             }
             return list;
         }
+        public List<ItemToPurchaseClass> getMostBoughtItems(string itemtype)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = new SqlCommand("SELECT S.itemid,S.picture,S.name,S.paymentamount,SUM(S.quantity) AS totalquantity FROM ShoppingCartTable S WHERE S.itemtype = @itemtype GROUP BY S.itemid, S.picture, S.name, S.paymentamount", connection);
+            command.Parameters.AddWithValue("@itemtype", itemtype);
+
+            List<ItemToPurchaseClass> list = new List<ItemToPurchaseClass>();
+            SqlDataReader readShoppingCart = command.ExecuteReader();
+            if (readShoppingCart != null)
+            {
+                while (readShoppingCart.Read())
+                {
+                    ItemToPurchaseClass item = new ItemToPurchaseClass();
+                    ProductClass book = new BookClass();
+                    item.product = book;
+                    item.product.id = readShoppingCart["itemid"].ToString();
+                    item.quantity = Convert.ToInt32(readShoppingCart["totalquantity"]);
+                    item.product.price = Convert.ToDouble(readShoppingCart["paymentamount"]);
+                    item.product.name = readShoppingCart["name"].ToString();
+                    item.product.cover_page_picture = readShoppingCart["picture"].ToString();
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
 
         public void removeSelectedItemsFromShoppingCart(string name)
         {

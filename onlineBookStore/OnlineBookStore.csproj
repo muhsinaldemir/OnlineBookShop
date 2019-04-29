@@ -102,6 +102,12 @@
     <Compile Include="ProductClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportProductsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportProductsUserControl.Designer.cs">
+      <DependentUpon>ReportProductsUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShoppingCartClass.cs" />
     <Compile Include="ShoppingCartItemsUserControl.cs">
       <SubType>UserControl</SubType>
@@ -142,6 +148,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportProductsUserControl.resx">
+      <DependentUpon>ReportProductsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShoppingCartItemsUserControl.resx">
       <DependentUpon>ShoppingCartItemsUserControl.cs</DependentUpon>
     </EmbeddedResource>
