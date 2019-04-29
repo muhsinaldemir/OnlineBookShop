@@ -293,6 +293,16 @@ namespace OnlineBookStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rb {
+            get {
+                object obj = ResourceManager.GetObject("rb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap removeblack {
             get {
                 object obj = ResourceManager.GetObject("removeblack", resourceCulture);
@@ -306,6 +316,26 @@ namespace OnlineBookStore.Properties {
         internal static System.Drawing.Bitmap reportblack {
             get {
                 object obj = ResourceManager.GetObject("reportblack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ribbon {
+            get {
+                object obj = ResourceManager.GetObject("ribbon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ribbonblack {
+            get {
+                object obj = ResourceManager.GetObject("ribbonblack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

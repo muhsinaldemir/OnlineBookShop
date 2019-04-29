@@ -42,50 +42,54 @@
             // lblMyAccountQuantity
             // 
             this.lblMyAccountQuantity.AutoSize = true;
-            this.lblMyAccountQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMyAccountQuantity.Location = new System.Drawing.Point(434, 61);
+            this.lblMyAccountQuantity.BackColor = System.Drawing.Color.White;
+            this.lblMyAccountQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMyAccountQuantity.Location = new System.Drawing.Point(283, 60);
             this.lblMyAccountQuantity.Name = "lblMyAccountQuantity";
-            this.lblMyAccountQuantity.Size = new System.Drawing.Size(81, 29);
+            this.lblMyAccountQuantity.Size = new System.Drawing.Size(53, 20);
             this.lblMyAccountQuantity.TabIndex = 33;
             this.lblMyAccountQuantity.Text = "label1";
             // 
             // lblUnitPriceValue
             // 
             this.lblUnitPriceValue.AutoSize = true;
-            this.lblUnitPriceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUnitPriceValue.Location = new System.Drawing.Point(566, 61);
+            this.lblUnitPriceValue.BackColor = System.Drawing.Color.White;
+            this.lblUnitPriceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUnitPriceValue.Location = new System.Drawing.Point(393, 60);
             this.lblUnitPriceValue.Name = "lblUnitPriceValue";
-            this.lblUnitPriceValue.Size = new System.Drawing.Size(81, 29);
+            this.lblUnitPriceValue.Size = new System.Drawing.Size(53, 20);
             this.lblUnitPriceValue.TabIndex = 31;
             this.lblUnitPriceValue.Text = "label1";
             // 
             // lblUnitPrice
             // 
             this.lblUnitPrice.AutoSize = true;
-            this.lblUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUnitPrice.Location = new System.Drawing.Point(556, 14);
+            this.lblUnitPrice.BackColor = System.Drawing.Color.White;
+            this.lblUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUnitPrice.Location = new System.Drawing.Point(376, 28);
             this.lblUnitPrice.Name = "lblUnitPrice";
-            this.lblUnitPrice.Size = new System.Drawing.Size(123, 29);
+            this.lblUnitPrice.Size = new System.Drawing.Size(83, 20);
             this.lblUnitPrice.TabIndex = 29;
             this.lblUnitPrice.Text = "Unit Price";
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblQuantity.Location = new System.Drawing.Point(413, 14);
+            this.lblQuantity.BackColor = System.Drawing.Color.White;
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblQuantity.Location = new System.Drawing.Point(265, 28);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(134, 29);
+            this.lblQuantity.Size = new System.Drawing.Size(89, 20);
             this.lblQuantity.TabIndex = 28;
             this.lblQuantity.Text = "Total Sold ";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(219, 55);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblName.Location = new System.Drawing.Point(127, 55);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(85, 29);
+            this.lblName.Size = new System.Drawing.Size(68, 25);
             this.lblName.TabIndex = 27;
             this.lblName.Text = "Name";
             // 
@@ -94,10 +98,10 @@
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pbShoppingCart);
-            this.panel1.Location = new System.Drawing.Point(61, 14);
+            this.panel1.Location = new System.Drawing.Point(14, 13);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(134, 123);
+            this.panel1.Size = new System.Drawing.Size(107, 109);
             this.panel1.TabIndex = 26;
             // 
             // pbShoppingCart
@@ -105,7 +109,7 @@
             this.pbShoppingCart.Location = new System.Drawing.Point(9, 15);
             this.pbShoppingCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbShoppingCart.Name = "pbShoppingCart";
-            this.pbShoppingCart.Size = new System.Drawing.Size(111, 88);
+            this.pbShoppingCart.Size = new System.Drawing.Size(84, 74);
             this.pbShoppingCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbShoppingCart.TabIndex = 0;
             this.pbShoppingCart.TabStop = false;
@@ -114,6 +118,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lblMyAccountQuantity);
             this.Controls.Add(this.lblUnitPriceValue);
             this.Controls.Add(this.lblUnitPrice);
@@ -121,7 +127,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.panel1);
             this.Name = "ReportProductsUserControl";
-            this.Size = new System.Drawing.Size(686, 150);
+            this.Size = new System.Drawing.Size(509, 136);
             this.Load += new System.EventHandler(this.ReportProductsUserControl_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbShoppingCart)).EndInit();

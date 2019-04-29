@@ -815,8 +815,7 @@ namespace OnlineBookStore
             ReportProductsUserControl[] myAccountUserControls = new ReportProductsUserControl[list.Count];
 
 
-            if (flpReportBooks.Controls.Count > 0)
-                flpReportBooks.Controls.Clear();
+          
 
             int i = 0;
             foreach (ItemToPurchaseClass item in list)
@@ -869,6 +868,16 @@ namespace OnlineBookStore
 
     
             tabControlGeneral.SelectedTab = tabPageReport;
+        }
+
+        private void flpReportBooks_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPageReport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

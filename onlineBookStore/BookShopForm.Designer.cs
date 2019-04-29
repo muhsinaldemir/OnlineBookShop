@@ -134,6 +134,10 @@
             this.tabMyAccount = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.flpMyAccount = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPageReport = new System.Windows.Forms.TabPage();
+            this.flpMagazine = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpMusicCDs = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpReportBooks = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelUserOps = new System.Windows.Forms.Panel();
             this.lblShoppinCartValue = new System.Windows.Forms.Label();
@@ -148,6 +152,7 @@
             this.pbMusicCds = new System.Windows.Forms.PictureBox();
             this.pbMagazines = new System.Windows.Forms.PictureBox();
             this.pbBooks = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pbMyAccount = new System.Windows.Forms.PictureBox();
             this.pbReport = new System.Windows.Forms.PictureBox();
@@ -155,10 +160,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbAdminPanel = new System.Windows.Forms.PictureBox();
             this.pbHomePage = new System.Windows.Forms.PictureBox();
-            this.tabPageReport = new System.Windows.Forms.TabPage();
-            this.flpReportBooks = new System.Windows.Forms.FlowLayoutPanel();
-            this.flpMusicCDs = new System.Windows.Forms.FlowLayoutPanel();
-            this.flpMagazine = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControlGeneral.SuspendLayout();
@@ -176,6 +177,7 @@
             this.tabHomePage.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabMyAccount.SuspendLayout();
+            this.tabPageReport.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelUserOps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserLogout)).BeginInit();
@@ -187,6 +189,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMusicCds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagazines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBooks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMyAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbReport)).BeginInit();
@@ -194,7 +197,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomePage)).BeginInit();
-            this.tabPageReport.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -1264,6 +1266,45 @@
             this.flpMyAccount.Size = new System.Drawing.Size(1901, 1176);
             this.flpMyAccount.TabIndex = 0;
             // 
+            // tabPageReport
+            // 
+            this.tabPageReport.Controls.Add(this.pictureBox4);
+            this.tabPageReport.Controls.Add(this.flpReportBooks);
+            this.tabPageReport.Controls.Add(this.flpMagazine);
+            this.tabPageReport.Controls.Add(this.flpMusicCDs);
+            this.tabPageReport.Location = new System.Drawing.Point(4, 25);
+            this.tabPageReport.Name = "tabPageReport";
+            this.tabPageReport.Size = new System.Drawing.Size(2002, 1301);
+            this.tabPageReport.TabIndex = 5;
+            this.tabPageReport.Text = "Report";
+            this.tabPageReport.UseVisualStyleBackColor = true;
+            this.tabPageReport.Click += new System.EventHandler(this.tabPageReport_Click);
+            // 
+            // flpMagazine
+            // 
+            this.flpMagazine.AutoScroll = true;
+            this.flpMagazine.Location = new System.Drawing.Point(1097, 26);
+            this.flpMagazine.Name = "flpMagazine";
+            this.flpMagazine.Size = new System.Drawing.Size(522, 381);
+            this.flpMagazine.TabIndex = 2;
+            // 
+            // flpMusicCDs
+            // 
+            this.flpMusicCDs.AutoScroll = true;
+            this.flpMusicCDs.Location = new System.Drawing.Point(554, 26);
+            this.flpMusicCDs.Name = "flpMusicCDs";
+            this.flpMusicCDs.Size = new System.Drawing.Size(519, 381);
+            this.flpMusicCDs.TabIndex = 1;
+            // 
+            // flpReportBooks
+            // 
+            this.flpReportBooks.AutoScroll = true;
+            this.flpReportBooks.Location = new System.Drawing.Point(3, 65);
+            this.flpReportBooks.Name = "flpReportBooks";
+            this.flpReportBooks.Size = new System.Drawing.Size(517, 381);
+            this.flpReportBooks.TabIndex = 0;
+            this.flpReportBooks.Paint += new System.Windows.Forms.PaintEventHandler(this.flpReportBooks_Paint);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -1408,6 +1449,17 @@
             this.pbBooks.TabStop = false;
             this.pbBooks.Click += new System.EventHandler(this.pbBooks_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
+            this.pictureBox4.Image = global::OnlineBookStore.Properties.Resources.ribbonblack;
+            this.pictureBox4.Location = new System.Drawing.Point(109, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(234, 65);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::OnlineBookStore.Properties.Resources.logo;
@@ -1486,39 +1538,6 @@
             this.pbHomePage.TabStop = false;
             this.pbHomePage.Click += new System.EventHandler(this.pbHomePage_Click);
             // 
-            // tabPageReport
-            // 
-            this.tabPageReport.Controls.Add(this.flpMagazine);
-            this.tabPageReport.Controls.Add(this.flpMusicCDs);
-            this.tabPageReport.Controls.Add(this.flpReportBooks);
-            this.tabPageReport.Location = new System.Drawing.Point(4, 25);
-            this.tabPageReport.Name = "tabPageReport";
-            this.tabPageReport.Size = new System.Drawing.Size(2002, 1301);
-            this.tabPageReport.TabIndex = 5;
-            this.tabPageReport.Text = "Report";
-            this.tabPageReport.UseVisualStyleBackColor = true;
-            // 
-            // flpReportBooks
-            // 
-            this.flpReportBooks.Location = new System.Drawing.Point(17, 26);
-            this.flpReportBooks.Name = "flpReportBooks";
-            this.flpReportBooks.Size = new System.Drawing.Size(782, 381);
-            this.flpReportBooks.TabIndex = 0;
-            // 
-            // flpMusicCDs
-            // 
-            this.flpMusicCDs.Location = new System.Drawing.Point(827, 23);
-            this.flpMusicCDs.Name = "flpMusicCDs";
-            this.flpMusicCDs.Size = new System.Drawing.Size(635, 366);
-            this.flpMusicCDs.TabIndex = 1;
-            // 
-            // flpMagazine
-            // 
-            this.flpMagazine.Location = new System.Drawing.Point(17, 413);
-            this.flpMagazine.Name = "flpMagazine";
-            this.flpMagazine.Size = new System.Drawing.Size(755, 366);
-            this.flpMagazine.TabIndex = 2;
-            // 
             // BookShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1558,6 +1577,7 @@
             this.panel2.PerformLayout();
             this.tabMyAccount.ResumeLayout(false);
             this.tabMyAccount.PerformLayout();
+            this.tabPageReport.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panelUserOps.ResumeLayout(false);
             this.panelUserOps.PerformLayout();
@@ -1570,6 +1590,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMusicCds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagazines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBooks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMyAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbReport)).EndInit();
@@ -1577,7 +1598,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomePage)).EndInit();
-            this.tabPageReport.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1714,5 +1734,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpReportBooks;
         private System.Windows.Forms.FlowLayoutPanel flpMagazine;
         private System.Windows.Forms.FlowLayoutPanel flpMusicCDs;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
