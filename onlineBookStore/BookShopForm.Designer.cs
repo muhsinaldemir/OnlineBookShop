@@ -149,12 +149,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.flpMyAccount = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblShoppinCartValue = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbUserLogout = new System.Windows.Forms.PictureBox();
-            this.lblGeneralUserName = new System.Windows.Forms.Label();
-            this.timerChangeAd = new System.Windows.Forms.Timer(this.components);
             this.panelUserOps = new System.Windows.Forms.Panel();
+            this.pbUserLogout = new System.Windows.Forms.PictureBox();
+            this.lblShoppinCartValue = new System.Windows.Forms.Label();
+            this.lblGeneralUserName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timerChangeAd = new System.Windows.Forms.Timer(this.components);
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMyAccount)).BeginInit();
@@ -187,9 +187,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBooks)).BeginInit();
             this.tabMyAccount.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUserLogout)).BeginInit();
             this.panelUserOps.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserLogout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -205,18 +205,19 @@
             this.pnlMenu.Controls.Add(this.pbHomePage);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(176, 1723);
+            this.pnlMenu.Size = new System.Drawing.Size(156, 882);
             this.pnlMenu.TabIndex = 3;
             this.pnlMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMenu_Paint);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::OnlineBookStore.Properties.Resources.logo;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 19);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 15);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(162, 153);
+            this.pictureBox3.Size = new System.Drawing.Size(144, 122);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
@@ -225,10 +226,9 @@
             // pbMyAccount
             // 
             this.pbMyAccount.Image = global::OnlineBookStore.Properties.Resources.myAccount;
-            this.pbMyAccount.Location = new System.Drawing.Point(-1, 706);
-            this.pbMyAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbMyAccount.Location = new System.Drawing.Point(-1, 565);
             this.pbMyAccount.Name = "pbMyAccount";
-            this.pbMyAccount.Size = new System.Drawing.Size(164, 170);
+            this.pbMyAccount.Size = new System.Drawing.Size(146, 136);
             this.pbMyAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMyAccount.TabIndex = 12;
             this.pbMyAccount.TabStop = false;
@@ -237,10 +237,9 @@
             // pbReport
             // 
             this.pbReport.Image = global::OnlineBookStore.Properties.Resources.reportblack;
-            this.pbReport.Location = new System.Drawing.Point(2, 1258);
-            this.pbReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbReport.Location = new System.Drawing.Point(2, 1006);
             this.pbReport.Name = "pbReport";
-            this.pbReport.Size = new System.Drawing.Size(161, 170);
+            this.pbReport.Size = new System.Drawing.Size(143, 136);
             this.pbReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbReport.TabIndex = 11;
             this.pbReport.TabStop = false;
@@ -249,37 +248,36 @@
             // 
             this.panel1.Controls.Add(this.lblShoppingCartValue);
             this.panel1.Controls.Add(this.lblShoppingCartTitle);
-            this.panel1.Location = new System.Drawing.Point(171, 0);
+            this.panel1.Location = new System.Drawing.Point(152, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1156, 42);
+            this.panel1.Size = new System.Drawing.Size(1028, 34);
             this.panel1.TabIndex = 5;
             // 
             // lblShoppingCartValue
             // 
             this.lblShoppingCartValue.AutoSize = true;
-            this.lblShoppingCartValue.Location = new System.Drawing.Point(1144, 21);
+            this.lblShoppingCartValue.Location = new System.Drawing.Point(1017, 17);
             this.lblShoppingCartValue.Name = "lblShoppingCartValue";
-            this.lblShoppingCartValue.Size = new System.Drawing.Size(51, 20);
+            this.lblShoppingCartValue.Size = new System.Drawing.Size(46, 17);
             this.lblShoppingCartValue.TabIndex = 1;
             this.lblShoppingCartValue.Text = "label2";
             // 
             // lblShoppingCartTitle
             // 
             this.lblShoppingCartTitle.AutoSize = true;
-            this.lblShoppingCartTitle.Location = new System.Drawing.Point(1016, 21);
+            this.lblShoppingCartTitle.Location = new System.Drawing.Point(903, 17);
             this.lblShoppingCartTitle.Name = "lblShoppingCartTitle";
-            this.lblShoppingCartTitle.Size = new System.Drawing.Size(111, 20);
+            this.lblShoppingCartTitle.Size = new System.Drawing.Size(98, 17);
             this.lblShoppingCartTitle.TabIndex = 0;
             this.lblShoppingCartTitle.Text = "Shopping Cart";
             // 
             // pbExit
             // 
             this.pbExit.Image = global::OnlineBookStore.Properties.Resources.exitblack;
-            this.pbExit.Location = new System.Drawing.Point(4, 976);
-            this.pbExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbExit.Location = new System.Drawing.Point(4, 781);
             this.pbExit.Name = "pbExit";
-            this.pbExit.Size = new System.Drawing.Size(164, 170);
+            this.pbExit.Size = new System.Drawing.Size(146, 136);
             this.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbExit.TabIndex = 9;
             this.pbExit.TabStop = false;
@@ -288,10 +286,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::OnlineBookStore.Properties.Resources.shoppingcartblack;
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 441);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 353);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(164, 170);
+            this.pictureBox2.Size = new System.Drawing.Size(146, 136);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -300,10 +297,9 @@
             // pbAdminPanel
             // 
             this.pbAdminPanel.Image = global::OnlineBookStore.Properties.Resources.adminblack;
-            this.pbAdminPanel.Location = new System.Drawing.Point(4, 1542);
-            this.pbAdminPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbAdminPanel.Location = new System.Drawing.Point(4, 1234);
             this.pbAdminPanel.Name = "pbAdminPanel";
-            this.pbAdminPanel.Size = new System.Drawing.Size(164, 170);
+            this.pbAdminPanel.Size = new System.Drawing.Size(146, 136);
             this.pbAdminPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAdminPanel.TabIndex = 8;
             this.pbAdminPanel.TabStop = false;
@@ -312,10 +308,9 @@
             // pbHomePage
             // 
             this.pbHomePage.Image = global::OnlineBookStore.Properties.Resources.homepageblack;
-            this.pbHomePage.Location = new System.Drawing.Point(-1, 193);
-            this.pbHomePage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbHomePage.Location = new System.Drawing.Point(-1, 154);
             this.pbHomePage.Name = "pbHomePage";
-            this.pbHomePage.Size = new System.Drawing.Size(164, 170);
+            this.pbHomePage.Size = new System.Drawing.Size(146, 136);
             this.pbHomePage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbHomePage.TabIndex = 7;
             this.pbHomePage.TabStop = false;
@@ -330,21 +325,19 @@
             this.tabControlGeneral.Controls.Add(this.tabShoppingCart);
             this.tabControlGeneral.Controls.Add(this.tabHomePage);
             this.tabControlGeneral.Controls.Add(this.tabMyAccount);
-            this.tabControlGeneral.Location = new System.Drawing.Point(176, 80);
-            this.tabControlGeneral.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControlGeneral.Location = new System.Drawing.Point(156, 64);
             this.tabControlGeneral.Name = "tabControlGeneral";
             this.tabControlGeneral.SelectedIndex = 0;
-            this.tabControlGeneral.Size = new System.Drawing.Size(2261, 1662);
+            this.tabControlGeneral.Size = new System.Drawing.Size(2010, 1330);
             this.tabControlGeneral.TabIndex = 4;
             // 
             // tabAdminPanel
             // 
             this.tabAdminPanel.Controls.Add(this.tabControlAdmin);
-            this.tabAdminPanel.Location = new System.Drawing.Point(4, 29);
-            this.tabAdminPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabAdminPanel.Location = new System.Drawing.Point(4, 25);
             this.tabAdminPanel.Name = "tabAdminPanel";
-            this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabAdminPanel.Size = new System.Drawing.Size(2253, 1629);
+            this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAdminPanel.Size = new System.Drawing.Size(2002, 1301);
             this.tabAdminPanel.TabIndex = 0;
             this.tabAdminPanel.Text = "Admin Panel";
             this.tabAdminPanel.UseVisualStyleBackColor = true;
@@ -355,11 +348,10 @@
             this.tabControlAdmin.Controls.Add(this.tabBooks);
             this.tabControlAdmin.Controls.Add(this.tabMusics);
             this.tabControlAdmin.Controls.Add(this.tabMagazine);
-            this.tabControlAdmin.Location = new System.Drawing.Point(3, 4);
-            this.tabControlAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControlAdmin.Location = new System.Drawing.Point(3, 3);
             this.tabControlAdmin.Name = "tabControlAdmin";
             this.tabControlAdmin.SelectedIndex = 0;
-            this.tabControlAdmin.Size = new System.Drawing.Size(1653, 1416);
+            this.tabControlAdmin.Size = new System.Drawing.Size(1609, 1133);
             this.tabControlAdmin.TabIndex = 0;
             // 
             // tabUser
@@ -383,11 +375,10 @@
             this.tabUser.Controls.Add(this.txtName);
             this.tabUser.Controls.Add(this.lblName);
             this.tabUser.Controls.Add(this.dgvUsers);
-            this.tabUser.Location = new System.Drawing.Point(4, 29);
-            this.tabUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabUser.Location = new System.Drawing.Point(4, 25);
             this.tabUser.Name = "tabUser";
-            this.tabUser.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabUser.Size = new System.Drawing.Size(1645, 1383);
+            this.tabUser.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabUser.Size = new System.Drawing.Size(1601, 1104);
             this.tabUser.TabIndex = 0;
             this.tabUser.Text = "User";
             this.tabUser.UseVisualStyleBackColor = true;
@@ -396,20 +387,19 @@
             // cbIsAdmin
             // 
             this.cbIsAdmin.AutoSize = true;
-            this.cbIsAdmin.Location = new System.Drawing.Point(841, 291);
+            this.cbIsAdmin.Location = new System.Drawing.Point(748, 233);
             this.cbIsAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbIsAdmin.Name = "cbIsAdmin";
-            this.cbIsAdmin.Size = new System.Drawing.Size(97, 24);
+            this.cbIsAdmin.Size = new System.Drawing.Size(83, 21);
             this.cbIsAdmin.TabIndex = 18;
             this.cbIsAdmin.Text = "Is Admin";
             this.cbIsAdmin.UseVisualStyleBackColor = true;
             // 
             // btnUpdateUser
             // 
-            this.btnUpdateUser.Location = new System.Drawing.Point(916, 324);
-            this.btnUpdateUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateUser.Location = new System.Drawing.Point(814, 259);
             this.btnUpdateUser.Name = "btnUpdateUser";
-            this.btnUpdateUser.Size = new System.Drawing.Size(96, 61);
+            this.btnUpdateUser.Size = new System.Drawing.Size(85, 49);
             this.btnUpdateUser.TabIndex = 17;
             this.btnUpdateUser.Text = "Update User";
             this.btnUpdateUser.UseVisualStyleBackColor = true;
@@ -418,27 +408,25 @@
             // txtUserId
             // 
             this.txtUserId.Enabled = false;
-            this.txtUserId.Location = new System.Drawing.Point(820, 25);
-            this.txtUserId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUserId.Location = new System.Drawing.Point(729, 20);
             this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(162, 26);
+            this.txtUserId.Size = new System.Drawing.Size(144, 22);
             this.txtUserId.TabIndex = 16;
             // 
             // lblUserId
             // 
             this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(715, 25);
+            this.lblUserId.Location = new System.Drawing.Point(636, 20);
             this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(23, 20);
+            this.lblUserId.Size = new System.Drawing.Size(19, 17);
             this.lblUserId.TabIndex = 15;
             this.lblUserId.Text = "Id";
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(813, 324);
-            this.btnDeleteUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDeleteUser.Location = new System.Drawing.Point(723, 259);
             this.btnDeleteUser.Name = "btnDeleteUser";
-            this.btnDeleteUser.Size = new System.Drawing.Size(96, 61);
+            this.btnDeleteUser.Size = new System.Drawing.Size(85, 49);
             this.btnDeleteUser.TabIndex = 14;
             this.btnDeleteUser.Text = "Delete User";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
@@ -446,10 +434,9 @@
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(711, 324);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddUser.Location = new System.Drawing.Point(632, 259);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(96, 61);
+            this.btnAddUser.Size = new System.Drawing.Size(85, 49);
             this.btnAddUser.TabIndex = 13;
             this.btnAddUser.Text = "Add User";
             this.btnAddUser.UseVisualStyleBackColor = true;
@@ -457,103 +444,97 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(820, 241);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPassword.Location = new System.Drawing.Point(729, 193);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(162, 26);
+            this.txtPassword.Size = new System.Drawing.Size(144, 22);
             this.txtPassword.TabIndex = 12;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(715, 245);
+            this.lblPassword.Location = new System.Drawing.Point(636, 196);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(78, 20);
+            this.lblPassword.Size = new System.Drawing.Size(69, 17);
             this.lblPassword.TabIndex = 11;
             this.lblPassword.Text = "Password";
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(820, 101);
-            this.txtSurname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSurname.Location = new System.Drawing.Point(729, 81);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(162, 26);
+            this.txtSurname.Size = new System.Drawing.Size(144, 22);
             this.txtSurname.TabIndex = 10;
             // 
             // lblSurname
             // 
             this.lblSurname.AutoSize = true;
-            this.lblSurname.Location = new System.Drawing.Point(715, 103);
+            this.lblSurname.Location = new System.Drawing.Point(636, 82);
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(74, 20);
+            this.lblSurname.Size = new System.Drawing.Size(65, 17);
             this.lblSurname.TabIndex = 9;
             this.lblSurname.Text = "Surname";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(820, 137);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Location = new System.Drawing.Point(729, 110);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(162, 26);
+            this.txtEmail.Size = new System.Drawing.Size(144, 22);
             this.txtEmail.TabIndex = 8;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(715, 140);
+            this.lblEmail.Location = new System.Drawing.Point(636, 112);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 20);
+            this.lblEmail.Size = new System.Drawing.Size(42, 17);
             this.lblEmail.TabIndex = 7;
             this.lblEmail.Text = "Email";
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(820, 171);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAddress.Location = new System.Drawing.Point(729, 137);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(162, 26);
+            this.txtAddress.Size = new System.Drawing.Size(144, 22);
             this.txtAddress.TabIndex = 6;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(715, 175);
+            this.lblAddress.Location = new System.Drawing.Point(636, 140);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(68, 20);
+            this.lblAddress.Size = new System.Drawing.Size(60, 17);
             this.lblAddress.TabIndex = 5;
             this.lblAddress.Text = "Address";
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(820, 207);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUserName.Location = new System.Drawing.Point(729, 166);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(162, 26);
+            this.txtUserName.Size = new System.Drawing.Size(144, 22);
             this.txtUserName.TabIndex = 4;
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(715, 210);
+            this.lblUserName.Location = new System.Drawing.Point(636, 168);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(85, 20);
+            this.lblUserName.Size = new System.Drawing.Size(75, 17);
             this.lblUserName.TabIndex = 3;
             this.lblUserName.Text = "UserName";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(820, 67);
-            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Location = new System.Drawing.Point(729, 54);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(162, 26);
+            this.txtName.Size = new System.Drawing.Size(144, 22);
             this.txtName.TabIndex = 2;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(715, 68);
+            this.lblName.Location = new System.Drawing.Point(636, 54);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(51, 20);
+            this.lblName.Size = new System.Drawing.Size(45, 17);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name";
             // 
@@ -562,13 +543,12 @@
             this.dgvUsers.BackgroundColor = System.Drawing.Color.White;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvUsers.Location = new System.Drawing.Point(-5, 420);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvUsers.Location = new System.Drawing.Point(-4, 336);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowTemplate.Height = 24;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(1533, 866);
+            this.dgvUsers.Size = new System.Drawing.Size(1587, 693);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
@@ -599,11 +579,10 @@
             this.tabBooks.Controls.Add(this.txtBookName);
             this.tabBooks.Controls.Add(this.lblBookName);
             this.tabBooks.Controls.Add(this.pbBook);
-            this.tabBooks.Location = new System.Drawing.Point(4, 29);
-            this.tabBooks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabBooks.Location = new System.Drawing.Point(4, 25);
             this.tabBooks.Name = "tabBooks";
-            this.tabBooks.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabBooks.Size = new System.Drawing.Size(1645, 1383);
+            this.tabBooks.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabBooks.Size = new System.Drawing.Size(1461, 1104);
             this.tabBooks.TabIndex = 1;
             this.tabBooks.Text = "Books";
             this.tabBooks.UseVisualStyleBackColor = true;
@@ -611,19 +590,17 @@
             // 
             // txtBookImage
             // 
-            this.txtBookImage.Location = new System.Drawing.Point(1025, 165);
-            this.txtBookImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookImage.Location = new System.Drawing.Point(911, 132);
             this.txtBookImage.Name = "txtBookImage";
-            this.txtBookImage.Size = new System.Drawing.Size(138, 26);
+            this.txtBookImage.Size = new System.Drawing.Size(123, 22);
             this.txtBookImage.TabIndex = 38;
             this.txtBookImage.Visible = false;
             // 
             // btnImageBook
             // 
-            this.btnImageBook.Location = new System.Drawing.Point(1025, 188);
-            this.btnImageBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnImageBook.Location = new System.Drawing.Point(911, 150);
             this.btnImageBook.Name = "btnImageBook";
-            this.btnImageBook.Size = new System.Drawing.Size(140, 41);
+            this.btnImageBook.Size = new System.Drawing.Size(124, 33);
             this.btnImageBook.TabIndex = 36;
             this.btnImageBook.Text = "Add Image";
             this.btnImageBook.UseVisualStyleBackColor = true;
@@ -631,27 +608,25 @@
             // 
             // txtBookStock
             // 
-            this.txtBookStock.Location = new System.Drawing.Point(808, 261);
-            this.txtBookStock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookStock.Location = new System.Drawing.Point(718, 209);
             this.txtBookStock.Name = "txtBookStock";
-            this.txtBookStock.Size = new System.Drawing.Size(162, 26);
+            this.txtBookStock.Size = new System.Drawing.Size(144, 22);
             this.txtBookStock.TabIndex = 35;
             // 
             // lblBookStock
             // 
             this.lblBookStock.AutoSize = true;
-            this.lblBookStock.Location = new System.Drawing.Point(735, 267);
+            this.lblBookStock.Location = new System.Drawing.Point(653, 214);
             this.lblBookStock.Name = "lblBookStock";
-            this.lblBookStock.Size = new System.Drawing.Size(50, 20);
+            this.lblBookStock.Size = new System.Drawing.Size(43, 17);
             this.lblBookStock.TabIndex = 34;
             this.lblBookStock.Text = "Stock";
             // 
             // btnUpdateBook
             // 
-            this.btnUpdateBook.Location = new System.Drawing.Point(952, 365);
-            this.btnUpdateBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateBook.Location = new System.Drawing.Point(846, 292);
             this.btnUpdateBook.Name = "btnUpdateBook";
-            this.btnUpdateBook.Size = new System.Drawing.Size(96, 61);
+            this.btnUpdateBook.Size = new System.Drawing.Size(85, 49);
             this.btnUpdateBook.TabIndex = 33;
             this.btnUpdateBook.Text = "Update Book";
             this.btnUpdateBook.UseVisualStyleBackColor = true;
@@ -660,27 +635,25 @@
             // txtBookId
             // 
             this.txtBookId.Enabled = false;
-            this.txtBookId.Location = new System.Drawing.Point(809, 14);
-            this.txtBookId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookId.Location = new System.Drawing.Point(719, 11);
             this.txtBookId.Name = "txtBookId";
-            this.txtBookId.Size = new System.Drawing.Size(162, 26);
+            this.txtBookId.Size = new System.Drawing.Size(144, 22);
             this.txtBookId.TabIndex = 32;
             // 
             // lblBookId
             // 
             this.lblBookId.AutoSize = true;
-            this.lblBookId.Location = new System.Drawing.Point(731, 14);
+            this.lblBookId.Location = new System.Drawing.Point(650, 11);
             this.lblBookId.Name = "lblBookId";
-            this.lblBookId.Size = new System.Drawing.Size(23, 20);
+            this.lblBookId.Size = new System.Drawing.Size(19, 17);
             this.lblBookId.TabIndex = 31;
             this.lblBookId.Text = "Id";
             // 
             // btnDeleteBooks
             // 
-            this.btnDeleteBooks.Location = new System.Drawing.Point(850, 365);
-            this.btnDeleteBooks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDeleteBooks.Location = new System.Drawing.Point(756, 292);
             this.btnDeleteBooks.Name = "btnDeleteBooks";
-            this.btnDeleteBooks.Size = new System.Drawing.Size(96, 61);
+            this.btnDeleteBooks.Size = new System.Drawing.Size(85, 49);
             this.btnDeleteBooks.TabIndex = 30;
             this.btnDeleteBooks.Text = "Delete Books";
             this.btnDeleteBooks.UseVisualStyleBackColor = true;
@@ -689,9 +662,9 @@
             // lblCoverPagePicture
             // 
             this.lblCoverPagePicture.AutoSize = true;
-            this.lblCoverPagePicture.Location = new System.Drawing.Point(1066, 12);
+            this.lblCoverPagePicture.Location = new System.Drawing.Point(948, 10);
             this.lblCoverPagePicture.Name = "lblCoverPagePicture";
-            this.lblCoverPagePicture.Size = new System.Drawing.Size(58, 20);
+            this.lblCoverPagePicture.Size = new System.Drawing.Size(52, 17);
             this.lblCoverPagePicture.TabIndex = 28;
             this.lblCoverPagePicture.Text = "Picture";
             // 
@@ -699,22 +672,20 @@
             // 
             this.dgvBooks.BackgroundColor = System.Drawing.Color.White;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBooks.Location = new System.Drawing.Point(29, 467);
-            this.dgvBooks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvBooks.Location = new System.Drawing.Point(26, 374);
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.ReadOnly = true;
             this.dgvBooks.RowTemplate.Height = 24;
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBooks.Size = new System.Drawing.Size(1588, 847);
+            this.dgvBooks.Size = new System.Drawing.Size(1412, 678);
             this.dgvBooks.TabIndex = 27;
             this.dgvBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellClick);
             // 
             // btnAddBook
             // 
-            this.btnAddBook.Location = new System.Drawing.Point(735, 365);
-            this.btnAddBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddBook.Location = new System.Drawing.Point(653, 292);
             this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(96, 61);
+            this.btnAddBook.Size = new System.Drawing.Size(85, 49);
             this.btnAddBook.TabIndex = 26;
             this.btnAddBook.Text = "Add Book";
             this.btnAddBook.UseVisualStyleBackColor = true;
@@ -722,112 +693,105 @@
             // 
             // txtBookPage
             // 
-            this.txtBookPage.Location = new System.Drawing.Point(809, 224);
-            this.txtBookPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookPage.Location = new System.Drawing.Point(719, 179);
             this.txtBookPage.Name = "txtBookPage";
-            this.txtBookPage.Size = new System.Drawing.Size(162, 26);
+            this.txtBookPage.Size = new System.Drawing.Size(144, 22);
             this.txtBookPage.TabIndex = 25;
             // 
             // lblBookPage
             // 
             this.lblBookPage.AutoSize = true;
-            this.lblBookPage.Location = new System.Drawing.Point(731, 227);
+            this.lblBookPage.Location = new System.Drawing.Point(650, 182);
             this.lblBookPage.Name = "lblBookPage";
-            this.lblBookPage.Size = new System.Drawing.Size(46, 20);
+            this.lblBookPage.Size = new System.Drawing.Size(41, 17);
             this.lblBookPage.TabIndex = 24;
             this.lblBookPage.Text = "Page";
             // 
             // txtBookPrice
             // 
-            this.txtBookPrice.Location = new System.Drawing.Point(809, 84);
-            this.txtBookPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookPrice.Location = new System.Drawing.Point(719, 67);
             this.txtBookPrice.Name = "txtBookPrice";
-            this.txtBookPrice.Size = new System.Drawing.Size(162, 26);
+            this.txtBookPrice.Size = new System.Drawing.Size(144, 22);
             this.txtBookPrice.TabIndex = 23;
             // 
             // lblBookPrice
             // 
             this.lblBookPrice.AutoSize = true;
-            this.lblBookPrice.Location = new System.Drawing.Point(731, 85);
+            this.lblBookPrice.Location = new System.Drawing.Point(650, 68);
             this.lblBookPrice.Name = "lblBookPrice";
-            this.lblBookPrice.Size = new System.Drawing.Size(44, 20);
+            this.lblBookPrice.Size = new System.Drawing.Size(40, 17);
             this.lblBookPrice.TabIndex = 22;
             this.lblBookPrice.Text = "Price";
             // 
             // txtBookIsbn
             // 
-            this.txtBookIsbn.Location = new System.Drawing.Point(809, 118);
-            this.txtBookIsbn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookIsbn.Location = new System.Drawing.Point(719, 94);
             this.txtBookIsbn.Name = "txtBookIsbn";
-            this.txtBookIsbn.Size = new System.Drawing.Size(162, 26);
+            this.txtBookIsbn.Size = new System.Drawing.Size(144, 22);
             this.txtBookIsbn.TabIndex = 21;
             // 
             // lblBookIsbn
             // 
             this.lblBookIsbn.AutoSize = true;
-            this.lblBookIsbn.Location = new System.Drawing.Point(731, 122);
+            this.lblBookIsbn.Location = new System.Drawing.Point(650, 98);
             this.lblBookIsbn.Name = "lblBookIsbn";
-            this.lblBookIsbn.Size = new System.Drawing.Size(47, 20);
+            this.lblBookIsbn.Size = new System.Drawing.Size(39, 17);
             this.lblBookIsbn.TabIndex = 20;
             this.lblBookIsbn.Text = "ISBN";
             // 
             // txtBookAuthor
             // 
-            this.txtBookAuthor.Location = new System.Drawing.Point(809, 154);
-            this.txtBookAuthor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookAuthor.Location = new System.Drawing.Point(719, 123);
             this.txtBookAuthor.Name = "txtBookAuthor";
-            this.txtBookAuthor.Size = new System.Drawing.Size(162, 26);
+            this.txtBookAuthor.Size = new System.Drawing.Size(144, 22);
             this.txtBookAuthor.TabIndex = 19;
             // 
             // lblBookAuthor
             // 
             this.lblBookAuthor.AutoSize = true;
-            this.lblBookAuthor.Location = new System.Drawing.Point(731, 157);
+            this.lblBookAuthor.Location = new System.Drawing.Point(650, 126);
             this.lblBookAuthor.Name = "lblBookAuthor";
-            this.lblBookAuthor.Size = new System.Drawing.Size(57, 20);
+            this.lblBookAuthor.Size = new System.Drawing.Size(50, 17);
             this.lblBookAuthor.TabIndex = 18;
             this.lblBookAuthor.Text = "Author";
             // 
             // txtBookPublisher
             // 
-            this.txtBookPublisher.Location = new System.Drawing.Point(809, 188);
-            this.txtBookPublisher.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookPublisher.Location = new System.Drawing.Point(719, 150);
             this.txtBookPublisher.Name = "txtBookPublisher";
-            this.txtBookPublisher.Size = new System.Drawing.Size(162, 26);
+            this.txtBookPublisher.Size = new System.Drawing.Size(144, 22);
             this.txtBookPublisher.TabIndex = 17;
             // 
             // lblBookPublisher
             // 
             this.lblBookPublisher.AutoSize = true;
-            this.lblBookPublisher.Location = new System.Drawing.Point(731, 192);
+            this.lblBookPublisher.Location = new System.Drawing.Point(650, 154);
             this.lblBookPublisher.Name = "lblBookPublisher";
-            this.lblBookPublisher.Size = new System.Drawing.Size(74, 20);
+            this.lblBookPublisher.Size = new System.Drawing.Size(67, 17);
             this.lblBookPublisher.TabIndex = 16;
             this.lblBookPublisher.Text = "Publisher";
             // 
             // txtBookName
             // 
-            this.txtBookName.Location = new System.Drawing.Point(809, 48);
-            this.txtBookName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBookName.Location = new System.Drawing.Point(719, 38);
             this.txtBookName.Name = "txtBookName";
-            this.txtBookName.Size = new System.Drawing.Size(162, 26);
+            this.txtBookName.Size = new System.Drawing.Size(144, 22);
             this.txtBookName.TabIndex = 15;
             // 
             // lblBookName
             // 
             this.lblBookName.AutoSize = true;
-            this.lblBookName.Location = new System.Drawing.Point(731, 50);
+            this.lblBookName.Location = new System.Drawing.Point(650, 40);
             this.lblBookName.Name = "lblBookName";
-            this.lblBookName.Size = new System.Drawing.Size(51, 20);
+            this.lblBookName.Size = new System.Drawing.Size(45, 17);
             this.lblBookName.TabIndex = 14;
             this.lblBookName.Text = "Name";
             // 
             // pbBook
             // 
-            this.pbBook.Location = new System.Drawing.Point(1025, 45);
-            this.pbBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbBook.Location = new System.Drawing.Point(911, 36);
             this.pbBook.Name = "pbBook";
-            this.pbBook.Size = new System.Drawing.Size(138, 120);
+            this.pbBook.Size = new System.Drawing.Size(123, 96);
             this.pbBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBook.TabIndex = 37;
             this.pbBook.TabStop = false;
@@ -854,10 +818,9 @@
             this.tabMusics.Controls.Add(this.txtMusicName);
             this.tabMusics.Controls.Add(this.lblMusicName);
             this.tabMusics.Controls.Add(this.pbMusic);
-            this.tabMusics.Location = new System.Drawing.Point(4, 29);
-            this.tabMusics.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabMusics.Location = new System.Drawing.Point(4, 25);
             this.tabMusics.Name = "tabMusics";
-            this.tabMusics.Size = new System.Drawing.Size(1645, 1383);
+            this.tabMusics.Size = new System.Drawing.Size(1461, 1104);
             this.tabMusics.TabIndex = 2;
             this.tabMusics.Text = "Music-Cds";
             this.tabMusics.UseVisualStyleBackColor = true;
@@ -865,19 +828,17 @@
             // 
             // txtMusicCDsImage
             // 
-            this.txtMusicCDsImage.Location = new System.Drawing.Point(1151, 177);
-            this.txtMusicCDsImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicCDsImage.Location = new System.Drawing.Point(1023, 142);
             this.txtMusicCDsImage.Name = "txtMusicCDsImage";
-            this.txtMusicCDsImage.Size = new System.Drawing.Size(138, 26);
+            this.txtMusicCDsImage.Size = new System.Drawing.Size(123, 22);
             this.txtMusicCDsImage.TabIndex = 53;
             this.txtMusicCDsImage.Visible = false;
             // 
             // btnAddMusic
             // 
-            this.btnAddMusic.Location = new System.Drawing.Point(1149, 203);
-            this.btnAddMusic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddMusic.Location = new System.Drawing.Point(1021, 162);
             this.btnAddMusic.Name = "btnAddMusic";
-            this.btnAddMusic.Size = new System.Drawing.Size(140, 41);
+            this.btnAddMusic.Size = new System.Drawing.Size(124, 33);
             this.btnAddMusic.TabIndex = 51;
             this.btnAddMusic.Text = "Add MusicCDS";
             this.btnAddMusic.UseVisualStyleBackColor = true;
@@ -886,35 +847,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1191, 25);
+            this.label1.Location = new System.Drawing.Point(1059, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 20);
+            this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 50;
             this.label1.Text = "Picture";
             // 
             // txtMusicCDsStock
             // 
-            this.txtMusicCDsStock.Location = new System.Drawing.Point(930, 210);
-            this.txtMusicCDsStock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicCDsStock.Location = new System.Drawing.Point(827, 168);
             this.txtMusicCDsStock.Name = "txtMusicCDsStock";
-            this.txtMusicCDsStock.Size = new System.Drawing.Size(166, 26);
+            this.txtMusicCDsStock.Size = new System.Drawing.Size(148, 22);
             this.txtMusicCDsStock.TabIndex = 49;
             // 
             // lblMusicCDsStock
             // 
             this.lblMusicCDsStock.AutoSize = true;
-            this.lblMusicCDsStock.Location = new System.Drawing.Point(857, 216);
+            this.lblMusicCDsStock.Location = new System.Drawing.Point(762, 173);
             this.lblMusicCDsStock.Name = "lblMusicCDsStock";
-            this.lblMusicCDsStock.Size = new System.Drawing.Size(50, 20);
+            this.lblMusicCDsStock.Size = new System.Drawing.Size(43, 17);
             this.lblMusicCDsStock.TabIndex = 48;
             this.lblMusicCDsStock.Text = "Stock";
             // 
             // btnUpdateMusicCDs
             // 
-            this.btnUpdateMusicCDs.Location = new System.Drawing.Point(1056, 260);
-            this.btnUpdateMusicCDs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateMusicCDs.Location = new System.Drawing.Point(939, 208);
             this.btnUpdateMusicCDs.Name = "btnUpdateMusicCDs";
-            this.btnUpdateMusicCDs.Size = new System.Drawing.Size(96, 61);
+            this.btnUpdateMusicCDs.Size = new System.Drawing.Size(85, 49);
             this.btnUpdateMusicCDs.TabIndex = 47;
             this.btnUpdateMusicCDs.Text = "Update Music CDs";
             this.btnUpdateMusicCDs.UseVisualStyleBackColor = true;
@@ -923,27 +882,25 @@
             // txtMusicCDsId
             // 
             this.txtMusicCDsId.Enabled = false;
-            this.txtMusicCDsId.Location = new System.Drawing.Point(935, 25);
-            this.txtMusicCDsId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicCDsId.Location = new System.Drawing.Point(831, 20);
             this.txtMusicCDsId.Name = "txtMusicCDsId";
-            this.txtMusicCDsId.Size = new System.Drawing.Size(162, 26);
+            this.txtMusicCDsId.Size = new System.Drawing.Size(144, 22);
             this.txtMusicCDsId.TabIndex = 46;
             // 
             // lblMusicCDsId
             // 
             this.lblMusicCDsId.AutoSize = true;
-            this.lblMusicCDsId.Location = new System.Drawing.Point(857, 29);
+            this.lblMusicCDsId.Location = new System.Drawing.Point(762, 23);
             this.lblMusicCDsId.Name = "lblMusicCDsId";
-            this.lblMusicCDsId.Size = new System.Drawing.Size(23, 20);
+            this.lblMusicCDsId.Size = new System.Drawing.Size(19, 17);
             this.lblMusicCDsId.TabIndex = 45;
             this.lblMusicCDsId.Text = "Id";
             // 
             // btnDeleteMusicCDs
             // 
-            this.btnDeleteMusicCDs.Location = new System.Drawing.Point(954, 260);
-            this.btnDeleteMusicCDs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDeleteMusicCDs.Location = new System.Drawing.Point(848, 208);
             this.btnDeleteMusicCDs.Name = "btnDeleteMusicCDs";
-            this.btnDeleteMusicCDs.Size = new System.Drawing.Size(96, 61);
+            this.btnDeleteMusicCDs.Size = new System.Drawing.Size(85, 49);
             this.btnDeleteMusicCDs.TabIndex = 44;
             this.btnDeleteMusicCDs.Text = "Delete Music CDs";
             this.btnDeleteMusicCDs.UseVisualStyleBackColor = true;
@@ -954,22 +911,20 @@
             this.dgvMusicCDs.BackgroundColor = System.Drawing.Color.White;
             this.dgvMusicCDs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMusicCDs.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvMusicCDs.Location = new System.Drawing.Point(3, 370);
-            this.dgvMusicCDs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMusicCDs.Location = new System.Drawing.Point(3, 296);
             this.dgvMusicCDs.Name = "dgvMusicCDs";
             this.dgvMusicCDs.ReadOnly = true;
             this.dgvMusicCDs.RowTemplate.Height = 24;
             this.dgvMusicCDs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMusicCDs.Size = new System.Drawing.Size(1624, 885);
+            this.dgvMusicCDs.Size = new System.Drawing.Size(1444, 708);
             this.dgvMusicCDs.TabIndex = 43;
             this.dgvMusicCDs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMusicCDs_CellClick);
             // 
             // btnAddMusicCDs
             // 
-            this.btnAddMusicCDs.Location = new System.Drawing.Point(851, 260);
-            this.btnAddMusicCDs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddMusicCDs.Location = new System.Drawing.Point(756, 208);
             this.btnAddMusicCDs.Name = "btnAddMusicCDs";
-            this.btnAddMusicCDs.Size = new System.Drawing.Size(96, 61);
+            this.btnAddMusicCDs.Size = new System.Drawing.Size(85, 49);
             this.btnAddMusicCDs.TabIndex = 42;
             this.btnAddMusicCDs.Text = "Add Music CDs";
             this.btnAddMusicCDs.UseVisualStyleBackColor = true;
@@ -977,78 +932,73 @@
             // 
             // txtMusicPrice
             // 
-            this.txtMusicPrice.Location = new System.Drawing.Point(935, 95);
-            this.txtMusicPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicPrice.Location = new System.Drawing.Point(831, 76);
             this.txtMusicPrice.Name = "txtMusicPrice";
-            this.txtMusicPrice.Size = new System.Drawing.Size(162, 26);
+            this.txtMusicPrice.Size = new System.Drawing.Size(144, 22);
             this.txtMusicPrice.TabIndex = 39;
             // 
             // lblMusicPrice
             // 
             this.lblMusicPrice.AutoSize = true;
-            this.lblMusicPrice.Location = new System.Drawing.Point(857, 96);
+            this.lblMusicPrice.Location = new System.Drawing.Point(762, 77);
             this.lblMusicPrice.Name = "lblMusicPrice";
-            this.lblMusicPrice.Size = new System.Drawing.Size(44, 20);
+            this.lblMusicPrice.Size = new System.Drawing.Size(40, 17);
             this.lblMusicPrice.TabIndex = 38;
             this.lblMusicPrice.Text = "Price";
             // 
             // txtMusicSinger
             // 
-            this.txtMusicSinger.Location = new System.Drawing.Point(935, 130);
-            this.txtMusicSinger.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicSinger.Location = new System.Drawing.Point(831, 104);
             this.txtMusicSinger.Name = "txtMusicSinger";
-            this.txtMusicSinger.Size = new System.Drawing.Size(162, 26);
+            this.txtMusicSinger.Size = new System.Drawing.Size(144, 22);
             this.txtMusicSinger.TabIndex = 37;
             // 
             // lblMusicSinger
             // 
             this.lblMusicSinger.AutoSize = true;
-            this.lblMusicSinger.Location = new System.Drawing.Point(857, 133);
+            this.lblMusicSinger.Location = new System.Drawing.Point(762, 106);
             this.lblMusicSinger.Name = "lblMusicSinger";
-            this.lblMusicSinger.Size = new System.Drawing.Size(55, 20);
+            this.lblMusicSinger.Size = new System.Drawing.Size(49, 17);
             this.lblMusicSinger.TabIndex = 36;
             this.lblMusicSinger.Text = "Singer";
             // 
             // txtMusicType
             // 
-            this.txtMusicType.Location = new System.Drawing.Point(935, 165);
-            this.txtMusicType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicType.Location = new System.Drawing.Point(831, 132);
             this.txtMusicType.Name = "txtMusicType";
-            this.txtMusicType.Size = new System.Drawing.Size(162, 26);
+            this.txtMusicType.Size = new System.Drawing.Size(144, 22);
             this.txtMusicType.TabIndex = 35;
             // 
             // lblMusicType
             // 
             this.lblMusicType.AutoSize = true;
-            this.lblMusicType.Location = new System.Drawing.Point(857, 169);
+            this.lblMusicType.Location = new System.Drawing.Point(762, 135);
             this.lblMusicType.Name = "lblMusicType";
-            this.lblMusicType.Size = new System.Drawing.Size(43, 20);
+            this.lblMusicType.Size = new System.Drawing.Size(40, 17);
             this.lblMusicType.TabIndex = 34;
             this.lblMusicType.Text = "Type";
             // 
             // txtMusicName
             // 
-            this.txtMusicName.Location = new System.Drawing.Point(935, 60);
-            this.txtMusicName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMusicName.Location = new System.Drawing.Point(831, 48);
             this.txtMusicName.Name = "txtMusicName";
-            this.txtMusicName.Size = new System.Drawing.Size(162, 26);
+            this.txtMusicName.Size = new System.Drawing.Size(144, 22);
             this.txtMusicName.TabIndex = 31;
             // 
             // lblMusicName
             // 
             this.lblMusicName.AutoSize = true;
-            this.lblMusicName.Location = new System.Drawing.Point(857, 60);
+            this.lblMusicName.Location = new System.Drawing.Point(762, 48);
             this.lblMusicName.Name = "lblMusicName";
-            this.lblMusicName.Size = new System.Drawing.Size(51, 20);
+            this.lblMusicName.Size = new System.Drawing.Size(45, 17);
             this.lblMusicName.TabIndex = 30;
             this.lblMusicName.Text = "Name";
             // 
             // pbMusic
             // 
-            this.pbMusic.Location = new System.Drawing.Point(1151, 50);
-            this.pbMusic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbMusic.Location = new System.Drawing.Point(1023, 40);
             this.pbMusic.Name = "pbMusic";
-            this.pbMusic.Size = new System.Drawing.Size(138, 120);
+            this.pbMusic.Size = new System.Drawing.Size(123, 96);
             this.pbMusic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMusic.TabIndex = 52;
             this.pbMusic.TabStop = false;
@@ -1075,10 +1025,9 @@
             this.tabMagazine.Controls.Add(this.txtMagazineName);
             this.tabMagazine.Controls.Add(this.lblMagazineName);
             this.tabMagazine.Controls.Add(this.pbMagazine);
-            this.tabMagazine.Location = new System.Drawing.Point(4, 29);
-            this.tabMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabMagazine.Location = new System.Drawing.Point(4, 25);
             this.tabMagazine.Name = "tabMagazine";
-            this.tabMagazine.Size = new System.Drawing.Size(1645, 1383);
+            this.tabMagazine.Size = new System.Drawing.Size(1461, 1104);
             this.tabMagazine.TabIndex = 3;
             this.tabMagazine.Text = "Magazine";
             this.tabMagazine.UseVisualStyleBackColor = true;
@@ -1086,19 +1035,17 @@
             // 
             // txtMagazineImage
             // 
-            this.txtMagazineImage.Location = new System.Drawing.Point(692, 178);
-            this.txtMagazineImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazineImage.Location = new System.Drawing.Point(615, 142);
             this.txtMagazineImage.Name = "txtMagazineImage";
-            this.txtMagazineImage.Size = new System.Drawing.Size(138, 26);
+            this.txtMagazineImage.Size = new System.Drawing.Size(123, 22);
             this.txtMagazineImage.TabIndex = 63;
             this.txtMagazineImage.Visible = false;
             // 
             // btnAddImageMagazine
             // 
-            this.btnAddImageMagazine.Location = new System.Drawing.Point(692, 198);
-            this.btnAddImageMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddImageMagazine.Location = new System.Drawing.Point(615, 158);
             this.btnAddImageMagazine.Name = "btnAddImageMagazine";
-            this.btnAddImageMagazine.Size = new System.Drawing.Size(140, 41);
+            this.btnAddImageMagazine.Size = new System.Drawing.Size(124, 33);
             this.btnAddImageMagazine.TabIndex = 61;
             this.btnAddImageMagazine.Text = "Add Magazine";
             this.btnAddImageMagazine.UseVisualStyleBackColor = true;
@@ -1107,35 +1054,33 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(732, 28);
+            this.label2.Location = new System.Drawing.Point(651, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 60;
             this.label2.Text = "Picture";
             // 
             // txtMagazineStock
             // 
-            this.txtMagazineStock.Location = new System.Drawing.Point(477, 224);
-            this.txtMagazineStock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazineStock.Location = new System.Drawing.Point(424, 179);
             this.txtMagazineStock.Name = "txtMagazineStock";
-            this.txtMagazineStock.Size = new System.Drawing.Size(164, 26);
+            this.txtMagazineStock.Size = new System.Drawing.Size(146, 22);
             this.txtMagazineStock.TabIndex = 59;
             // 
             // lblMagazineStock
             // 
             this.lblMagazineStock.AutoSize = true;
-            this.lblMagazineStock.Location = new System.Drawing.Point(404, 230);
+            this.lblMagazineStock.Location = new System.Drawing.Point(359, 184);
             this.lblMagazineStock.Name = "lblMagazineStock";
-            this.lblMagazineStock.Size = new System.Drawing.Size(50, 20);
+            this.lblMagazineStock.Size = new System.Drawing.Size(43, 17);
             this.lblMagazineStock.TabIndex = 58;
             this.lblMagazineStock.Text = "Stock";
             // 
             // btnUpdateMagazine
             // 
-            this.btnUpdateMagazine.Location = new System.Drawing.Point(610, 275);
-            this.btnUpdateMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateMagazine.Location = new System.Drawing.Point(542, 220);
             this.btnUpdateMagazine.Name = "btnUpdateMagazine";
-            this.btnUpdateMagazine.Size = new System.Drawing.Size(96, 61);
+            this.btnUpdateMagazine.Size = new System.Drawing.Size(85, 49);
             this.btnUpdateMagazine.TabIndex = 57;
             this.btnUpdateMagazine.Text = "Update Magazine";
             this.btnUpdateMagazine.UseVisualStyleBackColor = true;
@@ -1144,27 +1089,25 @@
             // txtMagazineId
             // 
             this.txtMagazineId.Enabled = false;
-            this.txtMagazineId.Location = new System.Drawing.Point(479, 34);
-            this.txtMagazineId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazineId.Location = new System.Drawing.Point(426, 27);
             this.txtMagazineId.Name = "txtMagazineId";
-            this.txtMagazineId.Size = new System.Drawing.Size(162, 26);
+            this.txtMagazineId.Size = new System.Drawing.Size(144, 22);
             this.txtMagazineId.TabIndex = 56;
             // 
             // lblMagazineId
             // 
             this.lblMagazineId.AutoSize = true;
-            this.lblMagazineId.Location = new System.Drawing.Point(402, 38);
+            this.lblMagazineId.Location = new System.Drawing.Point(357, 30);
             this.lblMagazineId.Name = "lblMagazineId";
-            this.lblMagazineId.Size = new System.Drawing.Size(23, 20);
+            this.lblMagazineId.Size = new System.Drawing.Size(19, 17);
             this.lblMagazineId.TabIndex = 55;
             this.lblMagazineId.Text = "Id";
             // 
             // btnDeleteMagazine
             // 
-            this.btnDeleteMagazine.Location = new System.Drawing.Point(507, 275);
-            this.btnDeleteMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDeleteMagazine.Location = new System.Drawing.Point(451, 220);
             this.btnDeleteMagazine.Name = "btnDeleteMagazine";
-            this.btnDeleteMagazine.Size = new System.Drawing.Size(96, 61);
+            this.btnDeleteMagazine.Size = new System.Drawing.Size(85, 49);
             this.btnDeleteMagazine.TabIndex = 54;
             this.btnDeleteMagazine.Text = "Delete Magazine";
             this.btnDeleteMagazine.UseVisualStyleBackColor = true;
@@ -1175,22 +1118,20 @@
             this.dgvMagazine.BackgroundColor = System.Drawing.Color.White;
             this.dgvMagazine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMagazine.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvMagazine.Location = new System.Drawing.Point(3, 344);
-            this.dgvMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMagazine.Location = new System.Drawing.Point(3, 275);
             this.dgvMagazine.Name = "dgvMagazine";
             this.dgvMagazine.ReadOnly = true;
             this.dgvMagazine.RowTemplate.Height = 24;
             this.dgvMagazine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMagazine.Size = new System.Drawing.Size(1639, 942);
+            this.dgvMagazine.Size = new System.Drawing.Size(1457, 754);
             this.dgvMagazine.TabIndex = 53;
             this.dgvMagazine.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMagazine_CellClick);
             // 
             // btnAddMagazine
             // 
-            this.btnAddMagazine.Location = new System.Drawing.Point(405, 275);
-            this.btnAddMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddMagazine.Location = new System.Drawing.Point(360, 220);
             this.btnAddMagazine.Name = "btnAddMagazine";
-            this.btnAddMagazine.Size = new System.Drawing.Size(96, 61);
+            this.btnAddMagazine.Size = new System.Drawing.Size(85, 49);
             this.btnAddMagazine.TabIndex = 52;
             this.btnAddMagazine.Text = "Add Magazine";
             this.btnAddMagazine.UseVisualStyleBackColor = true;
@@ -1198,78 +1139,73 @@
             // 
             // txtMagazinePrice
             // 
-            this.txtMagazinePrice.Location = new System.Drawing.Point(479, 110);
-            this.txtMagazinePrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazinePrice.Location = new System.Drawing.Point(426, 88);
             this.txtMagazinePrice.Name = "txtMagazinePrice";
-            this.txtMagazinePrice.Size = new System.Drawing.Size(162, 26);
+            this.txtMagazinePrice.Size = new System.Drawing.Size(144, 22);
             this.txtMagazinePrice.TabIndex = 51;
             // 
             // lblMagazinePrice
             // 
             this.lblMagazinePrice.AutoSize = true;
-            this.lblMagazinePrice.Location = new System.Drawing.Point(402, 111);
+            this.lblMagazinePrice.Location = new System.Drawing.Point(357, 89);
             this.lblMagazinePrice.Name = "lblMagazinePrice";
-            this.lblMagazinePrice.Size = new System.Drawing.Size(44, 20);
+            this.lblMagazinePrice.Size = new System.Drawing.Size(40, 17);
             this.lblMagazinePrice.TabIndex = 50;
             this.lblMagazinePrice.Text = "Price";
             // 
             // txtMagazineIssue
             // 
-            this.txtMagazineIssue.Location = new System.Drawing.Point(479, 145);
-            this.txtMagazineIssue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazineIssue.Location = new System.Drawing.Point(426, 116);
             this.txtMagazineIssue.Name = "txtMagazineIssue";
-            this.txtMagazineIssue.Size = new System.Drawing.Size(162, 26);
+            this.txtMagazineIssue.Size = new System.Drawing.Size(144, 22);
             this.txtMagazineIssue.TabIndex = 49;
             // 
             // lblMagazineIssue
             // 
             this.lblMagazineIssue.AutoSize = true;
-            this.lblMagazineIssue.Location = new System.Drawing.Point(402, 149);
+            this.lblMagazineIssue.Location = new System.Drawing.Point(357, 119);
             this.lblMagazineIssue.Name = "lblMagazineIssue";
-            this.lblMagazineIssue.Size = new System.Drawing.Size(48, 20);
+            this.lblMagazineIssue.Size = new System.Drawing.Size(41, 17);
             this.lblMagazineIssue.TabIndex = 48;
             this.lblMagazineIssue.Text = "Issue";
             // 
             // txtMagazineType
             // 
-            this.txtMagazineType.Location = new System.Drawing.Point(479, 180);
-            this.txtMagazineType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazineType.Location = new System.Drawing.Point(426, 144);
             this.txtMagazineType.Name = "txtMagazineType";
-            this.txtMagazineType.Size = new System.Drawing.Size(162, 26);
+            this.txtMagazineType.Size = new System.Drawing.Size(144, 22);
             this.txtMagazineType.TabIndex = 47;
             // 
             // lblMagazineType
             // 
             this.lblMagazineType.AutoSize = true;
-            this.lblMagazineType.Location = new System.Drawing.Point(402, 184);
+            this.lblMagazineType.Location = new System.Drawing.Point(357, 147);
             this.lblMagazineType.Name = "lblMagazineType";
-            this.lblMagazineType.Size = new System.Drawing.Size(43, 20);
+            this.lblMagazineType.Size = new System.Drawing.Size(40, 17);
             this.lblMagazineType.TabIndex = 46;
             this.lblMagazineType.Text = "Type";
             // 
             // txtMagazineName
             // 
-            this.txtMagazineName.Location = new System.Drawing.Point(479, 75);
-            this.txtMagazineName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMagazineName.Location = new System.Drawing.Point(426, 60);
             this.txtMagazineName.Name = "txtMagazineName";
-            this.txtMagazineName.Size = new System.Drawing.Size(162, 26);
+            this.txtMagazineName.Size = new System.Drawing.Size(144, 22);
             this.txtMagazineName.TabIndex = 45;
             // 
             // lblMagazineName
             // 
             this.lblMagazineName.AutoSize = true;
-            this.lblMagazineName.Location = new System.Drawing.Point(402, 76);
+            this.lblMagazineName.Location = new System.Drawing.Point(357, 61);
             this.lblMagazineName.Name = "lblMagazineName";
-            this.lblMagazineName.Size = new System.Drawing.Size(51, 20);
+            this.lblMagazineName.Size = new System.Drawing.Size(45, 17);
             this.lblMagazineName.TabIndex = 44;
             this.lblMagazineName.Text = "Name";
             // 
             // pbMagazine
             // 
-            this.pbMagazine.Location = new System.Drawing.Point(692, 52);
-            this.pbMagazine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbMagazine.Location = new System.Drawing.Point(615, 42);
             this.pbMagazine.Name = "pbMagazine";
-            this.pbMagazine.Size = new System.Drawing.Size(138, 120);
+            this.pbMagazine.Size = new System.Drawing.Size(123, 96);
             this.pbMagazine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMagazine.TabIndex = 62;
             this.pbMagazine.TabStop = false;
@@ -1280,10 +1216,9 @@
             this.tabShoppingCart.Controls.Add(this.lblTotalPriceValueGeneral);
             this.tabShoppingCart.Controls.Add(this.lblTotalPrice);
             this.tabShoppingCart.Controls.Add(this.flpShoppingCart);
-            this.tabShoppingCart.Location = new System.Drawing.Point(4, 29);
-            this.tabShoppingCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabShoppingCart.Location = new System.Drawing.Point(4, 25);
             this.tabShoppingCart.Name = "tabShoppingCart";
-            this.tabShoppingCart.Size = new System.Drawing.Size(2253, 1629);
+            this.tabShoppingCart.Size = new System.Drawing.Size(2002, 1301);
             this.tabShoppingCart.TabIndex = 2;
             this.tabShoppingCart.Text = "Shopping Cart";
             this.tabShoppingCart.UseVisualStyleBackColor = true;
@@ -1292,10 +1227,10 @@
             // btnPlaceOrder
             // 
             this.btnPlaceOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlaceOrder.Location = new System.Drawing.Point(1201, 97);
+            this.btnPlaceOrder.Location = new System.Drawing.Point(1068, 78);
             this.btnPlaceOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
-            this.btnPlaceOrder.Size = new System.Drawing.Size(227, 55);
+            this.btnPlaceOrder.Size = new System.Drawing.Size(202, 44);
             this.btnPlaceOrder.TabIndex = 3;
             this.btnPlaceOrder.Text = "Place Order";
             this.btnPlaceOrder.UseVisualStyleBackColor = true;
@@ -1305,9 +1240,9 @@
             // 
             this.lblTotalPriceValueGeneral.AutoSize = true;
             this.lblTotalPriceValueGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPriceValueGeneral.Location = new System.Drawing.Point(1349, 50);
+            this.lblTotalPriceValueGeneral.Location = new System.Drawing.Point(1199, 40);
             this.lblTotalPriceValueGeneral.Name = "lblTotalPriceValueGeneral";
-            this.lblTotalPriceValueGeneral.Size = new System.Drawing.Size(79, 29);
+            this.lblTotalPriceValueGeneral.Size = new System.Drawing.Size(64, 25);
             this.lblTotalPriceValueGeneral.TabIndex = 2;
             this.lblTotalPriceValueGeneral.Text = "label1";
             // 
@@ -1315,18 +1250,18 @@
             // 
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(1197, 50);
+            this.lblTotalPrice.Location = new System.Drawing.Point(1064, 40);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(136, 29);
+            this.lblTotalPrice.Size = new System.Drawing.Size(111, 25);
             this.lblTotalPrice.TabIndex = 1;
             this.lblTotalPrice.Text = "Total Price:";
             // 
             // flpShoppingCart
             // 
-            this.flpShoppingCart.Location = new System.Drawing.Point(3, 31);
+            this.flpShoppingCart.Location = new System.Drawing.Point(3, 25);
             this.flpShoppingCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpShoppingCart.Name = "flpShoppingCart";
-            this.flpShoppingCart.Size = new System.Drawing.Size(1149, 988);
+            this.flpShoppingCart.Size = new System.Drawing.Size(1021, 790);
             this.flpShoppingCart.TabIndex = 0;
             // 
             // tabHomePage
@@ -1334,10 +1269,9 @@
             this.tabHomePage.Controls.Add(this.pbAd);
             this.tabHomePage.Controls.Add(this.flpHomePage);
             this.tabHomePage.Controls.Add(this.panel2);
-            this.tabHomePage.Location = new System.Drawing.Point(4, 29);
-            this.tabHomePage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabHomePage.Location = new System.Drawing.Point(4, 25);
             this.tabHomePage.Name = "tabHomePage";
-            this.tabHomePage.Size = new System.Drawing.Size(2253, 1629);
+            this.tabHomePage.Size = new System.Drawing.Size(2002, 1301);
             this.tabHomePage.TabIndex = 3;
             this.tabHomePage.Text = "Home Page";
             this.tabHomePage.UseVisualStyleBackColor = true;
@@ -1345,9 +1279,10 @@
             // pbAd
             // 
             this.pbAd.Image = global::OnlineBookStore.Properties.Resources.ad5;
-            this.pbAd.Location = new System.Drawing.Point(461, 194);
+            this.pbAd.Location = new System.Drawing.Point(410, 155);
+            this.pbAd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbAd.Name = "pbAd";
-            this.pbAd.Size = new System.Drawing.Size(1286, 271);
+            this.pbAd.Size = new System.Drawing.Size(1143, 217);
             this.pbAd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAd.TabIndex = 2;
             this.pbAd.TabStop = false;
@@ -1355,10 +1290,10 @@
             // flpHomePage
             // 
             this.flpHomePage.AutoScroll = true;
-            this.flpHomePage.Location = new System.Drawing.Point(10, 499);
+            this.flpHomePage.Location = new System.Drawing.Point(9, 399);
             this.flpHomePage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpHomePage.Name = "flpHomePage";
-            this.flpHomePage.Size = new System.Drawing.Size(2184, 1104);
+            this.flpHomePage.Size = new System.Drawing.Size(1941, 883);
             this.flpHomePage.TabIndex = 1;
             // 
             // panel2
@@ -1371,19 +1306,19 @@
             this.panel2.Controls.Add(this.pbMusicCds);
             this.panel2.Controls.Add(this.pbMagazines);
             this.panel2.Controls.Add(this.pbBooks);
-            this.panel2.Location = new System.Drawing.Point(6, 4);
+            this.panel2.Location = new System.Drawing.Point(5, 3);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2252, 171);
+            this.panel2.Size = new System.Drawing.Size(2002, 137);
             this.panel2.TabIndex = 0;
             // 
             // lblMusicCds
             // 
             this.lblMusicCds.AutoSize = true;
             this.lblMusicCds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMusicCds.Location = new System.Drawing.Point(1749, 129);
+            this.lblMusicCds.Location = new System.Drawing.Point(1555, 103);
             this.lblMusicCds.Name = "lblMusicCds";
-            this.lblMusicCds.Size = new System.Drawing.Size(137, 29);
+            this.lblMusicCds.Size = new System.Drawing.Size(117, 25);
             this.lblMusicCds.TabIndex = 8;
             this.lblMusicCds.Text = "Music CDs";
             // 
@@ -1391,9 +1326,9 @@
             // 
             this.lblMagazines.AutoSize = true;
             this.lblMagazines.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMagazines.Location = new System.Drawing.Point(1034, 126);
+            this.lblMagazines.Location = new System.Drawing.Point(919, 101);
             this.lblMagazines.Name = "lblMagazines";
-            this.lblMagazines.Size = new System.Drawing.Size(138, 29);
+            this.lblMagazines.Size = new System.Drawing.Size(117, 25);
             this.lblMagazines.TabIndex = 7;
             this.lblMagazines.Text = "Magazines";
             // 
@@ -1401,18 +1336,19 @@
             // 
             this.lblBooks.AutoSize = true;
             this.lblBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBooks.Location = new System.Drawing.Point(383, 129);
+            this.lblBooks.Location = new System.Drawing.Point(340, 103);
             this.lblBooks.Name = "lblBooks";
-            this.lblBooks.Size = new System.Drawing.Size(86, 29);
+            this.lblBooks.Size = new System.Drawing.Size(72, 25);
             this.lblBooks.TabIndex = 6;
             this.lblBooks.Text = "Books";
             // 
             // pbMusicCds
             // 
             this.pbMusicCds.Image = global::OnlineBookStore.Properties.Resources.music_cds;
-            this.pbMusicCds.Location = new System.Drawing.Point(1724, 3);
+            this.pbMusicCds.Location = new System.Drawing.Point(1532, 2);
+            this.pbMusicCds.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbMusicCds.Name = "pbMusicCds";
-            this.pbMusicCds.Size = new System.Drawing.Size(183, 123);
+            this.pbMusicCds.Size = new System.Drawing.Size(163, 98);
             this.pbMusicCds.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMusicCds.TabIndex = 5;
             this.pbMusicCds.TabStop = false;
@@ -1421,9 +1357,10 @@
             // pbMagazines
             // 
             this.pbMagazines.Image = global::OnlineBookStore.Properties.Resources.magazines;
-            this.pbMagazines.Location = new System.Drawing.Point(1011, 0);
+            this.pbMagazines.Location = new System.Drawing.Point(899, 0);
+            this.pbMagazines.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbMagazines.Name = "pbMagazines";
-            this.pbMagazines.Size = new System.Drawing.Size(183, 123);
+            this.pbMagazines.Size = new System.Drawing.Size(163, 98);
             this.pbMagazines.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMagazines.TabIndex = 4;
             this.pbMagazines.TabStop = false;
@@ -1432,9 +1369,10 @@
             // pbBooks
             // 
             this.pbBooks.Image = global::OnlineBookStore.Properties.Resources.books;
-            this.pbBooks.Location = new System.Drawing.Point(327, 3);
+            this.pbBooks.Location = new System.Drawing.Point(291, 2);
+            this.pbBooks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbBooks.Name = "pbBooks";
-            this.pbBooks.Size = new System.Drawing.Size(183, 123);
+            this.pbBooks.Size = new System.Drawing.Size(163, 98);
             this.pbBooks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBooks.TabIndex = 3;
             this.pbBooks.TabStop = false;
@@ -1444,10 +1382,10 @@
             // 
             this.tabMyAccount.Controls.Add(this.label3);
             this.tabMyAccount.Controls.Add(this.flpMyAccount);
-            this.tabMyAccount.Location = new System.Drawing.Point(4, 29);
+            this.tabMyAccount.Location = new System.Drawing.Point(4, 25);
             this.tabMyAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabMyAccount.Name = "tabMyAccount";
-            this.tabMyAccount.Size = new System.Drawing.Size(2253, 1629);
+            this.tabMyAccount.Size = new System.Drawing.Size(2002, 1301);
             this.tabMyAccount.TabIndex = 4;
             this.tabMyAccount.Text = "My Account";
             this.tabMyAccount.UseVisualStyleBackColor = true;
@@ -1456,18 +1394,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(-3, 18);
+            this.label3.Location = new System.Drawing.Point(-3, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(408, 32);
+            this.label3.Size = new System.Drawing.Size(348, 29);
             this.label3.TabIndex = 0;
             this.label3.Text = "Your Previously Ordered Items:";
             // 
             // flpMyAccount
             // 
-            this.flpMyAccount.Location = new System.Drawing.Point(3, 52);
+            this.flpMyAccount.Location = new System.Drawing.Point(3, 42);
             this.flpMyAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpMyAccount.Name = "flpMyAccount";
-            this.flpMyAccount.Size = new System.Drawing.Size(2139, 1470);
+            this.flpMyAccount.Size = new System.Drawing.Size(1901, 1176);
             this.flpMyAccount.TabIndex = 0;
             // 
             // panel3
@@ -1475,60 +1413,10 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.panelUserOps);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(176, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Location = new System.Drawing.Point(156, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(2198, 72);
+            this.panel3.Size = new System.Drawing.Size(1570, 58);
             this.panel3.TabIndex = 5;
-            // 
-            // lblShoppinCartValue
-            // 
-            this.lblShoppinCartValue.AutoSize = true;
-            this.lblShoppinCartValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShoppinCartValue.Location = new System.Drawing.Point(47, 16);
-            this.lblShoppinCartValue.Name = "lblShoppinCartValue";
-            this.lblShoppinCartValue.Size = new System.Drawing.Size(19, 20);
-            this.lblShoppinCartValue.TabIndex = 13;
-            this.lblShoppinCartValue.Text = "0";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::OnlineBookStore.Properties.Resources.shopcart2;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pbUserLogout
-            // 
-            this.pbUserLogout.Image = global::OnlineBookStore.Properties.Resources.logout;
-            this.pbUserLogout.Location = new System.Drawing.Point(302, 0);
-            this.pbUserLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pbUserLogout.Name = "pbUserLogout";
-            this.pbUserLogout.Size = new System.Drawing.Size(101, 69);
-            this.pbUserLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbUserLogout.TabIndex = 1;
-            this.pbUserLogout.TabStop = false;
-            this.pbUserLogout.Click += new System.EventHandler(this.pbUserLogout_Click);
-            // 
-            // lblGeneralUserName
-            // 
-            this.lblGeneralUserName.AutoSize = true;
-            this.lblGeneralUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblGeneralUserName.Location = new System.Drawing.Point(126, 26);
-            this.lblGeneralUserName.Name = "lblGeneralUserName";
-            this.lblGeneralUserName.Size = new System.Drawing.Size(76, 25);
-            this.lblGeneralUserName.TabIndex = 0;
-            this.lblGeneralUserName.Text = "label3";
-            // 
-            // timerChangeAd
-            // 
-            this.timerChangeAd.Enabled = true;
-            this.timerChangeAd.Interval = 5000;
-            this.timerChangeAd.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panelUserOps
             // 
@@ -1537,22 +1425,69 @@
             this.panelUserOps.Controls.Add(this.lblGeneralUserName);
             this.panelUserOps.Controls.Add(this.pictureBox1);
             this.panelUserOps.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelUserOps.Location = new System.Drawing.Point(1788, 0);
+            this.panelUserOps.Location = new System.Drawing.Point(1206, 0);
+            this.panelUserOps.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelUserOps.Name = "panelUserOps";
-            this.panelUserOps.Size = new System.Drawing.Size(410, 72);
+            this.panelUserOps.Size = new System.Drawing.Size(364, 58);
             this.panelUserOps.TabIndex = 14;
+            // 
+            // pbUserLogout
+            // 
+            this.pbUserLogout.Image = global::OnlineBookStore.Properties.Resources.logout;
+            this.pbUserLogout.Location = new System.Drawing.Point(268, 0);
+            this.pbUserLogout.Name = "pbUserLogout";
+            this.pbUserLogout.Size = new System.Drawing.Size(90, 55);
+            this.pbUserLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbUserLogout.TabIndex = 1;
+            this.pbUserLogout.TabStop = false;
+            this.pbUserLogout.Click += new System.EventHandler(this.pbUserLogout_Click);
+            // 
+            // lblShoppinCartValue
+            // 
+            this.lblShoppinCartValue.AutoSize = true;
+            this.lblShoppinCartValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShoppinCartValue.Location = new System.Drawing.Point(42, 13);
+            this.lblShoppinCartValue.Name = "lblShoppinCartValue";
+            this.lblShoppinCartValue.Size = new System.Drawing.Size(17, 17);
+            this.lblShoppinCartValue.TabIndex = 13;
+            this.lblShoppinCartValue.Text = "0";
+            // 
+            // lblGeneralUserName
+            // 
+            this.lblGeneralUserName.AutoSize = true;
+            this.lblGeneralUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblGeneralUserName.Location = new System.Drawing.Point(112, 21);
+            this.lblGeneralUserName.Name = "lblGeneralUserName";
+            this.lblGeneralUserName.Size = new System.Drawing.Size(59, 20);
+            this.lblGeneralUserName.TabIndex = 0;
+            this.lblGeneralUserName.Text = "label3";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::OnlineBookStore.Properties.Resources.shopcart2;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // timerChangeAd
+            // 
+            this.timerChangeAd.Enabled = true;
+            this.timerChangeAd.Interval = 5000;
+            this.timerChangeAd.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // BookShopForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2374, 1723);
+            this.ClientSize = new System.Drawing.Size(1726, 882);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.tabControlGeneral);
             this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BookShopForm";
             this.Text = "BookShopForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1597,10 +1532,10 @@
             this.tabMyAccount.ResumeLayout(false);
             this.tabMyAccount.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUserLogout)).EndInit();
             this.panelUserOps.ResumeLayout(false);
             this.panelUserOps.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserLogout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
