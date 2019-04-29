@@ -233,6 +233,33 @@ namespace OnlineBookStore
             return false;
         }
 
+        public bool addOrUpdateAUserFromDB(string operationType, string id, string name, string surname, string address, string email, string username, string password, bool isadmin)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command;
+            if (operationType == "Add")
+                command = new SqlCommand("INSERT INTO CustomerTable (name,surname,address,email,username,password,isadmin) values(@name,@surname,@address,@email,@username,@password,@isadmin)", connection);
+            else if (operationType == "Update")
+                command = new SqlCommand("UPDATE CustomerTable SET name=@name ,surname=@surname,address=@address,email=@email,username=@username,password=@password,isadmin=@isadmin where id=@id", connection);
+            else
+                return false; //Non supported operation
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@surname", surname);
+            command.Parameters.AddWithValue("@address", address);
+            command.Parameters.AddWithValue("@email", email);
+            command.Parameters.AddWithValue("@username", username);
+            command.Parameters.AddWithValue("@password", password);
+            command.Parameters.AddWithValue("@isadmin", isadmin ? 1 : 0);
+            command.Parameters.AddWithValue("@id", id);
+            int affected = 0;
+            affected = command.ExecuteNonQuery();
+            if (affected == 0)
+                return false;
+            else
+                return true;
+        }
+        
         public bool deleteAnItemObjectFromDBByID(Type type,string id)
         {
             SqlConnection connection = dbHelper.getConnection();
