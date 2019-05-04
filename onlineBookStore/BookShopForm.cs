@@ -179,6 +179,7 @@ namespace OnlineBookStore
         /**
          * finds the selected customer information in datagridview from  CustomerTable in the database.
          */
+        
         private void tabUser_Click(object sender, EventArgs e)
         {
             dgvUsers.DataSource = dbHelper.getAllItemsForAClassFromATableByItsType(typeof(OnlineBookStore.UserClass));
@@ -227,10 +228,7 @@ namespace OnlineBookStore
             }
         }
 
-        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
         /**
         * finds the selected user information in datagridview
         * and prints this information to the corresponding textboxes.
@@ -246,7 +244,7 @@ namespace OnlineBookStore
             string username = dgvUsers.Rows[selectedValue].Cells[5].Value.ToString();
             string password = dgvUsers.Rows[selectedValue].Cells[6].Value.ToString();
             bool isAdmin = (bool)dgvUsers.Rows[selectedValue].Cells[7].Value;
-
+            bool isConfirmed = (bool)dgvUsers.Rows[selectedValue].Cells[8].Value;
             txtUserId.Text = id;
             txtName.Text = name;
             txtSurname.Text = surname;
@@ -258,6 +256,19 @@ namespace OnlineBookStore
                 cbIsAdmin.Checked = true;
             else
                 cbIsAdmin.Checked = false;
+
+            if (isConfirmed)
+            {
+                lblUserConfirmedValue.ForeColor = Color.Black;
+                lblUserConfirmedValue.Text = "Confirmed";
+                btnConfirm.Enabled = false;
+            }
+            else
+            {
+                lblUserConfirmedValue.Text = "Not Confirmed";
+                lblUserConfirmedValue.ForeColor = Color.Red;
+                btnConfirm.Enabled = true;
+            }
 
         }
         /**
@@ -902,6 +913,26 @@ namespace OnlineBookStore
         }
 
         private void tabPageReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            bool operationResult = AdminUserClass.confirmUser(txtUserId.Text);
+            if (operationResult)
+            {
+                MessageBox.Show("User Confirmed successfully");
+                clearUserControls();
+            }
+            else
+            {
+                MessageBox.Show("Error!");
+            }
+
+        }
+
+        private void lblUserConfirmedValue_Click(object sender, EventArgs e)
         {
 
         }

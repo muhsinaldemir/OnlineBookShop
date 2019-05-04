@@ -45,6 +45,11 @@ namespace OnlineBookStore
                 {
                     while (readCustomer.Read())
                     {
+                        if (!(bool)readCustomer["isconfirmed"])
+                        {
+                            MessageBox.Show("You're not confirmed. Wait for confirmation");
+                            return;
+                        }
                         bool isAdmin = (bool)readCustomer["isadmin"];
                         if (!isAdmin)
                             cs = CustomerClass.Instance; //SINGLETON PATTERN
@@ -127,6 +132,13 @@ namespace OnlineBookStore
         private void pbLoginExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SignUpForm formSignUp = new SignUpForm();
+            formSignUp.Show();
+            //this.Close();
         }
     }
 }

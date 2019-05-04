@@ -65,12 +65,19 @@ namespace OnlineBookStore
 
         public override bool saveCustomer(string id, string name, string surname, string address, string email, string username, string password, bool isadmin)
         {
-            bool operationResult = AdminUserClass.userOperations("Add", id, name, surname, address, email, username, password, isadmin);
+            bool operationResult = userOperations("Add", id, name, surname, address, email, username, password, isadmin);
             return operationResult;
         }
 
-    ///Initialize static member of AdminUserClass
-    private static AdminUserClass admin = null;
+        public static bool confirmUser(string userID)
+        {
+            DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance;
+            bool affected = dbHelper.confirmAUser(userID);
+            return affected;
+        }
+
+        ///Initialize static member of AdminUserClass
+        private static AdminUserClass admin = null;
         public static AdminUserClass Instance
         {
             get

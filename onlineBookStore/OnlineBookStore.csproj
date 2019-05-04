@@ -122,6 +122,12 @@
     <Compile Include="ShoppingCartItemsUserControl.Designer.cs">
       <DependentUpon>ShoppingCartItemsUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SMSClass.cs" />
     <Compile Include="UserClass.cs" />
     <EmbeddedResource Include="BookShopForm.resx">
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShoppingCartItemsUserControl.resx">
       <DependentUpon>ShoppingCartItemsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

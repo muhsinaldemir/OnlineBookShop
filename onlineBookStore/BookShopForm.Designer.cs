@@ -41,7 +41,12 @@
             this.tabAdminPanel = new System.Windows.Forms.TabPage();
             this.tabControlAdmin = new System.Windows.Forms.TabControl();
             this.tabUser = new System.Windows.Forms.TabPage();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblUserConfirmedValue = new System.Windows.Forms.Label();
+            this.lblUserConfirmed = new System.Windows.Forms.Label();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.cbIsAdmin = new System.Windows.Forms.CheckBox();
             this.lblName = new System.Windows.Forms.Label();
@@ -60,8 +65,9 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.lblSurname = new System.Windows.Forms.Label();
-            this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.tabBooks = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAddBook = new System.Windows.Forms.Button();
             this.txtBookImage = new System.Windows.Forms.TextBox();
@@ -86,8 +92,9 @@
             this.txtBookPrice = new System.Windows.Forms.TextBox();
             this.txtBookPage = new System.Windows.Forms.TextBox();
             this.lblBookPage = new System.Windows.Forms.Label();
-            this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.tabMusics = new System.Windows.Forms.TabPage();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.dgvMusicCDs = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtMusicName = new System.Windows.Forms.TextBox();
             this.txtMusicCDsImage = new System.Windows.Forms.TextBox();
@@ -108,8 +115,9 @@
             this.txtMusicPrice = new System.Windows.Forms.TextBox();
             this.btnDeleteMusicCDs = new System.Windows.Forms.Button();
             this.btnAddMusicCDs = new System.Windows.Forms.Button();
-            this.dgvMusicCDs = new System.Windows.Forms.DataGridView();
             this.tabMagazine = new System.Windows.Forms.TabPage();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.dgvMagazine = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnUpdateMagazine = new System.Windows.Forms.Button();
             this.txtMagazineImage = new System.Windows.Forms.TextBox();
@@ -130,7 +138,6 @@
             this.btnDeleteMagazine = new System.Windows.Forms.Button();
             this.txtMagazinePrice = new System.Windows.Forms.TextBox();
             this.btnAddMagazine = new System.Windows.Forms.Button();
-            this.dgvMagazine = new System.Windows.Forms.DataGridView();
             this.tabShoppingCart = new System.Windows.Forms.TabPage();
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.lblTotalPriceValueGeneral = new System.Windows.Forms.Label();
@@ -165,10 +172,6 @@
             this.lblGeneralUserName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerChangeAd = new System.Windows.Forms.Timer(this.components);
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMyAccount)).BeginInit();
@@ -181,20 +184,24 @@
             this.tabAdminPanel.SuspendLayout();
             this.tabControlAdmin.SuspendLayout();
             this.tabUser.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
+            this.panel1.SuspendLayout();
             this.tabBooks.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.tabMusics.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMusicCDs)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMusic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMusicCDs)).BeginInit();
             this.tabMagazine.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagazine)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).BeginInit();
             this.tabShoppingCart.SuspendLayout();
             this.tabHomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAd)).BeginInit();
@@ -208,10 +215,6 @@
             this.panelUserOps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -373,8 +376,40 @@
             this.tabUser.UseVisualStyleBackColor = true;
             this.tabUser.Click += new System.EventHandler(this.tabUser_Click);
             // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.AutoScroll = true;
+            this.panel7.AutoSize = true;
+            this.panel7.Controls.Add(this.dgvUsers);
+            this.panel7.Location = new System.Drawing.Point(6, 523);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(2614, 579);
+            this.panel7.TabIndex = 20;
+            // 
+            // dgvUsers
+            // 
+            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvUsers.BackgroundColor = System.Drawing.Color.White;
+            this.dgvUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsers.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvUsers.Location = new System.Drawing.Point(62, 33);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.ReadOnly = true;
+            this.dgvUsers.RowTemplate.Height = 24;
+            this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsers.Size = new System.Drawing.Size(2520, 513);
+            this.dgvUsers.TabIndex = 0;
+            this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
+            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblUserConfirmedValue);
+            this.panel1.Controls.Add(this.lblUserConfirmed);
+            this.panel1.Controls.Add(this.btnConfirm);
             this.panel1.Controls.Add(this.btnAddUser);
             this.panel1.Controls.Add(this.cbIsAdmin);
             this.panel1.Controls.Add(this.lblName);
@@ -396,12 +431,41 @@
             this.panel1.Location = new System.Drawing.Point(776, 23);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(474, 380);
+            this.panel1.Size = new System.Drawing.Size(474, 430);
             this.panel1.TabIndex = 19;
+            // 
+            // lblUserConfirmedValue
+            // 
+            this.lblUserConfirmedValue.AutoSize = true;
+            this.lblUserConfirmedValue.Location = new System.Drawing.Point(210, 276);
+            this.lblUserConfirmedValue.Name = "lblUserConfirmedValue";
+            this.lblUserConfirmedValue.Size = new System.Drawing.Size(91, 20);
+            this.lblUserConfirmedValue.TabIndex = 21;
+            this.lblUserConfirmedValue.Text = "Confirmed?";
+            this.lblUserConfirmedValue.Click += new System.EventHandler(this.lblUserConfirmedValue_Click);
+            // 
+            // lblUserConfirmed
+            // 
+            this.lblUserConfirmed.AutoSize = true;
+            this.lblUserConfirmed.Location = new System.Drawing.Point(105, 276);
+            this.lblUserConfirmed.Name = "lblUserConfirmed";
+            this.lblUserConfirmed.Size = new System.Drawing.Size(99, 20);
+            this.lblUserConfirmed.TabIndex = 20;
+            this.lblUserConfirmed.Text = "Is Confirmed";
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(349, 347);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(96, 59);
+            this.btnConfirm.TabIndex = 19;
+            this.btnConfirm.Text = "Confirm User";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(100, 314);
+            this.btnAddUser.Location = new System.Drawing.Point(38, 345);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(96, 62);
@@ -413,7 +477,7 @@
             // cbIsAdmin
             // 
             this.cbIsAdmin.AutoSize = true;
-            this.cbIsAdmin.Location = new System.Drawing.Point(231, 280);
+            this.cbIsAdmin.Location = new System.Drawing.Point(210, 305);
             this.cbIsAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbIsAdmin.Name = "cbIsAdmin";
             this.cbIsAdmin.Size = new System.Drawing.Size(97, 24);
@@ -432,7 +496,7 @@
             // 
             // btnUpdateUser
             // 
-            this.btnUpdateUser.Location = new System.Drawing.Point(306, 314);
+            this.btnUpdateUser.Location = new System.Drawing.Point(244, 345);
             this.btnUpdateUser.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnUpdateUser.Name = "btnUpdateUser";
             this.btnUpdateUser.Size = new System.Drawing.Size(96, 62);
@@ -486,7 +550,7 @@
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(202, 314);
+            this.btnDeleteUser.Location = new System.Drawing.Point(140, 345);
             this.btnDeleteUser.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(96, 62);
@@ -563,25 +627,6 @@
             this.lblSurname.TabIndex = 9;
             this.lblSurname.Text = "Surname";
             // 
-            // dgvUsers
-            // 
-            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvUsers.BackgroundColor = System.Drawing.Color.White;
-            this.dgvUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvUsers.Location = new System.Drawing.Point(62, 33);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.dgvUsers.Name = "dgvUsers";
-            this.dgvUsers.ReadOnly = true;
-            this.dgvUsers.RowTemplate.Height = 24;
-            this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(2520, 513);
-            this.dgvUsers.TabIndex = 0;
-            this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
-            this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
-            // 
             // tabBooks
             // 
             this.tabBooks.Controls.Add(this.panel8);
@@ -595,6 +640,34 @@
             this.tabBooks.Text = "Books";
             this.tabBooks.UseVisualStyleBackColor = true;
             this.tabBooks.Click += new System.EventHandler(this.tabBooks_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.AutoScroll = true;
+            this.panel8.AutoSize = true;
+            this.panel8.Controls.Add(this.dgvBooks);
+            this.panel8.Location = new System.Drawing.Point(6, 545);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(2620, 640);
+            this.panel8.TabIndex = 40;
+            // 
+            // dgvBooks
+            // 
+            this.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBooks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvBooks.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBooks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBooks.Location = new System.Drawing.Point(30, 24);
+            this.dgvBooks.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.dgvBooks.Name = "dgvBooks";
+            this.dgvBooks.ReadOnly = true;
+            this.dgvBooks.RowTemplate.Height = 24;
+            this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBooks.Size = new System.Drawing.Size(2580, 577);
+            this.dgvBooks.TabIndex = 27;
+            this.dgvBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellClick);
             // 
             // panel4
             // 
@@ -836,23 +909,6 @@
             this.lblBookPage.TabIndex = 24;
             this.lblBookPage.Text = "Page";
             // 
-            // dgvBooks
-            // 
-            this.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBooks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvBooks.BackgroundColor = System.Drawing.Color.White;
-            this.dgvBooks.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBooks.Location = new System.Drawing.Point(30, 24);
-            this.dgvBooks.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.dgvBooks.Name = "dgvBooks";
-            this.dgvBooks.ReadOnly = true;
-            this.dgvBooks.RowTemplate.Height = 24;
-            this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBooks.Size = new System.Drawing.Size(2580, 577);
-            this.dgvBooks.TabIndex = 27;
-            this.dgvBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellClick);
-            // 
             // tabMusics
             // 
             this.tabMusics.Controls.Add(this.panel9);
@@ -865,6 +921,36 @@
             this.tabMusics.Text = "Music-Cds";
             this.tabMusics.UseVisualStyleBackColor = true;
             this.tabMusics.Click += new System.EventHandler(this.tabMusics_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel9.AutoScroll = true;
+            this.panel9.AutoSize = true;
+            this.panel9.Controls.Add(this.dgvMusicCDs);
+            this.panel9.Location = new System.Drawing.Point(8, 527);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(2620, 640);
+            this.panel9.TabIndex = 55;
+            // 
+            // dgvMusicCDs
+            // 
+            this.dgvMusicCDs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMusicCDs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvMusicCDs.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMusicCDs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMusicCDs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMusicCDs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMusicCDs.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvMusicCDs.Location = new System.Drawing.Point(0, 0);
+            this.dgvMusicCDs.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.dgvMusicCDs.Name = "dgvMusicCDs";
+            this.dgvMusicCDs.ReadOnly = true;
+            this.dgvMusicCDs.RowTemplate.Height = 24;
+            this.dgvMusicCDs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMusicCDs.Size = new System.Drawing.Size(2620, 640);
+            this.dgvMusicCDs.TabIndex = 43;
+            this.dgvMusicCDs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMusicCDs_CellClick);
             // 
             // panel5
             // 
@@ -927,7 +1013,7 @@
             this.btnAddMusic.Name = "btnAddMusic";
             this.btnAddMusic.Size = new System.Drawing.Size(140, 42);
             this.btnAddMusic.TabIndex = 51;
-            this.btnAddMusic.Text = "Add MusicCDS";
+            this.btnAddMusic.Text = "Add Image";
             this.btnAddMusic.UseVisualStyleBackColor = true;
             this.btnAddMusic.Click += new System.EventHandler(this.btnAddMusic_Click);
             // 
@@ -1068,25 +1154,6 @@
             this.btnAddMusicCDs.UseVisualStyleBackColor = true;
             this.btnAddMusicCDs.Click += new System.EventHandler(this.btnAddMusicCDs_Click);
             // 
-            // dgvMusicCDs
-            // 
-            this.dgvMusicCDs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMusicCDs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvMusicCDs.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMusicCDs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvMusicCDs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMusicCDs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMusicCDs.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvMusicCDs.Location = new System.Drawing.Point(0, 0);
-            this.dgvMusicCDs.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.dgvMusicCDs.Name = "dgvMusicCDs";
-            this.dgvMusicCDs.ReadOnly = true;
-            this.dgvMusicCDs.RowTemplate.Height = 24;
-            this.dgvMusicCDs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMusicCDs.Size = new System.Drawing.Size(2620, 640);
-            this.dgvMusicCDs.TabIndex = 43;
-            this.dgvMusicCDs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMusicCDs_CellClick);
-            // 
             // tabMagazine
             // 
             this.tabMagazine.Controls.Add(this.panel10);
@@ -1099,6 +1166,37 @@
             this.tabMagazine.Text = "Magazine";
             this.tabMagazine.UseVisualStyleBackColor = true;
             this.tabMagazine.Click += new System.EventHandler(this.tabMagazine_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel10.AutoScroll = true;
+            this.panel10.AutoSize = true;
+            this.panel10.Controls.Add(this.dgvMagazine);
+            this.panel10.Location = new System.Drawing.Point(6, 444);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(2620, 707);
+            this.panel10.TabIndex = 65;
+            // 
+            // dgvMagazine
+            // 
+            this.dgvMagazine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMagazine.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvMagazine.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMagazine.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMagazine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMagazine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMagazine.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvMagazine.Location = new System.Drawing.Point(0, 0);
+            this.dgvMagazine.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.dgvMagazine.MultiSelect = false;
+            this.dgvMagazine.Name = "dgvMagazine";
+            this.dgvMagazine.ReadOnly = true;
+            this.dgvMagazine.RowTemplate.Height = 24;
+            this.dgvMagazine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMagazine.Size = new System.Drawing.Size(2620, 707);
+            this.dgvMagazine.TabIndex = 53;
+            this.dgvMagazine.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMagazine_CellClick);
             // 
             // panel6
             // 
@@ -1164,7 +1262,7 @@
             this.btnAddImageMagazine.Name = "btnAddImageMagazine";
             this.btnAddImageMagazine.Size = new System.Drawing.Size(140, 42);
             this.btnAddImageMagazine.TabIndex = 61;
-            this.btnAddImageMagazine.Text = "Add Magazine";
+            this.btnAddImageMagazine.Text = "Add Image";
             this.btnAddImageMagazine.UseVisualStyleBackColor = true;
             this.btnAddImageMagazine.Click += new System.EventHandler(this.btnAddImageMagazine_Click);
             // 
@@ -1301,26 +1399,6 @@
             this.btnAddMagazine.Text = "Add Magazine";
             this.btnAddMagazine.UseVisualStyleBackColor = true;
             this.btnAddMagazine.Click += new System.EventHandler(this.btnAddMagazine_Click);
-            // 
-            // dgvMagazine
-            // 
-            this.dgvMagazine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMagazine.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvMagazine.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMagazine.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvMagazine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMagazine.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMagazine.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvMagazine.Location = new System.Drawing.Point(0, 0);
-            this.dgvMagazine.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.dgvMagazine.MultiSelect = false;
-            this.dgvMagazine.Name = "dgvMagazine";
-            this.dgvMagazine.ReadOnly = true;
-            this.dgvMagazine.RowTemplate.Height = 24;
-            this.dgvMagazine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMagazine.Size = new System.Drawing.Size(2620, 707);
-            this.dgvMagazine.TabIndex = 53;
-            this.dgvMagazine.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMagazine_CellClick);
             // 
             // tabShoppingCart
             // 
@@ -1689,50 +1767,6 @@
             this.timerChangeAd.Interval = 5000;
             this.timerChangeAd.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.AutoScroll = true;
-            this.panel7.AutoSize = true;
-            this.panel7.Controls.Add(this.dgvUsers);
-            this.panel7.Location = new System.Drawing.Point(6, 523);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(2614, 579);
-            this.panel7.TabIndex = 20;
-            // 
-            // panel8
-            // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel8.AutoScroll = true;
-            this.panel8.AutoSize = true;
-            this.panel8.Controls.Add(this.dgvBooks);
-            this.panel8.Location = new System.Drawing.Point(6, 545);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(2620, 640);
-            this.panel8.TabIndex = 40;
-            // 
-            // panel9
-            // 
-            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel9.AutoScroll = true;
-            this.panel9.AutoSize = true;
-            this.panel9.Controls.Add(this.dgvMusicCDs);
-            this.panel9.Location = new System.Drawing.Point(8, 527);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(2620, 640);
-            this.panel9.TabIndex = 55;
-            // 
-            // panel10
-            // 
-            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel10.AutoScroll = true;
-            this.panel10.AutoSize = true;
-            this.panel10.Controls.Add(this.dgvMagazine);
-            this.panel10.Location = new System.Drawing.Point(6, 444);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(2620, 707);
-            this.panel10.TabIndex = 65;
-            // 
             // BookShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1761,27 +1795,31 @@
             this.tabControlAdmin.ResumeLayout(false);
             this.tabUser.ResumeLayout(false);
             this.tabUser.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.tabBooks.ResumeLayout(false);
             this.tabBooks.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.tabMusics.ResumeLayout(false);
             this.tabMusics.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMusicCDs)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMusic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMusicCDs)).EndInit();
             this.tabMagazine.ResumeLayout(false);
             this.tabMagazine.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagazine)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazine)).EndInit();
             this.tabShoppingCart.ResumeLayout(false);
             this.tabShoppingCart.PerformLayout();
             this.tabHomePage.ResumeLayout(false);
@@ -1800,10 +1838,6 @@
             this.panelUserOps.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserLogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1950,5 +1984,8 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label lblUserConfirmedValue;
+        private System.Windows.Forms.Label lblUserConfirmed;
+        private System.Windows.Forms.Button btnConfirm;
     }
 }

@@ -411,7 +411,21 @@ namespace OnlineBookStore
             return dt;
         }
 
+        public bool confirmAUser(string id)
+        {
+            SqlConnection connection = dbHelper.getConnection();
+            SqlCommand command = new SqlCommand("UPDATE CustomerTable SET isconfirmed='True' WHERE id=@id", connection);
+            command.Parameters.AddWithValue("@id", id);
+            int affected = 0;
+            affected = command.ExecuteNonQuery();
+            if (affected == 0)
+                return false;
+            else
+                return true;
+
         }
+
+    }
 
 
     }
