@@ -11,6 +11,7 @@ namespace OnlineBookStore
         public static string EMAIL = "***REMOVED***";
         public static string EMAIL_PASSWORD = "***REMOVED***" ;
         public static string SMS_NUMBER = "Our SMS Number";
-        public static string LOG_FILE_LOCATION = "clicklogs.txt";
+        //public static string LOG_FILE_LOCATION = "clicklogs.txt";
+        public static string EXCEPTION_LOG_FILE_LOCATION = @"Logs\ExceptionLogs\exceptionlogs.txt";
     }
 }
