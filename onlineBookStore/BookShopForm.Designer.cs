@@ -157,6 +157,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.flpMyAccount = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPageReport = new System.Windows.Forms.TabPage();
+            this.btnGeneratePDFBooks = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.flpUser = new System.Windows.Forms.FlowLayoutPanel();
             this.lblBestSellerMusicCDs = new System.Windows.Forms.Label();
@@ -172,6 +173,9 @@
             this.lblGeneralUserName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerChangeAd = new System.Windows.Forms.Timer(this.components);
+            this.btnGeneratePDFRichestCustomers = new System.Windows.Forms.Button();
+            this.btnGeneratePDFMagazines = new System.Windows.Forms.Button();
+            this.btnGeneratePDFMusicCDs = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMyAccount)).BeginInit();
@@ -1602,6 +1606,10 @@
             // 
             // tabPageReport
             // 
+            this.tabPageReport.Controls.Add(this.btnGeneratePDFMusicCDs);
+            this.tabPageReport.Controls.Add(this.btnGeneratePDFMagazines);
+            this.tabPageReport.Controls.Add(this.btnGeneratePDFRichestCustomers);
+            this.tabPageReport.Controls.Add(this.btnGeneratePDFBooks);
             this.tabPageReport.Controls.Add(this.label4);
             this.tabPageReport.Controls.Add(this.flpUser);
             this.tabPageReport.Controls.Add(this.lblBestSellerMusicCDs);
@@ -1617,6 +1625,16 @@
             this.tabPageReport.TabIndex = 5;
             this.tabPageReport.UseVisualStyleBackColor = true;
             this.tabPageReport.Click += new System.EventHandler(this.tabPageReport_Click);
+            // 
+            // btnGeneratePDFBooks
+            // 
+            this.btnGeneratePDFBooks.Location = new System.Drawing.Point(296, 35);
+            this.btnGeneratePDFBooks.Name = "btnGeneratePDFBooks";
+            this.btnGeneratePDFBooks.Size = new System.Drawing.Size(173, 39);
+            this.btnGeneratePDFBooks.TabIndex = 8;
+            this.btnGeneratePDFBooks.Text = "Generate PDF";
+            this.btnGeneratePDFBooks.UseVisualStyleBackColor = true;
+            this.btnGeneratePDFBooks.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label4
             // 
@@ -1766,6 +1784,36 @@
             this.timerChangeAd.Enabled = true;
             this.timerChangeAd.Interval = 5000;
             this.timerChangeAd.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnGeneratePDFRichestCustomers
+            // 
+            this.btnGeneratePDFRichestCustomers.Location = new System.Drawing.Point(292, 538);
+            this.btnGeneratePDFRichestCustomers.Name = "btnGeneratePDFRichestCustomers";
+            this.btnGeneratePDFRichestCustomers.Size = new System.Drawing.Size(173, 39);
+            this.btnGeneratePDFRichestCustomers.TabIndex = 9;
+            this.btnGeneratePDFRichestCustomers.Text = "Generate PDF";
+            this.btnGeneratePDFRichestCustomers.UseVisualStyleBackColor = true;
+            this.btnGeneratePDFRichestCustomers.Click += new System.EventHandler(this.btnGeneratePDFRichestCustomers_Click);
+            // 
+            // btnGeneratePDFMagazines
+            // 
+            this.btnGeneratePDFMagazines.Location = new System.Drawing.Point(956, 35);
+            this.btnGeneratePDFMagazines.Name = "btnGeneratePDFMagazines";
+            this.btnGeneratePDFMagazines.Size = new System.Drawing.Size(173, 39);
+            this.btnGeneratePDFMagazines.TabIndex = 10;
+            this.btnGeneratePDFMagazines.Text = "Generate PDF";
+            this.btnGeneratePDFMagazines.UseVisualStyleBackColor = true;
+            this.btnGeneratePDFMagazines.Click += new System.EventHandler(this.btnGeneratePDFMagazines_Click);
+            // 
+            // btnGeneratePDFMusicCDs
+            // 
+            this.btnGeneratePDFMusicCDs.Location = new System.Drawing.Point(1567, 35);
+            this.btnGeneratePDFMusicCDs.Name = "btnGeneratePDFMusicCDs";
+            this.btnGeneratePDFMusicCDs.Size = new System.Drawing.Size(173, 39);
+            this.btnGeneratePDFMusicCDs.TabIndex = 11;
+            this.btnGeneratePDFMusicCDs.Text = "Generate PDF";
+            this.btnGeneratePDFMusicCDs.UseVisualStyleBackColor = true;
+            this.btnGeneratePDFMusicCDs.Click += new System.EventHandler(this.btnGeneratePDFMusicCDs_Click);
             // 
             // BookShopForm
             // 
@@ -1987,5 +2035,9 @@
         private System.Windows.Forms.Label lblUserConfirmedValue;
         private System.Windows.Forms.Label lblUserConfirmed;
         private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnGeneratePDFBooks;
+        private System.Windows.Forms.Button btnGeneratePDFMusicCDs;
+        private System.Windows.Forms.Button btnGeneratePDFMagazines;
+        private System.Windows.Forms.Button btnGeneratePDFRichestCustomers;
     }
 }

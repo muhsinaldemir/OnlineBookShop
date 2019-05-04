@@ -936,5 +936,35 @@ namespace OnlineBookStore
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            List<ItemToPurchaseClass> list = dbHelper.getMostBoughtItems("Book");
+            ReportGeneratorClass report = new ReportGeneratorClass();
+            report.generate(list, ReportGeneratorClass.ReportType.BestSellerBooks);
+        }
+
+        private void btnGeneratePDFMagazines_Click(object sender, EventArgs e)
+        {
+            List<ItemToPurchaseClass> list = dbHelper.getMostBoughtItems("Magazine");
+            ReportGeneratorClass report = new ReportGeneratorClass();
+            report.generate(list, ReportGeneratorClass.ReportType.BestSellerMagazines);
+        }
+
+        private void btnGeneratePDFRichestCustomers_Click(object sender, EventArgs e)
+        {
+            List<ItemToPurchaseClass> list = dbHelper.getMostBoughtItems("Book");
+            ReportGeneratorClass report = new ReportGeneratorClass();
+            report.generate(list, ReportGeneratorClass.ReportType.BestSellerBooks);
+
+        }
+
+        private void btnGeneratePDFMusicCDs_Click(object sender, EventArgs e)
+        {
+            List<ItemToPurchaseClass> list = dbHelper.getMostBoughtItems("MusicCDs");
+            ReportGeneratorClass report = new ReportGeneratorClass();
+            report.generate(list, ReportGeneratorClass.ReportType.BestSellerMusicCDs);
+
+        }
     }
 }

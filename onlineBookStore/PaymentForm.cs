@@ -36,7 +36,7 @@ namespace OnlineBookStore
                 if (ctl != null) name = ctl.Name;
                 //Point pos = new Point(m.LParam.ToInt32());
                 string message = "Username " + user.userName + " Clicked object " + name + " at " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
-                FileWriterClass.WriteFile(AppConstants.LOG_FILE_LOCATION, message);
+                FileWriterClass.WriteFile(@"Logs\" + user.userName + "_clicklogs.txt", message);
                 Console.WriteLine("Click {0}", message);
             }
             return false;
