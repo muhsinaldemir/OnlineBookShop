@@ -8,6 +8,6 @@ namespace OnlineBookStore
 {
     abstract class ObserverClass
     {
-        public abstract void update(string communicationType,UserClass user, string name, double unitPriceValue);
+        public abstract void update(string communicationType,UserClass user, string product_name, double unitPriceValue);
     }
 }

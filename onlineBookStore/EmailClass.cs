@@ -57,7 +57,7 @@ namespace OnlineBookStore
             MailMessage mm = new MailMessage(fromAddress, user.email, "Your Order" +
                 "Information", message);
             mm.BodyEncoding = UTF8Encoding.UTF8;
-            //Console.WriteLine("Email Class in Email Class");
+            Console.WriteLine("Email Class in Email Class");
             //client.Send(mm);
 
         }

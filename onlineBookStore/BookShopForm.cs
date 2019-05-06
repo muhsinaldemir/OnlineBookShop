@@ -64,7 +64,9 @@ namespace OnlineBookStore
          */
         private void BookShopForm_Load(object sender, EventArgs e)
         {
+            //Attach Observers
             ShoppingCartClass.attach(new CustomerObserverClass());
+            ShoppingCartClass.attach(new EmailAndSMSLoggerObserverClass());
 
             if(!user.isAdmin())
             {
