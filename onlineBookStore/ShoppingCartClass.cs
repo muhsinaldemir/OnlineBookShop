@@ -131,6 +131,7 @@ namespace OnlineBookStore
             DatabaseHelperClass dbHelper = DatabaseHelperClass.Instance; //SINGLETON PATTERN
             dbHelper.shoppingCartPlaceOrder(customerID, paymentType);
             sendInvoiceByEmail(unitPriceValue);
+            //itemsToPurchase.Clear();
         }
         /** @brief cancelorder() function
         * @param string string name
