@@ -18,7 +18,7 @@
 - E-mail sending option to inform users about their purchase
 - Generating PDF Reports
 
-## Images
+## Screenshots
 - Homepage:
 
 ![Screenshot](docs/images/homepage.PNG)
