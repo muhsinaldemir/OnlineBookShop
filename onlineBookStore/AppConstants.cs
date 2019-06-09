@@ -8,8 +8,8 @@ namespace OnlineBookStore
 {
     class AppConstants
     {
-        public static string EMAIL = "***REMOVED***";
-        public static string EMAIL_PASSWORD = "***REMOVED***" ;
+        public static string EMAIL = "example";
+        public static string EMAIL_PASSWORD = "example" ;
         public static string SMS_NUMBER = "Our SMS Number";
         public static string EXCEPTION_LOG_FILE_LOCATION = @"Logs\ExceptionLogs\exceptionlogs.txt";
         public static string REPORTS_FILE_LOCATION = @"Reports\";
