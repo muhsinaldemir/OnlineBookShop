@@ -1,0 +1,10 @@
+Email is sent to UserName admin UserEmail: interrela@gmail.com for product:  with price: 90
+Email is sent to UserName admin UserEmail: interrela@gmail.com for product:  with price: 14
+{0} is sent to UserName admin UserEmail: interrela@gmail.com for product:  with price: 18Time: Monday, May 6, 2019 9:20:18 AM
+Email is sent to UserName admin UserEmail: interrela@gmail.com for product:  with price: 24 Time: Monday, May 6, 2019 9:30:10 AM
+Email is sent to UserName admin UserEmail: interrela@gmail.com for product:  with price: 20 Time: Monday, May 6, 2019 9:30:54 AM
+Email is sent to UserName admin UserEmail: interrela@gmail.com for product:  with price: 9 Time: Monday, May 6, 2019 9:31:13 AM
+Email is sent to UserName admin UserEmail: interrela@gmail.com for product:  with price: 52 Time: Tuesday, May 7, 2019 1:46:07 AM
+Email is sent to UserName admin UserEmail: interrela@gmail.com for product:  with price: 8 Time: Tuesday, May 7, 2019 1:49:21 AM
+Email is sent to UserName admin UserEmail: interrela@gmail.com for product:  with price: 32 Time: Tuesday, May 7, 2019 1:54:10 AM
+Email is sent to UserName admin UserEmail: interrela@gmail.com for product:  with price: 35 Time: Tuesday, May 7, 2019 1:58:01 AM

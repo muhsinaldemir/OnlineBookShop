@@ -1,0 +1,3 @@
+SMS is sent to UserName admin UserEmail: interrela@gmail.com for product: beyaz geceler with price: 45 Time: Monday, May 6, 2019 9:27:46 AM
+SMS is sent to UserName admin UserEmail: interrela@gmail.com for product: ot with price: 10 Time: Tuesday, May 7, 2019 1:46:28 AM
+SMS is sent to UserName admin UserEmail: interrela@gmail.com for product: kar with price: 45 Time: Tuesday, May 7, 2019 2:18:23 AM
