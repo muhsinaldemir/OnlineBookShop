@@ -22,19 +22,3 @@
 - Homepage:
 
 ![Screenshot](docs/images/homepage.PNG)
-
--My Account:
-
-![Screenshot](docs/images/myaccount.PNG)
-
--Admin Panel:
-
-![Screenshot](docs/images/adminpanel.PNG)
-
--Report Screen:
-
-![Screenshot](docs/images/reportscreen.PNG)
-
--Shopping Cart:
-
-![Screenshot](docs/images/shoppingcart.PNG)
